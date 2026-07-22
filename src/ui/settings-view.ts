@@ -45,6 +45,11 @@ const DEFAULT_SETTINGS: Settings = {
   serviceRole: 'priest',
 };
 
+function defaultBibleForLanguage(lang: string): string {
+  const map: Record<string, string> = { en: 'kjv', ru: 'synod', cu: 'elis' };
+  return map[lang] || 'kjv';
+}
+
 function detectBrowserLanguage(): LanguageCode {
   const lang = navigator.language || (navigator as any).userLanguage || '';
   if (lang.startsWith('ru')) return 'ru';
@@ -65,7 +70,7 @@ function loadSettings(): Settings {
       return { ...DEFAULT_SETTINGS, ...parsed };
     }
   } catch { /* ignore */ }
-  return { ...DEFAULT_SETTINGS, language: detectBrowserLanguage() };
+  return { ...DEFAULT_SETTINGS, language: detectBrowserLanguage(), defaultBibleVersion: defaultBibleForLanguage(detectBrowserLanguage()) };
 }
 
 function saveSettings(settings: Settings) {
@@ -248,7 +253,10 @@ export class SettingsView {
     // Event listeners
     document.getElementById('language')?.addEventListener('change', (e) => {
       this.settings.language = (e.target as HTMLSelectElement).value;
+      this.settings.defaultBibleVersion = defaultBibleForLanguage(this.settings.language);
       saveSettings(this.settings);
+      const bibleSelect = document.getElementById('default-bible') as HTMLSelectElement | null;
+      if (bibleSelect) bibleSelect.value = this.settings.defaultBibleVersion;
       this.onLanguageChange?.();
     });
 
