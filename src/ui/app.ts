@@ -1,0 +1,142 @@
+/**
+ * Main application shell — SPA router and layout.
+ */
+
+import { CalendarView } from './calendar-view';
+import { BibleView } from './bible-view';
+import { SettingsView } from './settings-view';
+import { JDate } from '../core/jdate';
+import { loadSettings, type Settings } from './settings-view';
+import { getTranslations, type LanguageCode } from '../core/i18n';
+
+type View = 'calendar' | 'bible' | 'settings';
+
+export class App {
+  private container: HTMLElement;
+  private currentView: View = 'calendar';
+  private currentDate: JDate;
+  private settings: Settings;
+
+  constructor(container: HTMLElement) {
+    this.container = container;
+    this.currentDate = JDate.today();
+    this.settings = loadSettings();
+    document.documentElement.style.setProperty('--liturgical-font-size', this.settings.fontSize + 'px');
+  }
+
+  init() {
+    this.container.innerHTML = '';
+    this.render();
+    this.handleRoute();
+    window.addEventListener('hashchange', () => this.handleRoute());
+
+    // Register service worker for PWA install
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      (window as any).__deferredPrompt = e;
+    });
+  }
+
+  private handleRoute() {
+    const hash = window.location.hash.slice(1) || 'calendar';
+    const parts = hash.split('/');
+    this.currentView = parts[0] as View || 'calendar';
+    this.renderView();
+  }
+
+  private resolveBibleVersion(shortId: string, lang: string): string {
+    // Map short version IDs like "kjv" to full paths like "en/bible/kjv"
+    const langMap: Record<string, string> = {
+      en: 'en/bible/kjv',
+      ru: 'ru/bible/synod',
+      cu: 'cu/bible/elis',
+    };
+    if (shortId === 'kjv' || shortId === 'brenton' || shortId === 'nonkjv') return `en/bible/${shortId}`;
+    if (shortId === 'synod' || shortId === 'kassian' || shortId === 'yungerov') return `ru/bible/${shortId}`;
+    if (shortId === 'elis') return 'cu/bible/elis';
+    if (shortId === 'ls') return 'fr/bible/ls';
+    if (shortId === 'spt') return 'el/bible/spt';
+    if (shortId === 'vulgate') return 'la/bible/vulgate';
+    if (shortId === 'cuv') return 'zh/Hans/bible/cuv';
+    if (shortId === 'cuv-hant') return 'zh/Hant/bible/cuv';
+    if (shortId === 'svd') return 'ar/bible/svd';
+    return langMap[lang] || 'en/bible/kjv';
+  }
+
+  private render() {
+    const t = getTranslations(this.settings.language as LanguageCode);
+    this.container.innerHTML = `
+      <div class="app-container min-h-screen flex flex-col">
+        <header class="bg-navy text-parchment p-3 flex items-center justify-between shadow-md">
+          <h1 class="text-sm font-bold tracking-wide">${t.appName}</h1>
+          <nav class="flex gap-4 text-sm">
+            <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
+            <a href="#bible" class="nav-link hover:text-gold transition-colors" data-view="bible">${t.nav.bible}</a>
+            <a href="#settings" class="nav-link hover:text-gold transition-colors" data-view="settings">${t.nav.settings}</a>
+          </nav>
+        </header>
+        <main id="view-container" class="flex-1 overflow-auto"></main>
+      </div>
+    `;
+  }
+
+  private renderView() {
+    const viewContainer = document.getElementById('view-container')!;
+    viewContainer.innerHTML = '';
+
+    // Update active nav
+    document.querySelectorAll('.nav-link').forEach(el => {
+      const v = el.getAttribute('data-view');
+      el.classList.toggle('text-gold', v === this.currentView);
+      el.classList.toggle('font-bold', v === this.currentView);
+    });
+
+    // Re-read settings fresh on each navigation
+    this.settings = loadSettings();
+    const lang = this.settings.language as LanguageCode;
+    const calendarType = this.settings.calendarType || 'julian';
+
+    switch (this.currentView) {
+      case 'calendar':
+        new CalendarView(viewContainer, this.currentDate, (date) => {
+          this.currentDate = date;
+        }, lang, calendarType).render();
+        break;
+      case 'bible': {
+        // Parse route params: #bible/{lang~short}/{book}/{passage}
+        const hash = window.location.hash.slice(1);
+        const bp = hash.split('/');
+        const versionSpec = bp[1] || '';
+        const bibleBook = bp[2] || '';
+        const biblePassage = bp[3] || '';
+        let bibleVersion: string;
+        if (!versionSpec) {
+          bibleVersion = this.resolveBibleVersion(this.settings.defaultBibleVersion, lang);
+        } else if (versionSpec.includes('~')) {
+          // Format: lang~short e.g. "en~kjv" → "en/bible/kjv"
+          const [vl, vs] = versionSpec.split('~');
+          bibleVersion = `${vl}/bible/${vs}`;
+        } else if (versionSpec.includes('/')) {
+          bibleVersion = versionSpec; // legacy full path
+        } else {
+          bibleVersion = this.resolveBibleVersion(versionSpec, lang);
+        }
+        new BibleView(viewContainer, lang, bibleVersion, bibleBook, biblePassage).render();
+        break;
+      }
+      case 'settings':
+        new SettingsView(viewContainer, () => {
+          this.render();
+          this.renderView();
+        }).render();
+        break;
+    }
+  }
+
+  go(view: View) {
+    window.location.hash = view;
+  }
+}

@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-parchment: #f5f0e8;
+  --color-parchment-dark: #e8dfd0;
+  --color-navy: #1a1a2e;
+  --color-navy-light: #2a2a4e;
+  --color-gold: #c5a55a;
+  --color-gold-light: #d4b96e;
+  --color-red: #8b0000;
+  --color-red-light: #a52a2a;
+  --color-purple: #4a0e4e;
+  --color-green: #2d5a27;
+  --color-blue: #1a3a6e;
+}
+
+@font-face {
+  font-family: 'Ponomar';
+  src: url('/fonts/Ponomar-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fedorovsk';
+  src: url('/fonts/Fedorovsk-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Indiction';
+  src: url('/fonts/Indiction-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Menaion';
+  src: url('/fonts/Menaion-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Monomakh';
+  src: url('/fonts/Monomakh-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Triodion';
+  src: url('/fonts/Triodion-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Vilnius';
+  src: url('/fonts/Vilnius-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Voskresensky';
+  src: url('/fonts/Voskresensky-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-parchment);
+  color: var(--color-navy);
+  font-family: 'Noto Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+.font-slavonic {
+  font-family: 'Ponomar', 'Noto Serif', Georgia, serif;
+}
+.font-ponomar { font-family: 'Ponomar', 'Noto Serif', Georgia, serif; }
+.font-fedrovsk { font-family: 'Fedorovsk', 'Noto Serif', Georgia, serif; }
+.font-indiction { font-family: 'Indiction', 'Noto Serif', Georgia, serif; }
+.font-menaion { font-family: 'Menaion', 'Noto Serif', Georgia, serif; }
+.font-monomakh { font-family: 'Monomakh', 'Noto Serif', Georgia, serif; }
+.font-triodion { font-family: 'Triodion', 'Noto Serif', Georgia, serif; }
+.font-vilnius { font-family: 'Vilnius', 'Noto Serif', Georgia, serif; }
+.font-voskresensky { font-family: 'Voskresensky', 'Noto Serif', Georgia, serif; }
+
+.font-system-slavonic {
+  font-family: 'Noto Serif', Georgia, serif;
+}
+
+.rank-icon {
+  font-family: 'Ponomar', serif;
+  font-size: 130%;
+}
+
+.liturgical-text {
+  font-size: var(--liturgical-font-size, 18px);
+  line-height: 1.6;
+}
+.liturgical-text > :first-child {
+  margin-top: 0;
+}
+
+.speaker-label {
+  color: var(--color-red);
+  font-weight: 700;
+}
+
+.rubric {
+  color: var(--color-red);
+  font-style: italic;
+}
+
+.drop-cap::first-letter {
+  color: var(--color-red);
+  font-weight: 700;
+  font-size: 1.5em;
+  float: left;
+  line-height: 1;
+  margin-right: 0.1em;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+/* PWA safe area insets */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .nav-bar {
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  }
+}
