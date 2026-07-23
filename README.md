@@ -4,6 +4,8 @@ A Progressive Web App for Orthodox Church calendar, liturgical services, and Bib
 
 Derived from the original [Java Ponomar application](https://github.com/typiconman/ponomar) by Aleksandr Andreev and [Sergei F.](https://github.com/typiconman).
 
+**Demo:** <https://ponomar.atroshin.ru>
+
 ## Features
 
 - **Calendar** — View month grids with liturgical days, fasting periods, ranks, and commemorations. Supports Julian calendar with Gregorian equivalents.
