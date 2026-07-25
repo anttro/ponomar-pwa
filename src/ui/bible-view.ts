@@ -133,7 +133,7 @@ export class BibleView {
           </div>
         </div>
 
-        <div id="bible-text" class="flex-1 overflow-auto p-2 max-w-3xl mx-auto liturgical-text">
+        <div id="bible-text" class="flex-1 overflow-auto p-2 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto liturgical-text">
           <p class="text-navy-light italic">${this.t.bible.selectBook}</p>
         </div>
       </div>
@@ -267,7 +267,7 @@ export class BibleView {
       const isChurchSlavonic = version?.language === 'cu';
       const fnClass = isChurchSlavonic ? fontClass(settings.cuFont) : '';
 
-      textEl.className = `flex-1 overflow-auto p-2 max-w-3xl mx-auto liturgical-text ${fnClass}`;
+      textEl.className = `flex-1 overflow-auto p-2 max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto liturgical-text ${fnClass}`;
       textEl.innerHTML = html || `<p class="text-navy-light">${this.t.bible.noTextFound}</p>`;
     } catch {
       textEl.innerHTML = `

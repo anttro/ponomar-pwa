@@ -88,7 +88,7 @@ export class ServiceView {
     `;
 
     this.container.innerHTML = standalone
-      ? `<div class="p-6 max-w-4xl mx-auto">
+      ? `<div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
           <h2 class="text-2xl font-bold text-navy mb-2">${this.t.services.title}</h2>
           <p class="text-navy-light mb-4">
             ${this.currentDate.toString()}
@@ -183,7 +183,7 @@ export class ServiceView {
 
       try {
         const tryFetch = async (lang: string) => {
-          const url = `/data/${lang}/services/Octoecheos/Tone ${toneNum}/${weekday}.json`;
+          const url = `/data/${lang}/services/octoecheos/tone${toneNum}/${weekday.toLowerCase()}.json`;
           const resp = await fetch(url);
           if (!resp.ok) return null;
           const nodes: ServiceNode[] = await resp.json();
@@ -214,9 +214,9 @@ export class ServiceView {
             const resp = await fetch(url);
             if (!resp.ok) return null;
             const all = await resp.json();
-            if (Array.isArray(all)) return all.map((e: Record<string, unknown>) => ({ cid: String(e.CId ?? '') }));
+            if (Array.isArray(all)) return all.map((e: Record<string, unknown>) => ({ cid: String(e.id ?? '') }));
             const entries = all[dateKey] as Record<string, unknown>[] | undefined;
-            if (Array.isArray(entries)) return entries.map((e: Record<string, unknown>) => ({ cid: String(e.CId ?? '') }));
+            if (Array.isArray(entries)) return entries.map((e: Record<string, unknown>) => ({ cid: String(e.id ?? '') }));
             return null;
           } catch { return null; }
         };
@@ -226,12 +226,24 @@ export class ServiceView {
         const menaionEntries = await tryLoad(`/data/${this.serviceLang}/menaion-bundle.json`);
         if (menaionEntries) allEntries.push(...menaionEntries);
 
+        // Load from merged calendar files
+        const loadCalendarEntry = async (file: string, index: number): Promise<{ cid: string }[] | null> => {
+          try {
+            const resp = await fetch(`/data/shared/calendar/${file}.json`);
+            if (!resp.ok) return null;
+            const data = await resp.json();
+            const key = String(index).padStart(2, '0');
+            const entry = data[key];
+            return entry ? [{ cid: String(entry.id ?? '') }] : null;
+          } catch { return null; }
+        };
+
         if (dayInfo.triodionFile !== null) {
-          const triodion = await tryLoad(`/data/shared/triodion/${dayInfo.triodionFile}.json`);
+          const triodion = await loadCalendarEntry('triodion', dayInfo.triodionFile);
           if (triodion) allEntries.push(...triodion);
         }
         if (dayInfo.pentecostarionFile !== null) {
-          const pent = await tryLoad(`/data/shared/pentecostarion/${dayInfo.pentecostarionFile}.json`);
+          const pent = await loadCalendarEntry('pentecostarion', dayInfo.pentecostarionFile);
           if (pent) allEntries.push(...pent);
         }
 
@@ -608,7 +620,28 @@ export class ServiceView {
       const resolvePath = (lang: string): string | null => {
         let fetchPath = basePath;
         if (fetchPath.startsWith('Services/')) {
-          fetchPath = fetchPath.replace('Services/', '').replace('.xml', '.json');
+          fetchPath = fetchPath.slice('Services/'.length);
+          // Handle different path patterns
+          if (fetchPath.startsWith('CommonPrayers/')) {
+            // CommonPrayers -> prayers
+            fetchPath = 'prayers/' + fetchPath.slice('CommonPrayers/'.length);
+          } else if (fetchPath.startsWith('Text/')) {
+            // Text -> texts
+            fetchPath = 'texts/' + fetchPath.slice('Text/'.length);
+          } else if (fetchPath.startsWith('Command/')) {
+            // Command -> commands
+            fetchPath = 'commands/' + fetchPath.slice('Command/'.length);
+          } else if (fetchPath.startsWith('Header/')) {
+            // Header -> headers
+            fetchPath = 'headers/' + fetchPath.slice('Header/'.length);
+          } else if (fetchPath.startsWith('Var/')) {
+            // Var -> var (lowercase)
+            fetchPath = 'var/' + fetchPath.slice('Var/'.length);
+          } else if (fetchPath.startsWith('Octoecheos/')) {
+            // Octoecheos -> octoecheos
+            fetchPath = 'octoecheos/' + fetchPath.slice('Octoecheos/'.length);
+          }
+          fetchPath = fetchPath.replace('.xml', '.json');
         }
         return `/data/${lang}/services/${fetchPath}`;
       };
@@ -673,7 +706,28 @@ export class ServiceView {
     const resolvePath = (lang: string): string | null => {
       let fetchPath = path;
       if (fetchPath.startsWith('Services/')) {
-        fetchPath = fetchPath.replace('Services/', '').replace('.xml', '.json');
+        fetchPath = fetchPath.slice('Services/'.length);
+        // Service templates are in templates/ subdirectory
+        // But if path contains a subdirectory, don't add templates/ prefix
+        if (!fetchPath.includes('/')) {
+          fetchPath = 'templates/' + fetchPath;
+        } else {
+          // Handle subdirectories like Var/, CommonPrayers/, etc.
+          if (fetchPath.startsWith('CommonPrayers/')) {
+            fetchPath = 'prayers/' + fetchPath.slice('CommonPrayers/'.length);
+          } else if (fetchPath.startsWith('Text/')) {
+            fetchPath = 'texts/' + fetchPath.slice('Text/'.length);
+          } else if (fetchPath.startsWith('Command/')) {
+            fetchPath = 'commands/' + fetchPath.slice('Command/'.length);
+          } else if (fetchPath.startsWith('Header/')) {
+            fetchPath = 'headers/' + fetchPath.slice('Header/'.length);
+          } else if (fetchPath.startsWith('Var/')) {
+            fetchPath = 'var/' + fetchPath.slice('Var/'.length);
+          } else if (fetchPath.startsWith('Octoecheos/')) {
+            fetchPath = 'octoecheos/' + fetchPath.slice('Octoecheos/'.length);
+          }
+        }
+        fetchPath = fetchPath.replace('.xml', '.json');
       }
       return `/data/${lang}/services/${fetchPath}`;
     };

@@ -18,6 +18,8 @@ let sharedScriptureIndex: Record<string, unknown[]> | null = null;
 let bookAbbrevMap: Record<string, string> | null = null;
 let bookCVSep = ':';
 let bookAbbrevLang = '';
+let cachedTriodion: Record<string, unknown> | null = null;
+let cachedPentecostarion: Record<string, unknown> | null = null;
 
 function resolveDefaultBibleVersion(): string {
   try {
@@ -130,8 +132,7 @@ interface LifeData {
   name?: {
     nominative?: string;
     short?: string;
-    '@_Nominative'?: string;
-    '@_Short'?: string;
+    shortF?: string;
   };
   life?: {
     text: string;
@@ -307,11 +308,11 @@ async function loadCommemoration(sharedId: string): Promise<CommemorationData | 
 
 function getPeriodName(life: LifeData | undefined): string {
   if (!life?.name) return '';
-  return life.name['@_Nominative'] || life.name.nominative || life.name['@_Short'] || life.name.short || '';
+  return life.name.nominative || life.name.short || '';
 }
 
 function getShortFeastName(life: LifeData | undefined, shared: CommemorationData | null | undefined): string {
-  if (life?.name?.['@_Short']) return life.name['@_Short'];
+  if (life?.name?.short) return life.name.short;
   if (life?.name?.short) return life.name.short;
   return getCommsName(shared);
 }
@@ -347,24 +348,46 @@ async function loadMenaion(lang: LanguageCode, month: number, day: number): Prom
   }
 }
 
-async function loadTriodionFile(index: number): Promise<unknown[]> {
+async function loadTriodionData(): Promise<Record<string, unknown>> {
+  if (cachedTriodion) return cachedTriodion;
   try {
-    const resp = await fetch(`/data/shared/triodion/${String(index).padStart(2, '0')}.json`);
-    if (!resp.ok) return [];
-    return await resp.json();
+    const resp = await fetch('/data/shared/calendar/triodion.json');
+    if (!resp.ok) return {};
+    const ct = resp.headers.get('content-type');
+    if (ct && ct.includes('text/html')) return {};
+    cachedTriodion = await resp.json();
+    return cachedTriodion!;
   } catch {
-    return [];
+    return {};
+  }
+}
+
+async function loadTriodionFile(index: number): Promise<unknown[]> {
+  const data = await loadTriodionData();
+  const key = String(index).padStart(2, '0');
+  const entry = data[key];
+  return entry ? [entry] : [];
+}
+
+async function loadPentecostarionData(): Promise<Record<string, unknown>> {
+  if (cachedPentecostarion) return cachedPentecostarion;
+  try {
+    const resp = await fetch('/data/shared/calendar/pentecostarion.json');
+    if (!resp.ok) return {};
+    const ct = resp.headers.get('content-type');
+    if (ct && ct.includes('text/html')) return {};
+    cachedPentecostarion = await resp.json();
+    return cachedPentecostarion!;
+  } catch {
+    return {};
   }
 }
 
 async function loadPentecostarionFile(index: number): Promise<unknown[]> {
-  try {
-    const resp = await fetch(`/data/shared/pentecostarion/${String(index).padStart(2, '0')}.json`);
-    if (!resp.ok) return [];
-    return await resp.json();
-  } catch {
-    return [];
-  }
+  const data = await loadPentecostarionData();
+  const key = String(index).padStart(2, '0');
+  const entry = data[key];
+  return entry ? [entry] : [];
 }
 
 export class CalendarView {
@@ -544,7 +567,7 @@ export class CalendarView {
         </div>
 
         <div class="flex-1 p-6 overflow-auto">
-          <div class="max-w-2xl">
+          <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
             <h2 class="text-base font-bold text-navy mb-1">
               ${julianStr}
             </h2>
@@ -653,7 +676,7 @@ export class CalendarView {
     for (const entry of allEntries) {
       if (typeof entry === 'object' && entry !== null) {
         const e = entry as Record<string, unknown>;
-        if (e.CId) cids.push(String(e.CId));
+        if (e.id) cids.push(String(e.id));
       }
     }
 
@@ -682,13 +705,11 @@ export class CalendarView {
       let feastName = '';
       let feastRank = 0;
 
-      // Pass 1: Find period name from primary calendar entry (SId ''/'0' + CId 9[0-38]xxxx)
+      // Pass 1: Find period name from primary calendar entry (id 9[0-38]xxxx)
       for (const entry of calendarEntries) {
         const e = entry as Record<string, unknown>;
-        const cid = String(e.CId || '');
-        const sid = String(e.SId ?? '');
+        const cid = String(e.id || '');
         if (!cid || !/^9[0-38]\d{2}$/.test(cid)) continue;
-        if (sid !== '' && sid !== '0') continue;
         const name = getPeriodName(livesData.get(cid)) || getCommsName(sharedComms.get(cid));
         if (!name) continue;
         periodName = name;
@@ -699,7 +720,7 @@ export class CalendarView {
       // Pass 2: Find great feast (rank >= 6) from all entries
       for (const entry of allEntries) {
         const e = entry as Record<string, unknown>;
-        const cid = String(e.CId || '');
+        const cid = String(e.id || '');
         if (!cid || this.skipCids.has(cid)) continue;
         const life = livesData.get(cid);
         const shared = sharedComms.get(cid);
@@ -749,7 +770,7 @@ export class CalendarView {
 
           let name = '';
           if (life?.name) {
-            name = life.name['@_Nominative'] || life.name.nominative || life.name['@_Short'] || life.name.short || '';
+            name = life.name.nominative || life.name.short || '';
           }
           if (!name && shared?.NAME) {
             if (typeof shared.NAME === 'object' && 'Long' in shared.NAME) {
@@ -811,7 +832,7 @@ export class CalendarView {
       if (cid && isPeriodCid(cid)) return '';
       return ` (${shortName})`;
     };
-    loadBookAbbrevs(this.language);
+    await loadBookAbbrevs(this.language);
     for (const [cid, shared] of sharedComms) {
       if (shared?.SCRIPTURE) {
         const shortN = typeof shared.NAME === 'object' && 'ShortN' in shared.NAME ? (shared.NAME.ShortN || '') : '';
@@ -830,7 +851,7 @@ export class CalendarView {
     }
     // Also load readings from saint lives (from services structure)
     for (const [cid, life] of livesData) {
-      const shortName = life?.name?.['@_Short'] || life?.name?.short || '';
+      const shortName = life?.name?.short || '';
       const tag = readingContext(shortName, cid);
 
       if (life?.services) {

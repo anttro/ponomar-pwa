@@ -4,10 +4,15 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run convert && vite dev",
-    "build": "npm run convert && vite build",
+    "dev": "vite dev",
+    "build": "vite build",
     "preview": "vite preview",
     "convert": "tsx scripts/convert-all.ts",
+    "migrate": "tsx scripts/migrate-data.ts",
+    "migrate:dry": "tsx scripts/migrate-data.ts --dry-run",
+    "validate": "tsx scripts/validate-data.ts",
+    "search": "tsx scripts/tools/search-texts.ts",
+    "stats": "tsx scripts/tools/stats.ts",
     "check": "svelte-kit sync 2>/dev/null; tsc --noEmit"
   },
   "devDependencies": {

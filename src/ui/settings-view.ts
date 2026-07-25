@@ -111,7 +111,7 @@ export class SettingsView {
     const t = getTranslations(this.settings.language as LanguageCode);
 
     this.container.innerHTML = `
-      <div class="p-6 max-w-2xl mx-auto">
+      <div class="p-6 max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
         <h2 class="text-2xl font-bold text-navy mb-6">${t.settings.title}</h2>
 
         <!-- Language -->
