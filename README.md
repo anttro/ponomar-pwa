@@ -2,7 +2,7 @@
 
 A Progressive Web App for Orthodox Church calendar, liturgical services, and Bible readings.
 
-Derived from the original [Java Ponomar application](https://github.com/typiconman/ponomar) by Aleksandr Andreev and [Sergei F.](https://github.com/typiconman).
+Derived from the original [Java Ponomar application](https://github.com/typiconman/ponomar) by Aleksandr Andreev, Yuri Shardt and [Sergei F.](https://github.com/typiconman).
 
 **Demo:** <https://ponomar.atroshin.ru>
 
