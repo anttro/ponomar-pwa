@@ -9,7 +9,7 @@ Derived from the original [Java Ponomar application](https://github.com/typiconm
 ## Features
 
 - **Calendar** — View month grids with liturgical days, fasting periods, ranks, and commemorations. Supports Julian calendar with Gregorian equivalents.
-- **Service Reader** — Assembles liturgical services (Hours, Vespers, Matins, Liturgy) from structured XML templates with conditional logic.
+- **Service Reader** — Assembles liturgical services (Hours, Kathismata) from structured templates with conditional logic.
 - **Bible Reader** — Read scripture across 13 versions (Church Slavonic, Russian Synodal, KJV, Brenton, Vulgate, etc.). Per-version reading position persists across sessions.
 - **Multi-language UI** — English, Russian, Church Slavonic (with dedicated Slavonic fonts).
 - **PWA** — Installable on desktop and mobile devices.
@@ -19,7 +19,7 @@ Derived from the original [Java Ponomar application](https://github.com/typiconm
 - [TypeScript](https://www.typescriptlang.org/) — fully typed
 - [Vite](https://vitejs.dev/) — build tool
 - [Tailwind CSS v4](https://tailwindcss.com/) — utility-first CSS
-- [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser) — service XML conversion
+- [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser) — legacy XML conversion (manual only)
 
 ## Getting Started
 
@@ -28,7 +28,14 @@ npm install
 npm run dev
 ```
 
-The data conversion from the Java project's XML sources happens automatically as part of the build. Point the conversion script at your local clone of the Java Ponomar repository by setting `PONOMAR_JAVA_HOME` (defaults to `../ponomar`).
+Data files in `static/data/` are pre-converted JSON (not committed). To regenerate from the Java XML sources, run:
+
+```bash
+npm run convert           # re-convert all data from XML
+npm run migrate           # normalize to current format
+```
+
+Set `PONOMAR_JAVA_HOME` to point at a local clone of the Java Ponomar repository (defaults to `../ponomar`).
 
 ```bash
 npm run build    # production build
@@ -42,9 +49,9 @@ src/
   core/          — Domain logic (calendar, paschalion, service assembly, i18n)
   ui/            — View components (app, calendar, bible, service, settings)
   main.ts        — Entry point
-scripts/         — XML-to-JSON conversion tools
+scripts/         — Data conversion, migration, validation, and CLI tools
 static/
-  data/          — Generated liturgical data (not committed, built from Java XML)
+  data/          — Liturgical data as JSON (not committed, generated from Java XML via npm run convert)
   fonts/         — Church Slavonic fonts
   icons/         — PWA icons
 ```
