@@ -15,6 +15,8 @@ const parser = new XMLParser({
   trimValues: true,
 });
 
+const SKIP_BOOKS = new Set(['Composite']);
+
 interface BibleBookMeta {
   id: string;
   name: string;
@@ -88,6 +90,7 @@ export async function convertBibleMeta(SRC: string, OUT: string) {
       const bookArr = Array.isArray(bible['BOOK']) ? bible['BOOK'] : [bible['BOOK']];
       for (const book of bookArr) {
         const bookId = book['@_Id'] || book['@_ID'] || '';
+        if (SKIP_BOOKS.has(bookId)) continue;
         const bookName = book['@_Name'] || '';
         const bookShort = book['@_Short'] || book['@_Abbr'] || '';
         const bookChapters = parseInt(book['@_Chapters'] || '0', 10);
@@ -122,7 +125,7 @@ export async function convertBibleMeta(SRC: string, OUT: string) {
 
     if (!existsSync(textSrc)) continue;
 
-    const textFiles = readdirSync(textSrc).filter(f => f.endsWith('.text'));
+    const textFiles = readdirSync(textSrc).filter(f => f.endsWith('.text') && !SKIP_BOOKS.has(f.replace('.text', '')));
     if (textFiles.length === 0) continue;
 
     // Fix: Russian Bibles are under cu/ru/ in source but should go to ru/ in output
