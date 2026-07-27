@@ -47,27 +47,31 @@ function shortToLang(shortId: string): string {
 async function loadBookAbbrevs(lang: string): Promise<void> {
   if (bookAbbrevLang === lang && bookAbbrevMap) return;
   bookAbbrevLang = lang;
-  bookAbbrevMap = null;
-  try {
-    const resp = await fetch('/data/bible/versions.json');
-    if (!resp.ok) return;
-    const ct = resp.headers.get('content-type');
-    if (ct && ct.includes('text/html')) return;
-    const versions = await resp.json() as any[];
-    const ver = versions.find((v: any) => v.id.startsWith(lang + '/')) || versions[0];
-    if (ver) {
-      const map: Record<string, string> = {};
-      if (ver.books) {
-        for (const book of ver.books) {
-          map[book.id] = book.short || book.id;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const resp = await fetch('/data/bible/versions.json');
+      if (!resp.ok) { if (attempt === 0) await new Promise(r => setTimeout(r, 300)); continue; }
+      const ct = resp.headers.get('content-type');
+      if (ct && ct.includes('text/html')) { if (attempt === 0) await new Promise(r => setTimeout(r, 300)); continue; }
+      const versions = await resp.json() as any[];
+      const ver = versions.find((v: any) => v.id.startsWith(lang + '/')) || versions[0];
+      if (ver) {
+        const map: Record<string, string> = {};
+        if (ver.books) {
+          for (const book of ver.books) {
+            map[book.id] = book.short || book.id;
+          }
         }
+        bookAbbrevMap = map;
+        if (ver.formatting?.CVSep) {
+          bookCVSep = ver.formatting.CVSep;
+        }
+        return;
       }
-      bookAbbrevMap = map;
-      if (ver.formatting?.CVSep) {
-        bookCVSep = ver.formatting.CVSep;
-      }
+    } catch {
+      if (attempt === 0) await new Promise(r => setTimeout(r, 300));
     }
-  } catch {}
+  }
 }
 
 function formatReadingRef(reading: string, _lang: string): string {
