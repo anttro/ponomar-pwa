@@ -154,6 +154,20 @@ export class ServiceView {
       titleNode: title('Ninth1', this.t.services.serviceNames.ninth),
     });
 
+    services.push({
+      id: 'vespers', name: this.t.services.serviceNames.vespers, serviceType: 'VESPERS',
+      template: 'Vespers',
+      description: this.t.services.serviceDescriptions.vespers,
+      titleNode: title('Vespers1', this.t.services.serviceNames.vespers, 'VesperSource'),
+    });
+
+    services.push({
+      id: 'liturgy', name: this.t.services.serviceNames.liturgy, serviceType: 'LITURGY',
+      template: 'DivineLiturgy',
+      description: this.t.services.serviceDescriptions.liturgy,
+      titleNode: title('DivineLiturgyTitle', this.t.services.serviceNames.liturgy, 'DivineLiturgySource'),
+    });
+
     if (dayInfo.dRank >= 6) {
       services.push({
         id: 'royalhours', name: this.t.services.serviceNames.royalhours, serviceType: 'ROYALHOURS',
@@ -166,7 +180,7 @@ export class ServiceView {
     return services;
   }
 
-  private async loadToneData(serviceType: string): Promise<{ troparion1?: string; kontakion1?: string } | null> {
+  private async loadToneData(serviceType: string): Promise<{ troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string } | null> {
     const computed = computeDay(this.currentDate);
     const { dayInfo } = computed;
     const tone = dayInfo.Tone;
@@ -175,7 +189,7 @@ export class ServiceView {
     const dd = String(dayInfo.day).padStart(2, '0');
     const dateKey = `${mm}-${dd}`;
 
-    let result: { troparion1?: string; kontakion1?: string } | null = null;
+    let result: { troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string } | null = null;
 
     if (tone > 0 && tone <= 8) {
       const toneNum = tone === 8 ? 0 : tone;
@@ -193,6 +207,9 @@ export class ServiceView {
                 return {
                   troparion1: node.troparion1 as string | undefined,
                   kontakion1: node.kontakion1 as string | undefined,
+                  theotokion1: node.theotokion1 as string | undefined,
+                  prokimenon1: node.prokimenon1 as string | undefined,
+                  alleluia1: node.alleluia1 as string | undefined,
                 };
               }
             }
@@ -296,10 +313,10 @@ export class ServiceView {
     return result;
   }
 
-  private generateVarNodes(toneData: { troparion1?: string; kontakion1?: string } | null, serviceType: string): Map<string, ServiceNode[]> {
+  private generateVarNodes(toneData: { troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string } | null, serviceType: string): Map<string, ServiceNode[]> {
     const varNodes = new Map<string, ServiceNode[]>();
 
-    const prefix: Record<string, string> = { PRIMES: '', TERCE: '3', SEXTE: '6', NONE: '9' };
+    const prefix: Record<string, string> = { PRIMES: '', TERCE: '3', SEXTE: '6', NONE: '9', VESPERS: 'V', LITURGY: 'L' };
     const p = prefix[serviceType] ?? '';
 
     if (toneData?.troparion1) {
@@ -326,6 +343,42 @@ export class ServiceView {
       }]);
     }
 
+    if (toneData?.theotokion1) {
+      const key = `PTheot${p}1`;
+      varNodes.set(key, [{
+        type: 'CREATE',
+        what: `THEOTOKION/${toneData.theotokion1}`,
+        who: '',
+        header: true,
+        redfirst: true,
+        newline: true,
+      }]);
+    }
+
+    if (toneData?.prokimenon1) {
+      const key = `PProk${p}1`;
+      varNodes.set(key, [{
+        type: 'CREATE',
+        what: toneData.prokimenon1,
+        who: '',
+        header: true,
+        redfirst: true,
+        newline: true,
+      }]);
+    }
+
+    if (toneData?.alleluia1) {
+      const key = `PAllel${p}1`;
+      varNodes.set(key, [{
+        type: 'CREATE',
+        what: toneData.alleluia1,
+        who: '',
+        header: true,
+        redfirst: true,
+        newline: true,
+      }]);
+    }
+
     return varNodes;
   }
 
@@ -344,6 +397,62 @@ export class ServiceView {
 
       const toneData = await this.loadToneData(service.serviceType);
       const varNodes = this.generateVarNodes(toneData, service.serviceType);
+
+      // Load Epistle and Gospel readings from commemoration
+      const loadReadings = async () => {
+        const ids: string[] = [];
+        const mm = String(this.currentDate.getMonth()).padStart(2, '0');
+        const dd = String(this.currentDate.getDay()).padStart(2, '0');
+        const dateKey = `${mm}-${dd}`;
+        try {
+          const resp = await fetch(`/data/${this.serviceLang}/menaion-bundle.json`);
+          if (resp.ok) {
+            const bundle = await resp.json();
+            const entries = bundle[dateKey];
+            if (entries) {
+              for (const e of entries) {
+                if (e.id) ids.push(String(e.id));
+              }
+            }
+          }
+        } catch {}
+        for (const cid of ids) {
+          try {
+            const resp = await fetch(`/data/shared/commemorations/${cid}.json`);
+            if (!resp.ok) continue;
+            const data = await resp.json();
+            const scripts = data.SCRIPTURE;
+            if (!Array.isArray(scripts)) continue;
+            let epistlePassage = '';
+            let gospelPassage = '';
+            for (const s of scripts) {
+              const r = s.Reading || '';
+              if (s.Type === 'apostol' && r && !epistlePassage) epistlePassage = r;
+              if (s.Type === 'gospel' && r && !gospelPassage) gospelPassage = r;
+            }
+            if (epistlePassage) {
+              varNodes.set('EpistleReading', [{
+                type: 'BIBLE',
+                verses: epistlePassage,
+                who: 'R',
+                redfirst: true,
+                newline: true,
+              }]);
+            }
+            if (gospelPassage) {
+              varNodes.set('GospelReading', [{
+                type: 'BIBLE',
+                verses: gospelPassage,
+                who: 'D',
+                redfirst: true,
+                newline: true,
+              }]);
+            }
+            if (epistlePassage || gospelPassage) break;
+          } catch {}
+        }
+      };
+      await loadReadings();
 
       const nodes: ServiceNode[] = [...templateNodes];
 
@@ -367,6 +476,7 @@ export class ServiceView {
         fetchCommandText: (name) => this.fetchCommandText(name),
         resolveTimes: (times) => this.resolveTimes(times),
         fetchText: this.createFetchText(),
+        fetchPrayerNodes: this.createFetchPrayerNodes(),
         fetchServiceNodes: async (path: string): Promise<ServiceNode[] | null> => {
           const varMatch = path.match(/Services\/Var\/(\w+)\.xml$/);
           if (varMatch) {
@@ -699,10 +809,71 @@ export class ServiceView {
         console.error('Service fetchText error:', err);
         return null;
       }
-    };
-  }
+     };
+   }
 
-  private async fetchServiceNodes(path: string): Promise<ServiceNode[] | null> {
+   private createFetchPrayerNodes() {
+     return async (path: string): Promise<ServiceNode[] | null> => {
+       const resolvePath = (lang: string): string | null => {
+         let fetchPath = path;
+         if (fetchPath.startsWith('Services/')) {
+           fetchPath = fetchPath.slice('Services/'.length);
+           if (fetchPath.startsWith('CommonPrayers/')) {
+             fetchPath = 'prayers/' + fetchPath.slice('CommonPrayers/'.length);
+           }
+           fetchPath = fetchPath.replace('.xml', '.json');
+         }
+         return `/data/${lang}/services/${fetchPath}`;
+       };
+
+       const tryFetch = async (url: string): Promise<ServiceNode[] | null> => {
+         if (this.notFound.has(url)) return null;
+         const cached = this.nodeCache.get(url);
+         if (cached) return cached;
+         try {
+           const resp = await fetch(url);
+           if (!resp.ok) { this.notFound.add(url); return null; }
+           const ct = resp.headers.get('content-type') || '';
+           if (ct.includes('text/html')) { this.notFound.add(url); return null; }
+           const nodes = await resp.json();
+           if (Array.isArray(nodes)) {
+             this.nodeCache.set(url, nodes);
+             return nodes;
+           }
+           this.notFound.add(url);
+           return null;
+         } catch {
+           this.notFound.add(url);
+           return null;
+         }
+       };
+
+       try {
+         let url = resolvePath(this.serviceLang);
+         if (url) {
+           const result = await tryFetch(url);
+           if (result) return result;
+         }
+         if (this.serviceLang !== 'cu') {
+           const fbUrl = resolvePath('cu');
+           if (fbUrl) {
+             const result = await tryFetch(fbUrl);
+             if (result) return result;
+           }
+         }
+         const sharedUrl = resolvePath('shared');
+         if (sharedUrl) {
+           return await tryFetch(sharedUrl);
+         }
+         return null;
+       } catch (err) {
+         console.error('Service fetchPrayerNodes error:', err);
+         return null;
+       }
+     };
+   }
+
+   private async fetchServiceNodes(path: string): Promise<ServiceNode[] | null> {
     const resolvePath = (lang: string): string | null => {
       let fetchPath = path;
       if (fetchPath.startsWith('Services/')) {

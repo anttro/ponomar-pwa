@@ -22,6 +22,7 @@ export interface ServiceContext {
   lang: string;
   fetchText: (path: string) => Promise<string | null>;
   fetchServiceNodes: (path: string) => Promise<ServiceNode[] | null>;
+  fetchPrayerNodes: (path: string) => Promise<ServiceNode[] | null>;
   fetchBibleText: (book: string, passage: string, showVerseNumbers?: boolean, verseNewLine?: boolean) => Promise<string>;
   fetchLives: (id: string) => Promise<Record<string, Record<string, Record<string, unknown>>> | null>;
   fetchCommandText: (name: string) => Promise<string>;
@@ -302,14 +303,6 @@ export async function assembleService(
         const who = whoRaw !== undefined ? localizeWho(whoRaw, ctx) : '';
         let text = '';
         let header = '';
-        if (what) {
-          text = await ctx.fetchText(`Services/CommonPrayers/${what}.xml`) ?? '';
-          // Fallback: if fetchText returns empty, try to use the 'what' field as a key
-          if (!text.trim()) {
-            text = what; // fallback to the key itself
-          }
-          header = await ctx.fetchText(`Services/CommonPrayers/${what}.xml.header`) ?? '';
-        }
         const commandName = str(n.command);
         const commandBName = str(n.commandB);
         const timesVal = num(n.times);
@@ -318,6 +311,61 @@ export async function assembleService(
           commandBName ? ctx.fetchCommandText(commandBName) : Promise.resolve(''),
           timesVal ? ctx.resolveTimes(timesVal) : Promise.resolve(''),
         ]);
+        if (what) {
+          // Try fetching structured prayer nodes (preserves per-line who)
+          const prayerNodes = await ctx.fetchPrayerNodes(`Services/CommonPrayers/${what}.xml`);
+          if (prayerNodes && prayerNodes.length > 0) {
+            header = await ctx.fetchText(`Services/CommonPrayers/${what}.xml.header`) ?? '';
+            const headerHtml = n.header && header
+              ? `<h2 class="text-center text-red font-bold mt-4">${header}</h2>`
+              : '';
+            if (headerHtml) html += headerHtml + '\n';
+            // Check if any TEXT nodes have their own who field
+            const hasWhoNodes = prayerNodes.some(n => n.type === 'TEXT' && str((n as Record<string, unknown>).who) !== undefined);
+            if (hasWhoNodes) {
+              for (const pn of prayerNodes) {
+                if (pn.type !== 'TEXT') continue;
+                const pnWhoRaw = str((pn as Record<string, unknown>).who);
+                const pnWho = pnWhoRaw !== undefined ? localizeWho(pnWhoRaw, ctx) : '';
+                const pnText = str((pn as Record<string, unknown>).what) ?? str((pn as Record<string, unknown>).value) ?? '';
+                const pnOpts = {
+                  who: pnWho,
+                  commandText: commandText || undefined,
+                  commandBText: commandBText || undefined,
+                  timesText: timesText || undefined,
+                  redFirst: bool((pn as Record<string, unknown>).redFirst) ?? bool(n.redFirst),
+                  newLine: bool((pn as Record<string, unknown>).newLine) ?? bool(n.newLine),
+                  headerLevel: 0,
+                };
+                const pnFmt = formatServiceContent(pnText, pnOpts);
+                if (pnWho) {
+                  if (pnWho !== groupWho) flushGroup();
+                  groupWho = pnWho;
+                  groupTexts.push(pnFmt);
+                } else {
+                  flushGroup();
+                  const br = pnOpts.newLine ? '<br>' : '';
+                  html += `${br}<p>${pnFmt}</p>`;
+                }
+              }
+              if (whoRaw !== undefined) whoLast = who;
+              break;
+            }
+            // No who nodes — fall back to flattening like fetchText
+            text = prayerNodes
+              .filter(n => n.type === 'TEXT')
+              .map(n => String(str((n as Record<string, unknown>).value) ?? '').replace(/\n/g, ' '))
+              .filter(Boolean)
+              .join('<br>') || '';
+          } else {
+            // No structured nodes — use fetchText
+            text = await ctx.fetchText(`Services/CommonPrayers/${what}.xml`) ?? '';
+            if (!text.trim()) {
+              text = what;
+            }
+            header = await ctx.fetchText(`Services/CommonPrayers/${what}.xml.header`) ?? '';
+          }
+        }
         const opts = {
           who,
           commandText: commandText || undefined,
