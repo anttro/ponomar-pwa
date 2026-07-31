@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Life Entry",
+  "description": "A single saint's life data entry",
+  "type": "object",
+  "required": ["name"],
+  "properties": {
+    "name": {
+      "type": "object",
+      "required": ["nominative"],
+      "properties": {
+        "nominative": { "type": "string", "description": "Full name in nominative case" },
+        "genitive": { "type": "string", "description": "Name in genitive case" },
+        "short": { "type": "string", "description": "Short name for display" },
+        "shortF": { "type": "string", "description": "Short name, feminine form" }
+      },
+      "additionalProperties": false
+    },
+    "life": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "Biography text (may contain HTML)" },
+        "id": { "type": "string", "description": "Source identifier" },
+        "copyright": { "type": "string", "description": "Copyright notice" }
+      },
+      "additionalProperties": false
+    },
+    "rank": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8,
+      "description": "Liturgical rank (0=none, 8=highest)"
+    },
+    "services": {
+      "type": "object",
+      "description": "Liturgical service texts for this commemoration",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" },
+            "Type": { "type": "string" },
+            "Reading": { "type": "string" },
+            "Pericope": { "type": "string" },
+            "Cmd": { "type": "string" },
+            "Header": { "type": "string" }
+          },
+          "additionalProperties": true
+        }
+      }
+    },
+    "scripture": {
+      "type": "array",
+      "description": "Scripture readings for this commemoration",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Type": { "type": "string" },
+          "Reading": { "type": "string" },
+          "Pericope": { "type": "string" },
+          "Cmd": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon identifier"
+    }
+  },
+  "additionalProperties": false
+}

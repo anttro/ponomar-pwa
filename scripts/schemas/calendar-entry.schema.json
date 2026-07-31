@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Calendar Entry",
+  "description": "Entry in triodion, pentecostarion, or menaion",
+  "type": "object",
+  "required": ["id"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Commemoration ID (CId)"
+    }
+  },
+  "additionalProperties": false
+}

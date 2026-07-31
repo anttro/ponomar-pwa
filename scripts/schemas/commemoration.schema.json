@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Commemoration",
+  "description": "Shared commemoration data for a saint or feast",
+  "type": "object",
+  "properties": {
+    "SCRIPTURE": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Type": { "type": "string" },
+          "Reading": { "type": "string" },
+          "Pericope": { "type": "string" },
+          "Cmd": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "NAME": {
+      "type": "object",
+      "properties": {
+        "Long": { "type": "string" },
+        "ShortN": { "type": "string" },
+        "ShortF": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "CHURCH": {
+      "type": "object",
+      "properties": {
+        "Rank": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "LIFE": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "Id": { "type": "string" },
+        "Copyright": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "TROPARION": {
+      "type": "object",
+      "properties": {
+        "Tone": { "type": "string" },
+        "text": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "KONTAKION": {
+      "type": "object",
+      "properties": {
+        "Tone": { "type": "string" },
+        "text": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

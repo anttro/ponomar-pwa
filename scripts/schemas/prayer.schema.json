@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Prayer Text",
+  "description": "A CommonPrayer or fixed text entry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["type"],
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["TEXT", "HEADER"],
+        "description": "Node type"
+      },
+      "value": {
+        "type": "string",
+        "description": "Text content"
+      }
+    },
+    "additionalProperties": false
+  }
+}

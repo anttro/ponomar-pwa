@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Fasting Rules",
+  "description": "Fasting period definitions with rules",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["cmd", "rules"],
+    "properties": {
+      "cmd": {
+        "type": "string",
+        "description": "Boolean expression for period inclusion"
+      },
+      "rules": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["case", "cmd"],
+          "properties": {
+            "case": {
+              "type": "string",
+              "pattern": "^[01]{7}$",
+              "description": "7-bit food permissions (meat,dairy,fish,caviar,oil,wine,dryFood)"
+            },
+            "cmd": {
+              "type": "string",
+              "description": "Boolean expression for rule inclusion"
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}

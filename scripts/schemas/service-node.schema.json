@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Service Node",
+  "description": "A single node in a service template",
+  "type": "object",
+  "required": ["type"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "TITLE", "SUBTITLE", "GET", "CREATE", "TEXT", "GETID",
+        "BIBLE", "TIMES", "TONE", "SERVICES", "LANGUAGE"
+      ],
+      "description": "Node type discriminator"
+    },
+    "cmd": {
+      "type": "string",
+      "description": "Boolean expression for conditional inclusion"
+    },
+    "who": {
+      "type": "string",
+      "description": "Speaker identifier (P=Riest, R=Reader, D=Deacon, C=Choir)"
+    },
+    "redfirst": {
+      "type": "boolean",
+      "description": "Render first letter in red"
+    },
+    "newline": {
+      "type": "boolean",
+      "description": "Add line break before text"
+    },
+    "header": {
+      "type": "boolean",
+      "description": "Generate section header"
+    },
+    "null": {
+      "type": "boolean",
+      "description": "Skip if content is empty"
+    },
+    "times": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of times to repeat"
+    },
+    "command": {
+      "type": "string",
+      "description": "Rubric text command name"
+    },
+    "commandB": {
+      "type": "string",
+      "description": "Prepend rubric text command name"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "type": { "const": "TITLE" },
+        "value": { "type": "string" },
+        "source": { "type": "string" },
+        "comment": { "type": "string" }
+      },
+      "required": ["value"]
+    },
+    {
+      "properties": {
+        "type": { "const": "SUBTITLE" },
+        "value": { "type": "string" },
+        "comment": { "type": "string" }
+      },
+      "required": ["value"]
+    },
+    {
+      "properties": {
+        "type": { "const": "GET" },
+        "file": { "type": "string" }
+      },
+      "required": ["file"]
+    },
+    {
+      "properties": {
+        "type": { "const": "CREATE" },
+        "what": { "type": "string" }
+      },
+      "required": ["what"]
+    },
+    {
+      "properties": {
+        "type": { "enum": ["TEXT", "text"] },
+        "what": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "GETID" },
+        "id": { "type": "string" },
+        "what": { "type": "string" }
+      },
+      "required": ["id", "what"]
+    },
+    {
+      "properties": {
+        "type": { "const": "BIBLE" },
+        "verses": { "type": "string" },
+        "getreading": { "type": "boolean" },
+        "twostars": { "type": "boolean" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "TIMES" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "TONE" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "SERVICES" }
+      }
+    },
+    {
+      "properties": {
+        "type": { "const": "LANGUAGE" }
+      }
+    }
+  ],
+  "additionalProperties": true
+}
