@@ -37,6 +37,44 @@ export interface DayInfo {
   // Data file references
   triodionFile: number | null;    // Index in triodion (1-70)
   pentecostarionFile: number | null; // Index in pentecostarion (1-315)
+  eothinon: number;               // Sunday Matins Eothinon (1-11, 0 = none)
+}
+
+/** A single sub-canon within an ode. */
+export interface CanonSubCanon {
+  irmos: string;
+  troparia: string[];
+  theotokion: string;
+}
+
+/** A single ode within a Matins canon. */
+export interface CanonOde {
+  ode: number;             // Ode number (1,3,4,5,6,7,8,9)
+  canons: CanonSubCanon[]; // Sub-canons per ode
+}
+
+/** Matins canon data for a given tone. */
+export interface CanonData {
+  tone: number;
+  odes: CanonOde[];
+}
+
+/** A single ode within the Great Canon of St. Andrew. */
+export interface GreatCanonOde {
+  ode: number;             // 1-9 (includes Ode 2)
+  irmos: string;
+  troparia: string[];      // Penitential troparia
+  trinityTroparion: string;
+  theotokion: string;
+  kontakion?: string;      // After Ode 6: "Душе моя..."
+  saintTroparia?: string[]; // Troparia to St. Mary of Egypt / St. Andrew
+}
+
+/** One part of the Great Canon (divided across the 1st week). */
+export interface GreatCanonPart {
+  part: number;            // 1-4 for first week
+  title: string;
+  odes: GreatCanonOde[];
 }
 
 /** Expression evaluator variable store. */

@@ -85,6 +85,9 @@ export interface Translations {
       liturgy: string;
       royalhours: string;
       compline: string;
+      greatcompline: string;
+      mariasstanding: string;
+      matins: string;
     };
     serviceDescriptions: {
       primes: string;
@@ -95,6 +98,9 @@ export interface Translations {
       liturgy: string;
       royalhours: string;
       compline: string;
+      greatcompline: string;
+      mariasstanding: string;
+      matins: string;
     };
   };
 
@@ -275,9 +281,12 @@ const translations: Record<LanguageCode, Translations> = {
         liturgy: 'Divine Liturgy',
         royalhours: 'Royal Hours',
         compline: 'Compline',
+        greatcompline: 'Great Compline',
+        mariasstanding: 'Standing of St. Mary of Egypt',
+        matins: 'Matins',
       },
       serviceDescriptions: {
-        primes: 'Prime (First Hour)',
+        primes: 'First Hour',
         third: 'Third Hour',
         sixth: 'Sixth Hour',
         ninth: 'Ninth Hour',
@@ -285,6 +294,9 @@ const translations: Record<LanguageCode, Translations> = {
         liturgy: 'Principal service (Divine Liturgy)',
         royalhours: 'Royal Hours',
         compline: 'Night office (Compline)',
+        greatcompline: 'Great Compline with the Canon of St. Andrew',
+        mariasstanding: 'Matins with the Great Canon and the Life of St. Mary of Egypt (Marias Standing)',
+        matins: 'Morning service (Matins)',
       },
     },
 
@@ -461,6 +473,9 @@ const translations: Record<LanguageCode, Translations> = {
         liturgy: 'Божественная Литургия',
         royalhours: 'Царские часы',
         compline: 'Повечерие',
+        greatcompline: 'Великое Повечерие',
+        mariasstanding: 'Стояние Марии Египетской',
+        matins: 'Утреня',
       },
       serviceDescriptions: {
         primes: 'Час первый',
@@ -471,6 +486,9 @@ const translations: Record<LanguageCode, Translations> = {
         liturgy: 'Главное богослужение (Божественная Литургия)',
         royalhours: 'Царские часы',
         compline: 'Ночное богослужение (Повечерие)',
+        greatcompline: 'Великое Повечерие с каноном Андрея Критского',
+        mariasstanding: 'Утреня с Великим каноном и житием Марии Египетской (Мариино стояние)',
+        matins: 'Утреннее богослужение (Утреня)',
       },
     },
 
@@ -647,6 +665,9 @@ const translations: Record<LanguageCode, Translations> = {
         liturgy: 'Божественная Литургия',
         royalhours: 'Царскія часъ',
         compline: 'Повечерiе',
+        greatcompline: 'Вели́кое Повече́рiе',
+        mariasstanding: 'Стоѧ́нїе ма́ріи є҆гѵ́петскїѧ',
+        matins: 'Оу҆́тренѧ',
       },
       serviceDescriptions: {
         primes: 'Часъ первый',
@@ -657,6 +678,9 @@ const translations: Record<LanguageCode, Translations> = {
         liturgy: 'Главное богослуженiе (Божественнаꙗ Литургiꙗ)',
         royalhours: 'Царскія часъ',
         compline: 'Ночное богослуженiе (Повечерiе)',
+        greatcompline: 'Вели́кое Повече́рiе съ кано́номъ а҆ндре́а кри́тскагѡ',
+        mariasstanding: 'Оу҆́тренѧ съ вели́кимъ кано́номъ и҆ житїе́мъ ма́ріи є҆гѵ́петскїѧ (Марі́ино стоѧ́нїе)',
+        matins: 'Оу҆́треннее богослуженiе (Оу҆́тренѧ)',
       },
     },
 

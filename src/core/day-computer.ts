@@ -95,6 +95,14 @@ export function computeDay(date: JDate): ComputedDay {
   // Priest status (1 = priest required, 0 = reader)
   const PS = (dRank >= 3 || dow === 0) ? 1 : 0;
 
+  // Eothinon (Sunday Matins Gospel cycle, 1-11)
+  // Based on weeks after Pascha: (⌊nday / 7⌋ % 11) + 1 for Sundays
+  // Non-Sundays get 0
+  let eothinon = 0;
+  if (dow === 0 && nday >= 0) {
+    eothinon = (Math.floor(nday / 7) % 11) + 1;
+  }
+
   const dayInfo: DayInfo = {
     dow,
     doy,
@@ -120,6 +128,7 @@ export function computeDay(date: JDate): ComputedDay {
     isNativityFast,
     triodionFile,
     pentecostarionFile,
+    eothinon,
   };
 
   // Build EvalContext from DayInfo (all values as numbers for the expression evaluator)
@@ -139,6 +148,7 @@ export function computeDay(date: JDate): ComputedDay {
     Easter: pascha.jdn,
     Pentecost: pentecost.jdn,
     LentStart: lentStart.jdn,
+    eothinon,
     LS: 1, // Default language
     GS: 1, // Default gospel selector
   };

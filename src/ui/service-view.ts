@@ -8,7 +8,7 @@ import { JDate } from '../core/jdate';
 import { computeDay } from '../core/day-computer';
 import { assembleService, type ServiceContext } from '../core/service-assembler';
 import { evalBool } from '../core/evaluator';
-import type { EvalContext, ServiceNode } from '../core/types';
+import type { CanonData, GreatCanonPart, EvalContext, ServiceNode } from '../core/types';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { loadSettings, fontClass } from './settings-view';
 
@@ -162,6 +162,13 @@ export class ServiceView {
     });
 
     services.push({
+      id: 'matins', name: this.t.services.serviceNames.matins, serviceType: 'MATINS',
+      template: 'Matins',
+      description: this.t.services.serviceDescriptions.matins,
+      titleNode: title('Matins1', this.t.services.serviceNames.matins, 'MatinsSource'),
+    });
+
+    services.push({
       id: 'liturgy', name: this.t.services.serviceNames.liturgy, serviceType: 'LITURGY',
       template: 'DivineLiturgy',
       description: this.t.services.serviceDescriptions.liturgy,
@@ -177,10 +184,30 @@ export class ServiceView {
       });
     }
 
+    // Great Compline: Lenten weekdays (Mon-Thu)
+    if (dayInfo.isLent && dayInfo.dow >= 1 && dayInfo.dow <= 4) {
+      services.push({
+        id: 'greatcompline', name: this.t.services.serviceNames.greatcompline, serviceType: 'GREATCOMPLINE',
+        template: 'GreatCompline',
+        description: this.t.services.serviceDescriptions.greatcompline,
+        titleNode: title('GreatCompline1', this.t.services.serviceNames.greatcompline),
+      });
+    }
+
+    // Standing of St. Mary of Egypt: Thursday of the 5th week of Great Lent
+    if (dayInfo.isLent && dayInfo.nday === -17) {
+      services.push({
+        id: 'mariasstanding', name: this.t.services.serviceNames.mariasstanding, serviceType: 'MARIASSTANDING',
+        template: 'MariasStanding',
+        description: this.t.services.serviceDescriptions.mariasstanding,
+        titleNode: title('MariasStanding1', this.t.services.serviceNames.mariasstanding),
+      });
+    }
+
     return services;
   }
 
-  private async loadToneData(serviceType: string): Promise<{ troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string } | null> {
+  private async loadToneData(serviceType: string): Promise<{ troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string; hypakoe1?: string } | null> {
     const computed = computeDay(this.currentDate);
     const { dayInfo } = computed;
     const tone = dayInfo.Tone;
@@ -189,7 +216,7 @@ export class ServiceView {
     const dd = String(dayInfo.day).padStart(2, '0');
     const dateKey = `${mm}-${dd}`;
 
-    let result: { troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string } | null = null;
+    let result: { troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string; hypakoe1?: string } | null = null;
 
     if (tone > 0 && tone <= 8) {
       const toneNum = tone === 8 ? 0 : tone;
@@ -202,14 +229,15 @@ export class ServiceView {
           if (!resp.ok) return null;
           const nodes: ServiceNode[] = await resp.json();
           for (const node of nodes) {
-            if (node.type === serviceType && node.cmd) {
-              if (evalBool(node.cmd as string, this.evalContext)) {
+            if (node.type === serviceType) {
+              if (!node.cmd || evalBool(node.cmd as string, this.evalContext)) {
                 return {
                   troparion1: node.troparion1 as string | undefined,
                   kontakion1: node.kontakion1 as string | undefined,
                   theotokion1: node.theotokion1 as string | undefined,
                   prokimenon1: node.prokimenon1 as string | undefined,
                   alleluia1: node.alleluia1 as string | undefined,
+                  hypakoe1: node.hypakoe1 as string | undefined,
                 };
               }
             }
@@ -313,10 +341,130 @@ export class ServiceView {
     return result;
   }
 
-  private generateVarNodes(toneData: { troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string } | null, serviceType: string): Map<string, ServiceNode[]> {
+  private async loadCanonData(tone: number): Promise<ServiceNode[] | null> {
+    if (tone < 1 || tone > 8) return null;
+    const toneNum = tone === 8 ? 0 : tone;
+    const url = `/data/shared/services/canons/tone${toneNum}/sunday.json`;
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) return null;
+      const canonData: CanonData = await resp.json();
+      const ODE_SLAV = ['', 'а', 'в', 'г', 'д', 'є', 'ѕ', 'з', 'и', 'ѳ'];
+
+      const nodes: ServiceNode[] = [];
+      for (const ode of canonData.odes) {
+        const slavNum = ODE_SLAV[ode.ode] ?? String(ode.ode);
+        nodes.push({ type: 'HEADER', value: `Пѣснь ${slavNum}҃.` });
+
+        for (const canon of ode.canons) {
+          if (canon.irmos) {
+            nodes.push({ type: 'HEADER', value: `Ірмосъ, гла́съ ${canonData.tone}:` });
+            nodes.push({ type: 'TEXT', value: canon.irmos });
+          }
+          for (const trop of canon.troparia) {
+            nodes.push({ type: 'TEXT', value: trop });
+          }
+          if (canon.theotokion) {
+            nodes.push({ type: 'HEADER', value: 'Бг҃ородиченъ:' });
+            nodes.push({ type: 'TEXT', value: canon.theotokion });
+          }
+        }
+      }
+      return nodes;
+    } catch {
+      return null;
+    }
+  }
+
+  private async loadMariasStandingData(): Promise<ServiceNode[] | null> {
+    const url = `/data/shared/services/marias-standing/full.json`;
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) return null;
+      const nodes: ServiceNode[] = await resp.json();
+      return nodes;
+    } catch {
+      return null;
+    }
+  }
+
+  private async loadGreatCanonData(): Promise<ServiceNode[] | null> {
+    const computed = computeDay(this.currentDate);
+    const { dayInfo } = computed;
+    const nday = dayInfo.nday;
+    // Determine which part of the Great Canon:
+    // 1st week: nday -48 (Mon) to -45 (Thu) → parts 1-4
+    // Other Lenten weekdays: default to part 1
+    let part: number;
+    if (nday >= -48 && nday <= -45) {
+      part = nday + 49; // -48→1, -47→2, -46→3, -45→4
+    } else {
+      part = 1;
+    }
+
+    const url = `/data/shared/services/canons/great-canon/part${part}.json`;
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) return null;
+      const canonData: GreatCanonPart = await resp.json();
+      const ODE_SLAV = ['', 'а҃', 'в҃', 'г҃', 'д҃', 'є҃', 'ѕ҃', 'з҃', 'и҃', 'ѳ҃'];
+      const nodes: ServiceNode[] = [];
+
+      nodes.push({ type: 'HEADER', value: 'Вели́кїй канѡ́нъ, гла́съ ѕ҃.' });
+      nodes.push({ type: 'HEADER', value: 'Творе́нїе ст҃а́гѡ ѻ҆тца̀ на́шегѡ а҆ндре́а кри́тскагѡ.' });
+
+      for (const ode of canonData.odes) {
+        const slavNum = ODE_SLAV[ode.ode] ?? String(ode.ode);
+        nodes.push({ type: 'HEADER', value: `Пѣ́снь ${slavNum}.` });
+
+        // Irmos
+        if (ode.irmos) {
+          nodes.push({ type: 'HEADER', value: 'І҆рмо́съ:' });
+          nodes.push({ type: 'TEXT', value: ode.irmos });
+        }
+
+        // Penitential troparia with refrain
+        const refrain = 'Поми́лꙋй мѧ̀, бж҃е, поми́лꙋй мѧ̀.';
+        for (const trop of ode.troparia) {
+          nodes.push({ type: 'TEXT', value: `${trop}\nПрипѣ́въ: ${refrain}` });
+        }
+
+        // Trinity troparion
+        if (ode.trinityTroparion) {
+          nodes.push({ type: 'HEADER', value: 'Сла́ва, трⷪ҇ченъ:' });
+          nodes.push({ type: 'TEXT', value: ode.trinityTroparion });
+        }
+
+        // Theotokion
+        if (ode.theotokion) {
+          nodes.push({ type: 'HEADER', value: 'И҆ ны́нѣ, бг҃оро́диченъ:' });
+          nodes.push({ type: 'TEXT', value: ode.theotokion });
+        }
+
+        // Saint troparia (St. Mary of Egypt / St. Andrew)
+        if (ode.saintTroparia && ode.saintTroparia.length > 0) {
+          for (const saintTrop of ode.saintTroparia) {
+            nodes.push({ type: 'TEXT', value: saintTrop });
+          }
+        }
+
+        // Kontakion (after Ode 6)
+        if (ode.kontakion) {
+          nodes.push({ type: 'HEADER', value: 'Конда́къ, гла́съ ѕ҃:' });
+          nodes.push({ type: 'TEXT', value: ode.kontakion });
+        }
+      }
+
+      return nodes;
+    } catch {
+      return null;
+    }
+  }
+
+  private generateVarNodes(toneData: { troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string; hypakoe1?: string } | null, serviceType: string): Map<string, ServiceNode[]> {
     const varNodes = new Map<string, ServiceNode[]>();
 
-    const prefix: Record<string, string> = { PRIMES: '', TERCE: '3', SEXTE: '6', NONE: '9', VESPERS: 'V', LITURGY: 'L' };
+    const prefix: Record<string, string> = { PRIMES: '', TERCE: '3', SEXTE: '6', NONE: '9', VESPERS: 'V', LITURGY: 'L', MATINS: 'U', GREATCOMPLINE: 'GC', MARIASSTANDING: 'MS' };
     const p = prefix[serviceType] ?? '';
 
     if (toneData?.troparion1) {
@@ -379,6 +527,50 @@ export class ServiceView {
       }]);
     }
 
+    if (toneData?.hypakoe1) {
+      const key = `PHypak${p}1`;
+      varNodes.set(key, [{
+        type: 'CREATE',
+        what: toneData.hypakoe1,
+        who: '',
+        header: true,
+        redfirst: true,
+        newline: true,
+      }]);
+    }
+
+    // Exapostilarion uses Eothinon (11-week cycle), not tone
+    if (serviceType === 'MATINS') {
+      const computed = computeDay(this.currentDate);
+      const eoth = computed.dayInfo.eothinon;
+      if (eoth >= 1 && eoth <= 11) {
+        const key = `PExapost${p}1`;
+        varNodes.set(key, [{
+          type: 'CREATE',
+          what: `Exapostilarion${eoth}`,
+          who: '',
+          header: true,
+          redfirst: true,
+          newline: true,
+        }]);
+      }
+    }
+
+    // Troparion after Doxology: odd tones use TroparAfterDoxologyOdd, even use TroparAfterDoxologyEven
+    if (serviceType === 'MATINS') {
+      const computed = computeDay(this.currentDate);
+      const tone = computed.dayInfo.Tone;
+      const doxFile = (tone % 2 === 1) ? 'TroparAfterDoxologyOdd' : 'TroparAfterDoxologyEven';
+      varNodes.set('PTropDoxU1', [{
+        type: 'CREATE',
+        what: doxFile,
+        who: 'C',
+        header: true,
+        redfirst: true,
+        newline: true,
+      }]);
+    }
+
     return varNodes;
   }
 
@@ -397,6 +589,31 @@ export class ServiceView {
 
       const toneData = await this.loadToneData(service.serviceType);
       const varNodes = this.generateVarNodes(toneData, service.serviceType);
+
+      // Load Matins canon data
+      if (service.serviceType === 'MATINS') {
+        const computed = computeDay(this.currentDate);
+        const canonNodes = await this.loadCanonData(computed.dayInfo.Tone);
+        if (canonNodes) {
+          varNodes.set('PCanonU', canonNodes);
+        }
+      }
+
+      // Load Great Canon data for Great Compline
+      if (service.serviceType === 'GREATCOMPLINE') {
+        const canonNodes = await this.loadGreatCanonData();
+        if (canonNodes) {
+          varNodes.set('PGreatCanon', canonNodes);
+        }
+      }
+
+      // Load Standing of St. Mary of Egypt data
+      if (service.serviceType === 'MARIASSTANDING') {
+        const standingNodes = await this.loadMariasStandingData();
+        if (standingNodes) {
+          varNodes.set('PMariasStanding', standingNodes);
+        }
+      }
 
       // Load Epistle and Gospel readings from commemoration
       const loadReadings = async () => {
