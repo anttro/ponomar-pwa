@@ -4,12 +4,14 @@
 
 import { CalendarView } from './calendar-view';
 import { BibleView } from './bible-view';
+import { PrayerView } from './prayer-view';
+import { MenaionView } from './menaion-view';
 import { SettingsView } from './settings-view';
 import { JDate } from '../core/jdate';
 import { loadSettings, type Settings } from './settings-view';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 
-type View = 'calendar' | 'bible' | 'settings';
+type View = 'calendar' | 'bible' | 'prayer' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'menaion' | 'triodion' | 'settings';
 
 export class App {
   private container: HTMLElement;
@@ -72,9 +74,18 @@ export class App {
       <div class="app-container min-h-screen flex flex-col">
         <header class="bg-navy text-parchment p-3 flex items-center justify-between shadow-md">
           <h1 class="text-sm font-bold tracking-wide">${t.appName}</h1>
-          <nav class="flex gap-4 text-sm">
+          <nav class="flex flex-wrap gap-4 text-sm">
             <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
             <a href="#bible" class="nav-link hover:text-gold transition-colors" data-view="bible">${t.nav.bible}</a>
+            <a href="#prayer" class="nav-link hover:text-gold transition-colors" data-view="prayer">${t.nav.prayer}</a>
+            <a href="#akathists" class="nav-link hover:text-gold transition-colors" data-view="akathists">${t.nav.akathists}</a>
+            <a href="#parimii" class="nav-link hover:text-gold transition-colors" data-view="parimii">${t.nav.parimii}</a>
+            <a href="#horologion" class="nav-link hover:text-gold transition-colors" data-view="horologion">${t.nav.horologion}</a>
+            <a href="#sbornik" class="nav-link hover:text-gold transition-colors" data-view="sbornik">${t.nav.sbornik}</a>
+            <a href="#paraclete" class="nav-link hover:text-gold transition-colors" data-view="paraclete">${t.nav.paraclete}</a>
+            <a href="#irmologion" class="nav-link hover:text-gold transition-colors" data-view="irmologion">${t.nav.irmologion}</a>
+            <a href="#menaion" class="nav-link hover:text-gold transition-colors" data-view="menaion">${t.nav.menaion}</a>
+            <a href="#triodion" class="nav-link hover:text-gold transition-colors" data-view="triodion">${t.nav.triodion}</a>
             <a href="#settings" class="nav-link hover:text-gold transition-colors" data-view="settings">${t.nav.settings}</a>
           </nav>
         </header>
@@ -127,6 +138,33 @@ export class App {
         new BibleView(viewContainer, lang, bibleVersion, bibleBook, biblePassage).render();
         break;
       }
+      case 'prayer':
+        new PrayerView(viewContainer, lang, 'prayer-rule').render();
+        break;
+      case 'akathists':
+        new PrayerView(viewContainer, lang, 'akathists').render();
+        break;
+      case 'parimii':
+        new PrayerView(viewContainer, lang, 'parimii').render();
+        break;
+      case 'horologion':
+        new PrayerView(viewContainer, lang, 'horologion').render();
+        break;
+      case 'sbornik':
+        new PrayerView(viewContainer, lang, 'sbornik').render();
+        break;
+      case 'paraclete':
+        new PrayerView(viewContainer, lang, 'paraclete').render();
+        break;
+      case 'irmologion':
+        new PrayerView(viewContainer, lang, 'irmologion').render();
+        break;
+      case 'menaion':
+        new MenaionView(viewContainer, lang).render();
+        break;
+      case 'triodion':
+        new PrayerView(viewContainer, lang, 'triodion').render();
+        break;
       case 'settings':
         new SettingsView(viewContainer, () => {
           this.render();

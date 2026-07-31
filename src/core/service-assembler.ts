@@ -417,6 +417,15 @@ export async function assembleService(
         break;
       }
 
+      case 'HEADER': {
+        flushGroup();
+        const value = str(n.value);
+        if (value) {
+          html += `<h3 class="mt-4 mb-1 font-bold text-center">${value}</h3>\n`;
+        }
+        break;
+      }
+
       case 'GETID': {
         const whoRaw = str(n.who);
         const who = whoRaw !== undefined ? localizeWho(whoRaw, ctx) : '';
