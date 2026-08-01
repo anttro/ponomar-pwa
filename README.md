@@ -29,7 +29,7 @@ npm install
 npm run dev
 ```
 
-Data files in `static/data/` are pre-converted JSON (not committed). To regenerate from the Java XML sources, run:
+Data files in `static/data/` are tracked in git. The only gitignored output is `scripts/output/minei.json` (33MB Chetyi-Minei source).
 
 ```bash
 npm run convert           # re-convert all data from XML
@@ -46,9 +46,16 @@ npm run preview  # preview production build
 ## QA / Validation
 
 ```bash
-npx tsx scripts/validate-i18n.ts   # i18n completeness (en/ru/cu)
-npx tsx scripts/validate-tabs.ts   # service tab/template consistency
-npx tsx scripts/assembler-test.ts  # service assembler integration tests
+npx tsx scripts/validate-data.ts        # Main validator (274 files checked)
+npx tsx scripts/validate-i18n.ts         # i18n completeness (en/ru/cu)
+npx tsx scripts/validate-tabs.ts         # service tab/template consistency
+npx tsx scripts/validate-menaion.ts      # menaion data validation
+npx tsx scripts/validate-prayer-rule.ts  # prayer rule structure validation
+npx tsx scripts/validate-triodion.ts     # Triodion period validation
+npx tsx scripts/validate-pentecostarion.ts # Pentecostarion validation
+npx tsx scripts/validate-holy-week.ts    # Holy Week validation
+npx tsx scripts/validate-great-canon.ts  # Great Canon validation
+npx tsx scripts/assembler-test.ts       # service assembler integration tests
 ```
 
 ## Liturgical Text Categories (static/data/shared/services/)
@@ -60,7 +67,7 @@ npx tsx scripts/assembler-test.ts  # service assembler integration tests
 - **Canons** — Paraclete (weekday, 8 tones × 6 days = 48), Octoechos (Sunday, 8 tones), Great Canon
 - **Services** — 78 data-backed services with full.json (Pascha, Paralytic, Sergius, Pokrov, etc.; Var/I-prefix + bare P-prefix varNodes now intercepted)
 - **Horologion / Sbornik / Prayer Rule / Akathists / Parimii / Paraclete / Irmologion** — daily-cycle collections
-- **Lives** — Saint lives (en/cu, name.nominative validated by `validate-data.ts`)
+- **Lives** — Saint lives (en/cu/ru, 1190/3046 with life.text enriched from Chetyi-Minei)
 
 ## Project Structure
 
@@ -69,9 +76,9 @@ src/
   core/          — Domain logic (calendar, paschalion, service assembly, i18n)
   ui/            — View components (app, calendar, bible, service, settings)
   main.ts        — Entry point
-scripts/         — Data conversion, migration, validation, and CLI tools
+scripts/         — Data conversion, migration, validation, enrichment, and CLI tools
 static/
-  data/          — Liturgical data as JSON (not committed, generated from Java XML via npm run convert)
+  data/          — Liturgical data as JSON (tracked in git, generated from Java XML via npm run convert)
   fonts/         — Church Slavonic fonts
   icons/         — PWA icons
 ```
@@ -79,3 +86,14 @@ static/
 ## License
 
 Same as the original Java project.
+
+## Documentation
+
+- **[DATA_FORMAT.md](DATA_FORMAT.md)** — Comprehensive static data format documentation in English
+- **[DATA_RUS.md](DATA_RUS.md)** — Complete Russian documentation of data format and enrichment process
+
+Covers:
+- Static data models, routing rules, and component breakdown
+- Complete tool inventory for conversion, migration, and validation
+- Chetyi-Minei enrichment pipeline and quality assurance workflow
+- Quick reference for all available NPM scripts and commands
