@@ -112,7 +112,7 @@ export class SettingsView {
 
     this.container.innerHTML = `
       <div class="p-6 max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold text-navy mb-6">${t.settings.title}</h2>
+        <h2 class="text-2xl font-bold text-red mb-6">${t.settings.title}</h2>
 
         <!-- Language -->
         <div class="mb-6">
@@ -128,7 +128,7 @@ export class SettingsView {
 
         <!-- Font Settings -->
         <div class="mb-6">
-          <h3 class="text-lg font-bold text-navy mb-3">${t.settings.fontSettings}</h3>
+          <h3 class="text-lg font-bold text-red mb-3">${t.settings.fontSettings}</h3>
 
           <div class="mb-3">
             <select id="cu-font" class="w-full border border-gold/30 rounded p-2 bg-white text-navy">
@@ -159,7 +159,7 @@ export class SettingsView {
 
         <!-- Calendar Type -->
         <div class="mb-6">
-          <h3 class="text-lg font-bold text-navy mb-3">${t.settings.calendarType}</h3>
+          <h3 class="text-lg font-bold text-red mb-3">${t.settings.calendarType}</h3>
           <div class="flex gap-4">
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="radio" name="calendar-type" value="julian" ${this.settings.calendarType === 'julian' ? 'checked' : ''}
@@ -176,7 +176,7 @@ export class SettingsView {
 
         <!-- Bible Settings -->
         <div class="mb-6">
-          <h3 class="text-lg font-bold text-navy mb-3">${t.settings.bibleSettings}</h3>
+          <h3 class="text-lg font-bold text-red mb-3">${t.settings.bibleSettings}</h3>
 
           <div class="mb-3">
             <label class="block text-sm font-bold text-navy mb-1">${t.settings.defaultTranslation}</label>
@@ -237,7 +237,7 @@ export class SettingsView {
 
         <!-- About -->
         <div class="mt-8 pt-6 border-t border-gold/20">
-          <h3 class="text-lg font-bold text-navy mb-2">${t.settings.about}</h3>
+          <h3 class="text-lg font-bold text-red mb-2">${t.settings.about}</h3>
           <p class="text-sm text-navy-light">
             ${t.settings.aboutText}
           </p>

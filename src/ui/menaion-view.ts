@@ -57,7 +57,7 @@ export class MenaionView {
 
     this.container.innerHTML = `
       <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
-        <h2 class="text-2xl font-bold text-navy mb-2">${this.t.menaion.title}</h2>
+        <h2 class="text-2xl font-bold text-red mb-2">${this.t.menaion.title}</h2>
         <p class="text-navy-light mb-4">${months[0]}</p>
         <div class="flex flex-wrap gap-1 mb-6">
           ${monthHtml}

@@ -89,7 +89,7 @@ export class ServiceView {
     const contentClass = `bg-white/50 border border-gold/20 rounded-lg p-6 ${this.activeService ? 'min-h-[300px]' : ''} ${fontClass}`;
 
     const tabHtml = `
-      <h3 class="font-bold text-navy mb-3">${this.t.services.title}</h3>
+      <h3 class="font-bold text-red mb-3">${this.t.services.title}</h3>
       <div class="flex flex-wrap gap-1 mb-6 border-b border-gold/20">
         ${availableServices.map(s => `
           ${s.divider ? '<span class="self-center mx-1 text-gold/40 select-none" aria-hidden="true">·</span>' : ''}
@@ -110,7 +110,7 @@ export class ServiceView {
 
     this.container.innerHTML = standalone
       ? `<div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
-          <h2 class="text-2xl font-bold text-navy mb-2">${this.t.services.title}</h2>
+          <h2 class="text-2xl font-bold text-red mb-2">${this.t.services.title}</h2>
           <p class="text-navy-light mb-4">
             ${this.currentDate.toString()}
             ${dayInfo.isLent ? this.t.services.greatLent : ''}

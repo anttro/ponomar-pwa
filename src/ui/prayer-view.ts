@@ -216,7 +216,7 @@ export class PrayerView {
 
     this.container.innerHTML = `
       <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
-        <h2 class="text-2xl font-bold text-navy mb-2">${title}</h2>
+        <h2 class="text-2xl font-bold text-red mb-2">${title}</h2>
         <p class="text-navy-light mb-6">${subtitle}</p>
         <div class="grid gap-2 sm:grid-cols-2 mb-6">
           ${sections.map(s => `

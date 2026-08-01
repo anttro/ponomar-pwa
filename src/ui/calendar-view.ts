@@ -497,7 +497,7 @@ export class CalendarView {
     let col = 0;
 
     gridHtml += this.t.calendar.dayNames.map(d =>
-      `<div class="text-center text-xs font-bold text-navy-light py-1">${d}</div>`
+      `<div class="text-center text-xs font-bold text-red py-1">${d}</div>`
     ).join('');
 
     for (let i = 0; i < firstDow; i++) {
@@ -572,7 +572,7 @@ export class CalendarView {
 
         <div class="flex-1 p-6 overflow-auto">
           <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
-            <h2 class="text-base font-bold text-navy mb-1">
+            <h2 class="text-base font-bold text-red mb-1">
               ${julianStr}
             </h2>
             <div class="text-sm text-navy-light mb-2">
@@ -582,17 +582,17 @@ export class CalendarView {
             <div id="day-title" class="mb-4"></div>
 
             <div id="commemorations-panel" class="mb-4 p-4 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
-              <h3 class="font-bold text-navy mb-2">${this.t.calendar.commemorations}</h3>
+              <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
             <div id="fasting-panel" class="mb-4 p-4 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
-              <h3 class="font-bold text-navy mb-2">${this.t.calendar.fastingRule}</h3>
+              <h3 class="font-bold text-red mb-2">${this.t.calendar.fastingRule}</h3>
               <p class="text-sm italic text-navy-light">${this.t.loading}</p>
             </div>
 
             <div id="readings-panel" class="mb-4 p-4 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
-              <h3 class="font-bold text-navy mb-2">${this.t.calendar.readings}</h3>
+              <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
@@ -658,7 +658,7 @@ export class CalendarView {
     const fastingPanel = document.getElementById('fasting-panel');
     if (fastingPanel) {
       fastingPanel.innerHTML = `
-        <h3 class="font-bold text-navy mb-2">${this.t.calendar.fastingRule}</h3>
+        <h3 class="font-bold text-red mb-2">${this.t.calendar.fastingRule}</h3>
         <p class="text-sm">${fastingResult.description || this.t.notAvailable}</p>
       `;
     }
@@ -759,7 +759,7 @@ export class CalendarView {
     if (commPanel) {
       if (cids.length === 0) {
         commPanel.innerHTML = `
-          <h3 class="font-bold text-navy mb-2">${this.t.calendar.commemorations}</h3>
+          <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
           <p class="text-sm text-navy-light italic">${this.t.calendar.noCommemorations}</p>
         `;
       } else {
@@ -801,7 +801,7 @@ export class CalendarView {
         }
         if (commHtmlParts.length > 0) {
           commPanel.innerHTML = `
-            <h3 class="font-bold text-navy mb-2">${this.t.calendar.commemorations}</h3>
+            <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
             <div class="space-y-1">${commHtmlParts.join('')}</div>
           `;
           commPanel.addEventListener('click', (e) => {
@@ -814,7 +814,7 @@ export class CalendarView {
           });
         } else {
           commPanel.innerHTML = `
-            <h3 class="font-bold text-navy mb-2">${this.t.calendar.commemorations}</h3>
+            <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
             <p class="text-sm text-navy-light italic">${this.t.calendar.noCommemorations}</p>
           `;
         }
@@ -898,7 +898,7 @@ export class CalendarView {
     if (readingsPanel) {
       if (readingsGroups.length === 0) {
         readingsPanel.innerHTML = `
-          <h3 class="font-bold text-navy mb-2">${this.t.calendar.readings}</h3>
+          <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
           <p class="text-sm text-navy-light italic">${this.t.calendar.noReadings}</p>
         `;
       } else {
@@ -922,7 +922,7 @@ export class CalendarView {
           return `<div class="text-sm text-navy"><strong>${g.service}</strong>${this.t.calendar.colon}${refs}</div>`;
         }).join('');
         readingsPanel.innerHTML = `
-          <h3 class="font-bold text-navy mb-2">${this.t.calendar.readings}</h3>
+          <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
           <div class="space-y-1">${groupsHtml}</div>
         `;
       }
