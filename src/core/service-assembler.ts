@@ -384,8 +384,10 @@ export async function assembleService(
         if (who) {
           if (who !== groupWho || headerHtml) flushGroup();
           if (headerHtml) html += headerHtml + '\n';
-          groupWho = who;
-          groupTexts.push(fmt);
+          const br = opts.newLine ? '<br>' : '';
+          const whoLabel = `<span class="speaker-label">${who}:</span> `;
+          html += `${br}${whoLabel}<p>${fmt}</p>`;
+          if (whoRaw !== undefined) whoLast = who;
         } else {
           flushGroup();
           const br = opts.newLine ? '<br>' : '';
