@@ -570,7 +570,7 @@ export class CalendarView {
 
         </div>
 
-        <div class="flex-1 p-6 overflow-auto">
+        <div class="flex-1 p-4 overflow-auto">
           <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
             <h2 class="text-base font-bold text-red mb-1">
               ${julianStr}
@@ -581,22 +581,22 @@ export class CalendarView {
 
             <div id="day-title" class="mb-4"></div>
 
-            <div id="commemorations-panel" class="mb-4 p-4 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="commemorations-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
-            <div id="fasting-panel" class="mb-4 p-4 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="fasting-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.fastingRule}</h3>
               <p class="text-sm italic text-navy-light">${this.t.loading}</p>
             </div>
 
-            <div id="readings-panel" class="mb-4 p-4 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="readings-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
-            <div id="services-panel" class="mb-4 border-t border-gold/20 pt-6"></div>
+            <div id="services-panel" class="mb-4 border-t border-gold/20 pt-3"></div>
           </div>
         </div>
       </div>
