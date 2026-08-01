@@ -95,8 +95,8 @@ export class ServiceView {
           <button
             class="service-tab text-sm transition-colors
               ${this.activeService === s.id
-                ? 'bg-navy text-parchment font-medium rounded-full px-3 py-1'
-                : 'text-navy-light hover:bg-navy/10 rounded-full px-3 py-1'}"
+                ? 'border border-gold bg-gold/10 text-navy font-bold rounded-lg px-3 py-1'
+                : 'border border-gold/20 bg-white/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1'}"
             data-service="${s.id}"
           >${s.name}</button>
         `).join('')}
@@ -132,9 +132,9 @@ export class ServiceView {
           this.container.querySelectorAll('.service-tab').forEach(t => {
             const id = t.getAttribute('data-service');
             if (id === serviceId) {
-              t.className = 'service-tab text-sm transition-colors bg-navy text-parchment font-medium rounded-full px-3 py-1';
+              t.className = 'service-tab text-sm transition-colors border border-gold bg-gold/10 text-navy font-bold rounded-lg px-3 py-1';
             } else {
-              t.className = 'service-tab text-sm transition-colors text-navy-light hover:bg-navy/10 rounded-full px-3 py-1';
+              t.className = 'service-tab text-sm transition-colors border border-gold/20 bg-white/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1';
             }
           });
           this.loadService(service);
