@@ -21,6 +21,23 @@ export interface LunarInfo {
   emoji: string;        // 🌑🌒🌓🌔🌕🌖🌗🌘
   name: string;         // localized phase name (set by caller)
   illumination: number; // 0–100 (percentage visible)
+  trend: 'waxing' | 'waning';
+  moonDay: number;      // day of the lunar cycle (1-30)
+}
+
+/** Convert moon phase (0-1) to a simple fraction string. */
+export function phaseToFraction(phase: number): string {
+  const dist = Math.min(phase, 1 - phase); // distance from new or full
+  const fracs: [number, string][] = [
+    [0.0, '0'], [0.0625, '1/16'], [0.125, '1/8'], [0.1875, '3/16'],
+    [0.25, '1/4'], [0.3125, '5/16'], [0.375, '3/8'], [0.4375, '7/16'],
+    [0.5, '1/2'], [0.5625, '9/16'], [0.625, '5/8'], [0.6875, '11/16'],
+    [0.75, '3/4'], [0.8125, '13/16'], [0.875, '7/8'], [0.9375, '15/16'], [1.0, '1'],
+  ];
+  for (const [threshold, label] of fracs) {
+    if (Math.abs(dist - threshold) < 0.032) return label;
+  }
+  return '—';
 }
 
 /**
@@ -106,6 +123,8 @@ export function calcSolarTimes(jdate: JDate, lat: number, lon: number, tz: numbe
 /** Moon phase info for a given Julian date. */
 export function getMoonInfo(jdate: JDate): LunarInfo {
   const phase = Paschalion.getLunarPhase(jdate);
+  const trend = phase < 0.5 ? 'waxing' : 'waning';
+  const moonDay = Math.floor(phase * 29.53) + 1;
 
   // Map phase (0-1) to emoji (0=new, 0.5=full)
   let emoji: string;
@@ -122,7 +141,7 @@ export function getMoonInfo(jdate: JDate): LunarInfo {
   // Illumination (0–100%)
   const illumination = Math.round((1 - Math.cos(2 * Math.PI * phase)) / 2 * 100);
 
-  return { phase, emoji, name: '', illumination };
+  return { phase, emoji, name: '', illumination, trend, moonDay };
 }
 
 /** Phase names keyed by phase bucket (0=new, 1-7 for other phases). */
