@@ -583,6 +583,10 @@ export class CalendarView {
 
             <div id="day-title" class="mb-4"></div>
 
+            <div id="astro-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg text-sm text-navy">
+              <span class="text-navy-light italic">${this.t.loading}</span>
+            </div>
+
             <div id="commemorations-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
@@ -596,10 +600,6 @@ export class CalendarView {
             <div id="readings-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
-            </div>
-
-            <div id="astro-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg text-sm text-navy">
-              <span class="text-navy-light italic">${this.t.loading}</span>
             </div>
 
             <div id="services-panel" class="mb-4 border-t border-gold/20 pt-3"></div>
