@@ -357,6 +357,7 @@ export async function assembleService(
               .map(n => String(str((n as Record<string, unknown>).value) ?? '').replace(/\n/g, ' '))
               .filter(Boolean)
               .join('<br>') || '';
+            header = ''; // Prevent double rendering in the fallthrough below
           } else {
             // No structured nodes — use fetchText
             text = await ctx.fetchText(`Services/CommonPrayers/${what}.xml`) ?? '';
