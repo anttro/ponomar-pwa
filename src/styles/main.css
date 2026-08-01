@@ -201,10 +201,10 @@ nav details.nav-group details a.nav-link {
 @media (max-width: 640px) {
   nav > details.nav-group > div {
     position: fixed;
-    top: 0;
+    top: 3.5rem;
     left: 0;
     right: 0;
-    max-height: 100vh;
+    max-height: calc(100vh - 3.5rem);
     overflow-y: auto;
     z-index: 100;
     background-color: var(--color-navy);
