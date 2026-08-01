@@ -90,14 +90,13 @@ export class ServiceView {
 
     const tabHtml = `
       <h3 class="font-bold text-red mb-3">${this.t.services.title}</h3>
-      <div class="flex flex-wrap gap-1 mb-6 border-b border-gold/20">
+      <div class="flex flex-wrap gap-2 mb-6">
         ${availableServices.map(s => `
-          ${s.divider ? '<span class="self-center mx-1 text-gold/40 select-none" aria-hidden="true">·</span>' : ''}
           <button
-            class="service-tab px-4 py-2 text-sm border-b-2 transition-colors whitespace-nowrap
+            class="service-tab text-sm transition-colors
               ${this.activeService === s.id
-                ? 'border-gold text-navy font-bold'
-                : 'border-transparent text-navy-light hover:text-navy hover:border-gold/50'}"
+                ? 'bg-navy text-parchment font-medium rounded-full px-3 py-1'
+                : 'text-navy-light hover:bg-navy/10 rounded-full px-3 py-1'}"
             data-service="${s.id}"
           >${s.name}</button>
         `).join('')}
@@ -133,9 +132,9 @@ export class ServiceView {
           this.container.querySelectorAll('.service-tab').forEach(t => {
             const id = t.getAttribute('data-service');
             if (id === serviceId) {
-              t.className = 'service-tab px-4 py-2 text-sm border-b-2 transition-colors whitespace-nowrap border-gold text-navy font-bold';
+              t.className = 'service-tab text-sm transition-colors bg-navy text-parchment font-medium rounded-full px-3 py-1';
             } else {
-              t.className = 'service-tab px-4 py-2 text-sm border-b-2 transition-colors whitespace-nowrap border-transparent text-navy-light hover:text-navy';
+              t.className = 'service-tab text-sm transition-colors text-navy-light hover:bg-navy/10 rounded-full px-3 py-1';
             }
           });
           this.loadService(service);
@@ -182,6 +181,27 @@ export class ServiceView {
     }
 
     daily.push({
+      id: 'vespers', name: this.t.services.serviceNames.vespers, serviceType: 'VESPERS',
+      template: 'Vespers',
+      description: this.t.services.serviceDescriptions.vespers,
+      titleNode: title('Vespers1', this.t.services.serviceNames.vespers, 'VesperSource'),
+    });
+
+    daily.push({
+      id: 'ninth', name: this.t.services.serviceNames.ninth, serviceType: 'NONE',
+      template: 'NinthHour',
+      description: this.t.services.serviceDescriptions.ninth,
+      titleNode: title('Ninth1', this.t.services.serviceNames.ninth),
+    });
+
+    daily.push({
+      id: 'matins', name: this.t.services.serviceNames.matins, serviceType: 'MATINS',
+      template: 'Matins',
+      description: this.t.services.serviceDescriptions.matins,
+      titleNode: title('Matins1', this.t.services.serviceNames.matins, 'MatinsSource'),
+    });
+
+    daily.push({
       id: 'primes', name: this.t.services.serviceNames.primes, serviceType: 'PRIMES',
       template: 'Prime',
       description: this.t.services.serviceDescriptions.primes,
@@ -200,27 +220,6 @@ export class ServiceView {
       template: 'SixthHour',
       description: this.t.services.serviceDescriptions.sixth,
       titleNode: title('Sixth1', this.t.services.serviceNames.sixth),
-    });
-
-    daily.push({
-      id: 'ninth', name: this.t.services.serviceNames.ninth, serviceType: 'NONE',
-      template: 'NinthHour',
-      description: this.t.services.serviceDescriptions.ninth,
-      titleNode: title('Ninth1', this.t.services.serviceNames.ninth),
-    });
-
-    daily.push({
-      id: 'vespers', name: this.t.services.serviceNames.vespers, serviceType: 'VESPERS',
-      template: 'Vespers',
-      description: this.t.services.serviceDescriptions.vespers,
-      titleNode: title('Vespers1', this.t.services.serviceNames.vespers, 'VesperSource'),
-    });
-
-    daily.push({
-      id: 'matins', name: this.t.services.serviceNames.matins, serviceType: 'MATINS',
-      template: 'Matins',
-      description: this.t.services.serviceDescriptions.matins,
-      titleNode: title('Matins1', this.t.services.serviceNames.matins, 'MatinsSource'),
     });
 
     daily.push({

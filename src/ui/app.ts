@@ -106,7 +106,7 @@ export class App {
     const t = getTranslations(this.settings.language as LanguageCode);
     this.container.innerHTML = `
       <div class="app-container min-h-screen flex flex-col">
-        <header class="bg-navy text-parchment p-3 flex items-center justify-between shadow-md">
+        <header class="bg-navy text-parchment p-3 flex items-center justify-end shadow-md">
           <nav class="flex flex-wrap gap-4 text-sm">
             <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
             <details class="nav-group relative" data-nav="library">
