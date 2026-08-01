@@ -20,11 +20,13 @@ import { join, dirname } from 'path';
 
 const ROOT = join(new URL('.', import.meta.url).pathname, '..');
 const MINEI_PATH = join(ROOT, 'scripts', 'output', 'minei.json');
+const BULGAKOV_PATH = join(ROOT, 'scripts', 'output', 'bulgakov.json');
 const MENAION_BUNDLE_PATH = join(ROOT, 'static', 'data', 'cu', 'menaion-bundle.json');
 const LIVES_DIR = join(ROOT, 'static', 'data', 'ru', 'lives');
 const REPORT_PATH = join(ROOT, 'scripts', 'output', 'lives-match-report.json');
 
-const COPYRIGHT = 'Четьи-Минеи свт. Димитрия Ростовского';
+const COPYRIGHT_MINEI = 'Четьи-Минеи свт. Димитрия Ростовского';
+const COPYRIGHT_BULGAKOV = 'Протоиерей Сергий Булгаков. Настольная Книга.';
 
 interface SourceLife {
   title: string;
@@ -42,6 +44,7 @@ interface Candidate {
 interface ReportEntry {
   date: string;
   sourceTitle: string;
+  source: 'minei' | 'bulgakov' | 'unknown';
   matchedCid: string | null;
   matchedName: string | null;
   score: number;
@@ -296,6 +299,16 @@ const MANUAL_FIXES: Record<string, string> = {
   '11-20|саверия': '257401',
   '11-20|нирсы': '257401',
   '11-28|стефаном новым': '3244',
+  // Bulgakov fixes (feast-related entries)
+  '02-22|обретение честных мощей': '491',
+  '11-20|во храм входа пресвятой': '257510',
+  '11-25|отда́нїе праздника входа': '257512',
+  '12-20|по плоти рождества господа бога и спаса': '09001',
+  '12-22|из церковных песнопений этого дня': '09001',
+  '12-23|из церковных песнопений этого дня': '09001',
+  '12-24|из церковных песнопений этого дня': '09006',
+  '12-26|собо́р прест҃ы́ѧ бг҃оро́дицы': '12260098',
+  '12-31|отда́нїе праздника рождества̀ христо́ва': '123101',
 };
 
 /** True if a token is a year, year-range, or Roman numeral (e.g. 309, 1238, V, IX). */
@@ -366,6 +379,14 @@ export async function enrichLives(args: Args): Promise<void> {
     process.exit(1);
   }
   const minei = JSON.parse(readFileSync(MINEI_PATH, 'utf-8')) as Record<string, SourceLife[]>;
+
+  // Optional second source: Bulgakov
+  let bulgakov: Record<string, SourceLife[]> = {};
+  if (existsSync(BULGAKOV_PATH)) {
+    bulgakov = JSON.parse(readFileSync(BULGAKOV_PATH, 'utf-8'));
+    console.log(`Loaded Bulgakov source: ${Object.keys(bulgakov).length} days, ${Object.values(bulgakov).flat().length} entries`);
+  }
+
   const bundle = JSON.parse(readFileSync(MENAION_BUNDLE_PATH, 'utf-8')) as Record<string, { id: string }[]>;
 
   // Load all ru/lives bundles into one map: cid -> {name, life, file}
@@ -382,28 +403,19 @@ export async function enrichLives(args: Args): Promise<void> {
   let autoApplied = 0;
   let needReview = 0;
   let unmatched = 0;
+  const filledByMinei = new Set<string>();
 
-  for (const [date, lives] of Object.entries(minei)) {
-    if (args.month && !date.startsWith(args.month)) continue;
-
-    // Candidate CIds for this date from the menaion bundle
-    const bundleIds = (bundle[date] || []).map(e => String(e.id));
-    const candidates: Candidate[] = bundleIds
-      .map(cid => {
-        const entry = livesByCid[cid];
-        if (!entry) return null;
-        const name = entry.name.nominative || entry.name.short || '';
-        return {
-          cid,
-          name,
-          file: entry.file,
-          hasLife: !!entry.life?.text,
-          score: 0,
-        } as Candidate;
-      })
-      .filter((c): c is Candidate => c !== null);
-
-    for (const life of lives) {
+  // Process a single source (minei or bulgakov) for a given date
+  function processSource(
+    date: string,
+    entries: SourceLife[],
+    source: 'minei' | 'bulgakov',
+    copyright: string,
+    idPrefix: string,
+    candidates: Candidate[],
+    skipCids: Set<string>,
+  ): void {
+    for (const life of entries) {
       let best: Candidate | null = null;
 
       const manualCid = findManualFix(date, life.title);
@@ -428,8 +440,14 @@ export async function enrichLives(args: Args): Promise<void> {
       }
 
       if (!best || best.score === 0) {
-        report.push({ date, sourceTitle: life.title, matchedCid: null, matchedName: null, score: 0, status: 'unmatched' });
+        report.push({ date, sourceTitle: life.title, source, matchedCid: null, matchedName: null, score: 0, status: 'unmatched' });
         unmatched++;
+        continue;
+      }
+
+      // For Bulgakov: skip if this CId was already filled by Minei
+      if (source === 'bulgakov' && skipCids.has(best.cid)) {
+        report.push({ date, sourceTitle: life.title, source, matchedCid: best.cid, matchedName: best.name, score: best.score, status: 'already-filled' });
         continue;
       }
 
@@ -444,6 +462,7 @@ export async function enrichLives(args: Args): Promise<void> {
       report.push({
         date,
         sourceTitle: life.title,
+        source,
         matchedCid: best.score >= 0.35 ? best.cid : null,
         matchedName: best.score >= 0.35 ? best.name : null,
         score: best.score,
@@ -458,14 +477,54 @@ export async function enrichLives(args: Args): Promise<void> {
         const entry = pendingWrites[key][best.cid] as Record<string, unknown>;
         const existingLife = entry.life as { id?: string; text?: string } | undefined;
         if (existingLife?.text) {
-          entry.life = { id: existingLife.id!, copyright: COPYRIGHT, text: `${existingLife.text}<p><b>${life.title}</b></p>${life.html}` };
+          entry.life = { id: existingLife.id!, copyright, text: `${existingLife.text}<p><b>${life.title}</b></p>${life.html}` };
         } else {
-          entry.life = { id: `minei-${date.replace('-', '')}-${best.cid}`, copyright: COPYRIGHT, text: life.html };
+          entry.life = { id: `${idPrefix}-${date.replace('-', '')}-${best.cid}`, copyright, text: life.html };
         }
+        if (source === 'minei') skipCids.add(best.cid);
       } else if (status === 'review') {
         needReview++;
       } else if (status === 'unmatched') {
         unmatched++;
+      }
+    }
+  }
+
+  // Build a set of all dates from both sources
+  const allDates = new Set(Object.keys(minei));
+  if (Object.keys(bulgakov).length > 0) {
+    for (const d of Object.keys(bulgakov)) allDates.add(d);
+  }
+
+  for (const date of [...allDates].sort()) {
+    if (args.month && !date.startsWith(args.month)) continue;
+
+    // Candidate CIds for this date from the menaion bundle
+    const bundleIds = (bundle[date] || []).map(e => String(e.id));
+    const candidates: Candidate[] = bundleIds
+      .map(cid => {
+        const entry = livesByCid[cid];
+        if (!entry) return null;
+        const name = entry.name.nominative || entry.name.short || '';
+        return {
+          cid,
+          name,
+          file: entry.file,
+          hasLife: !!entry.life?.text,
+          score: 0,
+        } as Candidate;
+      })
+      .filter((c): c is Candidate => c !== null);
+
+    // Process Minei entries first (primary source)
+    const mineiLives = minei[date] || [];
+    processSource(date, mineiLives, 'minei', COPYRIGHT_MINEI, 'minei', candidates, filledByMinei);
+
+    // Process Bulgakov entries second (fills gaps only)
+    if (Object.keys(bulgakov).length > 0) {
+      const bulgakovLives = bulgakov[date] || [];
+      if (bulgakovLives.length > 0) {
+        processSource(date, bulgakovLives, 'bulgakov', COPYRIGHT_BULGAKOV, 'bulgakov', candidates, filledByMinei);
       }
     }
   }
