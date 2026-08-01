@@ -117,7 +117,7 @@ export class App {
     const t = getTranslations(this.settings.language as LanguageCode);
     this.container.innerHTML = `
       <div class="app-container min-h-screen flex flex-col">
-        <header class="bg-navy text-parchment p-3 flex items-center justify-end shadow-md">
+        <header class="bg-navy text-parchment p-3 flex items-center justify-between shadow-md">
           <nav class="flex flex-wrap gap-4 text-sm">
             <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
             <details class="nav-group relative" data-nav="library">
@@ -135,7 +135,7 @@ export class App {
                 <a href="#triodion" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="triodion">${t.nav.triodion}</a>
               </div>
             </details>
-            <a href="#settings" class="nav-link hover:text-gold transition-colors" data-view="settings">${t.nav.settings}</a>
+            <a href="#settings" class="nav-link hover:text-gold transition-colors ml-auto" data-view="settings">${t.nav.settings}</a>
           </nav>
         </header>
         <main id="view-container" class="flex-1 overflow-auto"></main>
