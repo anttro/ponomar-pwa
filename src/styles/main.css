@@ -197,9 +197,21 @@ nav details.nav-group details a.nav-link {
   font-size: 0.875rem;
 }
 
-/* Mobile: nested dropdowns render in-flow below 640px */
+/* Mobile: top-level dropdown as fixed overlay; nested in-flow */
 @media (max-width: 640px) {
-  nav details.nav-group > div,
+  nav > details.nav-group > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    background-color: var(--color-navy);
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
   nav details.nav-group details > div {
     position: static;
     box-shadow: none;
