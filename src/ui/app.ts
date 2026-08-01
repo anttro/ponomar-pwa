@@ -45,6 +45,18 @@ export class App {
     document.addEventListener('click', closeOpenDropdowns);
     document.addEventListener('touchstart', closeOpenDropdowns, { passive: true });
 
+    // Close library dropdown when a nav link inside it is clicked
+    document.querySelector('nav')?.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('.nav-link');
+      if (link) {
+        const details = link.closest('details.nav-group');
+        if (details) {
+          details.removeAttribute('open');
+        }
+      }
+    });
+
     // PWA install prompt
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
