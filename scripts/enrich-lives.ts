@@ -318,8 +318,19 @@ function isYearish(tok: string): boolean {
   return false;
 }
 
+/** Normalize pre-revolutionary Russian orthography to modern. */
+function normalizePreRev(s: string): string {
+  return s
+    .replace(/ѣ/g, 'е').replace(/Ѣ/g, 'Е')
+    .replace(/і/g, 'и').replace(/І/g, 'И')
+    .replace(/ѳ/g, 'ф').replace(/Ѳ/g, 'Ф')
+    .replace(/ѵ/g, 'и').replace(/Ѵ/g, 'И')
+    .replace(/ѧ/g, 'я').replace(/Ѧ/g, 'Я')
+    .replace(/ѫ/g, 'у').replace(/Ѫ/g, 'У');
+}
+
 function normalizeToken(tok: string): string {
-  return tok.toLowerCase().replace(/ё/g, 'е').replace(/[^\p{L}]/gu, '');
+  return normalizePreRev(tok).toLowerCase().replace(/ё/g, 'е').replace(/[^\p{L}]/gu, '');
 }
 
 function tokenize(s: string): string[] {
@@ -333,7 +344,7 @@ function tokenize(s: string): string[] {
 
 /** Normalize a title for MANUAL_FIXES substring lookup. */
 function normKey(s: string): string {
-  return s.toLowerCase().replace(/ё/g, 'е').replace(/\s+/g, ' ').trim();
+  return normalizePreRev(s).toLowerCase().replace(/ё/g, 'е').replace(/\s+/g, ' ').trim();
 }
 
 /** Look up a manual override: date + distinctive normalized substring. */
