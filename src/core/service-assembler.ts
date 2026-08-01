@@ -316,13 +316,14 @@ export async function assembleService(
           const prayerNodes = await ctx.fetchPrayerNodes(`Services/CommonPrayers/${what}.xml`);
           if (prayerNodes && prayerNodes.length > 0) {
             header = await ctx.fetchText(`Services/CommonPrayers/${what}.xml.header`) ?? '';
-            const headerHtml = n.header && header
-              ? `<h2 class="text-center text-red font-bold mt-4">${header}</h2>`
-              : '';
-            if (headerHtml) html += headerHtml + '\n';
             // Check if any TEXT nodes have their own who field
             const hasWhoNodes = prayerNodes.some(n => n.type === 'TEXT' && str((n as Record<string, unknown>).who) !== undefined);
             if (hasWhoNodes) {
+              // Render header before individual who-nodes
+              const headerHtml = n.header && header
+                ? `<h2 class="text-center text-red font-bold mt-4">${header}</h2>`
+                : '';
+              if (headerHtml) html += headerHtml + '\n';
               for (const pn of prayerNodes) {
                 if (pn.type !== 'TEXT') continue;
                 const pnWhoRaw = str((pn as Record<string, unknown>).who);
@@ -357,7 +358,7 @@ export async function assembleService(
               .map(n => String(str((n as Record<string, unknown>).value) ?? '').replace(/\n/g, ' '))
               .filter(Boolean)
               .join('<br>') || '';
-            header = ''; // Prevent double rendering in the fallthrough below
+            // header is preserved for rendering after group flush below
           } else {
             // No structured nodes — use fetchText
             text = await ctx.fetchText(`Services/CommonPrayers/${what}.xml`) ?? '';
