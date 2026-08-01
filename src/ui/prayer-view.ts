@@ -190,34 +190,41 @@ export class PrayerView {
 
   async render() {
     const sections = this.getSections();
-    const isAkathists = this.collection === 'akathists';
-    const isParimii = this.collection === 'parimii';
-    const isHorologion = this.collection === 'horologion';
-    const isSbornik = this.collection === 'sbornik';
-    const isParaclete = this.collection === 'paraclete';
-    const isIrmologion = this.collection === 'irmologion';
     const isTriodion = this.collection === 'triodion';
-    const title = isTriodion ? this.t.triodion.title
-      : isAkathists ? this.t.akathists.title
-      : isParimii ? this.t.parimii.title
-      : isHorologion ? this.t.horologion.title
-      : isSbornik ? this.t.sbornik.title
-      : isParaclete ? this.t.paraclete.title
-      : isIrmologion ? this.t.irmologion.title
-      : this.t.prayer.title;
     const subtitle = isTriodion ? this.t.triodion.subtitle
-      : isAkathists ? this.t.akathists.subtitle
-      : isParimii ? this.t.parimii.subtitle
-      : isHorologion ? this.t.horologion.subtitle
-      : isSbornik ? this.t.sbornik.subtitle
-      : isParaclete ? this.t.paraclete.subtitle
-      : isIrmologion ? this.t.irmologion.subtitle
+      : this.collection === 'akathists' ? this.t.akathists.subtitle
+      : this.collection === 'parimii' ? this.t.parimii.subtitle
+      : this.collection === 'horologion' ? this.t.horologion.subtitle
+      : this.collection === 'sbornik' ? this.t.sbornik.subtitle
+      : this.collection === 'paraclete' ? this.t.paraclete.subtitle
+      : this.collection === 'irmologion' ? this.t.irmologion.subtitle
       : this.t.prayer.subtitle;
+
+    const subNavItems: { id: string; view: string; label: string }[] = [
+      { id: 'prayer', view: 'prayer', label: this.t.nav.prayer },
+      { id: 'akathists', view: 'akathists', label: this.t.nav.akathists },
+      { id: 'horologion', view: 'horologion', label: this.t.nav.horologion },
+      { id: 'sbornik', view: 'sbornik', label: this.t.nav.sbornik },
+      { id: 'parimii', view: 'parimii', label: this.t.nav.parimii },
+      { id: 'paraclete', view: 'paraclete', label: this.t.nav.paraclete },
+      { id: 'irmologion', view: 'irmologion', label: this.t.nav.irmologion },
+      { id: 'triodion', view: 'triodion', label: this.t.nav.triodion },
+    ];
 
     this.container.innerHTML = `
       <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
-        <h2 class="text-2xl font-bold text-red mb-2">${title}</h2>
-        <p class="text-navy-light mb-4">${subtitle}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          ${subNavItems.map(item => `
+            <button
+              class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1
+                ${this.collection === item.id
+                  ? 'border border-gold bg-gold/10 text-navy font-bold'
+                  : 'border border-gold/20 bg-white/50 text-navy hover:border-gold/50'}"
+              data-view="${item.view}"
+            >${item.label}</button>
+          `).join('')}
+        </div>
+        <p class="text-navy-light text-sm mb-4">${subtitle}</p>
         <select id="prayer-select" class="w-full border border-gold/20 bg-white/50 text-navy rounded-lg px-3 py-2 text-sm mb-6">
           ${sections.map(s => `
             <option value="${s.id}" ${this.activeSection === s.id ? 'selected' : ''}>${s.name}</option>
@@ -228,6 +235,13 @@ export class PrayerView {
         </div>
       </div>
     `;
+
+    this.container.querySelectorAll('.sub-nav-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.getAttribute('data-view')!;
+        window.location.hash = view;
+      });
+    });
 
     document.getElementById('prayer-select')?.addEventListener('change', (e) => {
       const id = (e.target as HTMLSelectElement).value;

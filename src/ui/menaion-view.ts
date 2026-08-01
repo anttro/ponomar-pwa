@@ -56,7 +56,10 @@ export class MenaionView {
 
     this.container.innerHTML = `
       <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
-        <h2 class="text-2xl font-bold text-red mb-2">${this.t.menaion.title}</h2>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1 border border-gold bg-gold/10 text-navy font-bold">${this.t.nav.menaion}</button>
+          <button class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1 border border-gold/20 bg-white/50 text-navy hover:border-gold/50" data-view="triodion">${this.t.nav.triodion}</button>
+        </div>
         <div id="menaion-calendar"></div>
         <div id="menaion-content" class="bg-white/50 border border-gold/20 rounded-lg p-6 min-h-[300px]">
           <p class="text-navy-light italic">${this.t.prayer.selectSection}</p>
@@ -65,6 +68,15 @@ export class MenaionView {
     `;
 
     this.renderCalendar(this.currentMonth);
+    this.setupChips();
+  }
+
+  private setupChips() {
+    this.container.querySelectorAll('.sub-nav-chip[data-view]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.location.hash = btn.getAttribute('data-view')!;
+      });
+    });
   }
 
   private renderCalendar(month: number) {

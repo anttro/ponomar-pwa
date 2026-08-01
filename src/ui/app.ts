@@ -124,25 +124,15 @@ export class App {
               <summary class="cursor-pointer list-none hover:text-gold transition-colors flex items-center gap-1">${t.nav.library} <span class="text-xs">▾</span></summary>
               <div class="absolute left-0 top-full mt-1 z-50 min-w-56 rounded-lg bg-navy-light shadow-xl p-2 flex flex-col gap-1">
                 <a href="#bible" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="bible">${t.nav.bible}</a>
-                <details class="nav-group">
-                  <summary class="cursor-pointer list-none hover:text-gold transition-colors px-2 py-1 flex items-center gap-1">${t.nav.service} <span class="text-xs">▸</span></summary>
-                  <div class="ml-2 flex flex-col gap-1">
-                    <a href="#horologion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="horologion">${t.nav.horologion}</a>
-                    <a href="#sbornik" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="sbornik">${t.nav.sbornik}</a>
-                    <a href="#prayer" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="prayer">${t.nav.prayer}</a>
-                    <a href="#akathists" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="akathists">${t.nav.akathists}</a>
-                    <a href="#parimii" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="parimii">${t.nav.parimii}</a>
-                    <a href="#paraclete" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="paraclete">${t.nav.paraclete}</a>
-                    <a href="#irmologion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="irmologion">${t.nav.irmologion}</a>
-                  </div>
-                </details>
-                <details class="nav-group">
-                  <summary class="cursor-pointer list-none hover:text-gold transition-colors px-2 py-1 flex items-center gap-1">${t.nav.festal} <span class="text-xs">▸</span></summary>
-                  <div class="ml-2 flex flex-col gap-1">
-                    <a href="#menaion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="menaion">${t.nav.menaion}</a>
-                    <a href="#triodion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="triodion">${t.nav.triodion}</a>
-                  </div>
-                </details>
+                <a href="#prayer" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="prayer">${t.nav.prayer}</a>
+                <a href="#akathists" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="akathists">${t.nav.akathists}</a>
+                <a href="#horologion" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="horologion">${t.nav.horologion}</a>
+                <a href="#sbornik" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="sbornik">${t.nav.sbornik}</a>
+                <a href="#parimii" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="parimii">${t.nav.parimii}</a>
+                <a href="#paraclete" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="paraclete">${t.nav.paraclete}</a>
+                <a href="#irmologion" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="irmologion">${t.nav.irmologion}</a>
+                <a href="#menaion" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="menaion">${t.nav.menaion}</a>
+                <a href="#triodion" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="triodion">${t.nav.triodion}</a>
               </div>
             </details>
             <a href="#settings" class="nav-link hover:text-gold transition-colors" data-view="settings">${t.nav.settings}</a>
