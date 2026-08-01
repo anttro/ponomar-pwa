@@ -86,11 +86,11 @@ export class ServiceView {
     const availableServices = this.getAvailableServices(dayInfo);
     const fontClass = this.getFontClass();
 
-    const contentClass = `bg-white/50 border border-gold/20 rounded-lg p-6 ${this.activeService ? 'min-h-[300px]' : ''} ${fontClass}`;
+    const contentClass = `bg-white/50 border border-gold/20 rounded-lg p-4 ${this.activeService ? 'min-h-[300px]' : ''} ${fontClass}`;
 
     const tabHtml = `
-      <h3 class="font-bold text-red mb-3">${this.t.services.title}</h3>
-      <div class="flex flex-wrap gap-2 mb-6">
+      <h3 class="font-bold text-red mb-2">${this.t.services.title}</h3>
+      <div class="flex flex-wrap gap-2 mb-3">
         ${availableServices.map(s => `
           <button
             class="service-tab text-sm transition-colors
@@ -108,9 +108,9 @@ export class ServiceView {
     `;
 
     this.container.innerHTML = standalone
-      ? `<div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
+      ? `<div class="p-4 max-w-4xl xl:max-w-6xl mx-auto">
           <h2 class="text-2xl font-bold text-red mb-2">${this.t.services.title}</h2>
-          <p class="text-navy-light mb-4">
+          <p class="text-navy-light mb-2">
             ${this.currentDate.toString()}
             ${dayInfo.isLent ? this.t.services.greatLent : ''}
             ${dayInfo.isBrightWeek ? this.t.services.brightWeek : ''}

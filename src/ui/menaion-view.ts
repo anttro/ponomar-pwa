@@ -55,8 +55,8 @@ export class MenaionView {
     this.currentMonth = today.getMonth() + 1;
 
     this.container.innerHTML = `
-      <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
-        <div class="flex flex-wrap gap-2 mb-4">
+      <div class="p-4 max-w-4xl xl:max-w-6xl mx-auto">
+        <div class="flex flex-wrap gap-2 mb-2">
           ${[
             { id: 'prayer', view: 'prayer', label: this.t.nav.prayer },
             { id: 'akathists', view: 'akathists', label: this.t.nav.akathists },
@@ -78,7 +78,7 @@ export class MenaionView {
           `).join('')}
         </div>
         <div id="menaion-calendar"></div>
-        <div id="menaion-content" class="bg-white/50 border border-gold/20 rounded-lg p-6 min-h-[300px]">
+        <div id="menaion-content" class="bg-white/50 border border-gold/20 rounded-lg p-4 min-h-[300px]">
           <p class="text-navy-light italic">${this.t.prayer.selectSection}</p>
         </div>
       </div>
@@ -132,7 +132,7 @@ export class MenaionView {
         <span class="text-base font-bold text-navy">${months[month - 1]}</span>
         <button id="menaion-next" class="text-sm text-navy-light hover:text-navy px-2 py-1">▶</button>
       </div>
-      <div class="grid gap-1 grid-cols-7 mb-4">
+      <div class="grid gap-1 grid-cols-7 mb-2">
         ${daysHtml}
       </div>
     `;

@@ -213,8 +213,8 @@ export class PrayerView {
     ];
 
     this.container.innerHTML = `
-      <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
-        <div class="flex flex-wrap gap-2 mb-4">
+      <div class="p-4 max-w-4xl xl:max-w-6xl mx-auto">
+        <div class="flex flex-wrap gap-2 mb-2">
           ${subNavItems.map(item => `
             <button
               class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1
@@ -225,13 +225,13 @@ export class PrayerView {
             >${item.label}</button>
           `).join('')}
         </div>
-        <p class="text-navy-light text-sm mb-4">${subtitle}</p>
-        <select id="prayer-select" class="w-full border border-gold/20 bg-white/50 text-navy rounded-lg px-3 py-2 text-sm mb-6">
+        <p class="text-navy-light text-sm mb-2">${subtitle}</p>
+        <select id="prayer-select" class="w-full border border-gold/20 bg-white/50 text-navy rounded-lg px-3 py-2 text-sm mb-3">
           ${sections.map(s => `
             <option value="${s.id}" ${this.activeSection === s.id ? 'selected' : ''}>${s.name}</option>
           `).join('')}
         </select>
-        <div id="prayer-content" class="bg-white/50 border border-gold/20 rounded-lg p-6 min-h-[300px]">
+        <div id="prayer-content" class="bg-white/50 border border-gold/20 rounded-lg p-4 min-h-[300px]">
           <p class="text-navy-light italic">${this.t.prayer.selectSection}</p>
         </div>
       </div>

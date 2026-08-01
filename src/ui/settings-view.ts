@@ -445,7 +445,10 @@ export class SettingsView {
         OfflineManager.getStats().then(stats => {
           const statsEl = document.getElementById('offline-stats');
           if (statsEl) {
-            statsEl.textContent = `Cache: ${OfflineManager.formatBytes(stats.usageBytes)} / ${OfflineManager.formatBytes(stats.quotaBytes)} (${stats.cachedFiles} files)`;
+            statsEl.textContent = t.settings.offlineCacheInfo
+              .replace('{0}', OfflineManager.formatBytes(stats.usageBytes))
+              .replace('{1}', OfflineManager.formatBytes(stats.quotaBytes))
+              .replace('{2}', String(stats.cachedFiles));
           }
         });
       });
@@ -475,7 +478,10 @@ export class SettingsView {
     OfflineManager.getStats().then(stats => {
       const statsEl = document.getElementById('offline-stats');
       if (statsEl) {
-        statsEl.textContent = `Cache: ${OfflineManager.formatBytes(stats.usageBytes)} / ${OfflineManager.formatBytes(stats.quotaBytes)} (${stats.cachedFiles} files)`;
+        statsEl.textContent = t.settings.offlineCacheInfo
+        .replace('{0}', OfflineManager.formatBytes(stats.usageBytes))
+        .replace('{1}', OfflineManager.formatBytes(stats.quotaBytes))
+        .replace('{2}', String(stats.cachedFiles));
       }
     });
 

@@ -581,28 +581,28 @@ export class CalendarView {
               ${this.t.calendar.gregorianDate[0].toLowerCase() + this.t.calendar.gregorianDate.slice(1)}: ${gregorianStr}
             </div>
 
-            <div id="day-title" class="mb-4"></div>
+            <div id="day-title" class="mb-2"></div>
 
-            <div id="astro-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg text-sm text-navy">
+            <div id="astro-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg text-sm text-navy">
               <span class="text-navy-light italic">${this.t.loading}</span>
             </div>
 
-            <div id="commemorations-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="commemorations-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
-            <div id="fasting-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="fasting-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.fastingRule}</h3>
               <p class="text-sm italic text-navy-light">${this.t.loading}</p>
             </div>
 
-            <div id="readings-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="readings-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
-            <div id="services-panel" class="mb-4 border-t border-gold/20 pt-3"></div>
+            <div id="services-panel" class="mb-2 border-t border-gold/20 pt-3"></div>
           </div>
         </div>
       </div>

@@ -499,6 +499,7 @@ export interface Translations {
     offlineDone: string;
     offlineSelectLang: string;
     offlineCleared: string;
+    offlineCacheInfo: string;
     locationTitle: string;
     latitude: string;
     longitude: string;
@@ -1044,6 +1045,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineDone: 'Done! Data cached for offline use.',
       offlineSelectLang: 'Please select at least one language.',
       offlineCleared: 'Cache cleared.',
+      offlineCacheInfo: 'Cache: {0} / {1} ({2} files)',
       locationTitle: 'Location',
       latitude: 'Latitude',
       longitude: 'Longitude',
@@ -1587,6 +1589,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineDone: 'Готово! Данные закэшированы для офлайн-использования.',
       offlineSelectLang: 'Пожалуйста, выберите хотя бы один язык.',
       offlineCleared: 'Кэш очищен.',
+      offlineCacheInfo: 'Кэш: {0} / {1} ({2} файлов)',
       locationTitle: 'Местоположение',
       latitude: 'Широта',
       longitude: 'Долгота',
@@ -2130,6 +2133,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineDone: 'Готово! Данныя закешированы для офлайн-потребленїя.',
       offlineSelectLang: 'Пожалуйста, изберите хотя бы единъ языкъ.',
       offlineCleared: 'Кешъ очищенъ.',
+      offlineCacheInfo: 'Кешъ: {0} / {1} ({2} фа́йлѡвъ)',
       locationTitle: 'Мѣстоположе́нїе',
       latitude: 'Широта̀',
       longitude: 'Долгота̀',
