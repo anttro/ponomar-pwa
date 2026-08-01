@@ -260,7 +260,9 @@ export class PrayerView {
     try {
       // Paraclete ids are t{tone}-{day}; others map directly
       let dataPath = `/data/shared/${this.collection}/${id}/full.json`;
-      if (this.collection === 'paraclete') {
+      if (this.collection === 'triodion') {
+        dataPath = `/data/shared/triodion/${id}.json`;
+      } else if (this.collection === 'paraclete') {
         const m = id.match(/^t(\d)-(\w+)$/);
         if (!m) {
           contentEl.innerHTML = `<p class="text-navy-light">${this.t.prayer.notFound}</p>`;
