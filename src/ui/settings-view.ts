@@ -238,59 +238,49 @@ export class SettingsView {
 
         <!-- Offline Content -->
         <div class="mb-6">
-          <h3 class="text-lg font-bold text-red mb-3">Offline Content</h3>
+          <h3 class="text-lg font-bold text-red mb-3">${t.settings.offlineContent}</h3>
 
           <!-- Language selection for offline -->
           <div class="mb-3">
-            <label class="block text-sm font-bold text-navy mb-2">Languages to cache</label>
+            <label class="block text-sm font-bold text-navy mb-2">${t.settings.offlineLangs}</label>
             <div id="offline-langs" class="flex flex-wrap gap-3">
-              <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="ru" class="offline-lang accent-gold"> <span class="text-sm">Русский</span>
-              </label>
-              <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="cu" class="offline-lang accent-gold"> <span class="text-sm">Церковнославянский</span>
-              </label>
-              <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="en" class="offline-lang accent-gold"> <span class="text-sm">English</span>
-              </label>
-              <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="el" class="offline-lang accent-gold"> <span class="text-sm">Ελληνικά</span>
-              </label>
-              <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="fr" class="offline-lang accent-gold"> <span class="text-sm">Français</span>
-              </label>
+              ${LANGUAGES.map(l => `
+                <label class="flex items-center gap-1 cursor-pointer">
+                  <input type="checkbox" value="${l.code}" class="offline-lang accent-gold"> <span class="text-sm">${l.local}</span>
+                </label>
+              `).join('')}
             </div>
           </div>
 
           <!-- Data type selection -->
           <div class="mb-3">
-            <label class="block text-sm font-bold text-navy mb-2">Data to cache</label>
+            <label class="block text-sm font-bold text-navy mb-2">${t.settings.offlineDataTypes}</label>
             <div id="offline-types" class="flex flex-wrap gap-3">
               <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="lives" checked class="offline-type accent-gold"> <span class="text-sm">Lives</span>
+                <input type="checkbox" value="lives" checked class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineLives}</span>
               </label>
               <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="calendar" checked class="offline-type accent-gold"> <span class="text-sm">Calendar</span>
+                <input type="checkbox" value="calendar" checked class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineCalendar}</span>
               </label>
               <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="menaion" class="offline-type accent-gold"> <span class="text-sm">Menaion</span>
+                <input type="checkbox" value="menaion" class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineMenaion}</span>
               </label>
             </div>
           </div>
 
           <!-- Storage info and controls -->
           <div class="flex items-center justify-between gap-3 mb-2">
-            <span id="offline-stats" class="text-sm text-navy-light">Calculating storage...</span>
+            <span id="offline-stats" class="text-sm text-navy-light">${t.settings.offlineCalculating}</span>
             <div class="flex gap-2">
-              <button id="offline-preload" class="bg-gold text-navy rounded px-3 py-1 text-sm font-bold hover:bg-gold-dark transition-colors">Preload</button>
-              <button id="offline-clear" class="bg-red text-parchment rounded px-3 py-1 text-sm hover:bg-red-dark transition-colors">Clear cache</button>
+              <button id="offline-preload" class="bg-gold text-navy rounded px-3 py-1 text-sm font-bold hover:bg-gold-dark transition-colors">${t.settings.offlinePreload}</button>
+              <button id="offline-clear" class="bg-red text-parchment rounded px-3 py-1 text-sm hover:bg-red-dark transition-colors">${t.settings.offlineClearCache}</button>
             </div>
           </div>
           <div id="offline-progress" class="hidden">
             <div class="w-full bg-parchment-dark rounded-full h-2 mb-1">
               <div id="offline-progress-bar" class="bg-gold h-2 rounded-full" style="width: 0%"></div>
             </div>
-            <p id="offline-progress-text" class="text-xs text-navy-light">0 / 0 files</p>
+            <p id="offline-progress-text" class="text-xs text-navy-light">0 / 0 ${t.settings.offlineDataTypes}</p>
           </div>
         </div>
 
@@ -383,7 +373,7 @@ export class SettingsView {
 
       if (selectedLangs.length === 0) {
         const progressText = document.getElementById('offline-progress-text');
-        if (progressText) progressText.textContent = 'Please select at least one language.';
+        if (progressText) progressText.textContent = t.settings.offlineSelectLang;
         return;
       }
 
@@ -395,7 +385,7 @@ export class SettingsView {
       // Start preloading in background
       OfflineManager.preload({ languages: selectedLangs, types: selectedTypes }).then(() => {
         if (progressBar) progressBar.style.width = '100%';
-        if (progressText) progressText.textContent = 'Done! Data cached for offline use.';
+        if (progressText) progressText.textContent = t.settings.offlineDone;
         OfflineManager.getStats().then(stats => {
           const statsEl = document.getElementById('offline-stats');
           if (statsEl) {
@@ -410,7 +400,7 @@ export class SettingsView {
         if (prog && prog.total > 0) {
           const pct = Math.round((prog.current / prog.total) * 100);
           if (progressBar) progressBar.style.width = `${pct}%`;
-          if (progressText) progressText.textContent = `${prog.current} / ${prog.total} files — ${prog.file.substring(0, 60)}...`;
+          if (progressText) progressText.textContent = `${prog.current} / ${prog.total} ${t.settings.offlineDataTypes} — ${prog.file.substring(0, 60)}...`;
         }
         if (!prog || prog.done) clearInterval(pollInterval);
       }, 200);
@@ -420,7 +410,7 @@ export class SettingsView {
     document.getElementById('offline-clear')?.addEventListener('click', async () => {
       await OfflineManager.clearCache();
       const statsEl = document.getElementById('offline-stats');
-      if (statsEl) statsEl.textContent = 'Cache cleared.';
+      if (statsEl) statsEl.textContent = t.settings.offlineCleared;
       const progressDiv = document.getElementById('offline-progress');
       if (progressDiv) progressDiv.classList.add('hidden');
     });

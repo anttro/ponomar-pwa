@@ -483,6 +483,18 @@ export interface Translations {
     aboutText: string;
     aboutLicense: string;
     installPwa: string;
+    offlineContent: string;
+    offlineLangs: string;
+    offlineDataTypes: string;
+    offlineLives: string;
+    offlineCalendar: string;
+    offlineMenaion: string;
+    offlinePreload: string;
+    offlineClearCache: string;
+    offlineCalculating: string;
+    offlineDone: string;
+    offlineSelectLang: string;
+    offlineCleared: string;
   };
 
   // Common
@@ -1007,6 +1019,18 @@ const translations: Record<LanguageCode, Translations> = {
       aboutText: 'Ponomar is an Orthodox Church calendar application providing liturgical information, service texts, and Bible readings in multiple languages.',
       aboutLicense: 'Based on the Ponomar Java desktop application by Aleksandr Andreev and Yuri Shardt. Licensed under GPL v3.',
       installPwa: 'Install Ponomar',
+      offlineContent: 'Offline Content',
+      offlineLangs: 'Languages to cache',
+      offlineDataTypes: 'Data to cache',
+      offlineLives: 'Lives',
+      offlineCalendar: 'Calendar',
+      offlineMenaion: 'Menaion',
+      offlinePreload: 'Preload',
+      offlineClearCache: 'Clear cache',
+      offlineCalculating: 'Calculating storage...',
+      offlineDone: 'Done! Data cached for offline use.',
+      offlineSelectLang: 'Please select at least one language.',
+      offlineCleared: 'Cache cleared.',
     },
 
     common: {
@@ -1529,6 +1553,18 @@ const translations: Record<LanguageCode, Translations> = {
       aboutText: 'Понома́рь — приложение православного календаря, предоставляющее литургическую информацию, тексты служб и библейские чтения на нескольких языках.',
       aboutLicense: 'Основано на Java-приложении Понома́рь от Александра Андреева и Юрия Шардт. Лицензия GPL v3.',
       installPwa: 'Установить Пономарь',
+      offlineContent: 'Офлайн-контент',
+      offlineLangs: 'Языки для кэширования',
+      offlineDataTypes: 'Типы данных',
+      offlineLives: 'Жития',
+      offlineCalendar: 'Календарь',
+      offlineMenaion: 'Минея',
+      offlinePreload: 'Загрузить',
+      offlineClearCache: 'Очистить кэш',
+      offlineCalculating: 'Расчёт размера...',
+      offlineDone: 'Готово! Данные закэшированы для офлайн-использования.',
+      offlineSelectLang: 'Пожалуйста, выберите хотя бы один язык.',
+      offlineCleared: 'Кэш очищен.',
     },
 
     common: {
@@ -2051,6 +2087,18 @@ const translations: Record<LanguageCode, Translations> = {
       aboutText: 'Понома́рь — приложенiе православнаго календаря, предоставляющее литургическiю информацию, тексты службъ и библейскія чтения на нескольких языкахъ.',
       aboutLicense: 'Основано на Java-приложенiи Понома́рь отъ Александра Андреева и Юрия Шардт. Лицензия GPL v3.',
       installPwa: 'Оустановити Понома́рь',
+      offlineContent: 'Офлайн-контентъ',
+      offlineLangs: 'Языки для кеширования',
+      offlineDataTypes: 'Типы данныхъ',
+      offlineLives: 'Житїя',
+      offlineCalendar: 'Календарь',
+      offlineMenaion: 'Минїа',
+      offlinePreload: 'Загрузити',
+      offlineClearCache: 'Очистити кешъ',
+      offlineCalculating: 'Расчётъ размѣра...',
+      offlineDone: 'Готово! Данныя закешированы для офлайн-потребленїя.',
+      offlineSelectLang: 'Пожалуйста, изберите хотя бы единъ языкъ.',
+      offlineCleared: 'Кешъ очищенъ.',
     },
 
     common: {
