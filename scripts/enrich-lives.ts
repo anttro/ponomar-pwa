@@ -368,10 +368,6 @@ function scoreMatch(source: string, name: string): number {
   return (2 * inter) / (a.length + b.length);
 }
 
-function bundleFileForCid(cid: string): string {
-  return /^(0[1-9]|1[0-2])\d+/.test(cid) ? `${cid.substring(0, 2)}.json` : 'misc.json';
-}
-
 interface Args {
   write: boolean;
   month: string | null;
@@ -402,12 +398,22 @@ export async function enrichLives(args: Args): Promise<void> {
 
   // Load all ru/lives bundles into one map: cid -> {name, life, file}
   const livesByCid: Record<string, { name: Record<string, string>; life?: { text?: string }; file: string }> = {};
-  for (const f of readdirSync(LIVES_DIR).filter(f => f.endsWith('.json'))) {
-    const bundleData = JSON.parse(readFileSync(join(LIVES_DIR, f), 'utf-8')) as Record<string, { name?: Record<string, string>; life?: { text?: string } }>;
-    for (const [cid, entry] of Object.entries(bundleData)) {
-      livesByCid[cid] = { name: entry.name || {}, life: entry.life, file: f };
+  function loadBundleDir(dir: string, prefix: string): void {
+    for (const f of readdirSync(dir)) {
+      const fullPath = join(dir, f);
+      if (f.endsWith('.json')) {
+        const bundleData = JSON.parse(readFileSync(fullPath, 'utf-8')) as Record<string, { name?: Record<string, string>; life?: { text?: string } }>;
+        const fileRef = prefix ? `${prefix}/${f}` : f;
+        for (const [cid, entry] of Object.entries(bundleData)) {
+          livesByCid[cid] = { name: entry.name || {}, life: entry.life, file: fileRef };
+        }
+      } else if (f !== '..' && f !== '.' && !f.includes('.')) {
+        // Recurse into subdirectory
+        loadBundleDir(fullPath, prefix ? `${prefix}/${f}` : f);
+      }
     }
   }
+  loadBundleDir(LIVES_DIR, '');
 
   const report: ReportEntry[] = [];
   const pendingWrites: Record<string, Record<string, unknown>> = {};

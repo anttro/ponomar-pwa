@@ -44,10 +44,7 @@ export class App {
     document.addEventListener('click', closeOpenDropdowns);
     document.addEventListener('touchstart', closeOpenDropdowns, { passive: true });
 
-    // Register service worker for PWA install
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
-    }
+    // PWA install prompt
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       (window as any).__deferredPrompt = e;

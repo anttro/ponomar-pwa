@@ -8,6 +8,7 @@ import { computeDay } from '../core/day-computer';
 import { evaluateFasting } from '../core/fasting';
 import type { FastingPeriod } from '../core/fasting';
 import { getTranslations, type LanguageCode } from '../core/i18n';
+import { DataCache } from '../core/data-cache';
 import { fontClass } from './settings-view';
 import { ServiceView } from './service-view';
 
@@ -93,12 +94,12 @@ function formatReadingRef(reading: string, _lang: string): string {
 async function loadSharedScriptureIndex(): Promise<Record<string, unknown[]> | null> {
   if (sharedScriptureIndex) return sharedScriptureIndex;
   try {
-    const resp = await fetch('/data/shared/lives-index.json');
-    if (!resp.ok) return null;
-    const ct = resp.headers.get('content-type');
-    if (ct && ct.includes('text/html')) return null;
-    sharedScriptureIndex = await resp.json();
-    return sharedScriptureIndex;
+    const data = await DataCache.fetch<Record<string, unknown[]>>('/data/shared/lives-index.json');
+    if (data) {
+      sharedScriptureIndex = data;
+      return data;
+    }
+    return null;
   } catch {
     return null;
   }
@@ -108,13 +109,12 @@ async function loadMenaionBundle(lang: string): Promise<Record<string, unknown> 
   const key = lang === 'cu' ? 'cu' : lang;
   if (menaionBundles.has(key)) return menaionBundles.get(key)!;
   try {
-    const resp = await fetch(`/data/${key}/menaion-bundle.json`);
-    if (!resp.ok) return null;
-    const ct = resp.headers.get('content-type');
-    if (ct && ct.includes('text/html')) return null;
-    const bundle = await resp.json() as Record<string, unknown>;
-    menaionBundles.set(key, bundle);
-    return bundle;
+    const bundle = await DataCache.fetch<Record<string, unknown>>(`/data/${key}/menaion-bundle.json`);
+    if (bundle) {
+      menaionBundles.set(key, bundle);
+      return bundle;
+    }
+    return null;
   } catch {
     return null;
   }
@@ -123,10 +123,12 @@ async function loadMenaionBundle(lang: string): Promise<Record<string, unknown> 
 async function loadFastingPeriods(): Promise<FastingPeriod[]> {
   if (cachedFastingPeriods) return cachedFastingPeriods;
   try {
-    const resp = await fetch('/data/shared/fasting.json');
-    if (!resp.ok) return [];
-    cachedFastingPeriods = await resp.json();
-    return cachedFastingPeriods!;
+    const data = await DataCache.fetch<FastingPeriod[]>('/data/shared/fasting.json');
+    if (data) {
+      cachedFastingPeriods = data;
+      return data;
+    }
+    return [];
   } catch {
     return [];
   }
@@ -237,23 +239,18 @@ async function loadLife(lang: LanguageCode, cid: string): Promise<LifeData | nul
   const cacheKey = `${lang}/${cid}`;
   if (lifeCache.has(cacheKey)) return lifeCache.get(cacheKey)!;
   try {
-    const bundleName = /^(0[1-9]|1[0-2])\d+/.test(cid) ? cid.substring(0, 2) : 'misc';
-    async function tryFetch(prefix: string): Promise<Response | null> {
-      const resp = await fetch(`/data/${prefix}/lives/${bundleName}.json`);
-      if (!resp.ok) return null;
-      const ct = resp.headers.get('content-type');
-      if (ct && ct.includes('text/html')) return null;
-      return resp;
+    const bundleName = /^(0[1-9]|1[0-2])\d+/.test(cid) ? cid.substring(0, 2) : `misc/${cid.charAt(0)}`;
+    async function tryFetch(prefix: string): Promise<Record<string, unknown> | null> {
+      return DataCache.fetch<Record<string, unknown>>(`/data/${prefix}/lives/${bundleName}.json`);
     }
-    let resp = await tryFetch(lang);
-    if (!resp && lang !== 'cu') {
-      resp = await tryFetch('cu');
+    let bundle = await tryFetch(lang);
+    if (!bundle && lang !== 'cu') {
+      bundle = await tryFetch('cu');
     }
-    if (!resp) {
+    if (!bundle) {
       lifeCache.set(cacheKey, null);
       return null;
     }
-    const bundle = await resp.json() as Record<string, unknown>;
     const life = (bundle[cid] || null) as LifeData | null;
     if (!life) {
       lifeCache.set(cacheKey, null);
@@ -263,14 +260,10 @@ async function loadLife(lang: LanguageCode, cid: string): Promise<LifeData | nul
     // Merge rank from cu life if language-specific life lacks it
     if (!life.rank && lang !== 'cu') {
       try {
-        const cuResp = await fetch(`/data/cu/lives/${bundleName}.json`);
-        if (cuResp.ok) {
-          const ct = cuResp.headers.get('content-type');
-          if (!ct || !ct.includes('text/html')) {
-            const cuBundle = await cuResp.json() as Record<string, unknown>;
-            const cuLife = cuBundle[cid] as LifeData | undefined;
-            if (cuLife?.rank) life.rank = cuLife.rank;
-          }
+        const cuBundle = await DataCache.fetch<Record<string, unknown>>(`/data/cu/lives/${bundleName}.json`);
+        if (cuBundle) {
+          const cuLife = cuBundle[cid] as LifeData | undefined;
+          if (cuLife?.rank) life.rank = cuLife.rank;
         }
       } catch {}
     }

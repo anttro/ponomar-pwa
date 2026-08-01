@@ -224,7 +224,7 @@ export async function convertLives(SRC: string, OUT: string) {
       if (saintData) {
         const cid = file.replace('.xml', '');
         const mm = cid.match(/^(0[1-9]|1[0-2])\d+/)?.[1];
-        const bundleName = mm ? `${mm}.json` : 'misc.json';
+        const bundleName = mm ? `${mm}.json` : `misc/${cid.charAt(0)}.json`;
         if (!bundles[bundleName]) bundles[bundleName] = {};
         bundles[bundleName][cid] = saintData;
         count++;
