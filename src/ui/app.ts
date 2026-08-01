@@ -10,6 +10,7 @@ import { SettingsView } from './settings-view';
 import { JDate } from '../core/jdate';
 import { loadSettings, type Settings } from './settings-view';
 import { getTranslations, type LanguageCode } from '../core/i18n';
+import { DataCache } from '../core/data-cache';
 
 type View = 'calendar' | 'bible' | 'prayer' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'menaion' | 'triodion' | 'settings';
 
@@ -49,6 +50,30 @@ export class App {
       e.preventDefault();
       (window as any).__deferredPrompt = e;
     });
+
+    // Auto-preload essential data for the current language
+    this.autoPreload();
+  }
+
+  private async autoPreload(): Promise<void> {
+    try {
+      const key = 'ponomar-preloaded';
+      if (localStorage.getItem(key)) return;
+      const lang = this.settings.language as LanguageCode;
+      const languages = lang === 'ru' ? ['ru', 'cu'] : [lang];
+      for (const l of languages) {
+        // Preload menaion bundle
+        await DataCache.fetch(`/data/${l}/menaion-bundle.json`).catch(() => {});
+        // Preload current month lives
+        const mm = String(JDate.today().getMonth()).padStart(2, '0');
+        await DataCache.fetch(`/data/${l}/lives/${mm}.json`).catch(() => {});
+      }
+      // Preload calendar data
+      await DataCache.fetch('/data/shared/fasting.json').catch(() => {});
+      localStorage.setItem(key, '1');
+    } catch {
+      // Silently fail — user can manually preload via settings
+    }
   }
 
   private handleRoute() {

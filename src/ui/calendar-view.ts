@@ -411,7 +411,6 @@ export class CalendarView {
       if (stored) {
         const settings = JSON.parse(stored);
         let cuFont = settings.cuFont || '';
-        // Migrate old usePonomarFont
         if (settings.usePonomarFont !== undefined) {
           cuFont = settings.usePonomarFont ? 'Ponomar' : '';
         }
@@ -420,6 +419,14 @@ export class CalendarView {
       }
     } catch {}
     return this.language === 'cu' ? 'font-ponomar' : '';
+  }
+
+  /** Prefetch lives data for a given month to warm the cache. */
+  private prefetchMonth(month: number): void {
+    const mm = String(month).padStart(2, '0');
+    const lang = this.language;
+    const url = `/data/${lang}/lives/${mm}.json`;
+    DataCache.fetch(url).catch(() => {});
   }
 
   /** Lightweight dRank computation for calendar grid highlighting */
@@ -932,5 +939,13 @@ export class CalendarView {
         svcPanel.innerHTML = `<p class="text-sm text-navy-light italic">${this.t.loading}</p>`;
       }
     }
+
+    // Prefetch current and adjacent month's lives data for faster navigation
+    const currentMonth = this.currentDate.getMonth();
+    const prevMonth = currentMonth <= 1 ? 12 : currentMonth - 1;
+    const nextMonth = currentMonth >= 12 ? 1 : currentMonth + 1;
+    this.prefetchMonth(currentMonth);
+    this.prefetchMonth(prevMonth);
+    this.prefetchMonth(nextMonth);
   }
 }
