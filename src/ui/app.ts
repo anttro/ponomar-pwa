@@ -50,10 +50,9 @@ export class App {
       const target = e.target as HTMLElement;
       const link = target.closest('.nav-link');
       if (link) {
-        const details = link.closest('details.nav-group');
-        if (details) {
-          details.removeAttribute('open');
-        }
+        document.querySelectorAll('details.nav-group[open]').forEach(d => {
+          d.removeAttribute('open');
+        });
       }
     });
 
