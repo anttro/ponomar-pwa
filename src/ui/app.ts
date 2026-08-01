@@ -32,6 +32,18 @@ export class App {
     this.handleRoute();
     window.addEventListener('hashchange', () => this.handleRoute());
 
+    // Close dropdown menus on click/touch outside
+    const closeOpenDropdowns = (e: Event) => {
+      const target = e.target as Node;
+      document.querySelectorAll('details.nav-group[open]').forEach(d => {
+        if (!d.contains(target)) {
+          d.removeAttribute('open');
+        }
+      });
+    };
+    document.addEventListener('click', closeOpenDropdowns);
+    document.addEventListener('touchstart', closeOpenDropdowns, { passive: true });
+
     // Register service worker for PWA install
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
@@ -76,16 +88,31 @@ export class App {
           <h1 class="text-sm font-bold tracking-wide">${t.appName}</h1>
           <nav class="flex flex-wrap gap-4 text-sm">
             <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
-            <a href="#bible" class="nav-link hover:text-gold transition-colors" data-view="bible">${t.nav.bible}</a>
-            <a href="#prayer" class="nav-link hover:text-gold transition-colors" data-view="prayer">${t.nav.prayer}</a>
-            <a href="#akathists" class="nav-link hover:text-gold transition-colors" data-view="akathists">${t.nav.akathists}</a>
-            <a href="#parimii" class="nav-link hover:text-gold transition-colors" data-view="parimii">${t.nav.parimii}</a>
-            <a href="#horologion" class="nav-link hover:text-gold transition-colors" data-view="horologion">${t.nav.horologion}</a>
-            <a href="#sbornik" class="nav-link hover:text-gold transition-colors" data-view="sbornik">${t.nav.sbornik}</a>
-            <a href="#paraclete" class="nav-link hover:text-gold transition-colors" data-view="paraclete">${t.nav.paraclete}</a>
-            <a href="#irmologion" class="nav-link hover:text-gold transition-colors" data-view="irmologion">${t.nav.irmologion}</a>
-            <a href="#menaion" class="nav-link hover:text-gold transition-colors" data-view="menaion">${t.nav.menaion}</a>
-            <a href="#triodion" class="nav-link hover:text-gold transition-colors" data-view="triodion">${t.nav.triodion}</a>
+            <details class="nav-group relative" data-nav="library">
+              <summary class="cursor-pointer list-none hover:text-gold transition-colors flex items-center gap-1">${t.nav.library} <span class="text-xs">▾</span></summary>
+              <div class="absolute left-0 top-full mt-1 z-50 min-w-56 rounded-lg bg-navy-light shadow-xl p-2 flex flex-col gap-1">
+                <a href="#bible" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="bible">${t.nav.bible}</a>
+                <details class="nav-group">
+                  <summary class="cursor-pointer list-none hover:text-gold transition-colors px-2 py-1 flex items-center gap-1">${t.nav.service} <span class="text-xs">▸</span></summary>
+                  <div class="ml-2 flex flex-col gap-1">
+                    <a href="#horologion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="horologion">${t.nav.horologion}</a>
+                    <a href="#sbornik" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="sbornik">${t.nav.sbornik}</a>
+                    <a href="#prayer" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="prayer">${t.nav.prayer}</a>
+                    <a href="#akathists" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="akathists">${t.nav.akathists}</a>
+                    <a href="#parimii" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="parimii">${t.nav.parimii}</a>
+                    <a href="#paraclete" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="paraclete">${t.nav.paraclete}</a>
+                    <a href="#irmologion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="irmologion">${t.nav.irmologion}</a>
+                  </div>
+                </details>
+                <details class="nav-group">
+                  <summary class="cursor-pointer list-none hover:text-gold transition-colors px-2 py-1 flex items-center gap-1">${t.nav.festal} <span class="text-xs">▸</span></summary>
+                  <div class="ml-2 flex flex-col gap-1">
+                    <a href="#menaion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="menaion">${t.nav.menaion}</a>
+                    <a href="#triodion" class="nav-link hover:text-gold transition-colors px-2 py-1 text-sm" data-view="triodion">${t.nav.triodion}</a>
+                  </div>
+                </details>
+              </div>
+            </details>
             <a href="#settings" class="nav-link hover:text-gold transition-colors" data-view="settings">${t.nav.settings}</a>
           </nav>
         </header>
@@ -101,8 +128,18 @@ export class App {
     // Update active nav
     document.querySelectorAll('.nav-link').forEach(el => {
       const v = el.getAttribute('data-view');
-      el.classList.toggle('text-gold', v === this.currentView);
-      el.classList.toggle('font-bold', v === this.currentView);
+      const isActive = v === this.currentView;
+      el.classList.toggle('text-gold', isActive);
+      el.classList.toggle('font-bold', isActive);
+      if (isActive) {
+        let parent = el.parentElement;
+        while (parent) {
+          if (parent.tagName === 'DETAILS') {
+            parent.setAttribute('open', '');
+          }
+          parent = parent.parentElement;
+        }
+      }
     });
 
     // Re-read settings fresh on each navigation

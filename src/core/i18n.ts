@@ -27,6 +27,8 @@ export interface Translations {
     menaion: string;
     triodion: string;
     settings: string;
+    library: string;
+    festal: string;
   };
 
   // Триодь постная
@@ -514,6 +516,8 @@ const translations: Record<LanguageCode, Translations> = {
       menaion: '📕 Menaion',
       triodion: '📗 Lenten Triodion',
       settings: '⚙ Settings',
+      library: '📚 Library',
+      festal: '📗 Feasts',
     },
 
     triodion: {
@@ -1034,6 +1038,8 @@ const translations: Record<LanguageCode, Translations> = {
       menaion: '📕 Минея',
       triodion: '📗 Триодь постная',
       settings: '⚙ Настройки',
+      library: '📚 Библиотека',
+      festal: '📗 Праздники',
     },
 
     triodion: {
@@ -1554,6 +1560,8 @@ const translations: Record<LanguageCode, Translations> = {
       menaion: '📕 Мїне́ѧ',
       triodion: '📗 Трїѡ́дь по́стнаѧ',
       settings: '⚙ Настройки',
+      library: '📚 Библіоте́ка',
+      festal: '📗 Пра́здники',
     },
 
     triodion: {

@@ -13,6 +13,7 @@ Derived from the original [Java Ponomar application](https://github.com/typiconm
 - **Bible Reader** — Read scripture across 13 versions (Church Slavonic, Russian Synodal, KJV, Brenton, Vulgate, etc.). Per-version reading position persists across sessions.
 - **Multi-language UI** — English, Russian, Church Slavonic (with dedicated Slavonic fonts).
 - **PWA** — Installable on desktop and mobile devices.
+- **Navigation** — 3 top-level items (Calendar, Library, Settings) with Library dropdown: Bible, Service (Horologion, Sbornik, Prayer Rule, Canons & Akathists, Parimii, Paraclete, Irmologion), Feasts (Menaion, Lenten Triodion).
 
 ## Tech Stack
 
@@ -41,6 +42,25 @@ Set `PONOMAR_JAVA_HOME` to point at a local clone of the Java Ponomar repository
 npm run build    # production build
 npm run preview  # preview production build
 ```
+
+## QA / Validation
+
+```bash
+npx tsx scripts/validate-i18n.ts   # i18n completeness (en/ru/cu)
+npx tsx scripts/validate-tabs.ts   # service tab/template consistency
+npx tsx scripts/assembler-test.ts  # service assembler integration tests
+```
+
+## Liturgical Text Categories (static/data/shared/services/)
+
+- **Triodion** — 37 sections (Pre-Lent → Great Lent → Holy Week)
+- **Pentecostarion** — 50 days (Pascha → All Saints)
+- **Menaion (daily)** — 367 daily entries (one per Julian calendar day)
+- **Menaion (feasts)** — 34 fixed feasts with dedicated services
+- **Canons** — Paraclete (weekday, 8 tones × 6 days = 48), Octoechos (Sunday, 8 tones), Great Canon
+- **Services** — 78 data-backed services with full.json (Pascha, Paralytic, Sergius, Pokrov, etc.; Var/I-prefix + bare P-prefix varNodes now intercepted)
+- **Horologion / Sbornik / Prayer Rule / Akathists / Parimii / Paraclete / Irmologion** — daily-cycle collections
+- **Lives** — Saint lives (pre-existing schema issues, 945 known)
 
 ## Project Structure
 

@@ -10,6 +10,10 @@ import { assembleService, type ServiceContext } from '../core/service-assembler'
 import { evalBool } from '../core/evaluator';
 import type { CanonData, GreatCanonPart, EvalContext, ServiceNode } from '../core/types';
 import { getTranslations, type LanguageCode } from '../core/i18n';
+import {
+  TRIODION_NDAY, BRIGHT_WEEK, PENTECOSTARION, FIRST_WEEK, MENAION_FEAST,
+  HOLY_WEEK, holyWeekVarName, type ServiceTabDef,
+} from '../core/service-tabs';
 import { loadSettings, fontClass } from './settings-view';
 
 interface ServiceDef {
@@ -146,31 +150,16 @@ export class ServiceView {
 
     // Triodion movable days (by nday): Pre-Lent Sundays + Lent Sundays
     // (the ones not already covered: week 1, Marias Standing, Palm Sunday, Holy Week)
-    const triodionDay: Record<number, { idx: number; name: string }> = {
-      [-70]: { idx: 1, name: this.t.triodion.sections[0] },
-      [-63]: { idx: 2, name: this.t.triodion.sections[1] },
-      [-57]: { idx: 3, name: this.t.triodion.sections[2] },
-      [-56]: { idx: 4, name: this.t.triodion.sections[3] },
-      [-50]: { idx: 6, name: this.t.triodion.sections[5] },
-      [-49]: { idx: 7, name: this.t.triodion.sections[6] },
-      [-42]: { idx: 14, name: this.t.triodion.sections[13] },
-      [-35]: { idx: 17, name: this.t.triodion.sections[16] },
-      [-28]: { idx: 20, name: this.t.triodion.sections[19] },
-      [-21]: { idx: 23, name: this.t.triodion.sections[22] },
-      [-14]: { idx: 27, name: this.t.triodion.sections[26] },
-      [-9]: { idx: 26, name: this.t.triodion.sections[25] },
-      [-8]: { idx: 29, name: this.t.triodion.sections[28] },
-    };
-    const triodionHit = triodionDay[dayInfo.nday];
-    if (triodionHit) {
+    const triodionIdx = TRIODION_NDAY[dayInfo.nday];
+    if (triodionIdx) {
       special.push({
-        id: `triodion-${triodionHit.idx}`,
-        name: triodionHit.name,
+        id: `triodion-${triodionIdx}`,
+        name: this.t.triodion.sections[triodionIdx - 1],
         serviceType: 'TRIODION',
         template: 'Triodion',
         description: this.t.triodion.title,
-        titleNode: title('Triodion1', triodionHit.name),
-        triodionIndex: triodionHit.idx,
+        titleNode: title('Triodion1', this.t.triodion.sections[triodionIdx - 1]),
+        triodionIndex: triodionIdx,
       });
     }
 
@@ -252,53 +241,17 @@ export class ServiceView {
 
     // Bright Week services (Pascha through Saturday)
     if (dayInfo.isBrightWeek) {
-      const brightDay: Record<number, { id: string; name: string; type: string; desc: string }> = {
-        [0]: { id: 'pascha', name: this.t.services.serviceNames.pascha, type: 'PASCHA', desc: this.t.services.serviceDescriptions.pascha },
-        [1]: { id: 'brightmonday', name: this.t.services.serviceNames.brightmonday, type: 'BRIGHTMONDAY', desc: this.t.services.serviceDescriptions.brightmonday },
-        [2]: { id: 'brighttuesday', name: this.t.services.serviceNames.brighttuesday, type: 'BRIGHTTUESDAY', desc: this.t.services.serviceDescriptions.brighttuesday },
-        [3]: { id: 'brightwednesday', name: this.t.services.serviceNames.brightwednesday, type: 'BRIGHTWEDNESDAY', desc: this.t.services.serviceDescriptions.brightwednesday },
-        [4]: { id: 'brightthursday', name: this.t.services.serviceNames.brightthursday, type: 'BRIGHTTHURSDAY', desc: this.t.services.serviceDescriptions.brightthursday },
-        [5]: { id: 'brightfriday', name: this.t.services.serviceNames.brightfriday, type: 'BRIGHTFRIDAY', desc: this.t.services.serviceDescriptions.brightfriday },
-        [6]: { id: 'brightsaturday', name: this.t.services.serviceNames.brightsaturday, type: 'BRIGHTSATURDAY', desc: this.t.services.serviceDescriptions.brightsaturday },
-      };
-      const bd = brightDay[dayInfo.nday];
-      if (bd) {
-        const templateName = bd.id.charAt(0).toUpperCase() + bd.id.slice(1);
-        special.push({
-          id: bd.id, name: bd.name, serviceType: bd.type,
-          template: templateName,
-          description: bd.desc,
-          titleNode: title(`${templateName}1`, bd.name),
-        });
+      const def = BRIGHT_WEEK[dayInfo.nday];
+      if (def) {
+        special.push(this.defToService(def));
       }
     }
 
     // Pentecostarion services (Antipascha through All Saints)
     if (dayInfo.pentecostarionFile !== null && dayInfo.nday > 6) {
-      const pentDay: Record<number, { id: string; name: string; type: string; desc: string }> = {
-        [7]:  { id: 'antipascha', name: this.t.services.serviceNames.antipascha, type: 'ANTIPASCHA', desc: this.t.services.serviceDescriptions.antipascha },
-        [14]: { id: 'myrrhbearers', name: this.t.services.serviceNames.myrrhbearers, type: 'MYRRHBEARERS', desc: this.t.services.serviceDescriptions.myrrhbearers },
-        [21]: { id: 'paralytic', name: this.t.services.serviceNames.paralytic, type: 'PARALYTIC', desc: this.t.services.serviceDescriptions.paralytic },
-        [25]: { id: 'prepolovenie', name: this.t.services.serviceNames.prepolovenie, type: 'PREPOLOVENIE', desc: this.t.services.serviceDescriptions.prepolovenie },
-        [28]: { id: 'samaritan', name: this.t.services.serviceNames.samaritan, type: 'SAMARITAN', desc: this.t.services.serviceDescriptions.samaritan },
-        [35]: { id: 'blindman', name: this.t.services.serviceNames.blindman, type: 'BLINDMAN', desc: this.t.services.serviceDescriptions.blindman },
-        [38]: { id: 'apodosis', name: this.t.services.serviceNames.apodosis, type: 'APODOSIS', desc: this.t.services.serviceDescriptions.apodosis },
-        [39]: { id: 'ascension', name: this.t.services.serviceNames.ascension, type: 'ASCENSION', desc: this.t.services.serviceDescriptions.ascension },
-        [42]: { id: 'holyfathers', name: this.t.services.serviceNames.holyfathers, type: 'HOLYFATHERS', desc: this.t.services.serviceDescriptions.holyfathers },
-        [48]: { id: 'pentecostsaturday', name: this.t.services.serviceNames.pentecostsaturday, type: 'PENTECOSTSATURDAY', desc: this.t.services.serviceDescriptions.pentecostsaturday },
-        [49]: { id: 'pentecost', name: this.t.services.serviceNames.pentecost, type: 'PENTECOST', desc: this.t.services.serviceDescriptions.pentecost },
-        [50]: { id: 'holyspirit', name: this.t.services.serviceNames.holyspirit, type: 'HOLYSPIRIT', desc: this.t.services.serviceDescriptions.holyspirit },
-        [56]: { id: 'allsaints', name: this.t.services.serviceNames.allsaints, type: 'ALLSAINTS', desc: this.t.services.serviceDescriptions.allsaints },
-      };
-      const pd = pentDay[dayInfo.nday];
+      const pd = PENTECOSTARION[dayInfo.nday];
       if (pd) {
-        const templateName = pd.id.charAt(0).toUpperCase() + pd.id.slice(1);
-        special.push({
-          id: pd.id, name: pd.name, serviceType: pd.type,
-          template: templateName,
-          description: pd.desc,
-          titleNode: title(`${templateName}1`, pd.name),
-        });
+        special.push(this.defToService(pd));
       }
       // All Saints of Russia (appendix, same Sunday as All Saints)
       if (dayInfo.nday === 56) {
@@ -313,93 +266,29 @@ export class ServiceView {
 
     // First Week of Lent: complete daily cycle (Matins, Hours, Typica, Vespers, Compline)
     if (dayInfo.isLent && dayInfo.nday >= -48 && dayInfo.nday <= -43) {
-      const fwDay: Record<number, { id: string; name: string; type: string; desc: string }> = {
-        [-48]: { id: 'firstweekmonday', name: this.t.services.serviceNames.firstweekmonday, type: 'FIRSTWEEKMONDAY', desc: this.t.services.serviceDescriptions.firstweekmonday },
-        [-47]: { id: 'firstweektuesday', name: this.t.services.serviceNames.firstweektuesday, type: 'FIRSTWEEKTUESDAY', desc: this.t.services.serviceDescriptions.firstweektuesday },
-        [-46]: { id: 'firstweekwednesday', name: this.t.services.serviceNames.firstweekwednesday, type: 'FIRSTWEEKWEDNESDAY', desc: this.t.services.serviceDescriptions.firstweekwednesday },
-        [-45]: { id: 'firstweekthursday', name: this.t.services.serviceNames.firstweekthursday, type: 'FIRSTWEEKTHURSDAY', desc: this.t.services.serviceDescriptions.firstweekthursday },
-        [-44]: { id: 'firstweekfriday', name: this.t.services.serviceNames.firstweekfriday, type: 'FIRSTWEEKFRIDAY', desc: this.t.services.serviceDescriptions.firstweekfriday },
-        [-43]: { id: 'firstweeksaturday', name: this.t.services.serviceNames.firstweeksaturday, type: 'FIRSTWEEKSATURDAY', desc: this.t.services.serviceDescriptions.firstweeksaturday },
-      };
-      const fw = fwDay[dayInfo.nday];
+      const fw = FIRST_WEEK[dayInfo.nday];
       if (fw) {
-        const templateName = 'FirstWeek' + fw.id.charAt(0).toUpperCase() + fw.id.slice(1);
-        special.push({
-          id: fw.id, name: fw.name, serviceType: fw.type,
-          template: templateName,
-          description: fw.desc,
-          titleNode: title(`${templateName}1`, fw.name),
-        });
+        special.push(this.defToService(fw));
       }
     }
 
     // Festal Menaion: Great feasts on fixed Julian dates (Typikon Ch. 47)
-    const menaionFeast: Record<string, { id: string; name: string; type: string; desc: string }> = {
-      '9-8':  { id: 'nativitytheotokos', name: this.t.services.serviceNames.nativitytheotokos, type: 'NATIVITYTHEOTOKOS', desc: this.t.services.serviceDescriptions.nativitytheotokos },
-      '9-14': { id: 'exaltation', name: this.t.services.serviceNames.exaltation, type: 'EXALTATION', desc: this.t.services.serviceDescriptions.exaltation },
-      '11-21': { id: 'vvedenie', name: this.t.services.serviceNames.vvedenie, type: 'VVEDENIE', desc: this.t.services.serviceDescriptions.vvedenie },
-      '12-24': { id: 'nativityhours', name: this.t.services.serviceNames.nativityhours, type: 'NATIVITYHOURS', desc: this.t.services.serviceDescriptions.nativityhours },
-      '12-25': { id: 'nativity', name: this.t.services.serviceNames.nativity, type: 'NATIVITY', desc: this.t.services.serviceDescriptions.nativity },
-      '1-5':  { id: 'theophanyhours', name: this.t.services.serviceNames.theophanyhours, type: 'THEOPHANYHOURS', desc: this.t.services.serviceDescriptions.theophanyhours },
-      '1-6':  { id: 'theophany', name: this.t.services.serviceNames.theophany, type: 'THEOPHANY', desc: this.t.services.serviceDescriptions.theophany },
-      '2-2':  { id: 'sretenie', name: this.t.services.serviceNames.sretenie, type: 'SRETENIE', desc: this.t.services.serviceDescriptions.sretenie },
-      '3-25': { id: 'annunciation', name: this.t.services.serviceNames.annunciation, type: 'ANNUNCIATION', desc: this.t.services.serviceDescriptions.annunciation },
-      '6-24': { id: 'forerunnerbirth', name: this.t.services.serviceNames.forerunnerbirth, type: 'FORERUNNERBIRTH', desc: this.t.services.serviceDescriptions.forerunnerbirth },
-      '6-29': { id: 'peterpaul', name: this.t.services.serviceNames.peterpaul, type: 'PETERPAUL', desc: this.t.services.serviceDescriptions.peterpaul },
-      '8-6':  { id: 'transfiguration', name: this.t.services.serviceNames.transfiguration, type: 'TRANSFIGURATION', desc: this.t.services.serviceDescriptions.transfiguration },
-      '8-15': { id: 'dormition', name: this.t.services.serviceNames.dormition, type: 'DORMITION', desc: this.t.services.serviceDescriptions.dormition },
-      '8-29': { id: 'forerunnerbeheading', name: this.t.services.serviceNames.forerunnerbeheading, type: 'FORERUNNERBEHEADING', desc: this.t.services.serviceDescriptions.forerunnerbeheading },
-      // Middle feasts (fixed dates)
-      '9-25': { id: 'sergius', name: this.t.services.serviceNames.sergius, type: 'SERGIUS', desc: this.t.services.serviceDescriptions.sergius },
-      '9-26': { id: 'johntheologiansep', name: this.t.services.serviceNames.johntheologiansep, type: 'JOHNTHEOLOGIANSEP', desc: this.t.services.serviceDescriptions.johntheologiansep },
-      '10-1': { id: 'pokrov', name: this.t.services.serviceNames.pokrov, type: 'POKROV', desc: this.t.services.serviceDescriptions.pokrov },
-      '10-10': { id: 'ambrose', name: this.t.services.serviceNames.ambrose, type: 'AMBROSE', desc: this.t.services.serviceDescriptions.ambrose },
-      '10-11': { id: 'seventhcouncilefathers', name: this.t.services.serviceNames.seventhcouncilefathers, type: 'SEVENTHCOUNCILFATHERS', desc: this.t.services.serviceDescriptions.seventhcouncilefathers },
-      '10-22': { id: 'kazan', name: this.t.services.serviceNames.kazan, type: 'KAZAN', desc: this.t.services.serviceDescriptions.kazan },
-      '10-26': { id: 'demetrius', name: this.t.services.serviceNames.demetrius, type: 'DEMETRIUS', desc: this.t.services.serviceDescriptions.demetrius },
-      '11-8': { id: 'michaelsynaxis', name: this.t.services.serviceNames.michaelsynaxis, type: 'MICHAELSYNAXIS', desc: this.t.services.serviceDescriptions.michaelsynaxis },
-      '12-6': { id: 'nicholas', name: this.t.services.serviceNames.nicholas, type: 'NICHOLAS', desc: this.t.services.serviceDescriptions.nicholas },
-      '1-1': { id: 'circumcision', name: this.t.services.serviceNames.circumcision, type: 'CIRCUMCISION', desc: this.t.services.serviceDescriptions.circumcision },
-      '2-24': { id: 'findinghead1st', name: this.t.services.serviceNames.findinghead1st, type: 'FINDINGHEAD1ST', desc: this.t.services.serviceDescriptions.findinghead1st },
-      '3-9': { id: 'fortymartyrs', name: this.t.services.serviceNames.fortymartyrs, type: 'FORTYMARTYRS', desc: this.t.services.serviceDescriptions.fortymartyrs },
-      '5-8': { id: 'johntheologianmay', name: this.t.services.serviceNames.johntheologianmay, type: 'JOHNTHEOLOGIANMAY', desc: this.t.services.serviceDescriptions.johntheologianmay },
-      '5-9': { id: 'nicholastranslation', name: this.t.services.serviceNames.nicholastranslation, type: 'NICHOLASTRANSLATION', desc: this.t.services.serviceDescriptions.nicholastranslation },
-      '5-25': { id: 'findinghead3rd', name: this.t.services.serviceNames.findinghead3rd, type: 'FINDINGHEAD3RD', desc: this.t.services.serviceDescriptions.findinghead3rd },
-      '7-15': { id: 'vladimir', name: this.t.services.serviceNames.vladimir, type: 'VLADIMIR', desc: this.t.services.serviceDescriptions.vladimir },
-      '7-16': { id: 'sixcouncilfathers', name: this.t.services.serviceNames.sixcouncilfathers, type: 'SIXCOUNCILFATHERS', desc: this.t.services.serviceDescriptions.sixcouncilfathers },
-      '7-20': { id: 'elijah', name: this.t.services.serviceNames.elijah, type: 'ELIJAH', desc: this.t.services.serviceDescriptions.elijah },
-      '7-27': { id: 'panteleimon', name: this.t.services.serviceNames.panteleimon, type: 'PANTELEIMON', desc: this.t.services.serviceDescriptions.panteleimon },
-      '8-1': { id: 'processioncross', name: this.t.services.serviceNames.processioncross, type: 'PROCESSIONCROSS', desc: this.t.services.serviceDescriptions.processioncross },
-    };
-    const feast = menaionFeast[`${dayInfo.month}-${dayInfo.day}`];
+    const feast = MENAION_FEAST[`${dayInfo.month}-${dayInfo.day}`];
     if (feast) {
-      const templateName = feast.id.charAt(0).toUpperCase() + feast.id.slice(1);
-      special.push({
-        id: feast.id, name: feast.name, serviceType: feast.type,
-        template: templateName,
-        description: feast.desc,
-        titleNode: title(`${templateName}1`, feast.name),
-      });
+      special.push(this.defToService(feast));
     }
     // Movable Sundays of the Nativity season (dow-based)
     if (dayInfo.dow === 0 && dayInfo.month === 12) {
-      const movable: { id: string; name: string; type: string; desc: string }[] = [];
+      let def: ServiceTabDef | null = null;
       if (dayInfo.day >= 11 && dayInfo.day <= 17) {
-        movable.push({ id: 'forefatherssunday', name: this.t.services.serviceNames.forefatherssunday, type: 'FOREFATHERSSUNDAY', desc: this.t.services.serviceDescriptions.forefatherssunday });
+        def = HOLY_WEEK['FOREFATHERSSUNDAY'];
       } else if (dayInfo.day >= 18 && dayInfo.day <= 24) {
-        movable.push({ id: 'holyfathersnativity', name: this.t.services.serviceNames.holyfathersnativity, type: 'HOLYFATHERSNATIVITY', desc: this.t.services.serviceDescriptions.holyfathersnativity });
+        def = HOLY_WEEK['HOLYFATHERSNATIVITY'];
       } else if (dayInfo.day >= 26 && dayInfo.day <= 31) {
-        movable.push({ id: 'sundayafternativity', name: this.t.services.serviceNames.sundayafternativity, type: 'SUNDAYAFTERNATIVITY', desc: this.t.services.serviceDescriptions.sundayafternativity });
+        def = HOLY_WEEK['SUNDAYAFTERNATIVITY'];
       }
-      const mv = movable[0];
-      if (mv) {
-        const templateName = mv.id.charAt(0).toUpperCase() + mv.id.slice(1);
-        special.push({
-          id: mv.id, name: mv.name, serviceType: mv.type,
-          template: templateName,
-          description: mv.desc,
-          titleNode: title(`${templateName}1`, mv.name),
-        });
+      if (def) {
+        special.push(this.defToService(def));
       }
     }
 
@@ -427,85 +316,37 @@ export class ServiceView {
     if (dayInfo.isLent) {
       // Palm Sunday: Vespers + Matins
       if (dayInfo.nday === -7) {
-        special.push({
-          id: 'palmsunday', name: this.t.services.serviceNames.palmsunday, serviceType: 'PALMSUNDAY',
-          template: 'PalmSunday',
-          description: this.t.services.serviceDescriptions.palmsunday,
-          titleNode: title('PalmSunday1', this.t.services.serviceNames.palmsunday),
-        });
+        special.push(this.defToService(HOLY_WEEK['PALMSUNDAY']));
       }
       // Great Monday through Thursday: daily cycle (Matins, Hours, Typica, Vespers)
-      const greatDay: Record<number, { id: string; name: string; type: string; desc: string }> = {
-        [-6]: { id: 'greatmonday', name: this.t.services.serviceNames.greatmonday, type: 'GREATMONDAY', desc: this.t.services.serviceDescriptions.greatmonday },
-        [-5]: { id: 'greattuesday', name: this.t.services.serviceNames.greattuesday, type: 'GREATTUESDAY', desc: this.t.services.serviceDescriptions.greattuesday },
-        [-4]: { id: 'greatwednesday', name: this.t.services.serviceNames.greatwednesday, type: 'GREATWEDNESDAY', desc: this.t.services.serviceDescriptions.greatwednesday },
-        [-3]: { id: 'greatthursday', name: this.t.services.serviceNames.greatthursday, type: 'GREATTHURSDAY', desc: this.t.services.serviceDescriptions.greatthursday },
+      const greatDay: Record<number, string> = {
+        [-6]: 'GREATMONDAY', [-5]: 'GREATTUESDAY', [-4]: 'GREATWEDNESDAY', [-3]: 'GREATTHURSDAY',
       };
       const gd = greatDay[dayInfo.nday];
       if (gd) {
-        special.push({
-          id: gd.id, name: gd.name, serviceType: gd.type,
-          template: gd.id.charAt(0).toUpperCase() + gd.id.slice(1),
-          description: gd.desc,
-          titleNode: title(`${gd.id.charAt(0).toUpperCase() + gd.id.slice(1)}1`, gd.name),
-        });
+        special.push(this.defToService(HOLY_WEEK[gd]));
       }
       // Matins of the 12 Passion Gospels: Great Thursday evening (Great Friday Matins)
       if (dayInfo.nday === -3) {
-        special.push({
-          id: 'passiongospels', name: this.t.services.serviceNames.passiongospels, serviceType: 'PASSIONGOSPELS',
-          template: 'PassionGospels',
-          description: this.t.services.serviceDescriptions.passiongospels,
-          titleNode: title('PassionGospels1', this.t.services.serviceNames.passiongospels),
-        });
+        special.push(this.defToService(HOLY_WEEK['PASSIONGOSPELS']));
       }
       // Royal Hours of Great Friday
       if (dayInfo.nday === -2) {
-        special.push({
-          id: 'royalhoursfriday', name: this.t.services.serviceNames.royalhoursfriday, serviceType: 'ROYALHOURSFRIDAY',
-          template: 'RoyalHoursFriday',
-          description: this.t.services.serviceDescriptions.royalhoursfriday,
-          titleNode: title('RoyalHoursFriday1', this.t.services.serviceNames.royalhoursfriday),
-        });
+        special.push(this.defToService(HOLY_WEEK['ROYALHOURSFRIDAY']));
       }
       // Lamentations Matins: Great Saturday Matins (served Friday night)
       if (dayInfo.nday === -1) {
-        special.push({
-          id: 'lamentations', name: this.t.services.serviceNames.lamentations, serviceType: 'LAMENTATIONS',
-          template: 'Lamentations',
-          description: this.t.services.serviceDescriptions.lamentations,
-          titleNode: title('Lamentations1', this.t.services.serviceNames.lamentations),
-        });
+        special.push(this.defToService(HOLY_WEEK['LAMENTATIONS']));
       }
       // Vespers of the Burial + cell Compline: Great Friday evening
       if (dayInfo.nday === -2) {
-        special.push({
-          id: 'burialvespers', name: this.t.services.serviceNames.burialvespers, serviceType: 'BURIALVESPERS',
-          template: 'BurialVespers',
-          description: this.t.services.serviceDescriptions.burialvespers,
-          titleNode: title('BurialVespers1', this.t.services.serviceNames.burialvespers),
-        });
+        special.push(this.defToService(HOLY_WEEK['BURIALVESPERS']));
       }
       // Holy Saturday: Hours, Vespers+Liturgy of St. Basil, Midnight Office
       if (dayInfo.nday === -1) {
-        special.push({
-          id: 'saturdayhours', name: this.t.services.serviceNames.saturdayhours, serviceType: 'SATURDAYHOURS',
-          template: 'SaturdayHours',
-          description: this.t.services.serviceDescriptions.saturdayhours,
-          titleNode: title('SaturdayHours1', this.t.services.serviceNames.saturdayhours),
-        });
-        special.push({
-          id: 'saturdayliturgy', name: this.t.services.serviceNames.saturdayliturgy, serviceType: 'SATURDAYLITURGY',
-          template: 'SaturdayVespersLiturgy',
-          description: this.t.services.serviceDescriptions.saturdayliturgy,
-          titleNode: title('SaturdayVespersLiturgy1', this.t.services.serviceNames.saturdayliturgy),
-        });
-        special.push({
-          id: 'saturdaymidnight', name: this.t.services.serviceNames.saturdaymidnight, serviceType: 'SATURDAYMIDNIGHT',
-          template: 'SaturdayMidnight',
-          description: this.t.services.serviceDescriptions.saturdaymidnight,
-          titleNode: title('SaturdayMidnight1', this.t.services.serviceNames.saturdaymidnight),
-        });
+        special.push(this.defToService(HOLY_WEEK['SATURDAYHOURS']));
+        special.push(this.defToService(HOLY_WEEK['SATURDAYLITURGY']));
+        special.push(this.defToService(HOLY_WEEK['SATURDAYMIDNIGHT']));
       }
     }
 
@@ -513,6 +354,19 @@ export class ServiceView {
       daily[0].divider = true;
     }
     return [...special, ...daily];
+  }
+
+  private defToService(def: ServiceTabDef): ServiceDef {
+    const names = this.t.services.serviceNames as Record<string, string>;
+    const descs = this.t.services.serviceDescriptions as Record<string, string>;
+    return {
+      id: def.id,
+      name: names[def.id],
+      serviceType: def.serviceType,
+      template: def.template,
+      description: descs[def.id],
+      titleNode: title(`${def.template}1`, names[def.id]),
+    };
   }
 
   private async loadToneData(serviceType: string): Promise<{ troparion1?: string; kontakion1?: string; theotokion1?: string; prokimenon1?: string; alleluia1?: string; hypakoe1?: string } | null> {
@@ -1001,167 +855,11 @@ export class ServiceView {
         }
       }
 
-      // Load Holy Week service data
-      const holyWeekVarMap: Record<string, string> = {
-        PALMSUNDAY: 'PPalmSunday',
-        GREATMONDAY: 'PGreatMonday',
-        GREATTUESDAY: 'PGreatTuesday',
-        GREATWEDNESDAY: 'PGreatWednesday',
-        GREATTHURSDAY: 'PGreatThursday',
-        PASSIONGOSPELS: 'PPassionGospels',
-        ROYALHOURSFRIDAY: 'PRoyalHoursFriday',
-        LAMENTATIONS: 'PLamentations',
-        BURIALVESPERS: 'PBurialVespers',
-        SATURDAYHOURS: 'PSaturdayHours',
-        SATURDAYLITURGY: 'PSaturdayVespersLiturgy',
-        SATURDAYMIDNIGHT: 'PSaturdayMidnight',
-        PASCHA: 'PPascha',
-        BRIGHTMONDAY: 'PBrightMonday',
-        BRIGHTTUESDAY: 'PBrightTuesday',
-        BRIGHTWEDNESDAY: 'PBrightWednesday',
-        BRIGHTTHURSDAY: 'PBrightThursday',
-        BRIGHTFRIDAY: 'PBrightFriday',
-        BRIGHTSATURDAY: 'PBrightSaturday',
-        ANTIPASCHA: 'PAntipascha',
-        MYRRHBEARERS: 'PMyrrhbearers',
-        PARALYTIC: 'PParalytic',
-        PREPOLOVENIE: 'PPrepolovenie',
-        SAMARITAN: 'PSamaritan',
-        BLINDMAN: 'PBlindMan',
-        APODOSIS: 'PApodosis',
-        ASCENSION: 'PAscension',
-        HOLYFATHERS: 'PHolyFathers',
-        PENTECOSTSATURDAY: 'PPentecostSaturday',
-        PENTECOST: 'PPentecost',
-        HOLYSPIRIT: 'PHolySpirit',
-        ALLSAINTS: 'PAllSaints',
-        RUSSIANSAINTS: 'PRussianSaints',
-        FIRSTWEEKMONDAY: 'PFirstWeekMonday',
-        FIRSTWEEKTUESDAY: 'PFirstWeekTuesday',
-        FIRSTWEEKWEDNESDAY: 'PFirstWeekWednesday',
-        FIRSTWEEKTHURSDAY: 'PFirstWeekThursday',
-        FIRSTWEEKFRIDAY: 'PFirstWeekFriday',
-        FIRSTWEEKSATURDAY: 'PFirstWeekSaturday',
-        NATIVITYTHEOTOKOS: 'PNativityTheotokos',
-        EXALTATION: 'PExaltation',
-        VVEDENIE: 'PVvedenie',
-        NATIVITYHOURS: 'PNativityHours',
-        NATIVITY: 'PNativity',
-        THEOPHANYHOURS: 'PTheophanyHours',
-        THEOPHANY: 'PTheophany',
-        SRETENIE: 'PSretenie',
-        ANNUNCIATION: 'PAnnunciation',
-        FORERUNNERBIRTH: 'PForerunnerBirth',
-        PETERPAUL: 'PPeterPaul',
-        TRANSFIGURATION: 'PTransfiguration',
-        DORMITION: 'PDormition',
-        FORERUNNERBEHEADING: 'PForerunnerBeheading',
-        SERGIUS: 'PSergius',
-        JOHNTHEOLOGIANSEP: 'PJohnTheologianSep',
-        POKROV: 'PPokrov',
-        AMBROSE: 'PAmbrose',
-        SEVENTHCOUNCILFATHERS: 'PSeventhCouncilFathers',
-        KAZAN: 'PKazan',
-        DEMETRIUS: 'PDemetrius',
-        MICHAELSYNAXIS: 'PMichaelSynaxis',
-        NICHOLAS: 'PNicholas',
-        CIRCUMCISION: 'PCircumcision',
-        FINDINGHEAD1ST: 'PFindingHead1st',
-        FORTYMARTYRS: 'PFortyMartyrs',
-        JOHNTHEOLOGIANMAY: 'PJohnTheologianMay',
-        NICHOLASTRANSLATION: 'PNicholasTranslation',
-        FINDINGHEAD3RD: 'PFindingHead3rd',
-        VLADIMIR: 'PVladimir',
-        SIXCOUNCILFATHERS: 'PSixCouncilsFathers',
-        ELIJAH: 'PElijah',
-        PANTELEIMON: 'PPanteleimon',
-        PROCESSIONCROSS: 'PProcessionCross',
-        FOREFATHERSSUNDAY: 'PForefathersSunday',
-        HOLYFATHERSNATIVITY: 'PHolyFathersNativity',
-        SUNDAYAFTERNATIVITY: 'PSundayAfterNativity',
-      };
-      const holyWeekDir: Record<string, string> = {
-        PALMSUNDAY: 'palm-sunday',
-        GREATMONDAY: 'great-monday',
-        GREATTUESDAY: 'great-tuesday',
-        GREATWEDNESDAY: 'great-wednesday',
-        GREATTHURSDAY: 'great-thursday',
-        PASSIONGOSPELS: 'passion-gospels',
-        ROYALHOURSFRIDAY: 'royal-hours-friday',
-        LAMENTATIONS: 'lamentations',
-        BURIALVESPERS: 'burial-vespers',
-        SATURDAYHOURS: 'saturday-hours',
-        SATURDAYLITURGY: 'saturday-vespers-liturgy',
-        SATURDAYMIDNIGHT: 'saturday-midnight',
-        PASCHA: 'pascha',
-        BRIGHTMONDAY: 'bright-monday',
-        BRIGHTTUESDAY: 'bright-tuesday',
-        BRIGHTWEDNESDAY: 'bright-wednesday',
-        BRIGHTTHURSDAY: 'bright-thursday',
-        BRIGHTFRIDAY: 'bright-friday',
-        BRIGHTSATURDAY: 'bright-saturday',
-        ANTIPASCHA: 'antipascha',
-        MYRRHBEARERS: 'myrrhbearers',
-        PARALYTIC: 'paralytic',
-        PREPOLOVENIE: 'prepolovenie',
-        SAMARITAN: 'samaritan',
-        BLINDMAN: 'blindman',
-        APODOSIS: 'apodosis',
-        ASCENSION: 'ascension',
-        HOLYFATHERS: 'holyfathers',
-        PENTECOSTSATURDAY: 'pentecostsaturday',
-        PENTECOST: 'pentecost',
-        HOLYSPIRIT: 'holyspirit',
-        ALLSAINTS: 'allsaints',
-        RUSSIANSAINTS: 'russiansaints',
-        FIRSTWEEKMONDAY: 'first-week-monday',
-        FIRSTWEEKTUESDAY: 'first-week-tuesday',
-        FIRSTWEEKWEDNESDAY: 'first-week-wednesday',
-        FIRSTWEEKTHURSDAY: 'first-week-thursday',
-        FIRSTWEEKFRIDAY: 'first-week-friday',
-        FIRSTWEEKSATURDAY: 'first-week-saturday',
-        NATIVITYTHEOTOKOS: 'nativity-theotokos',
-        EXALTATION: 'exaltation',
-        VVEDENIE: 'vvedenie',
-        NATIVITYHOURS: 'nativity-hours',
-        NATIVITY: 'nativity',
-        THEOPHANYHOURS: 'theophany-hours',
-        THEOPHANY: 'theophany',
-        SRETENIE: 'sretenie',
-        ANNUNCIATION: 'annunciation',
-        FORERUNNERBIRTH: 'forerunner-birth',
-        PETERPAUL: 'peter-paul',
-        TRANSFIGURATION: 'transfiguration',
-        DORMITION: 'dormition',
-        FORERUNNERBEHEADING: 'forerunner-beheading',
-        SERGIUS: 'sergius',
-        JOHNTHEOLOGIANSEP: 'johntheologian-sep',
-        POKROV: 'pokrov',
-        AMBROSE: 'ambrose',
-        SEVENTHCOUNCILFATHERS: 'seventh-council-fathers',
-        KAZAN: 'kazan',
-        DEMETRIUS: 'demetrius',
-        MICHAELSYNAXIS: 'michael-synaxis',
-        NICHOLAS: 'nicholas',
-        CIRCUMCISION: 'circumcision',
-        FINDINGHEAD1ST: 'finding-head-1st',
-        FORTYMARTYRS: 'forty-martyrs',
-        JOHNTHEOLOGIANMAY: 'johntheologian-may',
-        NICHOLASTRANSLATION: 'nicholas-translation',
-        FINDINGHEAD3RD: 'finding-head-3rd',
-        VLADIMIR: 'vladimir',
-        SIXCOUNCILFATHERS: 'six-councils-fathers',
-        ELIJAH: 'elijah',
-        PANTELEIMON: 'panteleimon',
-        PROCESSIONCROSS: 'procession-cross',
-        FOREFATHERSSUNDAY: 'forefathers-sunday',
-        HOLYFATHERSNATIVITY: 'holy-fathers-nativity',
-        SUNDAYAFTERNATIVITY: 'sunday-after-nativity',
-      };
-      const hwVar = holyWeekVarMap[service.serviceType];
-      if (hwVar) {
-        const nodes = await this.loadHolyWeekData(holyWeekDir[service.serviceType]);
-        if (nodes) varNodes.set(hwVar, nodes);
+      // Load data-backed service content (Holy Week, Bright Week, feasts, first week)
+      const hwDef = HOLY_WEEK[service.serviceType];
+      if (hwDef && hwDef.dir) {
+        const nodes = await this.loadHolyWeekData(hwDef.dir);
+        if (nodes) varNodes.set(holyWeekVarName(hwDef), nodes);
       }
 
       // Load Epistle and Gospel readings from commemoration
@@ -1244,8 +942,8 @@ export class ServiceView {
         fetchText: this.createFetchText(),
         fetchPrayerNodes: this.createFetchPrayerNodes(),
         fetchServiceNodes: async (path: string): Promise<ServiceNode[] | null> => {
-          const varMatch = path.match(/Services\/Var\/(\w+)\.xml$/);
-          if (varMatch) {
+          const varMatch = path.match(/Services\/(?:Var\/)?(\w+)\.xml$/);
+          if (varMatch && varNodes.has(varMatch[1])) {
             return varNodes.get(varMatch[1]) || null;
           }
           return this.fetchServiceNodes(path);
