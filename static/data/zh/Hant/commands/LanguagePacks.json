@@ -1,0 +1,392 @@
+{
+  "LANGUAGEPACKS": {
+    "PHRASE": [
+      {
+        "@_Key": "NameLocal",
+        "@_Value": "繁體中文"
+      },
+      {
+        "@_Key": "NameEnglish",
+        "@_Value": "Traditional Chinese"
+      },
+      {
+        "@_Key": "BibleV",
+        "@_Value": "zh/Hant/bible/cuv"
+      },
+      {
+        "@_Key": "Authors",
+        "@_Value": "亞歷山大·安德瑞耶/,尤里·斯查德"
+      },
+      {
+        "@_Key": "Year",
+        "@_Value": "二〇〇六～二〇一三年"
+      },
+      {
+        "@_Key": "And",
+        "@_Value": "、"
+      },
+      {
+        "@_Key": "Comma",
+        "@_Value": "、"
+      },
+      {
+        "@_Key": "Copyright",
+        "@_Value": "^AA^YY版權所有"
+      },
+      {
+        "@_Key": "0",
+        "@_Value": "波諾馬里",
+        "@_Comment": "This is the only entry for this key."
+      },
+      {
+        "@_Key": "1",
+        "@_Value": "主顯月/,獻主月/,福音月/,凱旋月/,聖君月/,使徒月/,先知月/,安息月/,聖架月/,帡幪月/,入殿月/,降生月",
+        "@_Comment": "The names of the liturgical months in the nominative case, that is, for use in the format 'Month 2008'."
+      },
+      {
+        "@_Key": "2",
+        "@_Value": "主日/,瞻禮二/,瞻禮三/,瞻禮四/,瞻禮五/,預備日/,安息日",
+        "@_Comment": "The names of the liturgical week in the nominative case, that is, for use in the format 'Year Month Date Week'."
+      },
+      {
+        "@_Key": "3",
+        "@_Value": "主顯月/,獻主月/,福音月/,凱旋月/,聖君月/,使徒月/,先知月/,安息月/,聖架月/,帡幪月/,入殿月/,降生月",
+        "@_Comment": "The names of the liturgical months in the genitive case, that is, for use in the format 'Wednesday, 28 March 2008'."
+      },
+      {
+        "@_Key": "4",
+        "@_Value": "一月/,二月/,三月/,四月/,五月/,六月/,七月/,八月/,九月/,十月/,十一月/,十二月",
+        "@_Comment": "The names of the civil months in the genitive case, that is, for use in the format 'Wednesday, 28 March 2008'."
+      },
+      {
+        "@_Key": "5",
+        "@_Value": "星期天/,星期一/,星期二/,星期三/,星期四/,星期五/,星期六",
+        "@_Comment": "The names of the civil week in the nominative case, that is, for use in the format 'Year Month Date Week'."
+      },
+      {
+        "@_Key": "Options",
+        "@_Value": "選擇"
+      },
+      {
+        "@_Key": "File",
+        "@_Value": "文件/,保存/,一般的文件選擇/,這會保存當前顯示/,退出/,這將退出程序/,打印/,這將打印當前文本框"
+      },
+      {
+        "@_Key": "SMenu",
+        "@_Value": "聖人/,Actions for 查找 and sorting infromation 關於 saints/,查找/,查找 for information 關於 a given saint"
+      },
+      {
+        "@_Key": "Services",
+        "@_Value": "禮儀/,事奉聖禮/,暮時課/,晚堂課/,晨時課/,一時課/,三時課/,六時課/,九時課/,皇時課/,守夜祈禱/,中夜課/,代聖體血禮儀/,This allows the user to compile the 禮儀/,Compile 事奉聖禮 for the given day/,Compile 暮時課 for the given day/,Compile 晚堂課 for the given day/,Compile 晨時課 for the day/,Compile 一時課 for the given day/,Compile 三時課 for the given day/,Compile 六時課 for the given day/,Compile 九時課 for the given day/,Compile 皇時課 for the given day/,Compile the 守夜祈禱 for the given day/,Compile 中夜課 for the given day/,Compile 代聖體血禮儀 for the given day"
+      },
+      {
+        "@_Key": "Bible",
+        "@_Value": "聖經/,這允許用戶存取聖經"
+      },
+      {
+        "@_Key": "Help",
+        "@_Value": "求助/,This accesses the 求助文件s./,關於/,Access the 關於 文件/,Go to 求助"
+      },
+      {
+        "@_Key": "LanguageMenu",
+        "@_Value": "語言/,選擇 the Interface 語言/,選擇s the Interface 語言/,OK/,In order for the interface 語言 to change, please restart the 程序./,No/,Do you wish to overwrite the 文件:/,Are you sure you wish to close this window?"
+      },
+      {
+        "@_Key": "About",
+        "@_Value": "版本/,波諾馬里的設計為用戶提供了訪問，了解和體驗的豐富和美麗的正教聖傳。該程序是目前發展階段。/,在波諾馬里項目中，我們認為禮典信息應當免費——也就是說不收費也不受版權的制約。上帝並沒有保留聖經的版權，聖約安也沒有保留《八音集》的版權。您可以從本站獲得任何東西並用於任何用途，只要您信任我們。如果您要發佈您自己對本站信息的修改成果，您需要在許可的體系下進行。/,版權所有/,/,為感謝：中文版由正教會中華諸聖會提供。"
+      },
+      {
+        "@_Key": "GospelSelection",
+        "@_Value": "主顯跳轉/,路喀跳轉/,福音經課/,選擇所需福音經課。"
+      },
+      {
+        "@_Key": "Tones",
+        "@_Value": "第八調/,第一調/,第二調/,第三調/,第四調/,第五調/,第六調/,第七調/,第八調",
+        "@_Comments": "To allow different formatting of the tones in other 語言, such as Greek (with letters) and Old Church Slavonic (with Cyrillic letters)"
+      },
+      {
+        "@_Key": "Main",
+        "@_Value": "格里高利歷/,<B>日出</B>：/,<B>日落</B>：/,<B>月相</B>：/,第TT調式/,信息 /,你確定要退出嗎？"
+      },
+      {
+        "@_Key": "gospel",
+        "@_Value": "聖福音經"
+      },
+      {
+        "@_Key": "apostol",
+        "@_Value": "使徒經書"
+      },
+      {
+        "@_Key": "matins",
+        "@_Value": "晨時課"
+      },
+      {
+        "@_Key": "vespers",
+        "@_Value": "暮時課"
+      },
+      {
+        "@_Key": "1st hour",
+        "@_Value": "一時課"
+      },
+      {
+        "@_Key": "3rd hour",
+        "@_Value": "三時課"
+      },
+      {
+        "@_Key": "6th hour",
+        "@_Value": "六時課"
+      },
+      {
+        "@_Key": "9th hour",
+        "@_Value": "九時課"
+      },
+      {
+        "@_Key": "Fasts",
+        "@_Value": "免齋期/,嚴格規定齋日/,齋日（酒、油可食）/,齋日（魚、酒及油可食）/,齋戒規則：/,錯誤 calculating fast information/,：按照修行規矩：/,禁食/,幹食/,免油熱食/,齋日（魚子、酒及油可食）/,齋日（Meat is excluded）/,齋日（酒可飲）/,肉類和動物製品/,乳製品/,魚/,魚子/,油/,酒/,幹食/,都/,都/,都/,可食用/,不可食用/,及/,, while/,齋日："
+      },
+      {
+        "@_Key": "Week1",
+        "@_Value": "主日/,瞻禮二/,瞻禮三/,瞻禮四/,瞻禮五/,預備日/,安息日",
+        "@_Comment": "This the abbreviation of the days of the week."
+      },
+      {
+        "@_Key": "Phases",
+        "@_Value": "新月（朔）/,眉月（盈眉月）/,上弦月/,盈凸月/,滿月/,虧凸月/,下弦月/,殘月（虧眉月）",
+        "@_Comment": "月相"
+      },
+      {
+        "@_Key": "Primes",
+        "@_Value": "本日沒有聚會/,一時課/,差遣頌於/,丟失/,集禱頌於/,座"
+      },
+      {
+        "@_Key": "RoyalHours",
+        "@_Value": "本日沒有皇時課/,皇時課"
+      },
+      {
+        "@_Key": "DayReading",
+        "@_Value": "於主日/,於瞻禮二/,於瞻禮三/,於瞻禮四/,於瞻禮五/,於預備日/,於安息日",
+        "@_Comment": "These are the forms put in brackets after transferred readings (Gospel and Apostol)."
+      },
+      {
+        "@_Key": "DateFormat",
+        "@_Value": "YY年MMDD日WW",
+        "@_Comment": "This will display a type similar to 1999年十月4日星期一. The permissible codes are WW for Weekname, DD for the day number, MM for the month, YY for the year. Any additonal formatting can be included such as comma after any number."
+      },
+      {
+        "@_Key": "Feasts",
+        "@_Value": "主耶穌基督受割禮日/,主顯節/,施浸禮者聖約安誕辰/,聖裴特若及聖帕弗羅/,主易聖容節/,聖母安息節/,施浸禮者聖約安授首紀念日/,聖母誕辰節/,舉揚聖架節/,聖母護守節/,誕神女進殿節/,主降生節/,主葩斯哈：聖葩斯哈主日及誕神女福音節/,聖葩斯哈主日/,誕神女福音節/,五旬節/,主升天節/,聖枝主日/,主進殿節"
+      },
+      {
+        "@_Key": "Helpers",
+        "@_Value": "保存 to a html 文件."
+      },
+      {
+        "@_Key": "ServiceRead",
+        "@_Value": "所需標題丟失。/,There was a serious 錯誤 reading the 文件: /,所需命令丟失。/,所需頁眉丟失。/,錯誤 finding 所需 information:"
+      },
+      {
+        "@_Key": "Errors",
+        "@_Value": "找不到 /,Unable to process floater # /,錯誤 at day /,Malformed expression: Not Enough Brackets/,Malformed expression:/,was 找不到/,錯誤 Reading the values/,無效的 Month/,無效的 Day:/,in/,A julian day must be greater than 0"
+      },
+      {
+        "@_Key": "PrimeSelection",
+        "@_Value": "誦經士/,司祭/,主教/,單獨/,無始/,無終/,無始無終/,儀式類型"
+      },
+      {
+        "@_Key": "Commemoration",
+        "@_Value": "錯誤 reading the Hashtable!\\nMissing element: /, with Tag: /,錯誤 reading the Hashtable!\\nMissing Node: /,錯誤 reading the Hashtable!!!",
+        "@_Comments": "The spaces must be maintained, as well as the new lines \\n"
+      },
+      {
+        "@_Key": "BibleW",
+        "@_Value": "前一章/,全章/,下一章/,收藏經文/,複製經文/,保存經文/,打印經文/,波諾馬里聖經讀者/,錯誤 reading bml文件: /,Resource 找不到:"
+      },
+      {
+        "@_Key": "Terce",
+        "@_Value": "本日沒有聚會/,三時課/,差遣頌於/,丟失/,集禱頌於/,座"
+      },
+      {
+        "@_Key": "Sexte",
+        "@_Value": "本日沒有聚會/,六時課/,差遣頌於/,丟失/,集禱頌於/,座"
+      },
+      {
+        "@_Key": "None",
+        "@_Value": "本日沒有聚會/,九時課/,差遣頌於/,丟失/,集禱頌於/,座"
+      },
+      {
+        "@_Key": "FontFaceM",
+        "@_Value": "MingLiU",
+        "@_Comment": "This is the 字體 to be used for 顯示 all the relevant information on screen  for the Main interface. A blank entry of \"\" will 選擇 the default 字體."
+      },
+      {
+        "@_Key": "FontSizeM",
+        "@_Value": "24",
+        "@_Comment": "The size of the 字體  for the Main interface, since some 語言s need a larger 字體 size to be legible. A blank entry will give the default value of 12."
+      },
+      {
+        "@_Key": "FontFaceL",
+        "@_Value": "MingLiU",
+        "@_Comment": "This is the 字體 to be used for 顯示 information in the Liturgical aspect. At times, the 字體 of the Liturgics will be different from that of the main Screen (for example, Russian interface; Church Slavonic Liturgics)."
+      },
+      {
+        "@_Key": "FontSizeL",
+        "@_Value": "24",
+        "@_Comment": "The size of the 字體  for the Liturgics aspect (see FontFaceL) for explanation, since some 語言 need a larger 字體 size to be legible. A blank entry will give the default value of 12."
+      },
+      {
+        "@_Key": "CommSep",
+        "@_Value": "；",
+        "@_Comment": "This is the mark to separate the different commemorations that are 顯示."
+      },
+      {
+        "@_Key": "ReadSep",
+        "@_Value": "；",
+        "@_Comment": "This is the mark to separate the readings."
+      },
+      {
+        "@_Key": "Colon",
+        "@_Value": "：",
+        "@_Comment": "This is for everytime that a colon is required."
+      },
+      {
+        "@_Key": "Language",
+        "@_Value": "zh_Hant",
+        "@_Comment": "This is the 2 letter ISO code for the given 語言. This will also determine component orientation, for example left-to-right, right-to-left (Hebrew, Arabic, Farsi), top-right-to-bottom-left (Traditional Chinese, Korean, Japanese), and top-left-to-bottom-right (Traditional Mongolian)."
+      },
+      {
+        "@_Key": "Country",
+        "@_Value": "HK",
+        "@_Comment": "This is the 2 letter ISO code for the given country. This may be required later on for some things."
+      },
+      {
+        "@_Key": "ZeroPoint",
+        "@_Value": "0",
+        "@_Comment": "This is the Unicode location for the starting point of the numbers. Changing it to a different starting point will allow any non-Western decimal system to be used. For 'Arabic' numerals (0,1,2,3,4,5...) the starting point is 0!"
+      },
+      {
+        "@_Key": "Ideographic",
+        "@_Value": "0",
+        "@_Comment": "This allows ideographic numerals to be 顯示 instead of the normal decimal based values, that is, 145 will be 顯示 as for example, CXLV. 1 = yes!"
+      },
+      {
+        "@_Key": "TimeF",
+        "@_Value": "HH時MM分",
+        "@_Comment": "This gives the format for the time. The 24-hour clock will be used."
+      },
+      {
+        "@_Key": "LivesW",
+        "@_Value": "生平/,差遣頌/,特別旋律：/,集禱頌/,第TT調式/,; /,Information 關於 this commemoration 丟失.",
+        "@_Comment": "A space (ifrequired) should be placed before and after the 2nd entry."
+      },
+      {
+        "@_Key": "IconW",
+        "@_Value": "上一頁聖像/,下一頁聖像/,聖像文件找不到。"
+      },
+      {
+        "@_Key": "Colon",
+        "@_Value": "：",
+        "@_Note": "This is how a colon is to appear in the given texts."
+      },
+      {
+        "@_Key": "Commemoration2",
+        "@_Value": "（For %getN(^CC,Short)）",
+        "@_Comments": "%getN is a generalised grammar engine that will return the appropriate grammatical form. The format is Noun (in this case to be specified so ^CC) and the desired case (as defined in the commemoration files)"
+      },
+      {
+        "@_Key": "Commemoration3",
+        "@_Value": "Name not found",
+        "@_Comments": "Failure to find any name for a given commemoration!"
+      },
+      {
+        "@_Key": "Rank0",
+        "@_Value": "^NF"
+      },
+      {
+        "@_Key": "Rank1",
+        "@_Value": "^NF"
+      },
+      {
+        "@_Key": "Rank2",
+        "@_Value": "<span style=\"font-family:Ponomar Unicode TT;font-size:130%\">🕃</span><I>^NF</I>"
+      },
+      {
+        "@_Key": "Rank3",
+        "@_Value": "<span style=\"color:red;font-family:Ponomar Unicode TT;font-size:130%\">🕃</span><I>^NF</I>"
+      },
+      {
+        "@_Key": "Rank4",
+        "@_Value": "<span style=\"color:red;font-family:Ponomar Unicode TT;font-size:130%\">🕂</span><B>^NF</B>"
+      },
+      {
+        "@_Key": "Rank5",
+        "@_Value": "<span style=\"color:red\"><span style=\"font-family:Ponomar Unicode TT;font-size:130%\">🕁</span>^NF</span>"
+      },
+      {
+        "@_Key": "Rank6",
+        "@_Value": "<span style=\"color:red\"><span style=\"font-family:Ponomar Unicode TT;font-size:130%\"%>🕀</span><B>^NF</B></span>"
+      },
+      {
+        "@_Key": "PadH",
+        "@_Value": "1",
+        "@_Note": "This allows the time value to be displayed with at least the given number of digits. Must be equal to or greater than 1"
+      },
+      {
+        "@_Key": "PadM",
+        "@_Value": "2",
+        "@_Note": "This allows the time value to be displayed with at least the given number of digits. Must be equal to or greater than 1"
+      },
+      {
+        "@_Key": "OrderBox",
+        "@_Value": "YY",
+        "@_Note": "This determine the order in which the Month Year selection boxes in the Main display for the calendar are displayed. MM implies that the month will come first, while YY implies that the year will do so."
+      },
+      {
+        "@_Key": "IconSearch",
+        "@_Value": "cu/ru/,el/,en",
+        "@_Note": "There is no need to include the current language and its path up, as it will be searched by default. Similarly, only the lowest desired searachable path should be considered, as the programme will by default search up the tree from the given point."
+      },
+      {
+        "@_Key": "AM",
+        "@_Value": "（創世^YYAM年）",
+        "@_Note": "This displays the anno mundi year in brackets in the calendar, only for the Julian date"
+      },
+      {
+        "@_Key": "AMC",
+        "@_Value": "1",
+        "@_Note": "This determines whether or not the Anno Mundi value will be displayed. 1 = Yes, 0 = No."
+      },
+      {
+        "@_Key": "AML",
+        "@_Value": "B",
+        "@_Note": "This determines whether the AM value comes before (B) the rest of the date or after (A) it"
+      },
+      {
+        "@_Key": "NoIcon",
+        "@_Value": "Ponomar/languages/cu/icons/4447/0.jpg",
+        "@_Note": "This is a relative path to the default icon desired for the case where there is no icons available."
+      },
+      {
+        "@_Key": "Options2",
+        "@_Value": "Ponomar: Defaults/,Geographical Information/,Latitude: /,°, negative to the South/,Longitude: /,°, negative to the West/,Time Zone: /, h from Greenwich mean time/,Civil Information/,Display Calendar:/,Julian/,Gregorian/,OK/,CANCEL"
+      },
+      {
+        "@_Key": "OptionsW",
+        "@_Value": "700",
+        "@_Note": "Width of the Options window"
+      },
+      {
+        "@_Key": "OptionsH",
+        "@_Value": "300",
+        "@_Note": "Height of the Options window"
+      },
+      {
+        "@_Key": "OptionMenu",
+        "@_Value": "Defaults…"
+      },
+      {
+        "@_Key": "BibleW2",
+        "@_Value": "Toggle Verse Numbers on/off"
+      }
+    ]
+  }
+}

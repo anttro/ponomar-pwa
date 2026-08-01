@@ -1,0 +1,447 @@
+{
+  "08010000": {
+    "name": {
+      "nominative": "Holy Hierarch Timothy the Wonderworker, Bishop of Proconeses",
+      "short": "Holy Hierarch"
+    }
+  },
+  "08010199": {
+    "name": {
+      "nominative": "Blessed Basil of Kubna",
+      "short": "Blessed Basil"
+    }
+  },
+  "08010299": {
+    "name": {
+      "nominative": "Beginning of the Dormition Fast",
+      "short": "Beginning of"
+    }
+  },
+  "08020000": {
+    "name": {
+      "nominative": "Hieromartyr Fructuosus, Bishop of Tarragon and with him the deacons Eulogius and Augrius",
+      "short": "Hieromartyr Fructuosus"
+    }
+  },
+  "08020100": {
+    "name": {
+      "nominative": "Finding of the Relics of the Righteous Nicodemus, Gamalieilus, and Abibus",
+      "short": "Finding of"
+    }
+  },
+  "08030000": {
+    "name": {
+      "nominative": "Holy Myrrh-bearing Woman Salome",
+      "short": "Holy Myrrh-bearing"
+    }
+  },
+  "08030100": {
+    "name": {
+      "nominative": "Venerable John the Confessor, Abbot of Patalareia",
+      "short": "Venerable John"
+    }
+  },
+  "08040099": {
+    "name": {
+      "nominative": "Hieromartyr Cosmas, Equal-to-the-Apostles",
+      "short": "Hieromartyr Cosmas, Equal-to-the-Apostles"
+    }
+  },
+  "08040199": {
+    "name": {
+      "nominative": "New Hieromartyr Nicholas Prozorov († 1930)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "08050000": {
+    "name": {
+      "nominative": "Forefeast of the Transfiguration of the Lord",
+      "short": "Forefeast of"
+    },
+    "rank": 2
+  },
+  "08050200": {
+    "name": {
+      "nominative": "Martyrs Cantidius, Cantidianus, and Sibella in Egypt",
+      "short": "Martyrs Cantidius"
+    }
+  },
+  "08050400": {
+    "name": {
+      "nominative": "St Euthimius, Patriarch of Constantinople",
+      "short": "St Euthimius"
+    }
+  },
+  "08050500": {
+    "name": {
+      "nominative": "New Martyrs Eudoxia, Daria, Daria, and Maria († 1919)",
+      "short": "New Martyrs"
+    }
+  },
+  "08051300": {
+    "name": {
+      "nominative": "Hieromartyr Antherus († 236) and Fabian († 250), the Popes of Rome",
+      "short": "Hieromartyr Antherus"
+    }
+  },
+  "08060000": {
+    "name": {
+      "nominative": "St Theoctist, Bishop of Chernigov",
+      "short": "St Theoctist"
+    }
+  },
+  "08060299": {
+    "name": {
+      "nominative": "New Hieromartyr Sergius (Tikhomirov) († 1930)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "08070000": {
+    "name": {
+      "nominative": "Venerable Dometius of Philotheeba",
+      "short": "Venerable Dometius"
+    }
+  },
+  "08070300": {
+    "name": {
+      "nominative": "Hieromartyr Narcissus, Patriarch of Jerusalem",
+      "short": "Hieromartyr Narcissus"
+    }
+  },
+  "08090000": {
+    "name": {
+      "nominative": "Venerable Macarius of Oredezhsk († 1532)",
+      "short": "Venerable Macarius"
+    }
+  },
+  "08090199": {
+    "name": {
+      "nominative": "Blessed Samuel, Presbyter of Edessa",
+      "short": "Blessed Samuel"
+    }
+  },
+  "08101000": {
+    "name": {
+      "nominative": "New Martyr Priest Vyacheslav († 1918)",
+      "short": "New Martyr"
+    }
+  },
+  "08110000": {
+    "name": {
+      "nominative": "Venerable Passarion",
+      "short": "Venerable Passarion"
+    }
+  },
+  "08110100": {
+    "name": {
+      "nominative": "Venerable Niphont, Patriarch of Constantinople",
+      "short": "Venerable Niphont"
+    }
+  },
+  "08120000": {
+    "name": {
+      "nominative": "Venerable Palamon of Egypt",
+      "short": "Venerable Palamon"
+    }
+  },
+  "08120100": {
+    "name": {
+      "nominative": "Venerable Castor, Bishop of Apta",
+      "short": "Venerable Castor"
+    }
+  },
+  "08130100": {
+    "name": {
+      "nominative": "Venerable Seridus the Abbot",
+      "short": "Venerable Seridus"
+    }
+  },
+  "08130200": {
+    "name": {
+      "nominative": "Venerable Empress Irene, in monasticism Xenia",
+      "short": "Venerable Empress"
+    }
+  },
+  "08131300": {
+    "name": {
+      "nominative": "Blessed Empress Eudoxia",
+      "short": "Blessed Empress Eudoxia"
+    }
+  },
+  "08140000": {
+    "name": {
+      "nominative": "New Martyr Simeon of Trapezund",
+      "short": "New Martyr"
+    }
+  },
+  "08150000": {
+    "name": {
+      "nominative": "Venerable Macarius the Roman and Chariton",
+      "short": "Venerable Macarius"
+    }
+  },
+  "08160000": {
+    "name": {
+      "nominative": "Venerable Joachim of Osogovsk († c. 1115)",
+      "short": "Venerable Joachim"
+    }
+  },
+  "08160200": {
+    "name": {
+      "nominative": "New Venerable Martyr Nicodemus",
+      "short": "New Venerable"
+    }
+  },
+  "08160300": {
+    "name": {
+      "nominative": "New Martyr Stamatius",
+      "short": "New Martyr Stamatius"
+    }
+  },
+  "08160900": {
+    "name": {
+      "nominative": "Martyr Alcuidus",
+      "short": "Martyr Alcuidus"
+    }
+  },
+  "08170000": {
+    "name": {
+      "nominative": "Venerable Elijah of Calabria",
+      "short": "Venerable Elijah"
+    }
+  },
+  "08170100": {
+    "name": {
+      "nominative": "Venerable Philipp of Yankov",
+      "short": "Venerable Philipp"
+    }
+  },
+  "08170199": {
+    "name": {
+      "nominative": "St Thomas, Bishop of Germanicia",
+      "short": "St Thomas"
+    }
+  },
+  "08170300": {
+    "name": {
+      "nominative": "Venerable Pimen of Ugresh",
+      "short": "Venerable Pimen"
+    }
+  },
+  "08180000": {
+    "name": {
+      "nominative": "Venerable Barnabas and Sophronios († 412)",
+      "short": "Venerable Barnabas"
+    }
+  },
+  "08180299": {
+    "name": {
+      "nominative": "Venerable Christopher († c. 668)",
+      "short": "Venerable Christopher († c. 668)"
+    }
+  },
+  "08180399": {
+    "name": {
+      "nominative": "Venerable Barnabus, Sophronius, and Christopher",
+      "short": "Venerable Barnabus"
+    }
+  },
+  "08180499": {
+    "name": {
+      "nominative": "New Martyr Gregory the Presbyter and Martyrs Eugene and Michael († 1937)",
+      "short": "New Martyr"
+    }
+  },
+  "08190000": {
+    "name": {
+      "nominative": "Venerable Theophanes the New, of Dochiariou, Mt Athos (15<sup>th</sup> C)",
+      "short": "Venerable Theophanes"
+    }
+  },
+  "08190100": {
+    "name": {
+      "nominative": "Finding of the Relics of Venerable Gennadius of Kostroma",
+      "short": "Finding of"
+    }
+  },
+  "08200000": {
+    "name": {
+      "nominative": "Martyr Lucius the Senator († 310)",
+      "short": "Martyr Lucius"
+    }
+  },
+  "08200100": {
+    "name": {
+      "nominative": "Martyrs Iliodoros, and Dosos († 380)",
+      "short": "Martyrs Iliodoros"
+    }
+  },
+  "08210000": {
+    "name": {
+      "nominative": "Venerable Theoclita (829-842)",
+      "short": "Venerable Theoclita (829-842)"
+    }
+  },
+  "08210199": {
+    "name": {
+      "nominative": "Venerable Abraham, the Lover-of-Labour of the Kiev Caves",
+      "short": "Venerable Abraham"
+    }
+  },
+  "08210200": {
+    "name": {
+      "nominative": "Venerable Conrnilius and his disciple Abraham, of Old Island",
+      "short": "Venerable Conrnilius"
+    }
+  },
+  "08210499": {
+    "name": {
+      "nominative": "Venerable Ephraim of Smolensk (13th C)",
+      "short": "Venerable Ephraim"
+    }
+  },
+  "08210599": {
+    "name": {
+      "nominative": "Hieromartyr Raphael of Shishatova",
+      "short": "Hieromartyr Raphael"
+    }
+  },
+  "08220100": {
+    "name": {
+      "nominative": "New Martyr Theodore, bishop of Penza († 1937)",
+      "short": "New Martyr"
+    }
+  },
+  "08220199": {
+    "name": {
+      "nominative": "New Hieromartyr Ephraim, Bishop of Selenginsk and Presbyter John Vostrogov († 1918)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "08220399": {
+    "name": {
+      "nominative": "New Martyrs John, bishop of Velikaya Russa and Alexey, archbishop of Omsk († 1937)",
+      "short": "New Martyrs"
+    }
+  },
+  "08230000": {
+    "name": {
+      "nominative": "Hieromartyr Pothinus, Bishop of Lyon",
+      "short": "Hieromartyr Pothinus"
+    }
+  },
+  "08230299": {
+    "name": {
+      "nominative": "St Theon, Bishop of Alexandria",
+      "short": "St Theon"
+    }
+  },
+  "082502": {
+    "name": {
+      "nominative": "St Michael, Patriarch of Constantinople",
+      "short": "St Michael"
+    }
+  },
+  "08251100": {
+    "name": {
+      "nominative": "Saint John the Cappadocian, Patriarch of Constantinople (6<sup>th</sup> C)",
+      "short": "Saint John"
+    }
+  },
+  "08251200": {
+    "name": {
+      "nominative": "St Epiphanius, Patriarch of Constantinople",
+      "short": "St Epiphanius"
+    }
+  },
+  "08260200": {
+    "name": {
+      "nominative": "Venerable Adrian, Abbot of Uglich (16<sup>th</sup> C)",
+      "short": "Venerable Adrian"
+    }
+  },
+  "082606": {
+    "name": {
+      "nominative": "Blessed Cyprian of Storozhevsk",
+      "short": "Blessed Cyprian"
+    }
+  },
+  "08270000": {
+    "name": {
+      "nominative": "Venerable Savva in Benephaleh",
+      "short": "Venerable Savva"
+    }
+  },
+  "08270200": {
+    "name": {
+      "nominative": "Martyr Phanurius",
+      "short": "Martyr Phanurius"
+    }
+  },
+  "08270400": {
+    "name": {
+      "nominative": "Martyr Anthusa",
+      "short": "Martyr Anthusa"
+    }
+  },
+  "08280000": {
+    "name": {
+      "nominative": "Righteous Hezekiah, King of Judea (721-691 BC)",
+      "short": "Righteous Hezekiah"
+    }
+  },
+  "08280100": {
+    "name": {
+      "nominative": "Synaxis of all the saints who have shown forth in the Kiev Far Caves",
+      "short": "Synaxis of"
+    }
+  },
+  "08280200": {
+    "name": {
+      "nominative": "St Amphilochius, Bishop of Vladimir Volynskiy",
+      "short": "St Amphilochius"
+    }
+  },
+  "08290000": {
+    "name": {
+      "nominative": "Venerable Candida and Gelasia of Constantinople",
+      "short": "Venerable Candida"
+    }
+  },
+  "08290100": {
+    "name": {
+      "nominative": "Venerable Alexander, Abbot of Voch",
+      "short": "Venerable Alexander"
+    }
+  },
+  "08290200": {
+    "name": {
+      "nominative": "Martyr Anastasius of Bulgaria († 1794)",
+      "short": "Martyr Anastasius"
+    }
+  },
+  "08290400": {
+    "name": {
+      "nominative": "Remembrance of All Orthodox Warriors, Killed in Battle for Faith, Czar, and Fatherland (1769)",
+      "short": "Remembrance of"
+    }
+  },
+  "08300000": {
+    "name": {
+      "nominative": "St Eulalius, Bishop of Cæsarea",
+      "short": "St Eulalius"
+    }
+  },
+  "08304000": {
+    "name": {
+      "nominative": "Venerable Brienna of Nizibia",
+      "short": "Venerable Brienna"
+    }
+  },
+  "08310100": {
+    "name": {
+      "nominative": "St John, Metropolitan of Kiev",
+      "short": "St John"
+    }
+  }
+}

@@ -1,0 +1,5837 @@
+[
+  {
+    "id": "en/bible/kjv",
+    "name": "English (traditional, full Bible)",
+    "language": "en",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Genesis",
+        "short": "Gen",
+        "chapters": 50,
+        "intro": "A reading from Genesis"
+      },
+      {
+        "id": "Ex",
+        "name": "Exodus",
+        "short": "Ex",
+        "chapters": 40,
+        "intro": "A reading from Exodus"
+      },
+      {
+        "id": "Lev",
+        "name": "Leviticus",
+        "short": "Lev",
+        "chapters": 27,
+        "intro": "A reading from Levites"
+      },
+      {
+        "id": "Num",
+        "name": "Numbers",
+        "short": "Num",
+        "chapters": 36,
+        "intro": "A reading from Numbers"
+      },
+      {
+        "id": "Deut",
+        "name": "Deuteronomy",
+        "short": "Deut",
+        "chapters": 34,
+        "intro": "A reading Deuteronomy"
+      },
+      {
+        "id": "Josh",
+        "name": "Joshua",
+        "short": "Josh",
+        "chapters": 24,
+        "intro": "A reading from Joshua, the son of Nun"
+      },
+      {
+        "id": "Judg",
+        "name": "Judges",
+        "short": "Judg",
+        "chapters": 21,
+        "intro": "A reading from Judges"
+      },
+      {
+        "id": "Ruth",
+        "name": "Ruth",
+        "short": "Ruth",
+        "chapters": 4,
+        "intro": "A reading from Ruth"
+      },
+      {
+        "id": "I_Kings",
+        "name": "I Kingdoms",
+        "short": "I Kings",
+        "chapters": 31,
+        "intro": "A reading from the first Book of Kingdoms"
+      },
+      {
+        "id": "II_Kings",
+        "name": "II Kingdoms",
+        "short": "II Kings",
+        "chapters": 24,
+        "intro": "A reading from the second Book of Kingdoms"
+      },
+      {
+        "id": "III_Kings",
+        "name": "III Kingdoms",
+        "short": "III Kings",
+        "chapters": 22,
+        "intro": "A reading from the third Book of Kingdoms"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "IV Kingdoms",
+        "short": "IV Kings",
+        "chapters": 25,
+        "intro": "A reading from the fourth Book of Kingdoms"
+      },
+      {
+        "id": "I_Paral",
+        "name": "I Paralipomenon",
+        "short": "I Paral",
+        "chapters": 29,
+        "intro": "A reading from the first Book of Paralipomenon"
+      },
+      {
+        "id": "II_Paral",
+        "name": "II Paralipomenon",
+        "short": "II Paral",
+        "chapters": 36,
+        "intro": "A reading from the second Book of Paraliponmenon"
+      },
+      {
+        "id": "I_Esdra",
+        "name": "I Esdra",
+        "short": "I Esdra",
+        "chapters": 10,
+        "intro": "A reading from the first Book of Esdras"
+      },
+      {
+        "id": "Nehem",
+        "name": "Nehemiah",
+        "short": "Nehem",
+        "chapters": 13,
+        "intro": "A reading from the Prophecy of Nehemiah"
+      },
+      {
+        "id": "II_Esdra",
+        "name": "II Esdra",
+        "short": "II Esdra",
+        "chapters": 9,
+        "intro": "A reading from the second Book of Esdras"
+      },
+      {
+        "id": "Tobit",
+        "name": "Tobit",
+        "short": "Tobit",
+        "chapters": 14,
+        "intro": "A reading from Tobit"
+      },
+      {
+        "id": "Judith",
+        "name": "Judith",
+        "short": "Judith",
+        "chapters": 16,
+        "intro": "A reading from Judith"
+      },
+      {
+        "id": "Esther",
+        "name": "Esther",
+        "short": "Esther",
+        "chapters": 10,
+        "intro": "A reading from Esther"
+      },
+      {
+        "id": "Job",
+        "name": "Job",
+        "short": "Job",
+        "chapters": 42,
+        "intro": "A reading from the Job"
+      },
+      {
+        "id": "Psalm",
+        "name": "Psalm",
+        "short": "Ps",
+        "chapters": 151,
+        "intro": "Psalm"
+      },
+      {
+        "id": "Prov",
+        "name": "Proverbs",
+        "short": "Prov",
+        "chapters": 31,
+        "intro": "A reading from Proverbs"
+      },
+      {
+        "id": "Eccles",
+        "name": "Ecclesiastes",
+        "short": "Eccles",
+        "chapters": 12,
+        "intro": "A reading from Ecclesiastes"
+      },
+      {
+        "id": "Song",
+        "name": "Song of Songs",
+        "short": "Song",
+        "chapters": 8,
+        "intro": "A reading from the Song of Songs"
+      },
+      {
+        "id": "Wisd",
+        "name": "Wisdom of Solomon",
+        "short": "Wisd",
+        "chapters": 19,
+        "intro": "A reading from the Wisdom of Solomon"
+      },
+      {
+        "id": "Sirach",
+        "name": "Sirach",
+        "short": "Sirach",
+        "chapters": 51,
+        "intro": "A reading from the Prophecy of Sirach, son of Jesus"
+      },
+      {
+        "id": "Isa",
+        "name": "Isaiah",
+        "short": "Isa",
+        "chapters": 66,
+        "intro": "A reading from the Prophecy of Isaiah"
+      },
+      {
+        "id": "Jerem",
+        "name": "Jeremiah",
+        "short": "Jerem",
+        "chapters": 52,
+        "intro": "A reading from the Prophecy of Jeremiah"
+      },
+      {
+        "id": "Lamen",
+        "name": "Lamentations",
+        "short": "Lamen",
+        "chapters": 5,
+        "intro": "A reading from the Lamentations of Jeremiah"
+      },
+      {
+        "id": "Epistle",
+        "name": "Epistle of Jeremiah",
+        "short": "Epistle",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jeremiah"
+      },
+      {
+        "id": "Baruch",
+        "name": "Baruch",
+        "short": "Baruch",
+        "chapters": 5,
+        "intro": "A reading from the Prophecy of Jeremiah"
+      },
+      {
+        "id": "Ezek",
+        "name": "Ezekiel",
+        "short": "Ezek",
+        "chapters": 48,
+        "intro": "A reading from the Prophecy of Ezekiel"
+      },
+      {
+        "id": "Dan",
+        "name": "Daniel",
+        "short": "Dan",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Daniel"
+      },
+      {
+        "id": "Hos",
+        "name": "Hosea",
+        "short": "Hos",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Hosea"
+      },
+      {
+        "id": "Joel",
+        "name": "Joel",
+        "short": "Joel",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Joel"
+      },
+      {
+        "id": "Amos",
+        "name": "Amos",
+        "short": "Amos",
+        "chapters": 9,
+        "intro": "A reading from the Prophecy of Amos"
+      },
+      {
+        "id": "Obad",
+        "name": "Obadiah",
+        "short": "Obad",
+        "chapters": 1,
+        "intro": "A reading from the Prophecy of Obadiah"
+      },
+      {
+        "id": "Jona",
+        "name": "Jonah",
+        "short": "Jona",
+        "chapters": 4,
+        "intro": "A reading from the Prophecy of Jonah"
+      },
+      {
+        "id": "Mica",
+        "name": "Micah",
+        "short": "Mica",
+        "chapters": 7,
+        "intro": "A reading from the Prophecy of Micah"
+      },
+      {
+        "id": "Nahum",
+        "name": "Nahum",
+        "short": "Nahum",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Nahum"
+      },
+      {
+        "id": "Habak",
+        "name": "Habakuk",
+        "short": "Habak",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Habakuk"
+      },
+      {
+        "id": "Zeph",
+        "name": "Zephaniah",
+        "short": "Zeph",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Zephaniah"
+      },
+      {
+        "id": "Hagg",
+        "name": "Haggai",
+        "short": "Hagg",
+        "chapters": 2,
+        "intro": "A reading from the Prophecy of Haggai"
+      },
+      {
+        "id": "Zech",
+        "name": "Zechariah",
+        "short": "Zech",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Zechariah"
+      },
+      {
+        "id": "Mal",
+        "name": "Malachi",
+        "short": "Mal",
+        "chapters": 4,
+        "intro": "A reading from the Prophecy of Malachi"
+      },
+      {
+        "id": "I_Macc",
+        "name": "I Maccabees",
+        "short": "I Macc",
+        "chapters": 16,
+        "intro": "A reading from the first Book of Maccabees"
+      },
+      {
+        "id": "II_Macc",
+        "name": "II Maccabees",
+        "short": "II Macc",
+        "chapters": 15,
+        "intro": "A reading from the second Book of Maccabees"
+      },
+      {
+        "id": "III_Macc",
+        "name": "III Maccabees",
+        "short": "III Macc",
+        "chapters": 7,
+        "intro": "A reading from the third Book of Maccabees"
+      },
+      {
+        "id": "III_Esdra",
+        "name": "III Esdra",
+        "short": "III Esdra",
+        "chapters": 16,
+        "intro": "A reading from the third Book of Esdras"
+      },
+      {
+        "id": "Mt",
+        "name": "Matthew",
+        "short": "Mt",
+        "chapters": 28,
+        "intro": "A reading from the Holy Gospel according to Matthew"
+      },
+      {
+        "id": "Mk",
+        "name": "Mark",
+        "short": "Mk",
+        "chapters": 16,
+        "intro": "A reading from the Holy Gospel according to Mark"
+      },
+      {
+        "id": "Lk",
+        "name": "Luke",
+        "short": "Lk",
+        "chapters": 24,
+        "intro": "A reading from the Holy Gospel according to Luke"
+      },
+      {
+        "id": "Jn",
+        "name": "John",
+        "short": "Jn",
+        "chapters": 21,
+        "intro": "A reading from the Holy Gospel accoridng to John"
+      },
+      {
+        "id": "Acts",
+        "name": "Acts",
+        "short": "Acts",
+        "chapters": 28,
+        "intro": "A reading from the Acts of the Apostles"
+      },
+      {
+        "id": "Jas",
+        "name": "James",
+        "short": "Jas",
+        "chapters": 5,
+        "intro": "A reading from the Epistle of James"
+      },
+      {
+        "id": "I_Pet",
+        "name": "I Peter",
+        "short": "I Pet",
+        "chapters": 5,
+        "intro": "A reading from the the first Epistle of Peter"
+      },
+      {
+        "id": "II_Pet",
+        "name": "II Peter",
+        "short": "II Pet",
+        "chapters": 3,
+        "intro": "A reading from the second Epistle of Peter"
+      },
+      {
+        "id": "I_Jn",
+        "name": "I John",
+        "short": "I Jn",
+        "chapters": 5,
+        "intro": "A reading from the first Epistle of John"
+      },
+      {
+        "id": "II_Jn",
+        "name": "II John",
+        "short": "II Jn",
+        "chapters": 1,
+        "intro": "A reading from the second Epistle of John"
+      },
+      {
+        "id": "III_Jn",
+        "name": "III John",
+        "short": "III Jn",
+        "chapters": 1,
+        "intro": "A reading from the third Epistle of John"
+      },
+      {
+        "id": "Jude",
+        "name": "Jude",
+        "short": "Jude",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jude"
+      },
+      {
+        "id": "Rom",
+        "name": "Romans",
+        "short": "Rom",
+        "chapters": 16,
+        "intro": "A reading from the Epistle of Paul to the Romans"
+      },
+      {
+        "id": "I_Cor",
+        "name": "I Corinthians",
+        "short": "I Cor",
+        "chapters": 16,
+        "intro": "A reading from the first Epistle of Paul to the Corinthians"
+      },
+      {
+        "id": "II_Cor",
+        "name": "II Corinthians",
+        "short": "II Cor",
+        "chapters": 13,
+        "intro": "A reading from the second Epistle of Paul to the Corinthians"
+      },
+      {
+        "id": "Gal",
+        "name": "Galatians",
+        "short": "Gal",
+        "chapters": 6,
+        "intro": "A reading from the Epistle of Paul to the Galatians"
+      },
+      {
+        "id": "Eph",
+        "name": "Ephesians",
+        "short": "Eph",
+        "chapters": 6,
+        "intro": "A reading from the Epistle of Paul to the Ephesians"
+      },
+      {
+        "id": "Philip",
+        "name": "Philippians",
+        "short": "Phil",
+        "chapters": 4,
+        "intro": "A reading from the Epistle to the Philippians"
+      },
+      {
+        "id": "Col",
+        "name": "Colossians",
+        "short": "Col",
+        "chapters": 4,
+        "intro": "A reading from the Epistle to the Colossians"
+      },
+      {
+        "id": "I_Thess",
+        "name": "I Thessalonians",
+        "short": "I Thess",
+        "chapters": 5,
+        "intro": "A reading from the first Epistle to the Thessalonians"
+      },
+      {
+        "id": "II_Thess",
+        "name": "II Thessalonians",
+        "short": "II Thess",
+        "chapters": 3,
+        "intro": "A reading from the second Epistle to the Thessalonians"
+      },
+      {
+        "id": "I_Tim",
+        "name": "I Timothy",
+        "short": "I Tim",
+        "chapters": 6,
+        "intro": "A reading from the first Epistle to Timothy"
+      },
+      {
+        "id": "II_Tim",
+        "name": "II Timothy",
+        "short": "II Tim",
+        "chapters": 4,
+        "intro": "A reading from the second Epistle to Timothy"
+      },
+      {
+        "id": "Tit",
+        "name": "Titus",
+        "short": "Tit",
+        "chapters": 3,
+        "intro": "A reading from the Epistle to Titus"
+      },
+      {
+        "id": "Philemon",
+        "name": "Philemon",
+        "short": "Philemon",
+        "chapters": 1,
+        "intro": "A reading from the Epistle to Philemon"
+      },
+      {
+        "id": "Heb",
+        "name": "Hebrews",
+        "short": "Heb",
+        "chapters": 13,
+        "intro": "A reading from the Epistle to the Hebrews"
+      },
+      {
+        "id": "Apoc",
+        "name": "Apocalypse",
+        "short": "Apoc",
+        "chapters": 22,
+        "intro": "A reading from the Book of Revelations"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SUP>^VN</SUP> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"font-style:italic;font-size:10pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Prologue,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ":",
+      "Duration": "-",
+      "SelectionSeparator": ",",
+      "BCSep": "",
+      "Orient": "ltr",
+      "Parts": "a,b,c"
+    }
+  },
+  {
+    "id": "en/bible/brenton",
+    "name": "English OT (Brenton LXX)",
+    "language": "en",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Genesis",
+        "short": "Gen",
+        "chapters": 50,
+        "intro": "A reading from Genesis"
+      },
+      {
+        "id": "Ex",
+        "name": "Exodus",
+        "short": "Ex",
+        "chapters": 40,
+        "intro": "A reading from Exodus"
+      },
+      {
+        "id": "Lev",
+        "name": "Leviticus",
+        "short": "Lev",
+        "chapters": 27,
+        "intro": "A reading from Levites"
+      },
+      {
+        "id": "Num",
+        "name": "Numbers",
+        "short": "Num",
+        "chapters": 36,
+        "intro": "A reading from Numbers"
+      },
+      {
+        "id": "Deut",
+        "name": "Deuteronomy",
+        "short": "Deut",
+        "chapters": 34,
+        "intro": "A reading Deuteronomy"
+      },
+      {
+        "id": "Josh",
+        "name": "Joshua",
+        "short": "Josh",
+        "chapters": 24,
+        "intro": "A reading from Joshua, the son of Nun"
+      },
+      {
+        "id": "Judg",
+        "name": "Judges",
+        "short": "Judg",
+        "chapters": 21,
+        "intro": "A reading from Judges"
+      },
+      {
+        "id": "Ruth",
+        "name": "Ruth",
+        "short": "Ruth",
+        "chapters": 4,
+        "intro": "A reading from Ruth"
+      },
+      {
+        "id": "I_Kings",
+        "name": "I Kingdoms",
+        "short": "I Kings",
+        "chapters": 31,
+        "intro": "A reading from the first Book of Kingdoms"
+      },
+      {
+        "id": "II_Kings",
+        "name": "II Kingdoms",
+        "short": "II Kings",
+        "chapters": 24,
+        "intro": "A reading from the second Book of Kingdoms"
+      },
+      {
+        "id": "III_Kings",
+        "name": "III Kingdoms",
+        "short": "III Kings",
+        "chapters": 22,
+        "intro": "A reading from the third Book of Kingdoms"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "IV Kingdoms",
+        "short": "IV Kings",
+        "chapters": 25,
+        "intro": "A reading from the fourth Book of Kingdoms"
+      },
+      {
+        "id": "I_Paral",
+        "name": "I Paralipomenon",
+        "short": "I Paral",
+        "chapters": 29,
+        "intro": "A reading from the first Book of Paralipomenon"
+      },
+      {
+        "id": "II_Paral",
+        "name": "II Paralipomenon",
+        "short": "II Paral",
+        "chapters": 36,
+        "intro": "A reading from the second Book of Paraliponmenon"
+      },
+      {
+        "id": "I_Esdra",
+        "name": "I Esdra",
+        "short": "I Esdra",
+        "chapters": 10,
+        "intro": "A reading from the first Book of Esdras"
+      },
+      {
+        "id": "Nehem",
+        "name": "Nehemiah",
+        "short": "Nehem",
+        "chapters": 13,
+        "intro": "A reading from the Prophecy of Nehemiah"
+      },
+      {
+        "id": "II_Esdra",
+        "name": "II Esdra",
+        "short": "II Esdra",
+        "chapters": 9,
+        "intro": "A reading from the second Book of Esdras"
+      },
+      {
+        "id": "Tobit",
+        "name": "Tobit",
+        "short": "Tobit",
+        "chapters": 14,
+        "intro": "A reading from Tobit"
+      },
+      {
+        "id": "Judith",
+        "name": "Judith",
+        "short": "Judith",
+        "chapters": 16,
+        "intro": "A reading from Judith"
+      },
+      {
+        "id": "Esther",
+        "name": "Esther",
+        "short": "Esther",
+        "chapters": 10,
+        "intro": "A reading from Esther"
+      },
+      {
+        "id": "Job",
+        "name": "Job",
+        "short": "Job",
+        "chapters": 42,
+        "intro": "A reading from the Job"
+      },
+      {
+        "id": "Psalm",
+        "name": "Psalm",
+        "short": "Ps",
+        "chapters": 151,
+        "intro": "Psalm"
+      },
+      {
+        "id": "Prov",
+        "name": "Proverbs",
+        "short": "Prov",
+        "chapters": 31,
+        "intro": "A reading from Proverbs"
+      },
+      {
+        "id": "Eccles",
+        "name": "Ecclesiastes",
+        "short": "Eccles",
+        "chapters": 12,
+        "intro": "A reading from Ecclesiastes"
+      },
+      {
+        "id": "Song",
+        "name": "Song of Songs",
+        "short": "Song",
+        "chapters": 8,
+        "intro": "A reading from the Song of Songs"
+      },
+      {
+        "id": "Wisd",
+        "name": "Wisdom of Solomon",
+        "short": "Wisd",
+        "chapters": 19,
+        "intro": "A reading from the Wisdom of Solomon"
+      },
+      {
+        "id": "Sirach",
+        "name": "Sirach",
+        "short": "Sirach",
+        "chapters": 51,
+        "intro": "A reading from the Prophecy of Sirach, son of Jesus"
+      },
+      {
+        "id": "Isa",
+        "name": "Isaiah",
+        "short": "Isa",
+        "chapters": 66,
+        "intro": "A reading from the Prophecy of Isaiah"
+      },
+      {
+        "id": "Jerem",
+        "name": "Jeremiah",
+        "short": "Jerem",
+        "chapters": 52,
+        "intro": "A reading from the Prophecy of Jeremiah"
+      },
+      {
+        "id": "Lamen",
+        "name": "Lamentations",
+        "short": "Lamen",
+        "chapters": 5,
+        "intro": "A reading from the Lamentations of Jeremiah"
+      },
+      {
+        "id": "Epistle",
+        "name": "Epistle of Jeremiah",
+        "short": "Epistle",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jeremiah"
+      },
+      {
+        "id": "Baruch",
+        "name": "Baruch",
+        "short": "Baruch",
+        "chapters": 5,
+        "intro": "A reading from the Prophecy of Jeremiah"
+      },
+      {
+        "id": "Ezek",
+        "name": "Ezekiel",
+        "short": "Ezek",
+        "chapters": 48,
+        "intro": "A reading from the Prophecy of Ezekiel"
+      },
+      {
+        "id": "Dan",
+        "name": "Daniel",
+        "short": "Dan",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Daniel"
+      },
+      {
+        "id": "Hos",
+        "name": "Hosea",
+        "short": "Hos",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Hosea"
+      },
+      {
+        "id": "Joel",
+        "name": "Joel",
+        "short": "Joel",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Joel"
+      },
+      {
+        "id": "Amos",
+        "name": "Amos",
+        "short": "Amos",
+        "chapters": 9,
+        "intro": "A reading from the Prophecy of Amos"
+      },
+      {
+        "id": "Obad",
+        "name": "Obadiah",
+        "short": "Obad",
+        "chapters": 1,
+        "intro": "A reading from the Prophecy of Obadiah"
+      },
+      {
+        "id": "Jona",
+        "name": "Jonah",
+        "short": "Jona",
+        "chapters": 4,
+        "intro": "A reading from the Prophecy of Jonah"
+      },
+      {
+        "id": "Mica",
+        "name": "Micah",
+        "short": "Mica",
+        "chapters": 7,
+        "intro": "A reading from the Prophecy of Micah"
+      },
+      {
+        "id": "Nahum",
+        "name": "Nahum",
+        "short": "Nahum",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Nahum"
+      },
+      {
+        "id": "Habak",
+        "name": "Habakuk",
+        "short": "Habak",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Habakuk"
+      },
+      {
+        "id": "Zeph",
+        "name": "Zephaniah",
+        "short": "Zeph",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Zephaniah"
+      },
+      {
+        "id": "Hagg",
+        "name": "Haggai",
+        "short": "Hagg",
+        "chapters": 2,
+        "intro": "A reading from the Prophecy of Haggai"
+      },
+      {
+        "id": "Zech",
+        "name": "Zechariah",
+        "short": "Zech",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Zechariah"
+      },
+      {
+        "id": "Mal",
+        "name": "Malachi",
+        "short": "Mal",
+        "chapters": 4,
+        "intro": "A reading from the Prophecy of Malachi"
+      },
+      {
+        "id": "I_Macc",
+        "name": "I Maccabees",
+        "short": "I Macc",
+        "chapters": 16,
+        "intro": "A reading from the first Book of Maccabees"
+      },
+      {
+        "id": "II_Macc",
+        "name": "II Maccabees",
+        "short": "II Macc",
+        "chapters": 15,
+        "intro": "A reading from the second Book of Maccabees"
+      },
+      {
+        "id": "III_Macc",
+        "name": "III Maccabees",
+        "short": "III Macc",
+        "chapters": 7,
+        "intro": "A reading from the third Book of Maccabees"
+      },
+      {
+        "id": "IV_Macc",
+        "name": "IV Maccabees",
+        "short": "IV Macc",
+        "chapters": 18,
+        "intro": "A reading from the fourth Book of Maccabees"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SUP>^VN</SUP> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"font-style:italic;font-size:10pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Prologue,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ":",
+      "Duration": "-",
+      "SelectionSeparator": ",",
+      "BCSep": "",
+      "Orient": "ltr",
+      "Parts": "a,b,c"
+    }
+  },
+  {
+    "id": "en/bible/nonkjv",
+    "name": "English (modern, NT only)",
+    "language": "en",
+    "books": [
+      {
+        "id": "Mt",
+        "name": "Matthew",
+        "short": "Mt",
+        "chapters": 28,
+        "intro": "A reading from the Holy Gospel according to Matthew"
+      },
+      {
+        "id": "Mk",
+        "name": "Mark",
+        "short": "Mk",
+        "chapters": 16,
+        "intro": "A reading from the Holy Gospel according to Mark"
+      },
+      {
+        "id": "Lk",
+        "name": "Luke",
+        "short": "Lk",
+        "chapters": 24,
+        "intro": "A reading from the Holy Gospel according to Luke"
+      },
+      {
+        "id": "Jn",
+        "name": "John",
+        "short": "Jn",
+        "chapters": 21,
+        "intro": "A reading from the Holy Gospel accoridng to John"
+      },
+      {
+        "id": "Acts",
+        "name": "Acts",
+        "short": "Acts",
+        "chapters": 28,
+        "intro": "A reading from the Acts of the Apostles"
+      },
+      {
+        "id": "Jas",
+        "name": "James",
+        "short": "Jas",
+        "chapters": 5,
+        "intro": "A reading from the Epistle of James"
+      },
+      {
+        "id": "I_Pet",
+        "name": "I Peter",
+        "short": "I Pet",
+        "chapters": 5,
+        "intro": "A reading from the the first Epistle of Peter"
+      },
+      {
+        "id": "II_Pet",
+        "name": "II Peter",
+        "short": "II Pet",
+        "chapters": 3,
+        "intro": "A reading from the second Epistle of Peter"
+      },
+      {
+        "id": "I_Jn",
+        "name": "I John",
+        "short": "I Jn",
+        "chapters": 5,
+        "intro": "A reading from the first Epistle of John"
+      },
+      {
+        "id": "II_Jn",
+        "name": "II John",
+        "short": "II Jn",
+        "chapters": 1,
+        "intro": "A reading from the second Epistle of John"
+      },
+      {
+        "id": "III_Jn",
+        "name": "III John",
+        "short": "III Jn",
+        "chapters": 1,
+        "intro": "A reading from the third Epistle of John"
+      },
+      {
+        "id": "Jude",
+        "name": "Jude",
+        "short": "Jude",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jude"
+      },
+      {
+        "id": "Rom",
+        "name": "Romans",
+        "short": "Rom",
+        "chapters": 16,
+        "intro": "A reading from the Epistle of Paul to the Romans"
+      },
+      {
+        "id": "I_Cor",
+        "name": "I Corinthians",
+        "short": "I Cor",
+        "chapters": 16,
+        "intro": "A reading from the first Epistle of Paul to the Corinthians"
+      },
+      {
+        "id": "II_Cor",
+        "name": "II Corinthians",
+        "short": "II Cor",
+        "chapters": 13,
+        "intro": "A reading from the second Epistle of Paul to the Corinthians"
+      },
+      {
+        "id": "Gal",
+        "name": "Galatians",
+        "short": "Gal",
+        "chapters": 6,
+        "intro": "A reading from the Epistle of Paul to the Galatians"
+      },
+      {
+        "id": "Eph",
+        "name": "Ephesians",
+        "short": "Eph",
+        "chapters": 6,
+        "intro": "A reading from the Epistle of Paul to the Ephesians"
+      },
+      {
+        "id": "Philip",
+        "name": "Philippians",
+        "short": "Phil",
+        "chapters": 4,
+        "intro": "A reading from the Epistle to the Philippians"
+      },
+      {
+        "id": "Col",
+        "name": "Colossians",
+        "short": "Col",
+        "chapters": 4,
+        "intro": "A reading from the Epistle to the Colossians"
+      },
+      {
+        "id": "I_Thess",
+        "name": "I Thessalonians",
+        "short": "I Thess",
+        "chapters": 5,
+        "intro": "A reading from the first Epistle to the Thessalonians"
+      },
+      {
+        "id": "II_Thess",
+        "name": "II Thessalonians",
+        "short": "II Thess",
+        "chapters": 3,
+        "intro": "A reading from the second Epistle to the Thessalonians"
+      },
+      {
+        "id": "I_Tim",
+        "name": "I Timothy",
+        "short": "I Tim",
+        "chapters": 6,
+        "intro": "A reading from the first Epistle to Timothy"
+      },
+      {
+        "id": "II_Tim",
+        "name": "II Timothy",
+        "short": "II Tim",
+        "chapters": 4,
+        "intro": "A reading from the second Epistle to Timothy"
+      },
+      {
+        "id": "Tit",
+        "name": "Titus",
+        "short": "Tit",
+        "chapters": 3,
+        "intro": "A reading from the Epistle to Titus"
+      },
+      {
+        "id": "Philemon",
+        "name": "Philemon",
+        "short": "Philemon",
+        "chapters": 1,
+        "intro": "A reading from the Epistle to Philemon"
+      },
+      {
+        "id": "Heb",
+        "name": "Hebrews",
+        "short": "Heb",
+        "chapters": 13,
+        "intro": "A reading from the Epistle to the Hebrews"
+      },
+      {
+        "id": "Apoc",
+        "name": "Apocalypse",
+        "short": "Apoc",
+        "chapters": 22,
+        "intro": "A reading from the Book of Revelations"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SUP>^VN</SUP> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"font-style:italic;font-size:10pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Prologue,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ":",
+      "Duration": "-",
+      "SelectionSeparator": ",",
+      "BCSep": "",
+      "Orient": "ltr",
+      "Parts": "a,b,c"
+    }
+  },
+  {
+    "id": "fr/bible/ls",
+    "name": "français (Louis Segond)",
+    "language": "fr",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Genèsis",
+        "short": "Gen",
+        "chapters": 50,
+        "intro": "Une lection de Genèsis"
+      },
+      {
+        "id": "Ex",
+        "name": "L'Exode",
+        "short": "Ex",
+        "chapters": 40,
+        "intro": "Une lection de L'Exode"
+      },
+      {
+        "id": "Lev",
+        "name": "Lévitique",
+        "short": "Lév",
+        "chapters": 27,
+        "intro": "Une lection de Lévitique"
+      },
+      {
+        "id": "Num",
+        "name": "Nombres",
+        "short": "Nom",
+        "chapters": 36,
+        "intro": "Une lection de Nombres"
+      },
+      {
+        "id": "Deut",
+        "name": "Deutéronome",
+        "short": "Deut",
+        "chapters": 34,
+        "intro": "Une lection de Deutéronome"
+      },
+      {
+        "id": "Josh",
+        "name": "Josué",
+        "short": "Jos",
+        "chapters": 24,
+        "intro": "Une lection de Josué, fils de Nun"
+      },
+      {
+        "id": "Judg",
+        "name": "Juges",
+        "short": "Jg",
+        "chapters": 21,
+        "intro": "Une lection de Juges"
+      },
+      {
+        "id": "Ruth",
+        "name": "Ruth",
+        "short": "Rt",
+        "chapters": 4,
+        "intro": "Une lection de Ruth"
+      },
+      {
+        "id": "I_Kings",
+        "name": "1 Règnes",
+        "short": "1 R",
+        "chapters": 31,
+        "intro": "Une lection du premier livre des Règnes"
+      },
+      {
+        "id": "II_Kings",
+        "name": "2 Règnes",
+        "short": "2 R",
+        "chapters": 24,
+        "intro": "Une lection du deuxième livre des Règnes"
+      },
+      {
+        "id": "III_Kings",
+        "name": "3 Règnes",
+        "short": "3 R",
+        "chapters": 22,
+        "intro": "Une lection du troisième livre des Règnes"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "4 Règnes",
+        "short": "4 R",
+        "chapters": 25,
+        "intro": "Une lection du quatrième livre des Règnes"
+      },
+      {
+        "id": "I_Paral",
+        "name": "1 Chroniques",
+        "short": "1 Ch",
+        "chapters": 29,
+        "intro": "Une lection du premier livre des Chroniques"
+      },
+      {
+        "id": "II_Paral",
+        "name": "2 Chroniques",
+        "short": "2 Ch",
+        "chapters": 36,
+        "intro": "Une lection du deuxième livre des Chroniques"
+      },
+      {
+        "id": "I_Esdra",
+        "name": "1 Esdras",
+        "short": "1 Esd",
+        "chapters": 10,
+        "intro": "Une lection du premier livre d'Esdras"
+      },
+      {
+        "id": "Nehem",
+        "name": "Néhémie",
+        "short": "Ne",
+        "chapters": 13,
+        "intro": "Une lection de Néhémie"
+      },
+      {
+        "id": "II_Esdra",
+        "name": "2 Esdras",
+        "short": "2 Esd",
+        "chapters": 9,
+        "intro": "Une lection du deuxième livre d'Esdras"
+      },
+      {
+        "id": "Tobit",
+        "name": "Tobie",
+        "short": "Tb",
+        "chapters": 14,
+        "intro": "Une lection de Tobit"
+      },
+      {
+        "id": "Judith",
+        "name": "Judith",
+        "short": "Jdt",
+        "chapters": 16,
+        "intro": "Une lection de Judith"
+      },
+      {
+        "id": "Esther",
+        "name": "Esther",
+        "short": "Est",
+        "chapters": 10,
+        "intro": "Une lection d'Esther"
+      },
+      {
+        "id": "Job",
+        "name": "Job",
+        "short": "Jb",
+        "chapters": 42,
+        "intro": "Une lection de Job"
+      },
+      {
+        "id": "Psalm",
+        "name": "Psaumes",
+        "short": "Ps",
+        "chapters": 151,
+        "intro": "Psaume"
+      },
+      {
+        "id": "Prov",
+        "name": "Proverbes",
+        "short": "Pr",
+        "chapters": 31,
+        "intro": "Une lection de Proverbes"
+      },
+      {
+        "id": "Eccles",
+        "name": "Ecclésiaste",
+        "short": "Qo",
+        "chapters": 12,
+        "intro": "Une lection d'Ecclésiaste"
+      },
+      {
+        "id": "Song",
+        "name": "Cantique des cantiques",
+        "short": "Ct",
+        "chapters": 8,
+        "intro": "Une lection de la Cantique des cantiques"
+      },
+      {
+        "id": "Wisd",
+        "name": "Sagesse de Salomon",
+        "short": "Sag",
+        "chapters": 19,
+        "intro": "Une lection de la Sagesse de Salomon"
+      },
+      {
+        "id": "Sirach",
+        "name": "Siracide",
+        "short": "Sr",
+        "chapters": 52,
+        "intro": "Une lection de Siracide, fils de Jésus"
+      },
+      {
+        "id": "Isa",
+        "name": "Isaïe / Ésaïe",
+        "short": "Is",
+        "chapters": 66,
+        "intro": "Une lection d'Ésaïe"
+      },
+      {
+        "id": "Jerem",
+        "name": "Jérémie",
+        "short": "Jr",
+        "chapters": 52,
+        "intro": "Une lection de la prophétie de Jérémie"
+      },
+      {
+        "id": "Lamen",
+        "name": "Lamentations",
+        "short": "La",
+        "chapters": 5,
+        "intro": "Une lection des Lamentations de Jérémie"
+      },
+      {
+        "id": "Epistle",
+        "name": "Lettre de Jérémie",
+        "short": "Lettre",
+        "chapters": 1,
+        "intro": "Une lection de Lettre de Jérémie"
+      },
+      {
+        "id": "Baruch",
+        "name": "Baruch",
+        "short": "Baruch",
+        "chapters": 5,
+        "intro": "Une lection de la prophétie de Jérémie"
+      },
+      {
+        "id": "Ezek",
+        "name": "Ézéchiel",
+        "short": "Éz",
+        "chapters": 48,
+        "intro": "Une lection de la prophétie d'Ézéchiel"
+      },
+      {
+        "id": "Dan",
+        "name": "Daniel",
+        "short": "Da",
+        "chapters": 14,
+        "intro": "Une lection de la prophétie de Daniel"
+      },
+      {
+        "id": "Hos",
+        "name": "Osée",
+        "short": "Os",
+        "chapters": 14,
+        "intro": "Une lection de la prophétie d'Osée"
+      },
+      {
+        "id": "Joel",
+        "name": "Joël",
+        "short": "Jl",
+        "chapters": 3,
+        "intro": "Une lection de la prophétie de Joël"
+      },
+      {
+        "id": "Amos",
+        "name": "Amos",
+        "short": "Am",
+        "chapters": 9,
+        "intro": "Une lection de la prophétie d'Amos"
+      },
+      {
+        "id": "Obad",
+        "name": "Abdias",
+        "short": "Ab",
+        "chapters": 1,
+        "intro": "Une lection de la prophétie d'Abdias"
+      },
+      {
+        "id": "Jona",
+        "name": "Jonas",
+        "short": "Jon",
+        "chapters": 4,
+        "intro": "Une lection de la prophétie de Jonas"
+      },
+      {
+        "id": "Mica",
+        "name": "Michée",
+        "short": "Mi",
+        "chapters": 7,
+        "intro": "Une lection de la prophétie de Michée"
+      },
+      {
+        "id": "Nahum",
+        "name": "Nahum",
+        "short": "Na",
+        "chapters": 3,
+        "intro": "Une lection de la prophétie de Nahum"
+      },
+      {
+        "id": "Habak",
+        "name": "Habacuc",
+        "short": "Ha",
+        "chapters": 3,
+        "intro": "Une lection de la prophétie de Habacuc"
+      },
+      {
+        "id": "Zeph",
+        "name": "Sophonie",
+        "short": "So",
+        "chapters": 3,
+        "intro": "Une lection de la prophétie de Sophonie"
+      },
+      {
+        "id": "Hagg",
+        "name": "Aggée",
+        "short": "Ag",
+        "chapters": 2,
+        "intro": "Une lection de la prophétie d'Aggée"
+      },
+      {
+        "id": "Zech",
+        "name": "Zacharie",
+        "short": "Za",
+        "chapters": 14,
+        "intro": "Une lection de la prophétie de Zacharie"
+      },
+      {
+        "id": "Mal",
+        "name": "Malachie",
+        "short": "Ml",
+        "chapters": 4,
+        "intro": "Une lection de la prophétie de Malachie"
+      },
+      {
+        "id": "I_Macc",
+        "name": "1 Maccabées",
+        "short": "1 M",
+        "chapters": 16,
+        "intro": "Une lection du premier livre des Maccabées"
+      },
+      {
+        "id": "II_Macc",
+        "name": "2 Maccabées",
+        "short": "2 M",
+        "chapters": 15,
+        "intro": "Une lection du deuxième livre des Maccabées"
+      },
+      {
+        "id": "III_Macc",
+        "name": "3 Maccabées",
+        "short": "3 M",
+        "chapters": 7,
+        "intro": "Une lection du troisième livre des Maccabées"
+      },
+      {
+        "id": "III_Esdra",
+        "name": "3 Esdras",
+        "short": "3 Esd",
+        "chapters": 16,
+        "intro": "Une lection du troisième livre d'Esdras"
+      },
+      {
+        "id": "Mt",
+        "name": "Matthieu",
+        "short": "Mt",
+        "chapters": 28,
+        "intro": "Une lection du Saint Évangile selon Saint Matthieu"
+      },
+      {
+        "id": "Mk",
+        "name": "Marc",
+        "short": "Marc",
+        "chapters": 16,
+        "intro": "Une lection du Saint Évangile selon Saint Marc"
+      },
+      {
+        "id": "Lk",
+        "name": "Luc",
+        "short": "Lc",
+        "chapters": 24,
+        "intro": "Une lection du Saint Évangile selon Saint Luc"
+      },
+      {
+        "id": "Jn",
+        "name": "Jean",
+        "short": "Jn",
+        "chapters": 21,
+        "intro": "Une lection du Saint Évangile selon Saint Jean"
+      },
+      {
+        "id": "Acts",
+        "name": "Actes des Apôtres",
+        "short": "Actes",
+        "chapters": 28,
+        "intro": "Une lection des Actes des Apôtres"
+      },
+      {
+        "id": "Jas",
+        "name": "Jacques",
+        "short": "Jac",
+        "chapters": 5,
+        "intro": "Une lection d'Epitre d'Apôtre Jacques"
+      },
+      {
+        "id": "I_Pet",
+        "name": "1 Pierre",
+        "short": "1 Per",
+        "chapters": 5,
+        "intro": "Une lection de première Épître d'Apôtre Pierre"
+      },
+      {
+        "id": "II_Pet",
+        "name": "2 Pierre",
+        "short": "2 Per",
+        "chapters": 3,
+        "intro": "Une lection de deuxième Épître d'Apôtre Pierre"
+      },
+      {
+        "id": "I_Jn",
+        "name": "1 Jean",
+        "short": "1 Jn",
+        "chapters": 5,
+        "intro": "Une lection de première Épître d'Apôtre Jean"
+      },
+      {
+        "id": "II_Jn",
+        "name": "2 Jean",
+        "short": "2 Jn",
+        "chapters": 1,
+        "intro": "Une lection de deuxième Epitre d'Apôtre Jean"
+      },
+      {
+        "id": "III_Jn",
+        "name": "3 Jean",
+        "short": "3 Jn",
+        "chapters": 1,
+        "intro": "Une lection de troisième Épître d'Apôtre Jean"
+      },
+      {
+        "id": "Jude",
+        "name": "Jude",
+        "short": "Jude",
+        "chapters": 1,
+        "intro": "Une lection d'Épître d'Apôtre Jude"
+      },
+      {
+        "id": "Rom",
+        "name": "Romains",
+        "short": "Rom",
+        "chapters": 16,
+        "intro": "Une lection de l'Épître de Paul aux Romains"
+      },
+      {
+        "id": "I_Cor",
+        "name": "1 Corinthiens",
+        "short": "1 Cor",
+        "chapters": 16,
+        "intro": "Une lection de la première Épître de Paul aux Corinthiens"
+      },
+      {
+        "id": "II_Cor",
+        "name": "2 Corinthiens",
+        "short": "2 Cor",
+        "chapters": 13,
+        "intro": "Une lection de la deuxième Épître de Paul aux Corinthiens"
+      },
+      {
+        "id": "Gal",
+        "name": "Galates",
+        "short": "Gal",
+        "chapters": 6,
+        "intro": "Une lection de l'Épître de Paul aux Galates"
+      },
+      {
+        "id": "Eph",
+        "name": "Éphésiens",
+        "short": "Éph",
+        "chapters": 6,
+        "intro": "Une lection de l'Épître de Paul aux Éphésiens"
+      },
+      {
+        "id": "Philip",
+        "name": "Philippiens",
+        "short": "Phil",
+        "chapters": 4,
+        "intro": "Une lection de l'Épître de Paul aux Philippiens"
+      },
+      {
+        "id": "Col",
+        "name": "Colossiens",
+        "short": "Col",
+        "chapters": 4,
+        "intro": "Une lection de l'Épître de Paul aux Colossiens"
+      },
+      {
+        "id": "I_Thess",
+        "name": "1 Thessaloniciens",
+        "short": "1 Thess",
+        "chapters": 5,
+        "intro": "Une lection de la première Épître de Paul aux Thessaloniciens"
+      },
+      {
+        "id": "II_Thess",
+        "name": "2 Thessaloniciens",
+        "short": "2 Thess",
+        "chapters": 3,
+        "intro": "Une lection de la deuxième Épître de Paul aux Thessaloniciens"
+      },
+      {
+        "id": "I_Tim",
+        "name": "1 Timothée",
+        "short": "1 Tim",
+        "chapters": 6,
+        "intro": "Une lection de la première Épître de Paul au Timothée"
+      },
+      {
+        "id": "II_Tim",
+        "name": "2 Timothée",
+        "short": "2 Tim",
+        "chapters": 4,
+        "intro": "Une lection de la deuxième Épître de Paul au Timothée"
+      },
+      {
+        "id": "Tit",
+        "name": "Tite",
+        "short": "Tit",
+        "chapters": 3,
+        "intro": "Une lection de l'Épître de Paul au Tite"
+      },
+      {
+        "id": "Philemon",
+        "name": "Philémon",
+        "short": "Philemon",
+        "chapters": 1,
+        "intro": "Une lection de l'Épître de Paul au Philémon"
+      },
+      {
+        "id": "Heb",
+        "name": "Hébreux",
+        "short": "Héb",
+        "chapters": 13,
+        "intro": "Une lection de l'Épître de Paul aux Hébreux"
+      },
+      {
+        "id": "Apoc",
+        "name": "Apocalypse",
+        "short": "Apoc",
+        "chapters": 22,
+        "intro": "Une lection de livre de la Révélation"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SUP>^VN</SUP> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"font-style:italic;font-size:10pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Prologue,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ":",
+      "Duration": "-",
+      "SelectionSeparator": ",",
+      "BCSep": "",
+      "Parts": "a,b,c"
+    }
+  },
+  {
+    "id": "cu/bible/elis",
+    "name": "Церковнославянская (Елисаветинская)",
+    "language": "cu",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Бытїѐ",
+        "short": "Быт.",
+        "chapters": 50,
+        "intro": "Бытїѧ̀ чте́нїе"
+      },
+      {
+        "id": "Ex",
+        "name": "И҆схо́дъ",
+        "short": "Исх.",
+        "chapters": 40,
+        "intro": "И҆схо́да чте́нїе"
+      },
+      {
+        "id": "Lev",
+        "name": "Леѵі́тъ",
+        "short": "Лев.",
+        "chapters": 27,
+        "intro": "Леѵі́тскихъ кни́гъ чте́нїе"
+      },
+      {
+        "id": "Num",
+        "name": "Чи́сла",
+        "short": "Чис.",
+        "chapters": 36,
+        "intro": "Чи́слъ чте́нїе"
+      },
+      {
+        "id": "Deut",
+        "name": "Второзако́нїе",
+        "short": "Втор.",
+        "chapters": 34,
+        "intro": "Втора́гѡ зако́на чте́нїе"
+      },
+      {
+        "id": "Josh",
+        "name": "І҆исꙋ́са наѵи́на",
+        "short": "Нав.",
+        "chapters": 24,
+        "intro": "і҆исꙋ́са наѵи́на чте́нїе"
+      },
+      {
+        "id": "Judg",
+        "name": "Сꙋді́й і҆сра́илевыхъ",
+        "short": "Суд.",
+        "chapters": 21,
+        "intro": "Сꙋде́й чте́нїе"
+      },
+      {
+        "id": "Ruth",
+        "name": "Рꙋ́ѳь",
+        "short": "Руф.",
+        "chapters": 4
+      },
+      {
+        "id": "I_Kings",
+        "name": "а҃ ца́рствъ",
+        "short": "1 Цар.",
+        "chapters": 31
+      },
+      {
+        "id": "II_Kings",
+        "name": "в҃ ца́рствъ",
+        "short": "2 Цар.",
+        "chapters": 24
+      },
+      {
+        "id": "III_Kings",
+        "name": "г҃ ца́рствъ",
+        "short": "3 Цар.",
+        "chapters": 22,
+        "intro": "Ца́рствъ тре́тїихъ чте́нїе"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "д҃ ца́рствъ",
+        "short": "4 Цар.",
+        "chapters": 25,
+        "intro": "Ца́рствъ четве́ртыхъ чте́нїе"
+      },
+      {
+        "id": "I_Paral",
+        "name": "а҃ паралипоме́нѡнъ",
+        "short": "1 Пар.",
+        "chapters": 29
+      },
+      {
+        "id": "II_Paral",
+        "name": "в҃ паралипоме́нѡнъ",
+        "short": "2 Пар.",
+        "chapters": 36
+      },
+      {
+        "id": "I_Esdra",
+        "name": "а҃ є҆́здры",
+        "short": "1 Езд.",
+        "chapters": 10
+      },
+      {
+        "id": "Nehem",
+        "name": "Неемі́и",
+        "short": "Неем",
+        "chapters": 13
+      },
+      {
+        "id": "II_Esdra",
+        "name": "в҃ є҆́здры",
+        "short": "2 Езд.",
+        "chapters": 9
+      },
+      {
+        "id": "Tobit",
+        "name": "Тѡві́т",
+        "short": "Тов",
+        "chapters": 14
+      },
+      {
+        "id": "Judith",
+        "name": "І҆ꙋді́ѳ",
+        "short": "Иудифь.",
+        "chapters": 16
+      },
+      {
+        "id": "Esther",
+        "name": "Є҆сѳи́рь",
+        "short": "Есф.",
+        "chapters": 10
+      },
+      {
+        "id": "Job",
+        "name": "І҆́ѡвъ",
+        "short": "Иов",
+        "chapters": 42,
+        "intro": "Ї҆́ѡва чте́нїе"
+      },
+      {
+        "id": "Psalm",
+        "name": "Ѱалти́рь",
+        "short": "Пс.",
+        "chapters": 151,
+        "intro": "Ѱало́мъ"
+      },
+      {
+        "id": "Prov",
+        "name": "При́тчей соломѡ́нихъ",
+        "short": "Притч.",
+        "chapters": 31,
+        "intro": "При́тчей чте́нїе"
+      },
+      {
+        "id": "Eccles",
+        "name": "Є҆кклесїа́ст",
+        "short": "Еккл.",
+        "chapters": 12
+      },
+      {
+        "id": "Song",
+        "name": "Пѣ́снь пѣ́сней",
+        "short": "Песн.",
+        "chapters": 8
+      },
+      {
+        "id": "Wisd",
+        "name": "Премꙋ́дрости соломѡ́ни",
+        "short": "Прем. Солом.",
+        "chapters": 19,
+        "intro": "Премꙋ́дрости соломѡ́новы чте́нїе"
+      },
+      {
+        "id": "Sirach",
+        "name": "Сїрахъ",
+        "short": "Сир.",
+        "chapters": 51
+      },
+      {
+        "id": "Isa",
+        "name": "И҆са́їи",
+        "short": "Ис.",
+        "chapters": 66,
+        "intro": "Прⷪ҇ро́чества и҆са́їина чте́нїе"
+      },
+      {
+        "id": "Jerem",
+        "name": "І҆еремі́и",
+        "short": "Иер.",
+        "chapters": 52,
+        "intro": "Прⷪ҇ро́чества їеремі́ина чте́нїе"
+      },
+      {
+        "id": "Lamen",
+        "name": "Пла́чь і҆еремі́евъ",
+        "short": "Плачь",
+        "chapters": 5
+      },
+      {
+        "id": "Epistle",
+        "name": "Посла́нїе їеремі́ино",
+        "short": "По. Иер.",
+        "chapters": 1
+      },
+      {
+        "id": "Baruch",
+        "name": "Варꙋ́хъ",
+        "short": "Вар.",
+        "chapters": 5,
+        "intro": "Прⷪ҇ро́чества і҆еремі́ина чте́нїе"
+      },
+      {
+        "id": "Ezek",
+        "name": "І҆езекі́илѧ",
+        "short": "Иез.",
+        "chapters": 48,
+        "intro": "Прⷪ҇ро́чества і҆езекі́илева чте́нїе"
+      },
+      {
+        "id": "Dan",
+        "name": "Данїи́ла",
+        "short": "Дан.",
+        "chapters": 14,
+        "intro": "Прⷪ҇ро́чества даиїи́лова чте́нїе"
+      },
+      {
+        "id": "Hos",
+        "name": "Ѡ҆сі́а",
+        "short": "Ос.",
+        "chapters": 14
+      },
+      {
+        "id": "Joel",
+        "name": "І҆ѡи́ль",
+        "short": "Иоиль",
+        "chapters": 3,
+        "intro": "Прⷪ҇ро́чества і҆ѡ́илева чте́нїе"
+      },
+      {
+        "id": "Amos",
+        "name": "А҆мѡ́съ",
+        "short": "Ам.",
+        "chapters": 9
+      },
+      {
+        "id": "Obad",
+        "name": "А҆вді́й",
+        "short": "Авд.",
+        "chapters": 1
+      },
+      {
+        "id": "Jona",
+        "name": "І҆ѡ́ны",
+        "short": "Ион.",
+        "chapters": 4,
+        "intro": "Прⷪ҇ро́чества і҆ѡ́нина чте́нїе"
+      },
+      {
+        "id": "Mica",
+        "name": "Мїхе́й",
+        "short": "Мих.",
+        "chapters": 7,
+        "intro": "Прⷪ҇ро́чества мїхе́ина чте́нїе"
+      },
+      {
+        "id": "Nahum",
+        "name": "Наꙋ́мъ",
+        "short": "Наум",
+        "chapters": 3
+      },
+      {
+        "id": "Habak",
+        "name": "А҆ввакꙋ́мъ",
+        "short": "Авв.",
+        "chapters": 3
+      },
+      {
+        "id": "Zeph",
+        "name": "Софо́нїа",
+        "short": "Соф.",
+        "chapters": 3,
+        "intro": "Прⷪ҇ро́чества софо́нїева чте́нїе"
+      },
+      {
+        "id": "Hagg",
+        "name": "А҆гге́й",
+        "short": "Агг.",
+        "chapters": 2
+      },
+      {
+        "id": "Zech",
+        "name": "Заха́рїа",
+        "short": "Зах.",
+        "chapters": 14,
+        "intro": "Прⷪ҇ро́чества заха́рїина чте́нїе"
+      },
+      {
+        "id": "Mal",
+        "name": "Малахі́а",
+        "short": "Мал.",
+        "chapters": 4,
+        "intro": "Прⷪ҇ро́чества малахі́ина чте́нїе"
+      },
+      {
+        "id": "I_Macc",
+        "name": "а҃ маккавей́скаѧ",
+        "short": "1 Макк.",
+        "chapters": 16
+      },
+      {
+        "id": "II_Macc",
+        "name": "в҃ маккавей́скаѧ",
+        "short": "2 Макк.",
+        "chapters": 15
+      },
+      {
+        "id": "III_Macc",
+        "name": "г҃ маккавей́скаѧ",
+        "short": "3 Макк.",
+        "chapters": 7
+      },
+      {
+        "id": "III_Esdra",
+        "name": "г҃ є҆́здры",
+        "short": "3 Езд.",
+        "chapters": 16
+      },
+      {
+        "id": "Mt",
+        "name": "Ѿ Матѳе́а",
+        "short": "Мф.",
+        "chapters": 28,
+        "intro": "Ѿ матѳе́а ст҃а́гѡ є҆ѵⷢ҇лїа чте́нїе"
+      },
+      {
+        "id": "Mk",
+        "name": "Ѿ Ма́рка",
+        "short": "Мк.",
+        "chapters": 16,
+        "intro": "Ѿ ма́рка ст҃а́гѡ є҆ѵⷢ҇лїа чте́нїе"
+      },
+      {
+        "id": "Lk",
+        "name": "Ѿ лꙋкѝ",
+        "short": "Лк.",
+        "chapters": 24,
+        "intro": "Ѿ лꙋкѝ ст҃а́гѡ є҆ѵⷢ҇лїа чте́нїе"
+      },
+      {
+        "id": "Jn",
+        "name": "Ѿ і҆ѡа́нна",
+        "short": "Ин.",
+        "chapters": 21,
+        "intro": "Ѿ і҆ѡа́нна ст҃а́гѡ є҆ѵⷢ҇лїа чте́нїе"
+      },
+      {
+        "id": "Acts",
+        "name": "Дѣѧ̑нїѧ ст҃ы́хъ а҆пⷭ҇лъ",
+        "short": "Деян.",
+        "chapters": 28,
+        "intro": "Дѣѧ̑нїй ст҃ы́хъ а҆пⷭ҇лъ чте́нїе"
+      },
+      {
+        "id": "Jas",
+        "name": "І҆а́кѡвле",
+        "short": "Иак.",
+        "chapters": 5
+      },
+      {
+        "id": "I_Pet",
+        "name": "Пе́рвое петра̀",
+        "short": "1 Петр.",
+        "chapters": 5,
+        "intro": "Собо́рнагѡ посла́нїѧ петро́ва чте́нїе"
+      },
+      {
+        "id": "II_Pet",
+        "name": "Второ́е петра̀",
+        "short": "2 Петр.",
+        "chapters": 3
+      },
+      {
+        "id": "I_Jn",
+        "name": "Пе́рвое і҆ѡа́нна",
+        "short": "1 Ин.",
+        "chapters": 5
+      },
+      {
+        "id": "II_Jn",
+        "name": "Второ́е і҆ѡа́нна",
+        "short": "2 Ин.",
+        "chapters": 1
+      },
+      {
+        "id": "III_Jn",
+        "name": "Тре́тїе і҆ѡа́нна",
+        "short": "3 Ин.",
+        "chapters": 1
+      },
+      {
+        "id": "Jude",
+        "name": "І҆ꙋ́дино",
+        "short": "Иуд.",
+        "chapters": 1
+      },
+      {
+        "id": "Rom",
+        "name": "Къ ри́млѧнѡмъ",
+        "short": "Рим.",
+        "chapters": 16,
+        "intro": "Къ ри́млѧнѡмъ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "I_Cor",
+        "name": "Пе́рвое къ корі́нѳѧнѡмъ",
+        "short": "1 Кор.",
+        "chapters": 16
+      },
+      {
+        "id": "II_Cor",
+        "name": "Второ́е къ корі́нѳѧнѡмъ",
+        "short": "2 Кор.",
+        "chapters": 13
+      },
+      {
+        "id": "Gal",
+        "name": "Къ гала́тѡмъ",
+        "short": "Гал.",
+        "chapters": 6,
+        "intro": "Къ гала́тѡмъ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "Eph",
+        "name": "Ко є҆фесе́ємъ",
+        "short": "Еф.",
+        "chapters": 6,
+        "intro": "Ко є҆фесе́ємъ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "Philip",
+        "name": "Къ фїлїпписі́ємъ",
+        "short": "Флп.",
+        "chapters": 4,
+        "intro": "Къ фїлїпписі́ємъ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "Col",
+        "name": "Къ колосса́ємъ",
+        "short": "Кол.",
+        "chapters": 4,
+        "intro": "Къ колосса́ємъ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "I_Thess",
+        "name": "Пе́рвое къ солꙋ́нѧнѡмъ",
+        "short": "1 Сол.",
+        "chapters": 5
+      },
+      {
+        "id": "II_Thess",
+        "name": "Второ́е къ солꙋ́нѧнѡмъ",
+        "short": "2 Сол.",
+        "chapters": 3
+      },
+      {
+        "id": "I_Tim",
+        "name": "Пе́рвое къ тїмоѳе́ю",
+        "short": "1 Тим.",
+        "chapters": 6
+      },
+      {
+        "id": "II_Tim",
+        "name": "Второ́е къ тїмоѳе́ю",
+        "short": "2 Тим.",
+        "chapters": 4
+      },
+      {
+        "id": "Tit",
+        "name": "Къ ті́тꙋ",
+        "short": "Тит.",
+        "chapters": 3,
+        "intro": "Къ ті́тꙋ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "Philemon",
+        "name": "Къ фїлимо́нꙋ",
+        "short": "Флм.",
+        "chapters": 1,
+        "intro": "Къ фїлимо́нꙋ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "Heb",
+        "name": "Ко є҆вре́ємъ",
+        "short": "Евр.",
+        "chapters": 13,
+        "intro": "Ко є҆вре́ємъ посла́нїѧ ст҃гѡ а҆пⷭ҇ла па́ѵла чте́нїе"
+      },
+      {
+        "id": "Apoc",
+        "name": "А҆пока́лѷѱїсъ",
+        "short": "Апок.",
+        "chapters": 22
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SPAN style=\"color:red;\">^VN</SPAN> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"color:red;font-size:12pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Пролог,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ",",
+      "Duration": "-",
+      "SelectionSeparator": ";",
+      "BCSep": "",
+      "FontFace": "Ponomar Unicode TT",
+      "FontSize": "18",
+      "Parts": "а,б,в"
+    }
+  },
+  {
+    "id": "ru/bible/synod",
+    "name": "Русская (Синодальный перевод)",
+    "language": "ru",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Бытие",
+        "short": "Быт.",
+        "chapters": 50,
+        "intro": "Бытия чтение"
+      },
+      {
+        "id": "Ex",
+        "name": "Исход",
+        "short": "Исх.",
+        "chapters": 40,
+        "intro": "Исхода чтение"
+      },
+      {
+        "id": "Lev",
+        "name": "Левит",
+        "short": "Лев.",
+        "chapters": 27,
+        "intro": "Левитских книг чтение"
+      },
+      {
+        "id": "Num",
+        "name": "Числа",
+        "short": "Чис.",
+        "chapters": 36,
+        "intro": "Числ чтение"
+      },
+      {
+        "id": "Deut",
+        "name": "Второзаконие",
+        "short": "Втор.",
+        "chapters": 34,
+        "intro": "Второго закона чтение"
+      },
+      {
+        "id": "Josh",
+        "name": "Иисуса навина",
+        "short": "Нав.",
+        "chapters": 24,
+        "intro": "Иисуса навина чтение"
+      },
+      {
+        "id": "Judg",
+        "name": "Судей израилевых",
+        "short": "Суд.",
+        "chapters": 21,
+        "intro": "Судей чтение"
+      },
+      {
+        "id": "Ruth",
+        "name": "Руфь",
+        "short": "Руф.",
+        "chapters": 4
+      },
+      {
+        "id": "I_Kings",
+        "name": "1 царств",
+        "short": "1 Цар.",
+        "chapters": 31
+      },
+      {
+        "id": "II_Kings",
+        "name": "2 царств",
+        "short": "2 Цар.",
+        "chapters": 24
+      },
+      {
+        "id": "III_Kings",
+        "name": "3 царств",
+        "short": "3 Цар.",
+        "chapters": 22,
+        "intro": "Царств третьих чтение"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "4 царств",
+        "short": "4 Цар.",
+        "chapters": 25,
+        "intro": "Царств четвертых чтение"
+      },
+      {
+        "id": "I_Paral",
+        "name": "1 паралипоменон",
+        "short": "1 Пар.",
+        "chapters": 29
+      },
+      {
+        "id": "II_Paral",
+        "name": "2 паралипоменон",
+        "short": "2 Пар.",
+        "chapters": 36
+      },
+      {
+        "id": "I_Esdra",
+        "name": "1 ездры",
+        "short": "1 Езд.",
+        "chapters": 10
+      },
+      {
+        "id": "Nehem",
+        "name": "Неемии",
+        "short": "Неем",
+        "chapters": 13
+      },
+      {
+        "id": "II_Esdra",
+        "name": "2 ездры",
+        "short": "2 Езд.",
+        "chapters": 9
+      },
+      {
+        "id": "Tobit",
+        "name": "Товит",
+        "short": "Тов",
+        "chapters": 14
+      },
+      {
+        "id": "Judith",
+        "name": "Иудиф",
+        "short": "Иудифь.",
+        "chapters": 16
+      },
+      {
+        "id": "Esther",
+        "name": "Есфирь",
+        "short": "Есф.",
+        "chapters": 10
+      },
+      {
+        "id": "Job",
+        "name": "Иов",
+        "short": "Иов",
+        "chapters": 42,
+        "intro": "Иова чтение"
+      },
+      {
+        "id": "Psalm",
+        "name": "Псалтирь",
+        "short": "Пс.",
+        "chapters": 151,
+        "intro": "Псалом"
+      },
+      {
+        "id": "Prov",
+        "name": "Притчи",
+        "short": "Притч.",
+        "chapters": 31,
+        "intro": "Притчей чтение"
+      },
+      {
+        "id": "Eccles",
+        "name": "Екклесиаст",
+        "short": "Еккл.",
+        "chapters": 12
+      },
+      {
+        "id": "Song",
+        "name": "Песнь песней",
+        "short": "Песн.",
+        "chapters": 8
+      },
+      {
+        "id": "Wisd",
+        "name": "Премудрости Соломона",
+        "short": "Прем. Солом.",
+        "chapters": 19,
+        "intro": "Премудрости Соломона чтение"
+      },
+      {
+        "id": "Sirach",
+        "name": "Сирах",
+        "short": "Сир.",
+        "chapters": 51
+      },
+      {
+        "id": "Isa",
+        "name": "Исаии",
+        "short": "Ис.",
+        "chapters": 66,
+        "intro": "Пророчества Исаии чтение"
+      },
+      {
+        "id": "Jerem",
+        "name": "Иеремии",
+        "short": "Иер.",
+        "chapters": 52,
+        "intro": "Пророчества Иеремии чтение"
+      },
+      {
+        "id": "Lamen",
+        "name": "Плачь Иеремии",
+        "short": "Плачь",
+        "chapters": 5
+      },
+      {
+        "id": "Epistle",
+        "name": "Послание Иеремии",
+        "short": "По. Иер.",
+        "chapters": 1
+      },
+      {
+        "id": "Baruch",
+        "name": "Варуха",
+        "short": "Вар.",
+        "chapters": 5,
+        "intro": "Пророчества Иеремии чтение"
+      },
+      {
+        "id": "Ezek",
+        "name": "Иезекииля",
+        "short": "Иез.",
+        "chapters": 48,
+        "intro": "Пророчества Иезекииля чтение"
+      },
+      {
+        "id": "Dan",
+        "name": "Даниила",
+        "short": "Дан.",
+        "chapters": 14,
+        "intro": "Пророчества Даииила чтение"
+      },
+      {
+        "id": "Hos",
+        "name": "Осии",
+        "short": "Ос.",
+        "chapters": 14
+      },
+      {
+        "id": "Joel",
+        "name": "Иоиля",
+        "short": "Иоиль",
+        "chapters": 3,
+        "intro": "Пророчества Иоиля чтение"
+      },
+      {
+        "id": "Amos",
+        "name": "Амоса",
+        "short": "Ам.",
+        "chapters": 9
+      },
+      {
+        "id": "Obad",
+        "name": "Авдия",
+        "short": "Авд.",
+        "chapters": 1
+      },
+      {
+        "id": "Jona",
+        "name": "Ионы",
+        "short": "Ион.",
+        "chapters": 4,
+        "intro": "Пророчества Ионы чтение"
+      },
+      {
+        "id": "Mica",
+        "name": "Михея",
+        "short": "Мих.",
+        "chapters": 7,
+        "intro": "Пророчества Михея чтение"
+      },
+      {
+        "id": "Nahum",
+        "name": "Наума",
+        "short": "Наум",
+        "chapters": 3
+      },
+      {
+        "id": "Habak",
+        "name": "Аввакума",
+        "short": "Авв.",
+        "chapters": 3
+      },
+      {
+        "id": "Zeph",
+        "name": "Софонии",
+        "short": "Соф.",
+        "chapters": 3,
+        "intro": "Пророчества Софонии чтение"
+      },
+      {
+        "id": "Hagg",
+        "name": "Аггея",
+        "short": "Агг.",
+        "chapters": 2
+      },
+      {
+        "id": "Zech",
+        "name": "Захарии",
+        "short": "Зах.",
+        "chapters": 14,
+        "intro": "Пророчества Захарии чтение"
+      },
+      {
+        "id": "Mal",
+        "name": "Малахии",
+        "short": "Мал.",
+        "chapters": 4,
+        "intro": "Пророчества Малахии чтение"
+      },
+      {
+        "id": "I_Macc",
+        "name": "1 Маккавейская",
+        "short": "1 Макк.",
+        "chapters": 16
+      },
+      {
+        "id": "II_Macc",
+        "name": "2 Маккавейская",
+        "short": "2 Макк.",
+        "chapters": 15
+      },
+      {
+        "id": "III_Macc",
+        "name": "3 Маккавейская",
+        "short": "3 Макк.",
+        "chapters": 7
+      },
+      {
+        "id": "III_Esdra",
+        "name": "3 Ездры",
+        "short": "3 Езд.",
+        "chapters": 16
+      },
+      {
+        "id": "Mt",
+        "name": "От Матфея",
+        "short": "Мф.",
+        "chapters": 28,
+        "intro": "От Матфея святаго Евангелия чтение"
+      },
+      {
+        "id": "Mk",
+        "name": "От Марка",
+        "short": "Мк.",
+        "chapters": 16,
+        "intro": "От мМарка святаго Евангелия чтение"
+      },
+      {
+        "id": "Lk",
+        "name": "От Луки",
+        "short": "Лк.",
+        "chapters": 24,
+        "intro": "От Луки святаго Евангелия чтение"
+      },
+      {
+        "id": "Jn",
+        "name": "От Иоанна",
+        "short": "Ин.",
+        "chapters": 21,
+        "intro": "От Иоанна святаго Евангелия чтение"
+      },
+      {
+        "id": "Acts",
+        "name": "Деяния святых Апостолов",
+        "short": "Деян.",
+        "chapters": 28,
+        "intro": "Деяний святых Апостолов чтение"
+      },
+      {
+        "id": "Jas",
+        "name": "Иакова",
+        "short": "Иак.",
+        "chapters": 5
+      },
+      {
+        "id": "I_Pet",
+        "name": "Первое Петра",
+        "short": "1 Петр.",
+        "chapters": 5,
+        "intro": "Соборного послания Петра чтение"
+      },
+      {
+        "id": "II_Pet",
+        "name": "Второе Петра",
+        "short": "2 Петр.",
+        "chapters": 3
+      },
+      {
+        "id": "I_Jn",
+        "name": "Первое Иоанна",
+        "short": "1 Ин.",
+        "chapters": 5
+      },
+      {
+        "id": "II_Jn",
+        "name": "Второе Иоанна",
+        "short": "2 Ин.",
+        "chapters": 1
+      },
+      {
+        "id": "III_Jn",
+        "name": "Третие Иоанна",
+        "short": "3 Ин.",
+        "chapters": 1
+      },
+      {
+        "id": "Jude",
+        "name": "Иуды",
+        "short": "Иуд.",
+        "chapters": 1
+      },
+      {
+        "id": "Rom",
+        "name": "К Римлянам",
+        "short": "Рим.",
+        "chapters": 16,
+        "intro": "К римляном послания святого апостола Павла чтение"
+      },
+      {
+        "id": "I_Cor",
+        "name": "Первое к Коринфянам",
+        "short": "1 Кор.",
+        "chapters": 16
+      },
+      {
+        "id": "II_Cor",
+        "name": "Второе к Коринфянам",
+        "short": "2 Кор.",
+        "chapters": 13
+      },
+      {
+        "id": "Gal",
+        "name": "К Галатам",
+        "short": "Гал.",
+        "chapters": 6
+      },
+      {
+        "id": "Eph",
+        "name": "К Ефесянам",
+        "short": "Еф.",
+        "chapters": 6
+      },
+      {
+        "id": "Philip",
+        "name": "К Филиппийцам",
+        "short": "Флп.",
+        "chapters": 4
+      },
+      {
+        "id": "Col",
+        "name": "К Колоссянам",
+        "short": "Кол.",
+        "chapters": 4
+      },
+      {
+        "id": "I_Thess",
+        "name": "Первое к Фессалоникийцам",
+        "short": "1 Фес.",
+        "chapters": 5
+      },
+      {
+        "id": "II_Thess",
+        "name": "Второе к Фессалоникийцам",
+        "short": "2 Фес.",
+        "chapters": 3
+      },
+      {
+        "id": "I_Tim",
+        "name": "Первое к Тимофею",
+        "short": "1 Тим.",
+        "chapters": 6
+      },
+      {
+        "id": "II_Tim",
+        "name": "Второе к Тимофею",
+        "short": "2 Тим.",
+        "chapters": 4
+      },
+      {
+        "id": "Tit",
+        "name": "К Титу",
+        "short": "Тит.",
+        "chapters": 3,
+        "intro": "К Титу послания святого апостола павла чтение"
+      },
+      {
+        "id": "Philemon",
+        "name": "К Филимону",
+        "short": "Флм.",
+        "chapters": 1,
+        "intro": "К Филимону послания святого апостола павла чтение"
+      },
+      {
+        "id": "Heb",
+        "name": "К Евреям",
+        "short": "Евр.",
+        "chapters": 13,
+        "intro": "Ко евреем послания святого апостола павла чтение"
+      },
+      {
+        "id": "Apoc",
+        "name": "Откровение",
+        "short": "Отк.",
+        "chapters": 22
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SPAN style=\"color:red;\">^VN</SPAN> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"color:red;font-size:12pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Пролог,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ",",
+      "Duration": "-",
+      "SelectionSeparator": ";",
+      "BCSep": "",
+      "Parts": "а,б,в"
+    }
+  },
+  {
+    "id": "ru/bible/kassian",
+    "name": "Русский НЗ (еп. Кассиана)",
+    "language": "ru",
+    "books": [
+      {
+        "id": "Mt",
+        "name": "От Матфея",
+        "short": "Мф.",
+        "chapters": 28,
+        "intro": "От Матфея святаго Евангелия чтение"
+      },
+      {
+        "id": "Mk",
+        "name": "От Марка",
+        "short": "Мк.",
+        "chapters": 16,
+        "intro": "От мМарка святаго Евангелия чтение"
+      },
+      {
+        "id": "Lk",
+        "name": "От Луки",
+        "short": "Лк.",
+        "chapters": 24,
+        "intro": "От Луки святаго Евангелия чтение"
+      },
+      {
+        "id": "Jn",
+        "name": "От Иоанна",
+        "short": "Ин.",
+        "chapters": 21,
+        "intro": "От Иоанна святаго Евангелия чтение"
+      },
+      {
+        "id": "Acts",
+        "name": "Деяния святых Апостолов",
+        "short": "Деян.",
+        "chapters": 28,
+        "intro": "Деяний святых Апостолов чтение"
+      },
+      {
+        "id": "Jas",
+        "name": "Иакова",
+        "short": "Иак.",
+        "chapters": 5
+      },
+      {
+        "id": "I_Pet",
+        "name": "Первое Петра",
+        "short": "1 Петр.",
+        "chapters": 5,
+        "intro": "Соборного послания Петра чтение"
+      },
+      {
+        "id": "II_Pet",
+        "name": "Второе Петра",
+        "short": "2 Петр.",
+        "chapters": 3
+      },
+      {
+        "id": "I_Jn",
+        "name": "Первое Иоанна",
+        "short": "1 Ин.",
+        "chapters": 5
+      },
+      {
+        "id": "II_Jn",
+        "name": "Второе Иоанна",
+        "short": "2 Ин.",
+        "chapters": 1
+      },
+      {
+        "id": "III_Jn",
+        "name": "Третие Иоанна",
+        "short": "3 Ин.",
+        "chapters": 1
+      },
+      {
+        "id": "Jude",
+        "name": "Иуды",
+        "short": "Иуд.",
+        "chapters": 1
+      },
+      {
+        "id": "Rom",
+        "name": "К Римлянам",
+        "short": "Рим.",
+        "chapters": 16,
+        "intro": "К римляном послания святого апостола Павла чтение"
+      },
+      {
+        "id": "I_Cor",
+        "name": "Первое к Коринфянам",
+        "short": "1 Кор.",
+        "chapters": 16
+      },
+      {
+        "id": "II_Cor",
+        "name": "Второе к Коринфянам",
+        "short": "2 Кор.",
+        "chapters": 13
+      },
+      {
+        "id": "Gal",
+        "name": "К Галатам",
+        "short": "Гал.",
+        "chapters": 6
+      },
+      {
+        "id": "Eph",
+        "name": "К Ефесянам",
+        "short": "Еф.",
+        "chapters": 6
+      },
+      {
+        "id": "Philip",
+        "name": "К Филиппийцам",
+        "short": "Флп.",
+        "chapters": 4
+      },
+      {
+        "id": "Col",
+        "name": "К Колоссянам",
+        "short": "Кол.",
+        "chapters": 4
+      },
+      {
+        "id": "I_Thess",
+        "name": "Первое к Фессалоникийцам",
+        "short": "1 Фес.",
+        "chapters": 5
+      },
+      {
+        "id": "II_Thess",
+        "name": "Второе к Фессалоникийцам",
+        "short": "2 Фес.",
+        "chapters": 3
+      },
+      {
+        "id": "I_Tim",
+        "name": "Первое к Тимофею",
+        "short": "1 Тим.",
+        "chapters": 6
+      },
+      {
+        "id": "II_Tim",
+        "name": "Второе к Тимофею",
+        "short": "2 Тим.",
+        "chapters": 4
+      },
+      {
+        "id": "Tit",
+        "name": "К Титу",
+        "short": "Тит.",
+        "chapters": 3,
+        "intro": "К Титу послания святого апостола павла чтение"
+      },
+      {
+        "id": "Philemon",
+        "name": "К Филимону",
+        "short": "Флм.",
+        "chapters": 1,
+        "intro": "К Филимону послания святого апостола павла чтение"
+      },
+      {
+        "id": "Heb",
+        "name": "К Евреям",
+        "short": "Евр.",
+        "chapters": 13,
+        "intro": "Ко евреем послания святого апостола павла чтение"
+      },
+      {
+        "id": "Apoc",
+        "name": "Откровение",
+        "short": "Отк.",
+        "chapters": 22
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SPAN style=\"color:red;\">^VN</SPAN> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"color:red;font-size:12pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Пролог,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ",",
+      "Duration": "-",
+      "SelectionSeparator": ";",
+      "BCSep": "",
+      "Parts": "а,б,в"
+    }
+  },
+  {
+    "id": "ru/bible/yungerov",
+    "name": "Русский (перевод П. А. Юнгерова)",
+    "language": "ru",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Бытие",
+        "short": "Быт.",
+        "chapters": 50,
+        "intro": "Бытия чтение"
+      },
+      {
+        "id": "Job",
+        "name": "Иов",
+        "short": "Иов",
+        "chapters": 42,
+        "intro": "Иова чтение"
+      },
+      {
+        "id": "Prov",
+        "name": "Притчи",
+        "short": "Притч.",
+        "chapters": 31,
+        "intro": "Притчей чтение"
+      },
+      {
+        "id": "Isa",
+        "name": "Исаии",
+        "short": "Ис.",
+        "chapters": 66,
+        "intro": "Пророчества Исаии чтение"
+      },
+      {
+        "id": "Jerem",
+        "name": "Иеремии",
+        "short": "Иер.",
+        "chapters": 52,
+        "intro": "Пророчества Иеремии чтение"
+      },
+      {
+        "id": "Ezek",
+        "name": "Иезекииля",
+        "short": "Иез.",
+        "chapters": 48,
+        "intro": "Пророчества Иезекииля чтение"
+      },
+      {
+        "id": "Dan",
+        "name": "Даниила",
+        "short": "Дан.",
+        "chapters": 14,
+        "intro": "Пророчества Даииила чтение"
+      },
+      {
+        "id": "Hos",
+        "name": "Осии",
+        "short": "Ос.",
+        "chapters": 14
+      },
+      {
+        "id": "Joel",
+        "name": "Иоиля",
+        "short": "Иоиль",
+        "chapters": 3,
+        "intro": "Пророчества Иоиля чтение"
+      },
+      {
+        "id": "Amos",
+        "name": "Амоса",
+        "short": "Ам.",
+        "chapters": 9
+      },
+      {
+        "id": "Obad",
+        "name": "Авдия",
+        "short": "Авд.",
+        "chapters": 1
+      },
+      {
+        "id": "Jona",
+        "name": "Ионы",
+        "short": "Ион.",
+        "chapters": 4,
+        "intro": "Пророчества Ионы чтение"
+      },
+      {
+        "id": "Mica",
+        "name": "Михея",
+        "short": "Мих.",
+        "chapters": 7,
+        "intro": "Пророчества Михея чтение"
+      },
+      {
+        "id": "Nahum",
+        "name": "Наума",
+        "short": "Наум",
+        "chapters": 3
+      },
+      {
+        "id": "Habak",
+        "name": "Аввакума",
+        "short": "Авв.",
+        "chapters": 3
+      },
+      {
+        "id": "Zeph",
+        "name": "Софонии",
+        "short": "Соф.",
+        "chapters": 3,
+        "intro": "Пророчества Софонии чтение"
+      },
+      {
+        "id": "Hagg",
+        "name": "Аггея",
+        "short": "Агг.",
+        "chapters": 2
+      },
+      {
+        "id": "Zech",
+        "name": "Захарии",
+        "short": "Зах.",
+        "chapters": 14,
+        "intro": "Пророчества Захарии чтение"
+      },
+      {
+        "id": "Mal",
+        "name": "Малахии",
+        "short": "Мал.",
+        "chapters": 4,
+        "intro": "Пророчества Малахии чтение"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SPAN style=\"color:red;\">^VN</SPAN> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"color:red;font-size:12pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Пролог,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ",",
+      "Duration": "-",
+      "SelectionSeparator": ";",
+      "BCSep": "",
+      "Parts": "а,б,в"
+    }
+  },
+  {
+    "id": "la/bible/vulgate",
+    "name": "Latina (vulgata)",
+    "language": "la",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Genesis",
+        "short": "Gen",
+        "chapters": 50
+      },
+      {
+        "id": "Ex",
+        "name": "Exodus",
+        "short": "Ex",
+        "chapters": 40
+      },
+      {
+        "id": "Lev",
+        "name": "Leviticus",
+        "short": "Lev",
+        "chapters": 27
+      },
+      {
+        "id": "Num",
+        "name": "Numeri",
+        "short": "Num",
+        "chapters": 36
+      },
+      {
+        "id": "Deut",
+        "name": "Deuteronomium",
+        "short": "Deut",
+        "chapters": 34
+      },
+      {
+        "id": "Josh",
+        "name": "Josue",
+        "short": "Josh",
+        "chapters": 24
+      },
+      {
+        "id": "Judg",
+        "name": "Judicum",
+        "short": "Judg",
+        "chapters": 21
+      },
+      {
+        "id": "Ruth",
+        "name": "Ruth",
+        "short": "Ruth",
+        "chapters": 4
+      },
+      {
+        "id": "I_Kings",
+        "name": "I Regnum",
+        "short": "I R",
+        "chapters": 31
+      },
+      {
+        "id": "II_Kings",
+        "name": "II Regnum",
+        "short": "II R",
+        "chapters": 24
+      },
+      {
+        "id": "III_Kings",
+        "name": "III Regnum",
+        "short": "III R",
+        "chapters": 22
+      },
+      {
+        "id": "IV_Kings",
+        "name": "IV Regnum",
+        "short": "IV R",
+        "chapters": 25
+      },
+      {
+        "id": "I_Paral",
+        "name": "I Paralipomenon",
+        "short": "I Paral",
+        "chapters": 29
+      },
+      {
+        "id": "II_Paral",
+        "name": "II Paralipomenon",
+        "short": "II Paral",
+        "chapters": 36
+      },
+      {
+        "id": "I_Esdra",
+        "name": "I Esdræ",
+        "short": "Esdræ I",
+        "chapters": 10
+      },
+      {
+        "id": "Nehem",
+        "name": "II Esdræ",
+        "short": "Esdræ II",
+        "chapters": 13
+      },
+      {
+        "id": "Tobit",
+        "name": "Tobiæ",
+        "short": "Tobiæ",
+        "chapters": 14
+      },
+      {
+        "id": "Judith",
+        "name": "Judith",
+        "short": "Judith",
+        "chapters": 16
+      },
+      {
+        "id": "Esther",
+        "name": "Esther",
+        "short": "Esther",
+        "chapters": 10
+      },
+      {
+        "id": "Job",
+        "name": "Job",
+        "short": "Job",
+        "chapters": 42
+      },
+      {
+        "id": "Psalm",
+        "name": "Psalmorum",
+        "short": "Ps",
+        "chapters": 151
+      },
+      {
+        "id": "Prov",
+        "name": "Proverbiorum",
+        "short": "Prov",
+        "chapters": 31
+      },
+      {
+        "id": "Eccles",
+        "name": "Ecclesiastes",
+        "short": "Eccles",
+        "chapters": 12
+      },
+      {
+        "id": "Song",
+        "name": "Canticum Canticorum",
+        "short": "Ct",
+        "chapters": 8
+      },
+      {
+        "id": "Wisd",
+        "name": "Sapientiæ",
+        "short": "Sap",
+        "chapters": 19
+      },
+      {
+        "id": "Sirach",
+        "name": "Sirach",
+        "short": "Sirach",
+        "chapters": 51
+      },
+      {
+        "id": "Isa",
+        "name": "Isaiæ",
+        "short": "Isa",
+        "chapters": 66
+      },
+      {
+        "id": "Jerem",
+        "name": "Jeremiæ",
+        "short": "Jerem",
+        "chapters": 52
+      },
+      {
+        "id": "Lamen",
+        "name": "Lamentationes",
+        "short": "Lamen",
+        "chapters": 5
+      },
+      {
+        "id": "Epistle",
+        "name": "Epistle Jeremiæ",
+        "short": "Epistle",
+        "chapters": 1
+      },
+      {
+        "id": "Baruch",
+        "name": "Baruch",
+        "short": "Baruch",
+        "chapters": 5
+      },
+      {
+        "id": "Ezek",
+        "name": "Ezechielis",
+        "short": "Ezek",
+        "chapters": 48
+      },
+      {
+        "id": "Dan",
+        "name": "Danielis",
+        "short": "Dan",
+        "chapters": 14
+      },
+      {
+        "id": "Hos",
+        "name": "Osee",
+        "short": "Os",
+        "chapters": 14
+      },
+      {
+        "id": "Joel",
+        "name": "Joël",
+        "short": "Joël",
+        "chapters": 3
+      },
+      {
+        "id": "Amos",
+        "name": "Amos",
+        "short": "Amos",
+        "chapters": 9
+      },
+      {
+        "id": "Obad",
+        "name": "Abdiæ",
+        "short": "Abd",
+        "chapters": 1
+      },
+      {
+        "id": "Jona",
+        "name": "Jonæ",
+        "short": "Jonæ",
+        "chapters": 4
+      },
+      {
+        "id": "Mica",
+        "name": "Michææ",
+        "short": "Michææ",
+        "chapters": 7
+      },
+      {
+        "id": "Nahum",
+        "name": "Nahum",
+        "short": "Nahum",
+        "chapters": 3
+      },
+      {
+        "id": "Habak",
+        "name": "Habacuc",
+        "short": "Habac",
+        "chapters": 3
+      },
+      {
+        "id": "Zeph",
+        "name": "Sophoniæ",
+        "short": "Soph",
+        "chapters": 3
+      },
+      {
+        "id": "Hagg",
+        "name": "Aggæi",
+        "short": "Aggæi",
+        "chapters": 2
+      },
+      {
+        "id": "Zech",
+        "name": "Zachariæ",
+        "short": "Zach",
+        "chapters": 14
+      },
+      {
+        "id": "Mal",
+        "name": "Malachiæ",
+        "short": "Mal",
+        "chapters": 4
+      },
+      {
+        "id": "I_Macc",
+        "name": "I Machabæorum",
+        "short": "I Mach",
+        "chapters": 16
+      },
+      {
+        "id": "II_Macc",
+        "name": "II Machabæorum",
+        "short": "II Mach",
+        "chapters": 15
+      },
+      {
+        "id": "III_Macc",
+        "name": "III Machabæorum",
+        "short": "III Mach",
+        "chapters": 7
+      },
+      {
+        "id": "II_Esdra",
+        "name": "III Esdræ",
+        "short": "Esdræ III",
+        "chapters": 9
+      },
+      {
+        "id": "III_Esdra",
+        "name": "IV Esdræ",
+        "short": "Esdræ IV",
+        "chapters": 16
+      },
+      {
+        "id": "Mt",
+        "name": "Matthæes",
+        "short": "Mt",
+        "chapters": 28
+      },
+      {
+        "id": "Mk",
+        "name": "Marcus",
+        "short": "Mk",
+        "chapters": 16
+      },
+      {
+        "id": "Lk",
+        "name": "Lucas",
+        "short": "Lk",
+        "chapters": 24
+      },
+      {
+        "id": "Jn",
+        "name": "Joannes",
+        "short": "Jn",
+        "chapters": 21
+      },
+      {
+        "id": "Acts",
+        "name": "Actus Apostolorum",
+        "short": "Act",
+        "chapters": 28
+      },
+      {
+        "id": "Jas",
+        "name": "Jacobi",
+        "short": "Jac",
+        "chapters": 5
+      },
+      {
+        "id": "I_Pet",
+        "name": "I Petri",
+        "short": "I Pet",
+        "chapters": 5
+      },
+      {
+        "id": "II_Pet",
+        "name": "II Petri",
+        "short": "II Pet",
+        "chapters": 3
+      },
+      {
+        "id": "I_Jn",
+        "name": "I Joannis",
+        "short": "I Jn",
+        "chapters": 5
+      },
+      {
+        "id": "II_Jn",
+        "name": "II Joannis",
+        "short": "II Jn",
+        "chapters": 1
+      },
+      {
+        "id": "III_Jn",
+        "name": "III Joannis",
+        "short": "III Jn",
+        "chapters": 1
+      },
+      {
+        "id": "Jude",
+        "name": "Judæ",
+        "short": "Judæ",
+        "chapters": 1
+      },
+      {
+        "id": "Rom",
+        "name": "ad Romanos",
+        "short": "Rom",
+        "chapters": 16
+      },
+      {
+        "id": "I_Cor",
+        "name": "I ad Corinthios",
+        "short": "I Cor",
+        "chapters": 16
+      },
+      {
+        "id": "II_Cor",
+        "name": "II ad Corinthios",
+        "short": "II Cor",
+        "chapters": 13
+      },
+      {
+        "id": "Gal",
+        "name": "ad Galatas",
+        "short": "Gal",
+        "chapters": 6
+      },
+      {
+        "id": "Eph",
+        "name": "ad Ephesios",
+        "short": "Eph",
+        "chapters": 6
+      },
+      {
+        "id": "Philip",
+        "name": "ad Philippenses",
+        "short": "Phil",
+        "chapters": 4
+      },
+      {
+        "id": "Col",
+        "name": "ad Collessenses",
+        "short": "Col",
+        "chapters": 4
+      },
+      {
+        "id": "I_Thess",
+        "name": "I ad Thessalonicenses",
+        "short": "I Thess",
+        "chapters": 5
+      },
+      {
+        "id": "II_Thess",
+        "name": "II ad Thessalonicenses",
+        "short": "II Thess",
+        "chapters": 3
+      },
+      {
+        "id": "I_Tim",
+        "name": "I ad Timotheum",
+        "short": "I Tim",
+        "chapters": 6
+      },
+      {
+        "id": "II_Tim",
+        "name": "II ad Timotheum",
+        "short": "II Tim",
+        "chapters": 4
+      },
+      {
+        "id": "Tit",
+        "name": "ad Titum",
+        "short": "Tit",
+        "chapters": 3
+      },
+      {
+        "id": "Philemon",
+        "name": "ad Philemonem",
+        "short": "Philemon",
+        "chapters": 1
+      },
+      {
+        "id": "Heb",
+        "name": "ad Hebræos",
+        "short": "Heb",
+        "chapters": 13
+      },
+      {
+        "id": "Apoc",
+        "name": "Apocalypsis",
+        "short": "Apoc",
+        "chapters": 22
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SUP>^VN</SUP> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"font-style:italic;font-size:10pt;\">^TT</p><BR>,I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,XXVII,XXVIII,XXIX,XXX,XXXI,XXXII,XXXIII,XXXIV,XXXV,XXXVI,XXXVII,XXXVIII,XXXIX,XL,XLI,XLII,XLIII,XLIV,XLV,XLVI,XLVII,XLVIII,XLIX,L,LI,LII,LIII,LIV,LV,LVI,LVII,LVIII,LIX,LX,LXI,LXII,LXIII,LXIV,LXV,LXVI,LXVII,LXVIII,LXIX,LXX,LXXI,LXXII,LXXIII,LXXIV,LXXV,LXXVI,LXXVII,LXXVIII,LXXIX,LXXX,LXXXI,LXXXII,LXXXIII,LXXXIV,LXXXV,LXXXVI,LXXXVII,LXXXVIII,LXXXIX,XC,XCI,XCII,XCIII,XCIV,XCV,XCVI,XCVII,XCVIII,XCIX,C,CI,CII,CIII,CIV,CV,CVI,CVII,CVIII,CIX,CX,CXI,CXII,CXIII,CXIV,CXV,CXVI,CXVII,CXVIII,CXIX,CXX,CXXI,CXXII,CXXIII,CXXIV,CXXV,CXXVI,CXXVII,CXXVIII,CXXIX,CXXX,CXXXI,CXXXII,CXXXIII,CXXXIV,CXXXV,CXXXVI,CXXXVII,CXXXVIII,CXXXIX,CXL,CXLI,CXLII,CXLIII,CXLIV,CXLV,CXLVI,CXLVII,CXLVIII,CXLIX,CL,CLI,CLII,CLIII,CLIV,CLV,CLVI,CLVII,CLVIII,CLIX,CLX,CLXI,CLXII,CLXIII,CLXIV,CLXV,CLXVI,CLXVII,CLXVIII,CLXIX,CLXX,CLXXI,CLXXII,CLXXIII,CLXXIV,CLXXV,CLXXVI,CLXXVII,CLXXVIII,CLXXIX,CLXXX",
+      "ChapterNo": "Prologus,I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,XXVII,XXVIII,XXIX,XXX,XXXI,XXXII,XXXIII,XXXIV,XXXV,XXXVI,XXXVII,XXXVIII,XXXIX,XL,XLI,XLII,XLIII,XLIV,XLV,XLVI,XLVII,XLVIII,XLIX,L,LI,LII,LIII,LIV,LV,LVI,LVII,LVIII,LIX,LX,LXI,LXII,LXIII,LXIV,LXV,LXVI,LXVII,LXVIII,LXIX,LXX,LXXI,LXXII,LXXIII,LXXIV,LXXV,LXXVI,LXXVII,LXXVIII,LXXIX,LXXX,LXXXI,LXXXII,LXXXIII,LXXXIV,LXXXV,LXXXVI,LXXXVII,LXXXVIII,LXXXIX,XC,XCI,XCII,XCIII,XCIV,XCV,XCVI,XCVII,XCVIII,XCIX,C,CI,CII,CIII,CIV,CV,CVI,CVII,CVIII,CIX,CX,CXI,CXII,CXIII,CXIV,CXV,CXVI,CXVII,CXVIII,CXIX,CXX,CXXI,CXXII,CXXIII,CXXIV,CXXV,CXXVI,CXXVII,CXXVIII,CXXIX,CXXX,CXXXI,CXXXII,CXXXIII,CXXXIV,CXXXV,CXXXVI,CXXXVII,CXXXVIII,CXXXIX,CXL,CXLI,CXLII,CXLIII,CXLIV,CXLV,CXLVI,CXLVII,CXLVIII,CXLIX,CL,CLI,CLII,CLIII,CLIV,CLV,CLVI,CLVII,CLVIII,CLIX,CLX,CLXI,CLXII,CLXIII,CLXIV,CLXV,CLXVI,CLXVII,CLXVIII,CLXIX,CLXX,CLXXI,CLXXII,CLXXIII,CLXXIV,CLXXV,CLXXVI,CLXXVII,CLXXVIII,CLXXIX,CLXXX",
+      "CVSep": ":",
+      "Duration": "-",
+      "SelectionSeparator": ",",
+      "BCSep": "",
+      "Parts": "a,b,c"
+    }
+  },
+  {
+    "id": "zh/Hans/bible/cuv",
+    "name": "简体圣经",
+    "language": "zh",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "起源之书",
+        "short": "创",
+        "chapters": 50,
+        "intro": "恭读起源之书"
+      },
+      {
+        "id": "Ex",
+        "name": "出离之书",
+        "short": "出",
+        "chapters": 40,
+        "intro": "恭读出离之书"
+      },
+      {
+        "id": "Lev",
+        "name": "勒维人之书",
+        "short": "利／肋",
+        "chapters": 27,
+        "intro": "恭读勒维人之书"
+      },
+      {
+        "id": "Num",
+        "name": "民数之书",
+        "short": "民／户",
+        "chapters": 36,
+        "intro": "恭读民数之书"
+      },
+      {
+        "id": "Deut",
+        "name": "第二法典之书",
+        "short": "申",
+        "chapters": 34,
+        "intro": "恭读第二法典之书"
+      },
+      {
+        "id": "Josh",
+        "name": "纳维之子伊稣斯传",
+        "short": "书／苏",
+        "chapters": 24,
+        "intro": "恭读纳维之子伊稣斯传"
+      },
+      {
+        "id": "Judg",
+        "name": "众审判者传",
+        "short": "士／民",
+        "chapters": 21,
+        "intro": "恭读众审判者传"
+      },
+      {
+        "id": "Ruth",
+        "name": "如特传",
+        "short": "得／卢",
+        "chapters": 4,
+        "intro": "恭读如特传"
+      },
+      {
+        "id": "I_Kings",
+        "name": "众王传一",
+        "short": "撒上",
+        "chapters": 31,
+        "intro": "恭读众王传一"
+      },
+      {
+        "id": "II_Kings",
+        "name": "众王传二",
+        "short": "撒下",
+        "chapters": 24,
+        "intro": "恭读众王传二"
+      },
+      {
+        "id": "III_Kings",
+        "name": "众王传三",
+        "short": "列上",
+        "chapters": 22,
+        "intro": "恭读众王传三"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "众王传四",
+        "short": "列下",
+        "chapters": 25,
+        "intro": "恭读众王传四"
+      },
+      {
+        "id": "I_Paral",
+        "name": "史书补遗一",
+        "short": "历上／编上",
+        "chapters": 29,
+        "intro": "恭读史书补遗一（纪年书一）"
+      },
+      {
+        "id": "II_Paral",
+        "name": "史书补遗二",
+        "short": "历下／编下",
+        "chapters": 36,
+        "intro": "恭读史书补遗二（纪年书二）"
+      },
+      {
+        "id": "II_Esdra",
+        "name": "艾斯德拉纪一",
+        "short": "拉／厄上",
+        "chapters": 9,
+        "intro": "恭读艾斯德拉纪一"
+      },
+      {
+        "id": "I_Esdra",
+        "name": "艾斯德拉纪二",
+        "short": "艾斯德拉纪二",
+        "chapters": 10,
+        "intro": "恭读艾斯德拉纪二"
+      },
+      {
+        "id": "Nehem",
+        "name": "奈俄弥亚纪",
+        "short": "尼／厄下",
+        "chapters": 13,
+        "intro": "恭读奈俄弥亚纪"
+      },
+      {
+        "id": "Tobit",
+        "name": "托维特传",
+        "short": "多",
+        "chapters": 14,
+        "intro": "恭读托维特传"
+      },
+      {
+        "id": "Judith",
+        "name": "虞狄特传",
+        "short": "友",
+        "chapters": 16,
+        "intro": "恭读虞狄特传"
+      },
+      {
+        "id": "Esther",
+        "name": "艾斯提尔传",
+        "short": "帖／艾",
+        "chapters": 10,
+        "intro": "恭读艾斯提尔传"
+      },
+      {
+        "id": "Job",
+        "name": "约弗传",
+        "short": "伯／约",
+        "chapters": 42,
+        "intro": "恭读约弗传"
+      },
+      {
+        "id": "Psalm",
+        "name": "圣咏集",
+        "short": "篇／咏",
+        "chapters": 151,
+        "intro": "恭读圣咏集"
+      },
+      {
+        "id": "Prov",
+        "name": "索洛蒙箴言",
+        "short": "箴言",
+        "chapters": 31,
+        "intro": "恭读索洛蒙箴言"
+      },
+      {
+        "id": "Eccles",
+        "name": "训道篇",
+        "short": "传",
+        "chapters": 12,
+        "intro": "恭读训道篇"
+      },
+      {
+        "id": "Song",
+        "name": "歌中之歌",
+        "short": "歌",
+        "chapters": 8,
+        "intro": "恭读歌中之歌"
+      },
+      {
+        "id": "Wisd",
+        "name": "索洛蒙的智慧书",
+        "short": "智慧",
+        "chapters": 19,
+        "intro": "恭读索洛蒙的智慧书"
+      },
+      {
+        "id": "Sirach",
+        "name": "希拉赫的智慧书",
+        "short": "德",
+        "chapters": 51,
+        "intro": "恭读希拉赫的智慧书"
+      },
+      {
+        "id": "Isa",
+        "name": "伊撒依亚书",
+        "short": "赛／依",
+        "chapters": 66,
+        "intro": "恭读伊撒依亚书"
+      },
+      {
+        "id": "Jerem",
+        "name": "耶热弥亚书",
+        "short": "耶",
+        "chapters": 52,
+        "intro": "恭读耶热弥亚书"
+      },
+      {
+        "id": "Lamen",
+        "name": "耶热弥亚之哀歌",
+        "short": "哀",
+        "chapters": 5,
+        "intro": "恭读耶热弥亚之哀歌"
+      },
+      {
+        "id": "Epistle",
+        "name": "耶热弥亚之书信",
+        "short": "巴6",
+        "chapters": 1,
+        "intro": "恭读耶热弥亚之书信"
+      },
+      {
+        "id": "Baruch",
+        "name": "瓦如赫书",
+        "short": "巴",
+        "chapters": 5,
+        "intro": "恭读耶则基伊尔书"
+      },
+      {
+        "id": "Ezek",
+        "name": "耶则基伊尔书",
+        "short": "结／则",
+        "chapters": 48,
+        "intro": "恭读耶则基伊尔书"
+      },
+      {
+        "id": "Dan",
+        "name": "达尼伊尔书",
+        "short": "但／达",
+        "chapters": 14,
+        "intro": "恭读达尼伊尔书"
+      },
+      {
+        "id": "Hos",
+        "name": "奥西艾书",
+        "short": "何／欧",
+        "chapters": 14,
+        "intro": "恭读奥西艾书"
+      },
+      {
+        "id": "Joel",
+        "name": "约伊尔书",
+        "short": "珥／岳",
+        "chapters": 3,
+        "intro": "恭读约伊尔书"
+      },
+      {
+        "id": "Amos",
+        "name": "阿摩斯书",
+        "short": "摩／亚",
+        "chapters": 9,
+        "intro": "恭读阿摩斯书"
+      },
+      {
+        "id": "Obad",
+        "name": "奥弗狄亚书",
+        "short": "俄／北",
+        "chapters": 1,
+        "intro": "恭读奥弗狄亚书"
+      },
+      {
+        "id": "Jona",
+        "name": "约纳书",
+        "short": "拿／纳",
+        "chapters": 4,
+        "intro": "恭读约纳书"
+      },
+      {
+        "id": "Mica",
+        "name": "弥亥亚书",
+        "short": "弥／米",
+        "chapters": 7,
+        "intro": "恭读弥亥亚书"
+      },
+      {
+        "id": "Nahum",
+        "name": "纳翁书",
+        "short": "鸿",
+        "chapters": 3,
+        "intro": "恭读纳翁书"
+      },
+      {
+        "id": "Habak",
+        "name": "盎瓦库穆书",
+        "short": "哈",
+        "chapters": 3,
+        "intro": "恭读盎瓦库穆书"
+      },
+      {
+        "id": "Zeph",
+        "name": "索佛尼亚书",
+        "short": "番／索",
+        "chapters": 3,
+        "intro": "恭读索佛尼亚书"
+      },
+      {
+        "id": "Hagg",
+        "name": "盎盖书",
+        "short": "该／盖",
+        "chapters": 2,
+        "intro": "恭读盎盖书"
+      },
+      {
+        "id": "Zech",
+        "name": "匝哈里亚书",
+        "short": "亚／匝",
+        "chapters": 14,
+        "intro": "恭读匝哈里亚书"
+      },
+      {
+        "id": "Mal",
+        "name": "玛拉希亚书",
+        "short": "玛／拉",
+        "chapters": 4,
+        "intro": "恭读玛拉希亚书"
+      },
+      {
+        "id": "I_Macc",
+        "name": "玛喀维传一",
+        "short": "加上",
+        "chapters": 16,
+        "intro": "恭读玛喀维传一"
+      },
+      {
+        "id": "II_Macc",
+        "name": "玛喀维传二",
+        "short": "加下",
+        "chapters": 15,
+        "intro": "恭读玛喀维传三"
+      },
+      {
+        "id": "III_Macc",
+        "name": "玛喀维传三",
+        "short": "玛喀维传三",
+        "chapters": 7,
+        "intro": "恭读玛喀维传三"
+      },
+      {
+        "id": "IV_Macc",
+        "name": "玛喀维传四",
+        "short": "玛喀维传四",
+        "chapters": 18,
+        "intro": "恭读玛喀维传四"
+      },
+      {
+        "id": "III_Esdra",
+        "name": "艾斯德拉纪三",
+        "short": "艾斯德拉纪三",
+        "chapters": 16,
+        "intro": "恭读艾斯德拉纪三"
+      },
+      {
+        "id": "Mt",
+        "name": "玛特泰福音",
+        "short": "太／玛",
+        "chapters": 28,
+        "intro": "恭读圣福音依玛特泰所传者"
+      },
+      {
+        "id": "Mk",
+        "name": "玛尔克福音",
+        "short": "可／谷",
+        "chapters": 16,
+        "intro": "恭读圣福音依玛尔克所传者"
+      },
+      {
+        "id": "Lk",
+        "name": "路喀福音",
+        "short": "路加",
+        "chapters": 24,
+        "intro": "恭读圣福音依路喀所传者"
+      },
+      {
+        "id": "Jn",
+        "name": "约安福音",
+        "short": "约／若",
+        "chapters": 21,
+        "intro": "恭读圣福音依约安所传者"
+      },
+      {
+        "id": "Acts",
+        "name": "使徒行实",
+        "short": "徒／宗",
+        "chapters": 28,
+        "intro": "恭读使徒行实"
+      },
+      {
+        "id": "Jas",
+        "name": "雅科弗书信",
+        "short": "雅",
+        "chapters": 5,
+        "intro": "恭读雅科弗书信"
+      },
+      {
+        "id": "I_Pet",
+        "name": "裴特若书信一",
+        "short": "彼前／伯前",
+        "chapters": 5,
+        "intro": "恭读裴特若书信一"
+      },
+      {
+        "id": "II_Pet",
+        "name": "裴特若书信二",
+        "short": "彼后／伯后",
+        "chapters": 3,
+        "intro": "恭读裴特若书信二"
+      },
+      {
+        "id": "I_Jn",
+        "name": "约安书信一",
+        "short": "约壹／若一",
+        "chapters": 5,
+        "intro": "恭读约安书信一"
+      },
+      {
+        "id": "II_Jn",
+        "name": "约安书信二",
+        "short": "约贰／若二",
+        "chapters": 1,
+        "intro": "恭读约安书信二"
+      },
+      {
+        "id": "III_Jn",
+        "name": "约安书信三",
+        "short": "约叁／若三",
+        "chapters": 1,
+        "intro": "恭读约安书信三"
+      },
+      {
+        "id": "Jude",
+        "name": "犹达书信",
+        "short": "犹",
+        "chapters": 1,
+        "intro": "恭读犹达书信"
+      },
+      {
+        "id": "Rom",
+        "name": "致罗马人书",
+        "short": "罗",
+        "chapters": 16,
+        "intro": "恭读圣帕弗罗致罗马人书"
+      },
+      {
+        "id": "I_Cor",
+        "name": "致科林托人书一",
+        "short": "林前／格前",
+        "chapters": 16,
+        "intro": "恭读圣帕弗罗致科林托人书一"
+      },
+      {
+        "id": "II_Cor",
+        "name": "致科林托人书二",
+        "short": "林后／格后",
+        "chapters": 13,
+        "intro": "恭读圣帕弗罗致科林托人书二"
+      },
+      {
+        "id": "Gal",
+        "name": "致噶拉塔人书",
+        "short": "加／迦",
+        "chapters": 6,
+        "intro": "恭读圣帕弗罗致噶拉塔人书"
+      },
+      {
+        "id": "Eph",
+        "name": "致艾弗所人书",
+        "short": "弗",
+        "chapters": 6,
+        "intro": "恭读圣帕弗罗致艾弗所人书"
+      },
+      {
+        "id": "Philip",
+        "name": "致斐利彼人书",
+        "short": "腓／斐",
+        "chapters": 4,
+        "intro": "恭读圣帕弗罗致斐利彼人书"
+      },
+      {
+        "id": "Col",
+        "name": "致科罗西人书",
+        "short": "西／哥",
+        "chapters": 4,
+        "intro": "恭读圣帕弗罗致科罗西人书"
+      },
+      {
+        "id": "I_Thess",
+        "name": "致特撒洛尼基人书一",
+        "short": "帖前／得前",
+        "chapters": 5,
+        "intro": "恭读圣帕弗罗致特撒洛尼基人书一"
+      },
+      {
+        "id": "II_Thess",
+        "name": "致特撒洛尼基人书二",
+        "short": "帖后／得后",
+        "chapters": 3,
+        "intro": "恭读圣帕弗罗致特撒洛尼基人书二"
+      },
+      {
+        "id": "I_Tim",
+        "name": "致提摩特书一",
+        "short": "提前／弟前",
+        "chapters": 6,
+        "intro": "恭读圣帕弗罗致提摩特书一"
+      },
+      {
+        "id": "II_Tim",
+        "name": "致提摩特书二",
+        "short": "提后／弟后",
+        "chapters": 4,
+        "intro": "恭读圣帕弗罗致提摩特书二"
+      },
+      {
+        "id": "Tit",
+        "name": "致提托书",
+        "short": "多／铎",
+        "chapters": 3,
+        "intro": "恭读圣帕弗罗致提托书"
+      },
+      {
+        "id": "Philemon",
+        "name": "致斐利蒙书",
+        "short": "门／费",
+        "chapters": 1,
+        "intro": "恭读圣帕弗罗致斐利蒙书"
+      },
+      {
+        "id": "Heb",
+        "name": "致希伯来人书",
+        "short": "来／希",
+        "chapters": 13,
+        "intro": "恭读圣帕弗罗致希伯来人书"
+      },
+      {
+        "id": "Apoc",
+        "name": "约安之启示录",
+        "short": "启／默",
+        "chapters": 22,
+        "intro": "恭读约安之启示录"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SPAN style=\"color:red;font-size:90%;\">^VN</SPAN>^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME^CNN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME^NN章</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME^CNN</h1>",
+      "ChapterNI": "第^NN章",
+      "VerseNo": "<p style=\"font-style:italic;font-size:14pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "序,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": "：",
+      "Duration": "-",
+      "SelectionSeparator": "、",
+      "BCSep": "",
+      "FontFace": "SimSun",
+      "FontSize": "20",
+      "Parts": "a,b,c"
+    }
+  },
+  {
+    "id": "zh/Hant/bible/cuv",
+    "name": "正體聖經",
+    "language": "zh",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "起源之書",
+        "short": "創",
+        "chapters": 50,
+        "intro": "恭讀起源之書"
+      },
+      {
+        "id": "Ex",
+        "name": "出離之書",
+        "short": "出",
+        "chapters": 40,
+        "intro": "恭讀出離之書"
+      },
+      {
+        "id": "Lev",
+        "name": "勒維人之書",
+        "short": "利／肋",
+        "chapters": 27,
+        "intro": "恭讀勒維人之書"
+      },
+      {
+        "id": "Num",
+        "name": "民數之書",
+        "short": "民／戶",
+        "chapters": 36,
+        "intro": "恭讀民數之書"
+      },
+      {
+        "id": "Deut",
+        "name": "第二法典之書",
+        "short": "申",
+        "chapters": 34,
+        "intro": "恭讀第二法典之書"
+      },
+      {
+        "id": "Josh",
+        "name": "納維之子伊穌斯傳",
+        "short": "書／蘇",
+        "chapters": 24,
+        "intro": "恭讀納維之子伊穌斯傳"
+      },
+      {
+        "id": "Judg",
+        "name": "眾審判者傳",
+        "short": "士／民",
+        "chapters": 21,
+        "intro": "恭讀眾審判者傳"
+      },
+      {
+        "id": "Ruth",
+        "name": "如特傳",
+        "short": "得／盧",
+        "chapters": 4,
+        "intro": "恭讀如特傳"
+      },
+      {
+        "id": "I_Kings",
+        "name": "眾王傳一",
+        "short": "撒上",
+        "chapters": 31,
+        "intro": "恭讀眾王傳一"
+      },
+      {
+        "id": "II_Kings",
+        "name": "眾王傳二",
+        "short": "撒下",
+        "chapters": 24,
+        "intro": "恭讀眾王傳二"
+      },
+      {
+        "id": "III_Kings",
+        "name": "眾王傳三",
+        "short": "列上",
+        "chapters": 22,
+        "intro": "恭讀眾王傳三"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "眾王傳四",
+        "short": "列下",
+        "chapters": 25,
+        "intro": "恭讀眾王傳四"
+      },
+      {
+        "id": "I_Paral",
+        "name": "史書補遺一",
+        "short": "歷上／編上",
+        "chapters": 29,
+        "intro": "恭讀史書補遺一（紀年書一）"
+      },
+      {
+        "id": "II_Paral",
+        "name": "史書補遺二",
+        "short": "歷下／編下",
+        "chapters": 36,
+        "intro": "恭讀史書補遺二（紀年書二）"
+      },
+      {
+        "id": "II_Esdra",
+        "name": "艾斯德拉紀一",
+        "short": "艾斯德拉紀一",
+        "chapters": 9,
+        "intro": "恭讀艾斯德拉紀一"
+      },
+      {
+        "id": "I_Esdra",
+        "name": "艾斯德拉紀二",
+        "short": "拉／厄上",
+        "chapters": 10,
+        "intro": "恭讀艾斯德拉紀二"
+      },
+      {
+        "id": "Nehem",
+        "name": "奈俄彌亞紀",
+        "short": "尼／厄下",
+        "chapters": 13,
+        "intro": "恭讀奈俄彌亞紀"
+      },
+      {
+        "id": "Tobit",
+        "name": "托維特傳",
+        "short": "多",
+        "chapters": 14,
+        "intro": "恭讀托維特傳"
+      },
+      {
+        "id": "Judith",
+        "name": "虞狄特傳",
+        "short": "友",
+        "chapters": 16,
+        "intro": "恭讀虞狄特傳"
+      },
+      {
+        "id": "Esther",
+        "name": "艾斯提爾傳",
+        "short": "帖／艾",
+        "chapters": 10,
+        "intro": "恭讀艾斯提爾傳"
+      },
+      {
+        "id": "Job",
+        "name": "約弗傳",
+        "short": "伯／約",
+        "chapters": 42,
+        "intro": "恭讀約弗傳"
+      },
+      {
+        "id": "Psalm",
+        "name": "聖詠集",
+        "short": "篇／詠",
+        "chapters": 151,
+        "intro": "恭讀聖詠集"
+      },
+      {
+        "id": "Prov",
+        "name": "索洛蒙箴言",
+        "short": "箴言",
+        "chapters": 31,
+        "intro": "恭讀索洛蒙箴言"
+      },
+      {
+        "id": "Eccles",
+        "name": "訓道篇",
+        "short": "傳",
+        "chapters": 12,
+        "intro": "恭讀訓道篇"
+      },
+      {
+        "id": "Song",
+        "name": "歌中之歌",
+        "short": "歌",
+        "chapters": 8,
+        "intro": "恭讀歌中之歌"
+      },
+      {
+        "id": "Wisd",
+        "name": "索洛蒙的智慧書",
+        "short": "智慧",
+        "chapters": 19,
+        "intro": "恭讀索洛蒙的智慧書"
+      },
+      {
+        "id": "Sirach",
+        "name": "希拉赫的智慧書",
+        "short": "德",
+        "chapters": 51,
+        "intro": "恭讀希拉赫的智慧書"
+      },
+      {
+        "id": "Isa",
+        "name": "伊撒依亞書",
+        "short": "賽／依",
+        "chapters": 66,
+        "intro": "恭讀伊撒依亞書"
+      },
+      {
+        "id": "Jerem",
+        "name": "耶熱彌亞書",
+        "short": "耶",
+        "chapters": 52,
+        "intro": "恭讀耶熱彌亞書"
+      },
+      {
+        "id": "Lamen",
+        "name": "耶熱彌亞之哀歌",
+        "short": "哀",
+        "chapters": 5,
+        "intro": "恭讀耶熱彌亞之哀歌"
+      },
+      {
+        "id": "Epistle",
+        "name": "耶熱彌亞之書信",
+        "short": "巴6",
+        "chapters": 1,
+        "intro": "恭讀耶熱彌亞之書信"
+      },
+      {
+        "id": "Baruch",
+        "name": "瓦如赫書",
+        "short": "巴",
+        "chapters": 5,
+        "intro": "恭讀耶則基伊爾書"
+      },
+      {
+        "id": "Ezek",
+        "name": "耶則基伊爾書",
+        "short": "結／則",
+        "chapters": 48,
+        "intro": "恭讀耶則基伊爾書"
+      },
+      {
+        "id": "Dan",
+        "name": "達尼伊爾書",
+        "short": "但／達",
+        "chapters": 14,
+        "intro": "恭讀達尼伊爾書"
+      },
+      {
+        "id": "Hos",
+        "name": "奧西艾書",
+        "short": "何／歐",
+        "chapters": 14,
+        "intro": "恭讀奧西艾書"
+      },
+      {
+        "id": "Joel",
+        "name": "約伊爾書",
+        "short": "珥／岳",
+        "chapters": 3,
+        "intro": "恭讀約伊爾書"
+      },
+      {
+        "id": "Amos",
+        "name": "阿摩斯書",
+        "short": "摩／亞",
+        "chapters": 9,
+        "intro": "恭讀阿摩斯書"
+      },
+      {
+        "id": "Obad",
+        "name": "奧弗狄亞書",
+        "short": "俄／北",
+        "chapters": 1,
+        "intro": "恭讀奧弗狄亞書"
+      },
+      {
+        "id": "Jona",
+        "name": "約納書",
+        "short": "拿／納",
+        "chapters": 4,
+        "intro": "恭讀約納書"
+      },
+      {
+        "id": "Mica",
+        "name": "彌亥亞書",
+        "short": "彌／米",
+        "chapters": 7,
+        "intro": "恭讀彌亥亞書"
+      },
+      {
+        "id": "Nahum",
+        "name": "納翁書",
+        "short": "鴻",
+        "chapters": 3,
+        "intro": "恭讀納翁書"
+      },
+      {
+        "id": "Habak",
+        "name": "盎瓦庫穆書",
+        "short": "哈",
+        "chapters": 3,
+        "intro": "恭讀盎瓦庫穆書"
+      },
+      {
+        "id": "Zeph",
+        "name": "索佛尼亞書",
+        "short": "番／索",
+        "chapters": 3,
+        "intro": "恭讀索佛尼亞書"
+      },
+      {
+        "id": "Hagg",
+        "name": "盎蓋書",
+        "short": "該／蓋",
+        "chapters": 2,
+        "intro": "恭讀盎蓋書"
+      },
+      {
+        "id": "Zech",
+        "name": "匝哈里亞書",
+        "short": "亞／匝",
+        "chapters": 14,
+        "intro": "恭讀匝哈里亞書"
+      },
+      {
+        "id": "Mal",
+        "name": "瑪拉希亞書",
+        "short": "瑪／拉",
+        "chapters": 4,
+        "intro": "恭讀瑪拉希亞書"
+      },
+      {
+        "id": "I_Macc",
+        "name": "瑪喀維傳一",
+        "short": "加上",
+        "chapters": 16,
+        "intro": "恭讀瑪喀維傳一"
+      },
+      {
+        "id": "II_Macc",
+        "name": "瑪喀維傳二",
+        "short": "加下",
+        "chapters": 15,
+        "intro": "恭讀瑪喀維傳三"
+      },
+      {
+        "id": "III_Macc",
+        "name": "瑪喀維傳三",
+        "short": "瑪喀維傳三",
+        "chapters": 7,
+        "intro": "恭讀瑪喀維傳三"
+      },
+      {
+        "id": "IV_Macc",
+        "name": "瑪喀維傳四",
+        "short": "瑪喀維傳四",
+        "chapters": 18,
+        "intro": "恭讀瑪喀維傳四"
+      },
+      {
+        "id": "III_Esdra",
+        "name": "艾斯德拉紀三",
+        "short": "艾斯德拉紀三",
+        "chapters": 16,
+        "intro": "恭讀艾斯德拉紀三"
+      },
+      {
+        "id": "Mt",
+        "name": "瑪特泰福音",
+        "short": "太／瑪",
+        "chapters": 28,
+        "intro": "恭讀聖福音依瑪特泰所傳者"
+      },
+      {
+        "id": "Mk",
+        "name": "瑪爾克福音",
+        "short": "可／谷",
+        "chapters": 16,
+        "intro": "恭讀聖福音依瑪爾克所傳者"
+      },
+      {
+        "id": "Lk",
+        "name": "路喀福音",
+        "short": "路加",
+        "chapters": 24,
+        "intro": "恭讀聖福音依路喀所傳者"
+      },
+      {
+        "id": "Jn",
+        "name": "約安福音",
+        "short": "約／若",
+        "chapters": 21,
+        "intro": "恭讀聖福音依約安所傳者"
+      },
+      {
+        "id": "Acts",
+        "name": "使徒行實",
+        "short": "徒／宗",
+        "chapters": 28,
+        "intro": "恭讀使徒行實"
+      },
+      {
+        "id": "Jas",
+        "name": "雅科弗書信",
+        "short": "雅",
+        "chapters": 5,
+        "intro": "恭讀雅科弗書信"
+      },
+      {
+        "id": "I_Pet",
+        "name": "裴特若書信一",
+        "short": "彼前／伯前",
+        "chapters": 5,
+        "intro": "恭讀裴特若書信一"
+      },
+      {
+        "id": "II_Pet",
+        "name": "裴特若書信二",
+        "short": "彼後／伯後",
+        "chapters": 3,
+        "intro": "恭讀裴特若書信二"
+      },
+      {
+        "id": "I_Jn",
+        "name": "約安書信一",
+        "short": "約壹／若一",
+        "chapters": 5,
+        "intro": "恭讀約安書信一"
+      },
+      {
+        "id": "II_Jn",
+        "name": "約安書信二",
+        "short": "約貳／若二",
+        "chapters": 1,
+        "intro": "恭讀約安書信二"
+      },
+      {
+        "id": "III_Jn",
+        "name": "約安書信三",
+        "short": "約叄／若三",
+        "chapters": 1,
+        "intro": "恭讀約安書信三"
+      },
+      {
+        "id": "Jude",
+        "name": "猶達書信",
+        "short": "猶",
+        "chapters": 1,
+        "intro": "恭讀猶達書信"
+      },
+      {
+        "id": "Rom",
+        "name": "致羅馬人書",
+        "short": "羅",
+        "chapters": 16,
+        "intro": "恭讀聖帕弗羅致羅馬人書"
+      },
+      {
+        "id": "I_Cor",
+        "name": "致科林托人書一",
+        "short": "林前／格前",
+        "chapters": 16,
+        "intro": "恭讀聖帕弗羅致科林托人書一"
+      },
+      {
+        "id": "II_Cor",
+        "name": "致科林托人書二",
+        "short": "林後／格後",
+        "chapters": 13,
+        "intro": "恭讀聖帕弗羅致科林托人書二"
+      },
+      {
+        "id": "Gal",
+        "name": "致噶拉塔人書",
+        "short": "加／迦",
+        "chapters": 6,
+        "intro": "恭讀聖帕弗羅致噶拉塔人書"
+      },
+      {
+        "id": "Eph",
+        "name": "致艾弗所人書",
+        "short": "弗",
+        "chapters": 6,
+        "intro": "恭讀聖帕弗羅致艾弗所人書"
+      },
+      {
+        "id": "Philip",
+        "name": "致斐利彼人書",
+        "short": "腓／斐",
+        "chapters": 4,
+        "intro": "恭讀聖帕弗羅致斐利彼人書"
+      },
+      {
+        "id": "Col",
+        "name": "致科羅西人書",
+        "short": "西／哥",
+        "chapters": 4,
+        "intro": "恭讀聖帕弗羅致科羅西人書"
+      },
+      {
+        "id": "I_Thess",
+        "name": "致特撒洛尼基人書一",
+        "short": "帖前／得前",
+        "chapters": 5,
+        "intro": "恭讀聖帕弗羅致特撒洛尼基人書一"
+      },
+      {
+        "id": "II_Thess",
+        "name": "致特撒洛尼基人書二",
+        "short": "帖後／得後",
+        "chapters": 3,
+        "intro": "恭讀聖帕弗羅致特撒洛尼基人書二"
+      },
+      {
+        "id": "I_Tim",
+        "name": "致提摩特書一",
+        "short": "提前／弟前",
+        "chapters": 6,
+        "intro": "恭讀聖帕弗羅致提摩特書一"
+      },
+      {
+        "id": "II_Tim",
+        "name": "致提摩特書二",
+        "short": "提後／弟後",
+        "chapters": 4,
+        "intro": "恭讀聖帕弗羅致提摩特書二"
+      },
+      {
+        "id": "Tit",
+        "name": "致提托書",
+        "short": "多／鐸",
+        "chapters": 3,
+        "intro": "恭讀聖帕弗羅致提托書"
+      },
+      {
+        "id": "Philemon",
+        "name": "致斐利蒙書",
+        "short": "門／費",
+        "chapters": 1,
+        "intro": "恭讀聖帕弗羅致斐利蒙書"
+      },
+      {
+        "id": "Heb",
+        "name": "致希伯來人書",
+        "short": "來／希",
+        "chapters": 13,
+        "intro": "恭讀聖帕弗羅致希伯來人書"
+      },
+      {
+        "id": "Apoc",
+        "name": "約安之啟示錄",
+        "short": "啟／默",
+        "chapters": 22,
+        "intro": "恭讀約安之啟示錄"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SPAN style=\"color:red;font-size:65%;\">^VN</SPAN>^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME^CNN",
+      "ChapterNI": "第^NN章",
+      "ChapterN": "<p style=\"color:red;\">^NAME^NN章</p>",
+      "HeaderFormat": "<h1 style=\"color:red;\">^NAME^CNN</h1>",
+      "VerseNo": "<p style=\"font-style:italic;font-size:14pt;\">^TT</p><BR>,一,二,三,四,五,六,七,八,九,十,十一,十二,十三,十四,十五,十六,十七,十八,十九,二十,二一,二二,二三,二四,二五,二六,二七,二八,二九,三十,三一,三二,三三,三四,三五,三六,三七,三八,三九,四十,四一,四二,四三,四四,四五,四六,四七,四八,四九,五十,五一,五二,五三,五四,五五,五六,五七,五八,五九,六十,六一,六二,六三,六四,六五,六六,六七,六八,六九,七十,七一,七二,七三,七四,七五,七六,七七,七八,七九,八十,八一,八二,八三,八四,八五,八六,八七,八八,八九,九十,九一,九二,九三,九四,九五,九六,九七,九八,九九,一百,百零一,百零二,百零三,百零四,百零五,百零六,百零七,百零八,百零九,百一十,百十一,百十二,百十三,百十四,百十五,百十六,百十七,百十八,百十九,百二十,百二一,百二二,百二三,百二四,百二五,百二六,百二七,百二八,百二九,百三十,百三一,百三二,百三三,百三四,百三五,百三六,百三七,百三八,百三九,百四十,百四一,百四二,百四三,百四四,百四五,百四六,百四七,百四八,百四九,百五十,百五一,百五二,百五三,百五四,百五五,百五六,百五七,百五八,百五九,百六十,百六一,百六二,百六三,百六四,百六五,百六六,百六七,百六八,百六九,百七十,百七一,百七二,百七三,百七四,百七五,百七六,百七七,百七八,百七九,百八十",
+      "ChapterNo": "序,一,二,三,四,五,六,七,八,九,十,十一,十二,十三,十四,十五,十六,十七,十八,十九,二十,二一,二二,二三,二四,二五,二六,二七,二八,二九,三十,三一,三二,三三,三四,三五,三六,三七,三八,三九,四十,四一,四二,四三,四四,四五,四六,四七,四八,四九,五十,五一,五二,五三,五四,五五,五六,五七,五八,五九,六十,六一,六二,六三,六四,六五,六六,六七,六八,六九,七十,七一,七二,七三,七四,七五,七六,七七,七八,七九,八十,八一,八二,八三,八四,八五,八六,八七,八八,八九,九十,九一,九二,九三,九四,九五,九六,九七,九八,九九,一百,百零一,百零二,百零三,百零四,百零五,百零六,百零七,百零八,百零九,百一十,百十一,百十二,百十三,百十四,百十五,百十六,百十七,百十八,百十九,百二十,百二一,百二二,百二三,百二四,百二五,百二六,百二七,百二八,百二九,百三十,百三一,百三二,百三三,百三四,百三五,百三六,百三七,百三八,百三九,百四十,百四一,百四二,百四三,百四四,百四五,百四六,百四七,百四八,百四九,百五十,百五一,百五二,百五三,百五四,百五五,百五六,百五七,百五八,百五九,百六十,百六一,百六二,百六三,百六四,百六五,百六六,百六七,百六八,百六九,百七十,百七一,百七二,百七三,百七四,百七五,百七六,百七七,百七八,百七九,百八十",
+      "CVSep": "：",
+      "Duration": "～",
+      "SelectionSeparator": "、",
+      "BCSep": "",
+      "FontFace": "MingLiU",
+      "FontSize": "22",
+      "Parts": "a,b,c"
+    }
+  },
+  {
+    "id": "el/bible/spt",
+    "name": "Ἡ Ἁγία Γραφή",
+    "language": "el",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "Γένεσις",
+        "short": "Γέν",
+        "chapters": 50,
+        "intro": "Γενέσεως τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Ex",
+        "name": "Ἔξοδος",
+        "short": "Έξ",
+        "chapters": 40,
+        "intro": "Τῆς Ἐξόδου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Lev",
+        "name": "Λευϊτικόν",
+        "short": "Λευ",
+        "chapters": 27,
+        "intro": "Λευϊτικοῦ τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Num",
+        "name": "Ἀριθμοὶ",
+        "short": "Αριθ",
+        "chapters": 36,
+        "intro": "Ἀριθμῶν τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Deut",
+        "name": "Δευτερονόμιον",
+        "short": "Δευτ",
+        "chapters": 34,
+        "intro": "Δευτερονομίου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Josh",
+        "name": "Ἰησοῦς Nαυῆ",
+        "short": "Ιησ",
+        "chapters": 24,
+        "intro": "Ἰησοῦ τοῦ Ναυῆ τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Judg",
+        "name": "Κριταὶ",
+        "short": "Κριτ",
+        "chapters": 21,
+        "intro": "Κριτῶν τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Ruth",
+        "name": "Ῥούθ",
+        "short": "Ρούθ",
+        "chapters": 4,
+        "intro": "A reading from Ruth"
+      },
+      {
+        "id": "I_Kings",
+        "name": "Βασιλειῶν αʹ",
+        "short": "Βασ αʹ",
+        "chapters": 31,
+        "intro": "Βασιλειῶν αʹ τὸ Ἀνάγνωσμ"
+      },
+      {
+        "id": "II_Kings",
+        "name": "Βασιλειῶν βʹ",
+        "short": "Βασ βʹ",
+        "chapters": 24,
+        "intro": "Βασιλειῶν βʹ τὸ Ἀνάγνωσμ"
+      },
+      {
+        "id": "III_Kings",
+        "name": "Βασιλειῶν γʹ",
+        "short": "Βασ γ",
+        "chapters": 22,
+        "intro": "Βασιλειῶν τρίτης τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "Βασιλειῶν δʹ",
+        "short": "Βασ δʹ",
+        "chapters": 25,
+        "intro": "Βασιλειῶν τετάρτης τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "I_Paral",
+        "name": "Παραλειπομένων αʹ",
+        "short": "Παραλ αʹ",
+        "chapters": 29,
+        "intro": "A reading from the first Book of Paralipomenon"
+      },
+      {
+        "id": "II_Paral",
+        "name": "Παραλειπομένων βʹ",
+        "short": "Παραλ βʹ",
+        "chapters": 36,
+        "intro": "A reading from the second Book of Paraliponmenon"
+      },
+      {
+        "id": "II_Esdra",
+        "name": "Ἔσδρας αʹ",
+        "short": "Ἔσδρας αʹ",
+        "chapters": 9,
+        "intro": "A reading from the second Book of Esdras"
+      },
+      {
+        "id": "I_Esdra",
+        "name": "Ἔσδρας βʹ",
+        "short": "Ἔσδρας βʹ",
+        "chapters": 10,
+        "intro": "A reading from the first Book of Esdras"
+      },
+      {
+        "id": "Nehem",
+        "name": "Νεεμίας",
+        "short": "Νεεμίας",
+        "chapters": 13,
+        "intro": "A reading from the Prophecy of Nehemiah"
+      },
+      {
+        "id": "Tobit",
+        "name": "Τωβίτ",
+        "short": "Τωβίτ",
+        "chapters": 14,
+        "intro": "A reading from Tobit"
+      },
+      {
+        "id": "Judith",
+        "name": "Ἰουδίθ",
+        "short": "Ἰουδίθ",
+        "chapters": 16,
+        "intro": "A reading from Judith"
+      },
+      {
+        "id": "Esther",
+        "name": "Ἐσθήρ",
+        "short": "Ἐσθήρ",
+        "chapters": 10,
+        "intro": "A reading from Esther"
+      },
+      {
+        "id": "Job",
+        "name": "Ἰώβ",
+        "short": "Ἰώβ",
+        "chapters": 42,
+        "intro": "Ἰὼβ τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Psalm",
+        "name": "Ψαλμοί",
+        "short": "Ψαλ",
+        "chapters": 151,
+        "intro": "Ψαλμοί"
+      },
+      {
+        "id": "Prov",
+        "name": "Παροιμίαι",
+        "short": "Παρ",
+        "chapters": 28,
+        "intro": "Παροιμιῶν τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Eccles",
+        "name": "Ἐκκλησιαστής",
+        "short": "Ἐκκ",
+        "chapters": 12,
+        "intro": "A reading from Ecclesiastes"
+      },
+      {
+        "id": "Song",
+        "name": "Ἆσμα Ἀσμάτων",
+        "short": "Ἆσμα",
+        "chapters": 8,
+        "intro": "A reading from the Song of Songs"
+      },
+      {
+        "id": "Wisd",
+        "name": "Σοφία Σαλoμῶντος",
+        "short": "Σοφία",
+        "chapters": 19,
+        "intro": "Σοφίας Σολομῶντος τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Sirach",
+        "name": "Σοφία Ἰησοῦ Σειράχ",
+        "short": "Σειράχ",
+        "chapters": 51,
+        "intro": "A reading from the Prophecy of Sirach, son of Jesus"
+      },
+      {
+        "id": "Isa",
+        "name": "Ἡσαΐας",
+        "short": "Ἡσα",
+        "chapters": 66,
+        "intro": "Προφητείας Ἡσαΐου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Jerem",
+        "name": "Ἱερεμίας",
+        "short": "Ἱερ",
+        "chapters": 52,
+        "intro": "Προφητείας Ἱερεμίου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Lamen",
+        "name": "Θρῆνοι Ἱερεμίου",
+        "short": "Θρῆνοι",
+        "chapters": 5,
+        "intro": "Προφητείας Ἱερεμίου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Epistle",
+        "name": "Επιστολὴ Ἱερεμίου",
+        "short": "Επιστολή",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jeremiah"
+      },
+      {
+        "id": "Baruch",
+        "name": "Βαρούχ",
+        "short": "Βαρούχ",
+        "chapters": 5,
+        "intro": "Προφητείας Ἱερεμίου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Ezek",
+        "name": "Ἰεζεκιὴλ",
+        "short": "Ἰεζ",
+        "chapters": 48,
+        "intro": "Προφητείας Ἰεζεκιὴλ τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Dan",
+        "name": "Δανιὴλ",
+        "short": "Δαν",
+        "chapters": 14,
+        "intro": "Προφητείας Δανιὴλ τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Hos",
+        "name": "Ὡσηέ",
+        "short": "Ὡσηέ",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Hosea"
+      },
+      {
+        "id": "Joel",
+        "name": "Ἰωὴλ",
+        "short": "Ἰωὴλ",
+        "chapters": 3,
+        "intro": "Προφητείας Ἰωὴλ τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Amos",
+        "name": "Ἀμώς",
+        "short": "Ἀμώς",
+        "chapters": 9,
+        "intro": "A reading from the Prophecy of Amos"
+      },
+      {
+        "id": "Obad",
+        "name": "Ὀβδίας",
+        "short": "Ὀβδ",
+        "chapters": 1,
+        "intro": "A reading from the Prophecy of Obadiah"
+      },
+      {
+        "id": "Jona",
+        "name": "Ἰωνᾶς",
+        "short": "Ἰωνᾶς",
+        "chapters": 4,
+        "intro": "Προφητείας Ἰωνᾶ τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Mica",
+        "name": "Μιχαίας",
+        "short": "Μιχ",
+        "chapters": 7,
+        "intro": "Προφητείας Μιχαίου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Nahum",
+        "name": "Ναούμ",
+        "short": "Ναούμ",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Nahum"
+      },
+      {
+        "id": "Habak",
+        "name": "Ἀμβακούμ",
+        "short": "Ἀμβ",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Habakuk"
+      },
+      {
+        "id": "Zeph",
+        "name": "Σοφονίας",
+        "short": "Σοφ",
+        "chapters": 3,
+        "intro": "Προφητείας Σοφονίου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Hagg",
+        "name": "Ἀγγαῖος",
+        "short": "Ἀγγ",
+        "chapters": 2,
+        "intro": "A reading from the Prophecy of Haggai"
+      },
+      {
+        "id": "Zech",
+        "name": "Ζαχαρίας",
+        "short": "Ζαχ",
+        "chapters": 14,
+        "intro": "Προφητείας Ζαχαρίου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Mal",
+        "name": "Μαλαχίας",
+        "short": "Μαλ",
+        "chapters": 4,
+        "intro": "Προφητείας Μαλαχίου τὸ ἀνάγνωσμα"
+      },
+      {
+        "id": "I_Macc",
+        "name": "Μακκαβαίων αʹ",
+        "short": "Μακ αʹ",
+        "chapters": 16,
+        "intro": "A reading from the first Book of Maccabees"
+      },
+      {
+        "id": "II_Macc",
+        "name": "Μακκαβαίων βʹ",
+        "short": "Μακ βʹ",
+        "chapters": 15,
+        "intro": "A reading from the second Book of Maccabees"
+      },
+      {
+        "id": "III_Macc",
+        "name": "Μακκαβαίων γʹ",
+        "short": "Μακ γʹ",
+        "chapters": 7,
+        "intro": "A reading from the third Book of Maccabees"
+      },
+      {
+        "id": "IV_Macc",
+        "name": "Μακκαβαίων δʹ",
+        "short": "Μακ δʹ",
+        "chapters": 18,
+        "intro": "A reading from the fourth Book of Maccabees"
+      },
+      {
+        "id": "Mt",
+        "name": "Εὐαγγέλιον κατὰ Ματθαῖον",
+        "short": "Ματ",
+        "chapters": 28,
+        "intro": "Εὐαγγέλιον ἐκ τοῦ κατὰ Ματθαῖον"
+      },
+      {
+        "id": "Mk",
+        "name": "Εὐαγγέλιον κατὰ Μᾶρκον",
+        "short": "Μᾶρ",
+        "chapters": 16,
+        "intro": "Εὐαγγέλιον ἐκ τοῦ κατὰ Μᾶρκον"
+      },
+      {
+        "id": "Lk",
+        "name": "Εὐαγγέλιον κατὰ Λουκᾶν",
+        "short": "Λου",
+        "chapters": 24,
+        "intro": "Εὐαγγέλιον ἐκ τοῦ κατὰ Λουκᾶν"
+      },
+      {
+        "id": "Jn",
+        "name": "Εὐαγγέλιον κατὰ Ἰωάννην",
+        "short": "Ἰωάν",
+        "chapters": 21,
+        "intro": "Εὐαγγέλιον ἐκ τοῦ κατὰ Ἰωάννην"
+      },
+      {
+        "id": "Acts",
+        "name": "Πράξεων τῶν Ἀποστολων",
+        "short": "Πράξ",
+        "chapters": 28,
+        "intro": "A reading from the Acts of the Apostles"
+      },
+      {
+        "id": "Jas",
+        "name": "Καθολικὴ Επιστολὴ Ιακώβου",
+        "short": "Ιακώβου",
+        "chapters": 5,
+        "intro": "A reading from the Epistle of James"
+      },
+      {
+        "id": "I_Pet",
+        "name": "Καθολικὴ Επιστολὴ Πέτρου αʹ",
+        "short": "Πέτρου αʹ",
+        "chapters": 5,
+        "intro": "Καθολικῆς αʹ Ἐπιστολῆς Πέτρου Τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "II_Pet",
+        "name": "Καθολικὴ Επιστολὴ Πέτρου βʹ",
+        "short": "Πέτρου βʹ",
+        "chapters": 3,
+        "intro": "Καθολικῆς βʹ Ἐπιστολῆς Πέτρου Τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "I_Jn",
+        "name": "Καθολικὴ Επιστολὴ Ἰωάννου αʹ",
+        "short": "Ἰωάν αʹ",
+        "chapters": 5,
+        "intro": "Καθολικῆς αʹ Ἐπιστολῆς Ἰωάννου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "II_Jn",
+        "name": "Καθολικὴ Επιστολὴ Ἰωάννου βʹ",
+        "short": "Ἰωάν βʹ",
+        "chapters": 1,
+        "intro": "Καθολικῆς βʹ Ἐπιστολῆς Ἰωάννου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "III_Jn",
+        "name": "Καθολικὴ Επιστολὴ Ἰωάννου γʹ",
+        "short": "Ἰωάν γʹ",
+        "chapters": 1,
+        "intro": "Καθολικῆς Γʹ Ἐπιστολῆς Ἰωάννου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Jude",
+        "name": "Καθολικὴ Επιστολὴ Ἰούδα",
+        "short": "Ἰούδα",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jude"
+      },
+      {
+        "id": "Rom",
+        "name": "Πρὸς Ῥωμαίους",
+        "short": "Ῥωμ",
+        "chapters": 16,
+        "intro": "Πρὸς Ῥωμαίους Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "I_Cor",
+        "name": "Πρὸς Κορινθίους αʹ",
+        "short": "Κορ αʹ",
+        "chapters": 16,
+        "intro": "Πρὸς Κορινθίους αʹ Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "II_Cor",
+        "name": "Πρὸς Κορινθίους βʹ",
+        "short": "Κορ βʹ",
+        "chapters": 13,
+        "intro": "Πρὸς Κορινθίους βʹ Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Gal",
+        "name": "Πρὸς Γαλάτας",
+        "short": "Γαλ",
+        "chapters": 6,
+        "intro": "Πρὸς Γαλάτας ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Eph",
+        "name": "Πρὸς Εφεσίους",
+        "short": "Εφ",
+        "chapters": 6,
+        "intro": "A reading from the Epistle of Paul to the Ephesians"
+      },
+      {
+        "id": "Philip",
+        "name": "Πρὸς Φιλιππησίους",
+        "short": "Φιλ",
+        "chapters": 4,
+        "intro": "Πρὸς Φιλιππησίους Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Col",
+        "name": "Πρὸς Κολοσσαείς",
+        "short": "Κολ",
+        "chapters": 4,
+        "intro": "A reading from the Epistle to the Colossians"
+      },
+      {
+        "id": "I_Thess",
+        "name": "Πρὸς Θεσσαλονικείς αʹ",
+        "short": "Θεσ α'",
+        "chapters": 5,
+        "intro": "Πρὸς Θεσσαλονικεὶς αʹ Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "II_Thess",
+        "name": "Πρὸς Θεσσαλονικείς βʹ",
+        "short": "Θεσ βʹ",
+        "chapters": 3,
+        "intro": "Πρὸς Θεσσαλονικεὶς Βʹ Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "I_Tim",
+        "name": "Πρὸς Τιμόθεον αʹ",
+        "short": "Τιμ αʹ",
+        "chapters": 6,
+        "intro": "Πρὸς Τιμόθεον αʹ Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "II_Tim",
+        "name": "Πρὸς Τιμόθεον βʹ",
+        "short": "Τιμ βʹ",
+        "chapters": 4,
+        "intro": "Πρὸς Τιμόθεον βʹ Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Tit",
+        "name": "Πρὸς Τίτον",
+        "short": "Τίτον",
+        "chapters": 3,
+        "intro": "Πρὸς Τίτον ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Philemon",
+        "name": "Πρὸς Φιλήμονα",
+        "short": "Φιλήμονα",
+        "chapters": 1,
+        "intro": "A reading from the Epistle to Philemon"
+      },
+      {
+        "id": "Heb",
+        "name": "Πρὸς Ἑβραίους",
+        "short": "Ἑβρ",
+        "chapters": 13,
+        "intro": "Πρὸς Ἑβραίους Ἐπιστολῆς Παύλου τὸ Ἀνάγνωσμα"
+      },
+      {
+        "id": "Apoc",
+        "name": "Ἀποκάλυψις",
+        "short": "Αποκ",
+        "chapters": 22,
+        "intro": "A reading from the Book of Revelations"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SUP>^VN</SUP> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^CNN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME ^CNN</h1>",
+      "ChapterNI": "^NN",
+      "VerseNo": "<p style=\"color:red;font-size:10pt;\">^TT</p><BR>,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "ChapterNo": "Prologue,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180",
+      "CVSep": ":",
+      "Duration": "-",
+      "SelectionSeparator": ",",
+      "BCSep": "",
+      "FontFace": "Times New Roman",
+      "FontSize": "14",
+      "Parts": "α,β,γ"
+    }
+  },
+  {
+    "id": "ar/bible/svd",
+    "name": "العربية (Smith - van Dyck)",
+    "language": "ar",
+    "books": [
+      {
+        "id": "Gen",
+        "name": "تكوين",
+        "short": "Gen",
+        "chapters": 50,
+        "intro": "A reading from Genesis"
+      },
+      {
+        "id": "Ex",
+        "name": "خروج",
+        "short": "Ex",
+        "chapters": 40,
+        "intro": "A reading from Exodus"
+      },
+      {
+        "id": "Lev",
+        "name": "لاويين",
+        "short": "Lev",
+        "chapters": 27,
+        "intro": "A reading from Levites"
+      },
+      {
+        "id": "Num",
+        "name": "عدد",
+        "short": "Num",
+        "chapters": 36,
+        "intro": "A reading from Numbers"
+      },
+      {
+        "id": "Deut",
+        "name": "تثنية",
+        "short": "Deut",
+        "chapters": 34,
+        "intro": "A reading Deuteronomy"
+      },
+      {
+        "id": "Josh",
+        "name": "يشوع",
+        "short": "Josh",
+        "chapters": 24,
+        "intro": "A reading from Joshua, the son of Nun"
+      },
+      {
+        "id": "Judg",
+        "name": "قضاة",
+        "short": "Judg",
+        "chapters": 21,
+        "intro": "A reading from Judges"
+      },
+      {
+        "id": "Ruth",
+        "name": "راعوث",
+        "short": "Ruth",
+        "chapters": 4,
+        "intro": "A reading from Ruth"
+      },
+      {
+        "id": "I_Kings",
+        "name": "١ صموئيل",
+        "short": "I Kings",
+        "chapters": 31,
+        "intro": "A reading from the first Book of Kingdoms"
+      },
+      {
+        "id": "II_Kings",
+        "name": "٢ صموئيل",
+        "short": "II Kings",
+        "chapters": 24,
+        "intro": "A reading from the second Book of Kingdoms"
+      },
+      {
+        "id": "III_Kings",
+        "name": "١ ملوك",
+        "short": "III Kings",
+        "chapters": 22,
+        "intro": "A reading from the third Book of Kingdoms"
+      },
+      {
+        "id": "IV_Kings",
+        "name": "٢ ملوك",
+        "short": "IV Kings",
+        "chapters": 25,
+        "intro": "A reading from the fourth Book of Kingdoms"
+      },
+      {
+        "id": "I_Paral",
+        "name": "١ اخبار",
+        "short": "I Paral",
+        "chapters": 29,
+        "intro": "A reading from the first Book of Paralipomenon"
+      },
+      {
+        "id": "II_Paral",
+        "name": "٢ اخبار",
+        "short": "II Paral",
+        "chapters": 36,
+        "intro": "A reading from the second Book of Paraliponmenon"
+      },
+      {
+        "id": "I_Esdra",
+        "name": "١ عزرا",
+        "short": "I Esdra",
+        "chapters": 10,
+        "intro": "A reading from the first Book of Esdras"
+      },
+      {
+        "id": "Nehem",
+        "name": "نحميا",
+        "short": "Nehem",
+        "chapters": 13,
+        "intro": "A reading from the Prophecy of Nehemiah"
+      },
+      {
+        "id": "Tobit",
+        "name": "طوبيت",
+        "short": "Tobit",
+        "chapters": 14,
+        "intro": "A reading from Tobit"
+      },
+      {
+        "id": "Judith",
+        "name": "سفر يهوديت",
+        "short": "Judith",
+        "chapters": 16,
+        "intro": "A reading from Judith"
+      },
+      {
+        "id": "Esther",
+        "name": "استير",
+        "short": "Esther",
+        "chapters": 10,
+        "intro": "A reading from Esther"
+      },
+      {
+        "id": "Job",
+        "name": "ايوب",
+        "short": "Job",
+        "chapters": 42,
+        "intro": "A reading from the Job"
+      },
+      {
+        "id": "Psalm",
+        "name": "مزامير",
+        "short": "Ps",
+        "chapters": 151,
+        "intro": "Psalm"
+      },
+      {
+        "id": "Prov",
+        "name": "امثال",
+        "short": "Prov",
+        "chapters": 31,
+        "intro": "A reading from Proverbs"
+      },
+      {
+        "id": "Eccles",
+        "name": "جامعة",
+        "short": "Eccles",
+        "chapters": 12,
+        "intro": "A reading from Ecclesiastes"
+      },
+      {
+        "id": "Song",
+        "name": "نشيد الانشاد",
+        "short": "Song",
+        "chapters": 8,
+        "intro": "A reading from the Song of Songs"
+      },
+      {
+        "id": "Wisd",
+        "name": "سفر الحكمة",
+        "short": "Wisd",
+        "chapters": 19,
+        "intro": "A reading from the Wisdom of Solomon"
+      },
+      {
+        "id": "Sirach",
+        "name": "سفر يشوع بن سيراخ",
+        "short": "Sirach",
+        "chapters": 51,
+        "intro": "A reading from the Prophecy of Sirach, son of Jesus"
+      },
+      {
+        "id": "Isa",
+        "name": "اشعياء",
+        "short": "Isa",
+        "chapters": 66,
+        "intro": "A reading from the Prophecy of Isaiah"
+      },
+      {
+        "id": "Jerem",
+        "name": "ارميا",
+        "short": "Jerem",
+        "chapters": 52,
+        "intro": "A reading from the Prophecy of Jeremiah"
+      },
+      {
+        "id": "Epistle",
+        "name": "رسالة ارميا",
+        "short": "Epistle",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jeremiah"
+      },
+      {
+        "id": "Baruch",
+        "name": "سفر باروخ",
+        "short": "Baruch",
+        "chapters": 5,
+        "intro": "A reading from the Prophecy of Jeremiah"
+      },
+      {
+        "id": "Lamen",
+        "name": "مراثي",
+        "short": "Lamen",
+        "chapters": 5,
+        "intro": "A reading from the Lamentations of Jeremiah"
+      },
+      {
+        "id": "Ezek",
+        "name": "حزقيال",
+        "short": "Ezek",
+        "chapters": 48,
+        "intro": "A reading from the Prophecy of Ezekiel"
+      },
+      {
+        "id": "Dan",
+        "name": "دانيال",
+        "short": "Dan",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Daniel"
+      },
+      {
+        "id": "Hos",
+        "name": "هوشع",
+        "short": "Hos",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Hosea"
+      },
+      {
+        "id": "Joel",
+        "name": "يوئيل",
+        "short": "Joel",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Joel"
+      },
+      {
+        "id": "Amos",
+        "name": "عاموس",
+        "short": "Amos",
+        "chapters": 9,
+        "intro": "A reading from the Prophecy of Amos"
+      },
+      {
+        "id": "Obad",
+        "name": "عوبديا",
+        "short": "Obad",
+        "chapters": 1,
+        "intro": "A reading from the Prophecy of Obadiah"
+      },
+      {
+        "id": "Jona",
+        "name": "يونان",
+        "short": "Jona",
+        "chapters": 4,
+        "intro": "A reading from the Prophecy of Jonah"
+      },
+      {
+        "id": "Mica",
+        "name": "ميخا",
+        "short": "Mica",
+        "chapters": 7,
+        "intro": "A reading from the Prophecy of Micah"
+      },
+      {
+        "id": "Nahum",
+        "name": "ناحوم",
+        "short": "Nahum",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Nahum"
+      },
+      {
+        "id": "Habak",
+        "name": "حبقوق",
+        "short": "Habak",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Habakuk"
+      },
+      {
+        "id": "Zeph",
+        "name": "صفنيا",
+        "short": "Zeph",
+        "chapters": 3,
+        "intro": "A reading from the Prophecy of Zephaniah"
+      },
+      {
+        "id": "Hagg",
+        "name": "حجى",
+        "short": "Hagg",
+        "chapters": 2,
+        "intro": "A reading from the Prophecy of Haggai"
+      },
+      {
+        "id": "Zech",
+        "name": "زكريا",
+        "short": "Zech",
+        "chapters": 14,
+        "intro": "A reading from the Prophecy of Zechariah"
+      },
+      {
+        "id": "Mal",
+        "name": "ملاخي",
+        "short": "Mal",
+        "chapters": 4,
+        "intro": "A reading from the Prophecy of Malachi"
+      },
+      {
+        "id": "I_Macc",
+        "name": "١ المكابيين",
+        "short": "I Macc",
+        "chapters": 16,
+        "intro": "A reading from the first Book of Maccabees"
+      },
+      {
+        "id": "II_Macc",
+        "name": "٢ المكابيين",
+        "short": "II Macc",
+        "chapters": 15,
+        "intro": "A reading from the second Book of Maccabees"
+      },
+      {
+        "id": "Mt",
+        "name": "متى",
+        "short": "Mt",
+        "chapters": 28,
+        "intro": "A reading from the Holy Gospel according to Matthew"
+      },
+      {
+        "id": "Mk",
+        "name": "مرقس",
+        "short": "Mk",
+        "chapters": 16,
+        "intro": "A reading from the Holy Gospel according to Mark"
+      },
+      {
+        "id": "Lk",
+        "name": "لوقا",
+        "short": "Lk",
+        "chapters": 24,
+        "intro": "A reading from the Holy Gospel according to Luke"
+      },
+      {
+        "id": "Jn",
+        "name": "يوحنا",
+        "short": "Jn",
+        "chapters": 21,
+        "intro": "A reading from the Holy Gospel accoridng to John"
+      },
+      {
+        "id": "Acts",
+        "name": "اعمال",
+        "short": "Acts",
+        "chapters": 28,
+        "intro": "A reading from the Acts of the Apostles"
+      },
+      {
+        "id": "Jas",
+        "name": "يعقوب",
+        "short": "Jas",
+        "chapters": 5,
+        "intro": "A reading from the Epistle of James"
+      },
+      {
+        "id": "I_Pet",
+        "name": "١ بطرس",
+        "short": "I Pet",
+        "chapters": 5,
+        "intro": "A reading from the the first Epistle of Peter"
+      },
+      {
+        "id": "II_Pet",
+        "name": "٢ بطرس",
+        "short": "II Pet",
+        "chapters": 3,
+        "intro": "A reading from the second  Epistle of Peter"
+      },
+      {
+        "id": "I_Jn",
+        "name": "١ يوحنا",
+        "short": "I Jn",
+        "chapters": 5,
+        "intro": "A reading from the first Epistle of  John"
+      },
+      {
+        "id": "II_Jn",
+        "name": "٢ يوحنا",
+        "short": "II Jn",
+        "chapters": 1,
+        "intro": "A reading from the second Epistle of John"
+      },
+      {
+        "id": "III_Jn",
+        "name": "٣ يوحنا",
+        "short": "III Jn",
+        "chapters": 1,
+        "intro": "A reading from the third Epistle of John"
+      },
+      {
+        "id": "Jude",
+        "name": "يهوذا",
+        "short": "Jude",
+        "chapters": 1,
+        "intro": "A reading from the Epistle of Jude"
+      },
+      {
+        "id": "Rom",
+        "name": "رومية",
+        "short": "Rom",
+        "chapters": 16,
+        "intro": "A reading from the Epistle of Paul to the Romans"
+      },
+      {
+        "id": "I_Cor",
+        "name": "١ كورنثوس",
+        "short": "I Cor",
+        "chapters": 16,
+        "intro": "A reading from the first Epistle of Paul to the Corinthians"
+      },
+      {
+        "id": "II_Cor",
+        "name": "٢ كورنثوس",
+        "short": "II Cor",
+        "chapters": 13,
+        "intro": "A reading from the second Epistle of Paul to the Corinthians"
+      },
+      {
+        "id": "Gal",
+        "name": "غلاطية",
+        "short": "Gal",
+        "chapters": 6,
+        "intro": "A reading from the Epistle of Paul to the Galatians"
+      },
+      {
+        "id": "Eph",
+        "name": "افسس",
+        "short": "Eph",
+        "chapters": 6,
+        "intro": "A reading from the Epistle of Paul to the Ephesians"
+      },
+      {
+        "id": "Philip",
+        "name": "فيلبي",
+        "short": "Phil",
+        "chapters": 4,
+        "intro": "A reading from the Epistle to the Philippians"
+      },
+      {
+        "id": "Col",
+        "name": "كولوسي",
+        "short": "Col",
+        "chapters": 4,
+        "intro": "A reading from the Epistle to the Colossians"
+      },
+      {
+        "id": "I_Thess",
+        "name": "١ تسالونيكي",
+        "short": "I Thess",
+        "chapters": 5,
+        "intro": "A reading from the first Epistle to the Thessalonians"
+      },
+      {
+        "id": "II_Thess",
+        "name": "٢ تسالونيكي",
+        "short": "II Thess",
+        "chapters": 3,
+        "intro": "A reading from the second Epistle to the Thessalonians"
+      },
+      {
+        "id": "I_Tim",
+        "name": "١ تيموثاوس",
+        "short": "I Tim",
+        "chapters": 6,
+        "intro": "A reading from the first Epistle to Timothy"
+      },
+      {
+        "id": "II_Tim",
+        "name": "٢ تيموثاوس",
+        "short": "II Tim",
+        "chapters": 4,
+        "intro": "A reading from the second Epistle to Timothy"
+      },
+      {
+        "id": "Tit",
+        "name": "تيطس",
+        "short": "Tit",
+        "chapters": 3,
+        "intro": "A reading from the Epistle to Titus"
+      },
+      {
+        "id": "Philemon",
+        "name": "فليمون",
+        "short": "Philemon",
+        "chapters": 1,
+        "intro": "A reading from the Epistle to Philemon"
+      },
+      {
+        "id": "Heb",
+        "name": "عبرانيين",
+        "short": "Heb",
+        "chapters": 13,
+        "intro": "A reading from the Epistle to the Hebrews"
+      },
+      {
+        "id": "Apoc",
+        "name": "رؤيا",
+        "short": "Apoc",
+        "chapters": 22,
+        "intro": "A reading from the Book of Revelations"
+      }
+    ],
+    "formatting": {
+      "VerseNumFormat": "<SPAN style=\"color:red;\">^VN</SPAN> ^VT",
+      "VerseNoNumFormat": "^VT",
+      "VerseLink": "",
+      "AbbrevFormat": "^NAME ^NN",
+      "ChapterNI": "^NN",
+      "ChapterN": "<p style=\"font-style:bold;color:red;\">^NAME ^NN</p>",
+      "HeaderFormat": "<h1 style=\"font-style:bold;color:red;\">^NAME ^CNN</h1>",
+      "VerseNo": "<p style=\"color:red;font-size:10pt;\">^TT</p><BR>,١,٢,٣,٤,٥,٦,٧,٨,٩,١٠,١١,١٢,١٣,١٤,١٥,١٦,١٧,١٨,١٩,٢٠,٢١,٢٢,٢٣,٢٤,٢٥,٢٦,٢٧,٢٨,٢٩,٣٠,٣١,٣٢,٣ \n٣,٣٤,٣٥,٣٦,٣٧,٣٨,٣٩,٤٠,٤١,٤٢,٤٣,٤٤,٤٥,٤٦,٤٧,٤٨,٤٩,٥٠,٥١,٥٢,٥٣,٥٤,٥٥,٥٦,٥٧,٥٨,٥٩,٦٠,٦١,٦٢,٦٣,٦٤,٦٥,٦٦,٦٧,٦٨ \n,٦٩,٧٠,٧١,٧٢,٧٣,٧٤,٧٥,٧٦,٧٧,٧٨,٧٩,٨٠,٨١,٨٢,٨٣,٨٤,٨٥,٨٦,٨٧,٨٨,٨٩,٩٠,٩١,٩٢,٩٣,٩٤,٩٥,٩٦,٩٧,٩٨,٩٩,١٠٠,١٠١,١٠٢, \n١٠٣,١٠٤,١٠٥,١٠٦,١٠٧,١٠٨,١٠٩,١١٠,١١١,١١٢,١١٣,١١٤,١١٥,١١٦,١١٧,١١٨,١١٩,١٢٠,١٢١,١٢٢,١٢٣,١٢٤,١٢٥,١٢٦,١٢٧,١٢٨,١٢ \n٩,١٣٠,١٣١,١٣٢,١٣٣,١٣٤,١٣٥,١٣٦,١٣٧,١٣٨,١٣٩,١٤٠,١٤١,١٤٢,١٤٣,١٤٤,١٤٥,١٤٦,١٤٧,١٤٨,١٤٩,١٥٠,١٥١,١٥٢,١٥٣,١٥٤,١٥٥, \n١٥٦,١٥٧,١٥٨,١٥٩,١٦٠,١٦١,١٦٢,١٦٣,١٦٤,١٦٥,١٦٦,١٦٧,١٦٨,١٦٩,١٧٠,١٧١,١٧٢,١٧٣,١٧٤,١٧٥,١٧٦,١٧٧,١٧٨,١٧٩,١٨٠",
+      "ChapterNo": "Prologue,١,٢,٣,٤,٥,٦,٧,٨,٩,١٠,١١,١٢,١٣,١٤,١٥,١٦,١٧,١٨,١٩,٢٠,٢١,٢٢,٢٣,٢٤,٢٥,٢٦,٢٧,٢٨,٢٩,٣٠,٣١,٣٢ \n,٣٣,٣٤,٣٥,٣٦,٣٧,٣٨,٣٩,٤٠,٤١,٤٢,٤٣,٤٤,٤٥,٤٦,٤٧,٤٨,٤٩,٥٠,٥١,٥٢,٥٣,٥٤,٥٥,٥٦,٥٧,٥٨,٥٩,٦٠,٦١,٦٢,٦٣,٦٤,٦٥,٦٦,٦٧, \n٦٨,٦٩,٧٠,٧١,٧٢,٧٣,٧٤,٧٥,٧٦,٧٧,٧٨,٧٩,٨٠,٨١,٨٢,٨٣,٨٤,٨٥,٨٦,٨٧,٨٨,٨٩,٩٠,٩١,٩٢,٩٣,٩٤,٩٥,٩٦,٩٧,٩٨,٩٩,١٠٠,١٠١,١٠ \n٢,١٠٣,١٠٤,١٠٥,١٠٦,١٠٧,١٠٨,١٠٩,١١٠,١١١,١١٢,١١٣,١١٤,١١٥,١١٦,١١٧,١١٨,١١٩,١٢٠,١٢١,١٢٢,١٢٣,١٢٤,١٢٥,١٢٦,١٢٧,١٢٨, \n١٢٩,١٣٠,١٣١,١٣٢,١٣٣,١٣٤,١٣٥,١٣٦,١٣٧,١٣٨,١٣٩,١٤٠,١٤١,١٤٢,١٤٣,١٤٤,١٤٥,١٤٦,١٤٧,١٤٨,١٤٩,١٥٠,١٥١,١٥٢,١٥٣,١٥٤,١٥ \n٥,١٥٦,١٥٧,١٥٨,١٥٩,١٦٠,١٦١,١٦٢,١٦٣,١٦٤,١٦٥,١٦٦,١٦٧,١٦٨,١٦٩,١٧٠,١٧١,١٧٢,١٧٣,١٧٤,١٧٥,١٧٦,١٧٧,١٧٨,١٧٩,١٨٠",
+      "CVSep": ":",
+      "Duration": "-",
+      "SelectionSeparator": ",",
+      "BCSep": "",
+      "FontSize": "20",
+      "Orient": "rtl",
+      "Parts": "a,b,c"
+    }
+  }
+]

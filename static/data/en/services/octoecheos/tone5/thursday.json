@@ -1,0 +1,45 @@
+[
+  {
+    "type": "TONE"
+  },
+  {
+    "type": "VESPERS",
+    "troparion1": "THUR5",
+    "kontakion1": "THUR5",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "PRIMES",
+    "troparion1": "THUR5",
+    "kontakion1": "THUR5",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "PRIMES",
+    "kontakion1": "MTTL",
+    "cmd": "(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "TERCE",
+    "troparion1": "THUR5",
+    "kontakion1": "THUR5",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "SEXTE",
+    "troparion1": "THUR5",
+    "kontakion1": "THUR5",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "SEXTE",
+    "kontakion1": "MTTL6",
+    "cmd": "(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "NONE",
+    "troparion1": "THUR5",
+    "kontakion1": "THUR5",
+    "cmd": "!(nday > -50 && nday < 0)"
+  }
+]

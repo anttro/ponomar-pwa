@@ -1,0 +1,945 @@
+{
+  "09002": {
+    "name": {
+      "nominative": "St. Jean le Tailleur",
+      "short": "St. Jean"
+    }
+  },
+  "09005": {
+    "name": {
+      "nominative": "Ste. Julienne, Princesse de Vyazmsk",
+      "short": "Ste. Julienne"
+    }
+  },
+  "09006": {
+    "name": {
+      "nominative": "Veille de la Nativité du Seigneur",
+      "short": "Veille de"
+    },
+    "rank": 1
+  },
+  "09010000": {
+    "name": {
+      "nominative": "St. Mélétios le Jeune",
+      "short": "St. Mélétios"
+    }
+  },
+  "09010100": {
+    "name": {
+      "nominative": "St. Nicolas de Courtaliotis en Crète",
+      "short": "St. Nicolas"
+    }
+  },
+  "09010200": {
+    "name": {
+      "nominative": "St. Néo-Martyr Angélis",
+      "short": "St. Néo-Martyr Angélis"
+    }
+  },
+  "09010300": {
+    "name": {
+      "nominative": "Synaxe de l’Icone de la Mère de Dieu de Miasènes",
+      "short": "Synaxe de"
+    }
+  },
+  "09011100": {
+    "name": {
+      "nominative": "Ste. Evanthia",
+      "short": "Ste. Evanthia"
+    }
+  },
+  "09013": {
+    "name": {
+      "nominative": "Paramonie de la Théophanie",
+      "short": "Paramonie de"
+    },
+    "rank": 1
+  },
+  "09017": {
+    "name": {
+      "nominative": "Aprèsfête de Théophanie",
+      "short": "Aprèsfête de Théophanie"
+    }
+  },
+  "090171": {
+    "name": {
+      "nominative": "Clôture de la Fête de la Théophanie",
+      "short": "Clôture"
+    },
+    "rank": 3
+  },
+  "09020": {
+    "name": {
+      "nominative": "St. Publius",
+      "short": "St. Publius"
+    }
+  },
+  "09020000": {
+    "name": {
+      "nominative": "Sts. Eleazar et son fils Phinès",
+      "short": "Sts. Eleazar"
+    }
+  },
+  "09020097": {
+    "name": {
+      "nominative": "Sts. Diomède, Julien, Eutychien, Hesychios, Léonide, Eutyche, Philadelphe, Melanippe, Ammoun et Aeithala de Thrace, Ste. Parthagape",
+      "short": "Sts. Diomède"
+    }
+  },
+  "09022": {
+    "name": {
+      "nominative": "Transfert des Reliques de St. Jean Chrysostome",
+      "short": "Transfert des"
+    },
+    "rank": 4
+  },
+  "09030": {
+    "name": {
+      "short": "les Hiérarques",
+      "nominative": "Synaxe des Trois Sts. Hiérarques et Docteurs Universels : Basile le Grand, Grégoire le Théologien et Jean Chrysostome",
+      "cmd": "nday != -52 && nday != -54"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Source: calendrier.egliseorthodoxe.com",
+      "text": "<p>Sous le règne de l’empereur Alexis Comnène (1081-1118), une querelle vint à diviser à Constantinople les hommes instruits dans les choses de la foi et zélés pour la vertu, au sujet des trois Saints Hiérarques et grands Pères de l’Église : Basile le Grand, Grégoire le Théologien et Jean Chrysostome. Les uns disaient préférer Saint Basile aux deux autres, car il a su expliquer les Mystères de la nature comme aucun autre et il s’est élevé au rang des Anges par ses vertus. Organisateur du monachisme, chef de l’Église entière pour lutter contre l’hérésie, pasteur austère et exigeant quant à la pureté des mœurs, il n’y avait en lui rien de bas ni de terrestre. C’est pourquoi il était, disaient-ils, supérieur à Saint Chrysostome qui, par nature, était plus facilement porté à pardonner aux pécheurs. </p> <p>D’autres, prenant le parti de l’illustre Archevêque de Constantinople, rétorquaient que Saint Chrysostome n’avait été en rien moins zélé que Saint Basile pour combattre les vices, porter les pécheurs au repentir et élever tout le peuple à la perfection évangélique. Insurpassable par son éloquence, ce pasteur à la « bouche d’or » a arrosé l’Église d’un véritable fleuve de discours, dans lesquels il a interprété la parole de Dieu et a montré comment l’appliquer dans la vie courante, avec une maîtrise supérieure aux deux autres Saints Docteurs. Un troisième groupe soutenait que Saint Grégoire le Théologien leur était supérieur, à cause de la majesté, de la pureté et de la profondeur de son langage. Maîtrisant en souverain toute la sagesse et toute l’éloquence helléniques, il avait atteint, disaient-ils, un tel degré dans la contemplation de Dieu que personne comme lui n’a su exprimer si parfaitement le dogme de la Sainte Trinité. Chacun défendant ainsi l’un des Pères contre les deux autres, la querelle gagna bientôt tout le peuple chrétien de la capitale et, loin de favoriser la dévotion pour les Saints, il n’en sortait que troubles, discordes et disputes sans fin entre les trois partis. C’est alors qu’une nuit les trois Saints Hiérarques apparurent en songe à Saint Jean Mauropos, Métropolite d’Eucheita (mémoire le 5 octobre), d’abord séparément puis tous les trois ensemble. Et, d’une seule voix, ils lui dirent : « Comme tu le vois, nous sommes tous les trois auprès de Dieu et aucune discorde ou rivalité ne nous séparent. Chacun d’entre nous, selon les circonstances et selon l’inspiration qu’il avait reçue du Saint-Esprit, a écrit et enseigné ce qui convenait pour le salut des hommes. Il n’y a ni premier, ni second, ni troisième entre nous; et si tu invoques l’un de nous aussitôt les deux autres sont présents avec lui. Aussi ordonne à ceux qui se disputent de ne pas créer de divisions dans l’Église à cause de nous, car lorsque nous étions en vie tous nos efforts ont été consacrés à rétablir l’unité et la concorde dans le monde. Puis réunis en une fête nos trois mémoires et composes-en l’Office en y insérant les hymnes dédiées à chacun d’entre nous, selon l’art et la science que Dieu t’a donnés, et transmets-le aux Chrétiens en leur ordonnant de le célébrer chaque année. S’ils nous honorent ainsi, comme étant un auprès de Dieu et en Dieu, nous leur promettions d’intercéder dans notre commune prière pour leur salut ». Sur ces mots, les Saints furent enlevés au ciel dans une lumière infinie, en s’adressant l’un à l’autre par leurs noms. </p> <p>Saint Jean rassembla alors sans retard le peuple et lui communiqua cette révélation. Comme il était respecté de tous pour sa vertu et admiré pour la force de son éloquence, les trois partis firent la paix et tout le monde l’exhorta à se mettre sans retard à la composition de l’Office de la fête commune. Avec un fin discernement, il choisit de consacrer le trentième jour de janvier à cette célébration, comme pour sceller ce mois pendant lequel on commémore séparément chacun des trois Hiérarques (janvier 1-er : St. Basile ; janvier 25 : St. Grégoire ; et janvier 27 : translation des Reliques de St. Chrysostome). Comme l’évoquent de nombreux tropaires de cet Office magnifique, les trois Hiérarques — trinité terrestre — distincts par leurs personnes mais unis par la Grâce de Dieu, nous ont enseigné, tant par leurs écrits que par leur vie, à adorer et à glorifier la Sainte Trinité, le Dieu unique en trois Personnes. Ces trois luminaires de l’Église ont répandu par toute la terre la lumière de la Vraie Foi, au mépris des dangers et des persécutions, et ils nous ont laissé, à nous leurs descendants, ce saint héritage par lequel nous pouvons atteindre aussi la béatitude suprême et la vie éternelle en présence de Dieu, avec tous les Saints. En clôturant le mois de janvier, pendant lequel nous célébrons la mémoire de tant de glorieux Hiérarques, Confesseurs et Ascètes, par la fête commune des trois grands Hiérarques, l’Église récapitule en quelque sorte la mémoire de tous les Saints qui ont témoigné de la Foi Orthodoxe par leurs écrits et par leur vie. Avec cette fête, c’est tout le ministère d’enseignement, d’illumination de l’intelligence et des cœurs des fidèles par la parole, que nous honorons. La Fête des trois Hiérarques est donc en fait la commémoration de tous les Pères de l’Église, de tous ces modèles de la perfection évangélique que le Saint-Esprit a suscité d’époque en époque et de lieu en lieu, pour être de nouveaux Prophètes et de nouveaux Apôtres, les guides des âmes vers le Ciel, les consolateurs du peuple et des colonnes de prière incandescentes qui soutiennent l’Église et la confirment dans la vérité. </p>"
+    }
+  },
+  "09030000": {
+    "name": {
+      "nominative": "St. Aristion, Evêque d’Alexandrie",
+      "short": "St. Aristion"
+    }
+  },
+  "0903001": {
+    "name": {
+      "nominative": "<i>La fête des trois hiérarche est transfert au jeudi</i>",
+      "cmd": "nday == -51"
+    }
+  },
+  "09030100": {
+    "name": {
+      "nominative": "St. Constantin le Jeune, Empereur",
+      "short": "St. Constantin"
+    }
+  },
+  "09030200": {
+    "name": {
+      "nominative": "St. Néomartyr Polydore de Chypre",
+      "short": "St. Néomartyr"
+    }
+  },
+  "09030597": {
+    "name": {
+      "nominative": "St. Mansuet, 1<sup>er</sup> Evêque de Toul",
+      "short": "St. Mansuet"
+    }
+  },
+  "09031": {
+    "name": {
+      "short": "transfert",
+      "nominative": "Tranfert des Reliques de St. Ignace le Théophore, Evêque d’Antioche <i>(Le service peut-être transfert au vendredi)</i>",
+      "cmd": "nday == -52"
+    },
+    "rank": 2
+  },
+  "09031100": {
+    "name": {
+      "nominative": "St. Archontios",
+      "short": "St. Archontios"
+    }
+  },
+  "09031200": {
+    "name": {
+      "nominative": "St. Chariton",
+      "short": "St. Chariton"
+    }
+  },
+  "09033": {
+    "name": {
+      "nominative": "St. Cyrille le Philosophe, Apôtre et Illuminateur des Slaves",
+      "short": "St. Cyrille"
+    },
+    "rank": 4
+  },
+  "09040100": {
+    "name": {
+      "nominative": "St. Antime l’Aveugle",
+      "short": "St. Antime l’Aveugle"
+    }
+  },
+  "09040197": {
+    "name": {
+      "nominative": "Stes Charitine et Eutychie, sœurs de Ste. Hermione et St. Petronios",
+      "short": "Stes Charitine"
+    }
+  },
+  "09041100": {
+    "name": {
+      "nominative": "Sts. Theotime et Théodule, bourreaux de Ste. Hermione",
+      "short": "Sts. Theotime"
+    }
+  },
+  "09041200": {
+    "name": {
+      "nominative": "St. Sabilos",
+      "short": "St. Sabilos"
+    }
+  },
+  "09050000": {
+    "name": {
+      "nominative": "Mémoire de l’appartion de l’Apôtre Pierre à Justinien, Empereur",
+      "short": "Mémoire de"
+    }
+  },
+  "09070000": {
+    "name": {
+      "nominative": "St. Cloud, Fondateur et Higoumène du Monastère de Nogent-sur-Seine",
+      "short": "St. Cloud"
+    }
+  },
+  "09070297": {
+    "name": {
+      "nominative": "Ste. Reine",
+      "short": "Ste. Reine"
+    }
+  },
+  "09070397": {
+    "name": {
+      "nominative": "Ste. Grimonie de Soissons",
+      "short": "Ste. Grimonie"
+    }
+  },
+  "09070497": {
+    "name": {
+      "nominative": "St. Euvert, Evêque d’Orléans",
+      "short": "St. Euvert"
+    }
+  },
+  "09070597": {
+    "name": {
+      "nominative": "St. Augustal, Evêque d’Arles",
+      "short": "St. Augustal"
+    }
+  },
+  "09071100": {
+    "name": {
+      "nominative": "St. Pierre le Pieux, Higoumène",
+      "short": "St. Pierre"
+    }
+  },
+  "09080000": {
+    "name": {
+      "nominative": "St. Arsène, higoumène de Konevits",
+      "short": "St. Arsène"
+    }
+  },
+  "09080200": {
+    "name": {
+      "nominative": "St. Lucien, Higoumène d’Alexandrov",
+      "short": "St. Lucien"
+    }
+  },
+  "09080400": {
+    "name": {
+      "nominative": "St. Sophrone, Evêque d’Achtaleia en Géorgie",
+      "short": "St. Sophrone"
+    }
+  },
+  "09081100": {
+    "name": {
+      "nominative": "Sts. Rufus et Ruffien",
+      "short": "Sts. Rufus"
+    }
+  },
+  "09081200": {
+    "name": {
+      "nominative": "St. Sévère",
+      "short": "St. Sévère"
+    }
+  },
+  "09081300": {
+    "name": {
+      "nominative": "St. Artémiodore",
+      "short": "St. Artémiodore"
+    }
+  },
+  "09081400": {
+    "name": {
+      "nominative": "St. Néomartyr Athanase de Thessalonique",
+      "short": "St. Néomartyr"
+    }
+  },
+  "09090000": {
+    "name": {
+      "nominative": "St. Joachim, Fondateur du Monastère d’Opochka, près de Pskov",
+      "short": "St. Joachim"
+    }
+  },
+  "09100000": {
+    "name": {
+      "nominative": "St. Barypsabas",
+      "short": "St. Barypsabas"
+    }
+  },
+  "09100100": {
+    "name": {
+      "nominative": "St. Salvius, Evêque d’Albi",
+      "short": "St. Salvius"
+    }
+  },
+  "09100297": {
+    "name": {
+      "nominative": "St. Cassien, Higoumène du Monastère du Saint Sauveur à Kubensk",
+      "short": "St. Cassien"
+    }
+  },
+  "09100397": {
+    "name": {
+      "nominative": "St. Cyrille, higoumène du Monastère du Lac Blanc",
+      "short": "St. Cyrille"
+    }
+  },
+  "09107": {
+    "name": {
+      "short": "St. Jean",
+      "nominative": "Le 1-ère et seconde invention du chef de St. Jean le Baptiste (transféré du 24 février)",
+      "cmd": "doy != 54"
+    },
+    "rank": 4
+  },
+  "0910701": {
+    "name": {
+      "short": "",
+      "nominative": "<i>Le service pour l’invention du chef de St. Jean le Baptiste est transféré au samedi de St. Théodore</i>",
+      "cmd": "nday == -47 || nday == -46 || nday == -45 || nday == -44"
+    }
+  },
+  "09110100": {
+    "name": {
+      "nominative": "Sts. Diodore, Diomède et Didyme",
+      "short": "Sts. Diodore"
+    }
+  },
+  "09110300": {
+    "name": {
+      "nominative": "Ste. Xénie de St. Petersbourg, Folle en Christ",
+      "short": "Ste. Xénie"
+    }
+  },
+  "09110397": {
+    "name": {
+      "nominative": "St. Elie de Calabre",
+      "short": "St. Elie"
+    }
+  },
+  "09120000": {
+    "name": {
+      "nominative": "Sts. Martyrs Macédonius, Théodule et Tatien",
+      "short": "Sts. Martyrs"
+    }
+  },
+  "09120100": {
+    "name": {
+      "nominative": "St. Andronique de l’Atroa (Mont Olympe en Bithynie)",
+      "short": "St. Andronique"
+    }
+  },
+  "091212": {
+    "name": {
+      "nominative": "St. Daniel de Thasos",
+      "short": "St. Daniel"
+    }
+  },
+  "09121200": {
+    "name": {
+      "nominative": "St. Océanos",
+      "short": "St. Océanos"
+    }
+  },
+  "09130100": {
+    "name": {
+      "nominative": "Sts. Corneille de Padan-Olonets, Denys et Michel",
+      "short": "Sts. Corneille"
+    }
+  },
+  "09130200": {
+    "name": {
+      "nominative": "St. Hiérothée le Jeune, du Monastère d’Iviron (Mont Athos)",
+      "short": "St. Hiérothée"
+    }
+  },
+  "091303": {
+    "name": {
+      "nominative": "St. Straton",
+      "short": "St. Straton"
+    }
+  },
+  "09130597": {
+    "name": {
+      "nominative": "St. Amé, Fondateur de l’Abbaye de Remiremont",
+      "short": "St. Amé"
+    }
+  },
+  "09130697": {
+    "name": {
+      "nominative": "St. Antonin de Carpentras",
+      "short": "St. Antonin"
+    }
+  },
+  "09140000": {
+    "name": {
+      "nominative": "St. Papas",
+      "short": "St. Papas"
+    }
+  },
+  "09140100": {
+    "name": {
+      "nominative": "Ste. Placilla, Impératrice épouse de St. Théodose le Grand",
+      "short": "Ste. Placilla"
+    }
+  },
+  "09140300": {
+    "name": {
+      "nominative": "St. Néomartyr Macaire de Thessalonique",
+      "short": "St. Néomartyr"
+    }
+  },
+  "09140400": {
+    "name": {
+      "nominative": "Sts. 170 Pères du VIème Concile Œcuménique",
+      "short": "Sts. 170"
+    }
+  },
+  "09141100": {
+    "name": {
+      "nominative": "St. Théoklis",
+      "short": "St. Théoklis"
+    }
+  },
+  "09141200": {
+    "name": {
+      "nominative": "St. Valérien",
+      "short": "St. Valérien"
+    }
+  },
+  "09150000": {
+    "name": {
+      "nominative": "St. Syméon, Archevêque de thessalonique",
+      "short": "St. Syméon"
+    }
+  },
+  "09150100": {
+    "name": {
+      "nominative": "Sts. Bessarion 1<sup>er</sup> et Bessarion II, Archevêque de Larissa",
+      "short": "Sts. Bessarion"
+    }
+  },
+  "09150200": {
+    "name": {
+      "nominative": "St. Gérasime, fondateur du Monastère de la Ste. Trinité dit de Sourvia",
+      "short": "St. Gérasime"
+    }
+  },
+  "09150300": {
+    "name": {
+      "nominative": "St. Joseph le Jeune, Métropolite de Témisvar",
+      "short": "St. Joseph"
+    }
+  },
+  "09150400": {
+    "name": {
+      "nominative": "St. Néomartyr Jean de Crète",
+      "short": "St. Néomartyr"
+    }
+  },
+  "09150500": {
+    "name": {
+      "nominative": "St. Acace (Akakios) de Mélitène",
+      "short": "St. Acace"
+    }
+  },
+  "09160000": {
+    "name": {
+      "nominative": "St. Procope le Tchèque",
+      "short": "St. Procope"
+    }
+  },
+  "09160497": {
+    "name": {
+      "nominative": "St. Cyprien de Carthage",
+      "short": "St. Cyprien"
+    }
+  },
+  "09170000": {
+    "name": {
+      "nominative": "Sts. Héraclide et Myron, Evêques de Tamassos à Chypre",
+      "short": "Sts. Héraclide"
+    }
+  },
+  "09170100": {
+    "name": {
+      "nominative": "Stes Lucie et Géminien son fils spirituel",
+      "short": "Stes Lucie"
+    }
+  },
+  "09170197": {
+    "name": {
+      "nominative": "Ste. Agathoclée",
+      "short": "Ste. Agathoclée"
+    }
+  },
+  "09170200": {
+    "name": {
+      "nominative": "St. Anastase de Chypre",
+      "short": "St. Anastase"
+    }
+  },
+  "09170697": {
+    "name": {
+      "nominative": "Sts. Mesclin de Tarbes",
+      "short": "Sts. Mesclin"
+    }
+  },
+  "09171100": {
+    "name": {
+      "nominative": "Sts. Charalampos, Pantoléon et leurs compagnons",
+      "short": "Sts. Charalampos"
+    }
+  },
+  "09180000": {
+    "name": {
+      "nominative": "Stes Sophie et Irène",
+      "short": "Stes Sophie"
+    }
+  },
+  "09180200": {
+    "name": {
+      "nominative": "St. Arcade de Novgorod",
+      "short": "St. Arcade"
+    }
+  },
+  "09181100": {
+    "name": {
+      "nominative": "St. Romylos",
+      "short": "St. Romylos"
+    }
+  },
+  "091902": {
+    "name": {
+      "nominative": "St. Janvier, Evêque de Bénévent et ses compagnons",
+      "short": "St. Janvier"
+    }
+  },
+  "09200000": {
+    "name": {
+      "nominative": "St. Jean d’Egypte et ses 4 compagnons",
+      "short": "St. Jean"
+    }
+  },
+  "09200100": {
+    "name": {
+      "nominative": "Sts. Anastase, Théodore et Euprépios, disciples de St. Maxime",
+      "short": "Sts. Anastase"
+    }
+  },
+  "09200200": {
+    "name": {
+      "nominative": "St. Néomartyr, Hilarion le Crétois",
+      "short": "St. Néomartyr"
+    }
+  },
+  "09200300": {
+    "name": {
+      "nominative": "St. Mélèce (Mélétios), Evêque de Chypre",
+      "short": "St. Mélèce"
+    }
+  },
+  "092008": {
+    "name": {
+      "nominative": "St. Jean de Crète",
+      "short": "St. Jean"
+    }
+  },
+  "09201100": {
+    "name": {
+      "nominative": "Sts. Hypatios, Evêque et André, Prêtre",
+      "short": "Sts. Hypatios"
+    }
+  },
+  "09201200": {
+    "name": {
+      "nominative": "Sts. Martin, Eveque de Rome et Maxime le Sage",
+      "short": "Sts. Martin"
+    }
+  },
+  "09201300": {
+    "name": {
+      "nominative": "Sts. Artémidore et Thalelaios",
+      "short": "Sts. Artémidore"
+    }
+  },
+  "09210000": {
+    "name": {
+      "nominative": "St. Pricus",
+      "short": "St. Pricus"
+    }
+  },
+  "092101": {
+    "name": {
+      "nominative": "St. Eusèbe",
+      "short": "St. Eusèbe"
+    }
+  },
+  "09210100": {
+    "name": {
+      "nominative": "St. Isaac, Evêque de Sitie enb Chypre",
+      "short": "St. Isaac"
+    }
+  },
+  "092104": {
+    "name": {
+      "nominative": "Sts. Eusèbe, Nestabe, Zénon, nestor et Boussiris",
+      "short": "Sts. Eusèbe"
+    }
+  },
+  "09210897": {
+    "name": {
+      "nominative": "St. Castor de Nîmes, Evêque d’Apt",
+      "short": "St. Castor"
+    }
+  },
+  "09211500": {
+    "name": {
+      "nominative": "Sts. 6 Martyrs écuyers de l’Empereur Maximien",
+      "short": "Sts. 6"
+    }
+  },
+  "09216": {
+    "name": {
+      "nominative": "St. Martyr Théodote d’Ancyre",
+      "short": "St. Martyr"
+    },
+    "rank": 1
+  },
+  "09220000": {
+    "name": {
+      "nominative": "Sts. 26 moines et Martyrs du Monastère de Zographou (Athos)",
+      "short": "Sts. 26"
+    }
+  },
+  "09220100": {
+    "name": {
+      "nominative": "St. Cosmas du Monastère de Zographou (Athos)",
+      "short": "St. Cosmas"
+    }
+  },
+  "09220300": {
+    "name": {
+      "nominative": "St. Théophane l’ Hésichaste des Grottes de Kiev",
+      "short": "St. Théophane"
+    }
+  },
+  "09220497": {
+    "name": {
+      "nominative": "St. Sophrone, Evêque de Vratchane, en Bulgarie",
+      "short": "St. Sophrone"
+    }
+  },
+  "092206": {
+    "name": {
+      "nominative": "St. Macaire le Thaumaturge, Higoumène du Monastère de Zhabin",
+      "short": "St. Macaire"
+    }
+  },
+  "09221100": {
+    "name": {
+      "nominative": "Sts. Isaac, Martin et Nicolas",
+      "short": "Sts. Isaac"
+    }
+  },
+  "09224": {
+    "name": {
+      "nominative": "St. Cyrille du lac Blanc",
+      "short": "St. Cyrille"
+    },
+    "rank": 3
+  },
+  "09230000": {
+    "name": {
+      "nominative": "St. Nicolas l’épicier à Constantinople",
+      "short": "St. Nicolas"
+    }
+  },
+  "09230195": {
+    "name": {
+      "nominative": "St. Jean de Konitsa",
+      "short": "St. Jean"
+    }
+  },
+  "09240000": {
+    "name": {
+      "nominative": "St. Abramios, 1<sup>er</sup> Higoumène du Monastère de la Ste. Transfiguration à Pskov",
+      "short": "St. Abramios"
+    }
+  },
+  "09250000": {
+    "name": {
+      "nominative": "Mémoire du grand tremblement de terre à Constantinople et du Miracle du Trisagion",
+      "short": "Mémoire du"
+    }
+  },
+  "09250200": {
+    "name": {
+      "nominative": "Sts. Paul, Tattia son épouse et Sabinien, Rufus et Eugène leurs enfants",
+      "short": "Sts. Paul"
+    }
+  },
+  "09253": {
+    "name": {
+      "nominative": "Sts. Aristarque, Pudens et Trophime, Apôtres des 70",
+      "short": "Sts. Aristarque"
+    }
+  },
+  "09260000": {
+    "name": {
+      "nominative": "St. Gédéon, Juge en Isræl",
+      "short": "St. Gédéon"
+    }
+  },
+  "09260100": {
+    "name": {
+      "nominative": "St. Nil de Calabre",
+      "short": "St. Nil"
+    }
+  },
+  "09260297": {
+    "name": {
+      "nominative": "Stes cinq Martyres Vierges et moniales",
+      "short": "Stes cinq"
+    }
+  },
+  "09261100": {
+    "name": {
+      "nominative": "Ste. Chiras",
+      "short": "Ste. Chiras"
+    }
+  },
+  "09262": {
+    "name": {
+      "nominative": "St. Arsène le Grand",
+      "short": "St. Arsène"
+    },
+    "rank": 1
+  },
+  "09270000": {
+    "name": {
+      "nominative": "Ste. Aquilina",
+      "short": "Ste. Aquilina"
+    }
+  },
+  "09270497": {
+    "name": {
+      "nominative": "St. Exupère, Archevêque de Toulouse",
+      "short": "St. Exupère"
+    }
+  },
+  "09271100": {
+    "name": {
+      "nominative": "Sts. Phimémon, Evêque et Fortunianus son compagnon",
+      "short": "Sts. Phimémon"
+    }
+  },
+  "09271200": {
+    "name": {
+      "nominative": "Ste. Gaïenne",
+      "short": "Ste. Gaïenne"
+    }
+  },
+  "09271300": {
+    "name": {
+      "nominative": "Quinze Martyrs morts noyés",
+      "short": "Quinze Martyrs"
+    }
+  },
+  "09279": {
+    "name": {
+      "nominative": "St. Archippe, Apôtre",
+      "short": "St. Archippe, Apôtre"
+    },
+    "rank": 1
+  },
+  "09280000": {
+    "name": {
+      "nominative": "St. Chariton de Sianjemsk",
+      "short": "St. Chariton"
+    }
+  },
+  "09280097": {
+    "name": {
+      "nominative": "Sts. Calmlinique et Eustate le Romain",
+      "short": "Sts. Calmlinique"
+    }
+  },
+  "092802": {
+    "name": {
+      "nominative": "St. Fauste, Evêque de Riez et 3ème Higoumène de Lérins",
+      "short": "St. Fauste"
+    }
+  },
+  "09288": {
+    "name": {
+      "nominative": "St. Pierre l’Athonite",
+      "short": "St. Pierre l’Athonite"
+    },
+    "rank": 1
+  },
+  "09290000": {
+    "name": {
+      "nominative": "Ste. Goudelia",
+      "short": "Ste. Goudelia"
+    }
+  },
+  "09290200": {
+    "name": {
+      "nominative": "St. Cyprien, fondateur du Monastère des Sts. Archanges à Oustioug (Vologda)",
+      "short": "St. Cyprien"
+    }
+  },
+  "09290400": {
+    "name": {
+      "nominative": "Sts. 150 Martyrs de Palestine",
+      "short": "Sts. 150"
+    }
+  },
+  "09291100": {
+    "name": {
+      "nominative": "Ste. Pétronia",
+      "short": "Ste. Pétronia"
+    }
+  },
+  "09294": {
+    "name": {
+      "nominative": "Ste. Martyre Aquiline",
+      "short": "Ste. Martyre Aquiline"
+    },
+    "rank": 1
+  },
+  "09300097": {
+    "name": {
+      "nominative": "Sts. Aristakès, Verthanès, Houssik, Nersès et Sahak le grand",
+      "short": "Sts. Aristakès"
+    }
+  },
+  "09300297": {
+    "name": {
+      "nominative": "St. Mardonios, Mygdonios, Gorgonios, Indos, Glykérios, Théophile",
+      "short": "St. Mardonios"
+    }
+  },
+  "09300397": {
+    "name": {
+      "nominative": "2 Stes Vierges et 1000 Martyrs anonymes",
+      "short": "2 Stes"
+    }
+  },
+  "09301100": {
+    "name": {
+      "nominative": "St. Stratonique",
+      "short": "St. Stratonique"
+    }
+  },
+  "09365": {
+    "name": {
+      "nominative": "St. Apôtre Barthélemy (translation de ses Reliques)",
+      "short": "St. Apôtre"
+    },
+    "rank": 2
+  },
+  "09392": {
+    "name": {
+      "nominative": "Ste. Fébronie de Nisibe",
+      "short": "Ste. Fébronie"
+    },
+    "rank": 1
+  },
+  "09426": {
+    "name": {
+      "nominative": "Nouvel An écclésiastique",
+      "short": "Nouvel An écclésiastique"
+    }
+  },
+  "09497": {
+    "name": {
+      "short": "Georges",
+      "nominative": "St. Grand Martyr Georges le Tropéophore et ses compagnons (transféré de saint et grand vendredi)",
+      "cmd": "doy == 115"
+    },
+    "life": {
+      "id": "",
+      "copyright": "",
+      "text": "<p>Saint Georges, né entre 275 et 280, était issu d’une famille riche et de haute condition de Cappadoce. Ayant perdu son père à l’âge de dix ans, sa mère Polychronia, qui était devenue chrétienne à l’insu de son mari, retourna dans sa patrie, la Palestine, et éleva son jeune fils dans les vertus évangéliques. De belle apparence, intelligent et de mœurs raffinées, Georges entra dans la carrière militaire à l’âge de dix-huit ans. Il plut à ses supérieurs et fut rapidement élevé au grade de tribun de la garde impériale, puis, semble-t-il, à la dignité de préfet.</p><p>De retour vers la Cappadoce après une campagne victorieuse, passant dans la région d’Attalia en Pamphylie, il délivra la fille du roi, qui avait été livrée en pâture à un redoutable dragon, et mit à mort la bête par la force surnaturelle qu’il tirait de sa foi. Admiratifs devant cette démonstration de la puissance accordée par le Christ à ses fidèles contre les puissances du mal, les païens de l’endroit se convertirent tous au christianisme. </p><p>Au temps de la Grande Persécution déclenchée par Dioclétien (vers 304), comme l’empereur avait convoqué à Nicomédie tous les gouverneurs d’Orient pour leur communiquer ses décrets contre les Chrétiens, Saint Georges, sentant que le moment était venu pour lui de confesser publiquement le Christ, distribua tous ses biens aux pauvres, affranchit ses esclaves et se rendit à la cour. Il se présenta au milieu de l’assemblée et reprocha au souverain de verser injustement le sang innocent des Chrétiens. </p><p>Il reçus le martyre avec beaucoup de gens qu’il a converti. </p><p>Conformément à la recommandation du Saint, son serviteur transporta ensuite sa précieuse relique dans sa patrie, Lydda (Diospolis) en Palestine (cf. 3 novembre), où d’innombrables miracles s’accomplirent dans la vaste église que l’on construisit en son honneur. </p><p>Le culte de Saint Georges a connu une immense faveur dans tout le monde chrétien, tant en Orient qu’en Occident. Il a été choisi pour protecteur de pays comme la Géorgie et la Grande-Bretagne, des milliers d’églises lui ont été consacrées et toute âme chrétienne voit en lui l’incarnation des vertus de vaillance, de patience dans les afflictions et de confiance en l’assistance de la Grâce que le Christ, Maître du combat, a recommandées à tous les soldats de la piété. </p>"
+    },
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "Libérateur des captifs, * toi qui assures aux pauvres ta protection, * en qui les malades trouvent aussi médecin * et les princes, leur Seigneur, * victorieux défenseur, * saint Georges, victorieux et grand martyr * intercède auprès du Christ notre Dieu * pour le salut de nos âmes.",
+          "Type": "1",
+          "Tone": "4"
+        },
+        "KONTAKION/1": {
+          "text": "Cultivant toi-même par Dieu, tu devins * le vénérable jardinier de la foi, * recueillant les gerbes des vertus : * ayant semé dans les larmes, tu moissonnas dans la joie ; * pour le combat sanglant que tu menas, * tu obtins le Christ comme prix ; * par tes prières, saint Georges, tu procures à tous le pardon de leurs péchés.",
+          "Type": "1",
+          "Tone": "4"
+        }
+      }
+    }
+  },
+  "0949701": {
+    "name": {
+      "nominative": "<i>Le service pour St. Georges est transféré au lundi lumineux.</i>"
+    }
+  },
+  "09779": {
+    "name": {
+      "nominative": "St. Pierre, Métropolite de Moscou",
+      "short": "St. Pierre"
+    },
+    "rank": 3
+  },
+  "09785": {
+    "name": {
+      "nominative": "Sts. Apôtres Pierre et Paul",
+      "short": "Sts. Apôtres"
+    },
+    "rank": 6
+  },
+  "09812": {
+    "name": {
+      "nominative": "Délivrance de Moscou par l’Icône de la Mère de Dieu de Vladimir",
+      "short": "Délivrance de"
+    },
+    "rank": 4
+  },
+  "09946": {
+    "name": {
+      "nominative": "St. Prophète Elie le Thesbite",
+      "short": "St. Prophète"
+    },
+    "rank": 2
+  },
+  "09951": {
+    "name": {
+      "nominative": "Sts. Theognide, Rufus, Antipater, Théostique, Artémas, Magnos, Théodule, Thaumasios et Philémon de Cizique",
+      "short": "Sts. Theognide"
+    },
+    "rank": 1
+  },
+  "09968": {
+    "name": {
+      "nominative": "Découverte des Reliques de St. Séraphim de Sarov et sa canonisation",
+      "short": "Découverte des"
+    },
+    "rank": 5
+  }
+}

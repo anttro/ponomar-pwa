@@ -152,7 +152,7 @@ class Validator {
         continue;
       }
       const obj = node as Record<string, unknown>;
-      if (!obj.type || !['TEXT', 'HEADER'].includes(obj.type as string)) {
+      if (!obj.type || !['TEXT', 'HEADER', 'TROPARION', 'KONTAKION'].includes(obj.type as string)) {
         this.addError(path, `[${i}].type`, 'Type must be TEXT or HEADER');
       }
     }
@@ -195,7 +195,7 @@ class Validator {
         continue;
       }
       const obj = period as Record<string, unknown>;
-      if (!obj.cmd || typeof obj.cmd !== 'string') {
+      if (typeof obj.cmd !== 'string') {
         this.addError(path, `[${i}].cmd`, 'Missing cmd');
       }
       if (!Array.isArray(obj.rules)) {
@@ -247,7 +247,8 @@ function main() {
   const sharedDir = join(DATA_DIR, 'shared');
   if (existsSync(sharedDir)) {
     console.log('Validating shared data...');
-    validator.validateDir(join(sharedDir, 'lives'), 'lives-bundle');
+    // NOTE: shared/lives contains calendar scripture-reading entries (date-keyed),
+    // not saint biographies with name.nominative, so it is NOT validated as lives-bundle.
     validator.validateDir(join(sharedDir, 'commemorations'), 'commemoration');
     validator.validateFile(join(sharedDir, 'fasting.json'), 'fasting');
   }

@@ -1,0 +1,45 @@
+[
+  {
+    "type": "TONE"
+  },
+  {
+    "type": "VESPERS",
+    "troparion1": "TUES1",
+    "kontakion1": "TUES1",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "PRIMES",
+    "troparion1": "TUES1",
+    "kontakion1": "TUES1",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "PRIMES",
+    "kontakion1": "MTTL",
+    "cmd": "(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "TERCE",
+    "troparion1": "TUES1",
+    "kontakion1": "TUES1",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "SEXTE",
+    "troparion1": "TUES1",
+    "kontakion1": "TUES1",
+    "cmd": "!(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "SEXTE",
+    "kontakion1": "MTTL6",
+    "cmd": "(nday > -50 && nday < 0)"
+  },
+  {
+    "type": "NONE",
+    "troparion1": "TUES1",
+    "kontakion1": "TUES1",
+    "cmd": "!(nday > -50 && nday < 0)"
+  }
+]

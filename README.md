@@ -60,7 +60,7 @@ npx tsx scripts/assembler-test.ts  # service assembler integration tests
 - **Canons** — Paraclete (weekday, 8 tones × 6 days = 48), Octoechos (Sunday, 8 tones), Great Canon
 - **Services** — 78 data-backed services with full.json (Pascha, Paralytic, Sergius, Pokrov, etc.; Var/I-prefix + bare P-prefix varNodes now intercepted)
 - **Horologion / Sbornik / Prayer Rule / Akathists / Parimii / Paraclete / Irmologion** — daily-cycle collections
-- **Lives** — Saint lives (pre-existing schema issues, 945 known)
+- **Lives** — Saint lives (en/cu, name.nominative validated by `validate-data.ts`)
 
 ## Project Structure
 

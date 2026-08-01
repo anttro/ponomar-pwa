@@ -1,0 +1,1025 @@
+{
+  "DATA": {
+    "PERIOD": [
+      {
+        "PRIME": {
+          "@_Type": "Paschal"
+        },
+        "TERCE": {
+          "@_Type": "Paschal"
+        },
+        "SEXTE": {
+          "@_Type": "Paschal"
+        },
+        "NONE": {
+          "@_Type": "Paschal"
+        },
+        "@_Cmd": "nday >= 0 && nday < 7"
+      },
+      {
+        "PRIME": {
+          "@_Type": "Easter",
+          "@_Troparion": "{P,T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{P,T}",
+          "@_PickK": "1"
+        },
+        "TERCE": {
+          "@_Type": "Easter",
+          "@_Troparion": "{P,T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{P,T}",
+          "@_PickK": "1"
+        },
+        "SEXTE": {
+          "@_Type": "Easter",
+          "@_Troparion": "{P,T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{P,T}",
+          "@_PickK": "1"
+        },
+        "NONE": {
+          "@_Type": "Easter",
+          "@_Troparion": "{P,T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{P,T}",
+          "@_PickK": "1"
+        },
+        "@_Cmd": "nday >= 7 && nday < 39"
+      },
+      {
+        "PRIME": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 40 || nday == 50"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M_A,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday > 40 && nday < 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,M_A}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M,M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday > 40 && dRank == 3 && nday != 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 49"
+          }
+        ],
+        "TERCE": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 40 || nday == 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M_A,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday >= 40 && nday != 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,M_A}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M,M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday > 40 && dRank == 3 && nday != 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 49"
+          }
+        ],
+        "SEXTE": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 40 || nday == 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M_A,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday >= 40 && nday != 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,M_A}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M,M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday > 40 && dRank == 3 && nday != 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 49"
+          }
+        ],
+        "NONE": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 40 || nday == 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M_A,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday >= 40 && nday != 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,M_A}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M,M_A,T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday > 40 && dRank == 3 && nday != 49"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "nday == 49"
+          }
+        ],
+        "@_Cmd": "nday >= 39 && nday < 57"
+      },
+      {
+        "PRIME": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "MTTL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 1 || dow == 2 || dow == 4"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "WFL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 3 || dow == 5"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "SatL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 6"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && (dRank <= 6 && dRank >= 4)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && (dRank <= 6 && dRank >= 4)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank == 8"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && dRank == 8"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && (dRank == 3 || dRank == 2)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && (dRank == 3 || dRank == 2)"
+          }
+        ],
+        "TERCE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "SEXTE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "NONE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "@_Cmd": "nday >= 57 && doy <= 178"
+      },
+      {
+        "PRIME": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank == 2"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank >= 3"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow !=0 && dRank >= 2"
+          }
+        ],
+        "TERCE": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank == 2"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank >= 3"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow !=0 && dRank >= 2"
+          }
+        ],
+        "SEXTE": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank == 2"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank >= 3"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow !=0 && dRank >= 2"
+          }
+        ],
+        "NONE": [
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank == 2"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T,M}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank >= 3"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow !=0 && dRank >= 2"
+          }
+        ],
+        "@_Cmd": "(doy >= 179 && doy <= 211) || (doy >= 226 && doy <= 317) || (doy >= 358 && doy <= 364) || ((doy >= 0 || doy == 366) && nday <= -71)"
+      },
+      {
+        "PRIME": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "MTTL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 1 || dow == 2 || dow == 4"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "WFL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 3 || dow == 5"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "SatL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 6"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && (dRank <= 6 && dRank >= 4)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && (dRank <= 6 && dRank >= 4)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank == 8"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && dRank == 8"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && (dRank == 3 || dRank == 2)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && (dRank == 3 || dRank == 2)"
+          }
+        ],
+        "TERCE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "SEXTE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "NONE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "@_Cmd": "doy > 211 && doy <= 225"
+      },
+      {
+        "PRIME": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "MTTL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 1 || dow == 2 || dow == 4"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "WFL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 3 || dow == 5"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "SatL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 6"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && (dRank <= 6 && dRank >= 4)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && (dRank <= 6 && dRank >= 4)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && dRank == 8"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && dRank == 8"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{M,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0 && (dRank == 3 || dRank == 2)"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0 && (dRank == 3 || dRank == 2)"
+          }
+        ],
+        "TERCE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "SEXTE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "NONE": [
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{M,T}",
+            "@_PickT": "2",
+            "@_Kontakion": "{T}",
+            "@_PickK": "1",
+            "@_Cmd": "dRank >= 2"
+          }
+        ],
+        "@_Cmd": "doy >= 318 && doy <= 357"
+      },
+      {
+        "PRIME": {
+          "@_Type": "Normal",
+          "@_Troparion": "{T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{T}",
+          "@_PickK": "1"
+        },
+        "TERCE": {
+          "@_Type": "Normal",
+          "@_Troparion": "{T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{T}",
+          "@_PickK": "1"
+        },
+        "SEXTE": {
+          "@_Type": "Normal",
+          "@_Troparion": "{T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{T}",
+          "@_PickK": "1"
+        },
+        "NONE": {
+          "@_Type": "Normal",
+          "@_Troparion": "{T}",
+          "@_PickT": "1",
+          "@_Kontakion": "{T}",
+          "@_PickK": "1"
+        },
+        "@_Cmd": "nday >= -70 && nday <= -49"
+      },
+      {
+        "PRIME": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "MTTL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 1"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "MTTL",
+            "@_PickK": "-1",
+            "@_LENTENK": "13",
+            "@_Cmd": "dow == 2"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "WFL",
+            "@_PickK": "-1",
+            "@_LENTENK": "2",
+            "@_Cmd": "dow == 3"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "MTTL",
+            "@_PickK": "-1",
+            "@_LENTENK": "9",
+            "@_Cmd": "dow == 4"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "WFL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 5"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "SatL",
+            "@_PickK": "-1",
+            "@_Cmd": "dow == 6"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          }
+        ],
+        "TERCE": [
+          {
+            "@_Type": "Lenten",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "7",
+            "@_Cmd": "dow == 1"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "14",
+            "@_Cmd": "dow == 2"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "3",
+            "@_Cmd": "dow == 3"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "10",
+            "@_Cmd": "dow == 4"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "19",
+            "@_Cmd": "dow == 5"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow == 6"
+          }
+        ],
+        "SEXTE": [
+          {
+            "@_Type": "Lenten",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "8",
+            "@_Cmd": "dow == 1"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "15",
+            "@_Cmd": "dow == 2"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "4",
+            "@_Cmd": "dow == 3"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "11",
+            "@_Cmd": "dow == 4"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "20",
+            "@_Cmd": "dow == 5"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow == 6"
+          }
+        ],
+        "NONE": [
+          {
+            "@_Type": "Lenten",
+            "@_Troparion": "{T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "9",
+            "@_Cmd": "dow == 1"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "16",
+            "@_Cmd": "dow == 2"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "5",
+            "@_Cmd": "dow == 3"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_LENTENK": "12",
+            "@_Cmd": "dow == 4"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow == 5"
+          },
+          {
+            "@_Type": "Lenten",
+            "@_Cmd": "dow == 6"
+          }
+        ],
+        "@_Cmd": "nday >= -48 && nday <= -9"
+      },
+      {
+        "PRIME": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "{P,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{P,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "None",
+            "@_Cmd": "dow == 5"
+          }
+        ],
+        "TERCE": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "{P,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{P,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "None",
+            "@_Cmd": "dow == 5"
+          }
+        ],
+        "SEXTE": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "{P,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{P,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "None",
+            "@_Cmd": "dow == 5"
+          }
+        ],
+        "NONE": [
+          {
+            "@_Type": "Lenten",
+            "@_Kontakion": "{P,T}",
+            "@_PickK": "1",
+            "@_Cmd": "dow != 0"
+          },
+          {
+            "@_Type": "Normal",
+            "@_Troparion": "{P,T}",
+            "@_PickT": "1",
+            "@_Kontakion": "{P}",
+            "@_PickK": "1",
+            "@_Cmd": "dow == 0"
+          },
+          {
+            "@_Type": "None",
+            "@_Cmd": "dow == 5"
+          }
+        ],
+        "@_Cmd": "nday >= -8 && nday <= -1"
+      },
+      {
+        "SEXTE": {
+          "@_Type": "Lenten",
+          "@_Cmd": "nday == -51 || nday == -53"
+        },
+        "PRIME": {
+          "@_Type": "Lenten",
+          "@_Kontakion": "WFL",
+          "@_PickK": "-1",
+          "@_Cmd": "nday == -51 || nday == -53"
+        },
+        "TERCE": {
+          "@_Type": "Lenten",
+          "@_Cmd": "nday == -51 || nday == -53"
+        },
+        "NONE": {
+          "@_Type": "Lenten",
+          "@_Cmd": "nday == -51 || nday == -53"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "DATA": {
+    "COMMAND": [
+      {
+        "@_Name": "Transfer",
+        "@_Value": "nday >= 52 || nday < -55",
+        "@_Comment": "This determines whether the sequential readings may be skipped or transferred.",
+        "@_Cmd": "GS == 1"
+      },
+      {
+        "@_Name": "Transfer",
+        "@_Value": "nday >= 52 || nday < -55",
+        "@_Comment": "This determines whether the sequential readings may be skipped or transferred.",
+        "@_Cmd": "GS == 0"
+      },
+      {
+        "@_Name": "Suppress",
+        "@_Value": "doy == 4 && dow != 0 && dow != 6",
+        "@_Comments": "Eve of Theophany can have seq. readings on Sat. (see Table 25b, 2019) and on Sun. (see Table 24b, 2087)",
+        "@_Cmd": "GS == 1"
+      },
+      {
+        "@_Name": "Suppress",
+        "@_Value": "doy == 357 && dow != 6",
+        "@_Comments": "Eve of Nativity can have seq. readings on Sat. (see Table 27a, 2084)",
+        "@_Cmd": "GS == 1"
+      },
+      {
+        "@_Name": "Suppress",
+        "@_Value": "(doy == 358 || doy == 5)",
+        "@_Comment": "Nativity and Theophany never have seq. readings"
+      },
+      {
+        "@_Name": "Suppress",
+        "@_Value": "(doy == 256 || doy == 217) && dow == 0",
+        "@_Comment": "Suppress seq. readings if Exaltation or Transfiguration falls on Sunday"
+      },
+      {
+        "@_Name": "Class3Transfers",
+        "@_Value": "!(doy == 358 || doy == 357 || doy == 4 || doy == 5 || doy == 256 || doy == 217) && ((dRank >= 5 && dow != 0) || dRank == 8)",
+        "@_Cmd": "GS == 1 || GS == 0"
+      },
+      {
+        "@_Name": "Class3Transfers",
+        "@_Value": "(doy == 3 && dow == 5) || (doy == 356 && dow == 5)",
+        "@_Comment": "There is no Liturgy on Friday when the Royal Hours occur. The readings are moved to Thursday.",
+        "@_Cmd": "GS == 1 || GS == 0"
+      },
+      {
+        "@_Name": "Class3Transfers",
+        "@_Value": "(doy == 256 || doy == 217) && dow != 0",
+        "@_Comments": "Exaltation and Transfiguration readings are only transferred if it's not a Sunday"
+      },
+      {
+        "@_Name": "TransferRulesB",
+        "@_Value": "dow != 0 && !(nday >= -63 && nday <= 0) && doy != 338",
+        "@_Cmd": "GS == 1",
+        "@_Comment": "This determines the rules used to transfer the readings to the previous day. Note that St. Nicholas's day has a special set of rules"
+      },
+      {
+        "@_Name": "TransferRulesF",
+        "@_Value": "!(nday >= -63 && nday <= 0) && (dow == 2  && doy != 339) || ((doy == 340 && (dow != 0 && dow != 2)))",
+        "@_Cmd": "GS == 1",
+        "@_Comment": "This determines the rules used to transfer the readings to the next day (forwards). Note that St. Nicholas's day has a special set of rules."
+      },
+      {
+        "@_Name": "TransferRulesB",
+        "@_Value": "dow != 0 && !(nday >= -63 && nday <= 0) && doy != 338",
+        "@_Cmd": "GS == 0",
+        "@_Comment": "This determines the rules used to transfer the readings to the previous day. Note that St. Nicholas's day has a special set of rules"
+      },
+      {
+        "@_Name": "TransferRulesF",
+        "@_Value": "!(nday >= -63 && nday <= 0) && (dow == 2  && doy != 339) || ((doy == 340 && (dow != 0 && dow != 2)))",
+        "@_Cmd": "GS == 0",
+        "@_Comment": "This determines the rules used to transfer the readings to the next day (forwards). Note that St. Nicholas's day has a special set of rules."
+      }
+    ]
+  }
+}

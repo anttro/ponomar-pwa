@@ -1,0 +1,18 @@
+{
+  "DATA": {
+    "TIMES": [
+      {
+        "@_Value": "<i>Twice</i>",
+        "@_Cmd": "Times == 2"
+      },
+      {
+        "@_Value": "<i>Thrice</i>",
+        "@_Cmd": "Times == 3"
+      },
+      {
+        "@_Value": "<i>^# times</i>",
+        "@_Cmd": "Times >= 4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1556 @@
+{
+  "09001": {
+    "name": {
+      "nominative": "Forefeast of the Nativity",
+      "short": "Forefeast"
+    },
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "And it came to pass that Mary was enrolled with Joseph the old man, in Bethlehem, since she was\nof the seed of David, and was great with the Lamb, without seed. And when the time for delivery\ndrew near, and they had no place in the village, the cave did appear to the Queen as a delightful\npalace. Verily, Christ shall be born, raising the likeness that fell of old.",
+          "Type": "1",
+          "Tone": "4",
+          "Author": "Unknown",
+          "Header": "Tropar of the Forefeast, Tone 4"
+        },
+        "KONTAKION/1": {
+          "text": "Today the Virgin cometh to the cave where she will give birth in an ineffable manner to the Word\nWho is before all the ages. Rejoice, therefore, O universe, when thou hearest it heralded: Glorify\nHim, with the angels and the shepherds, Who chose to be seen as a new-born babe, the God Who\nis before all the ages.",
+          "Type": "1",
+          "Tone": "3",
+          "Author": "Unknown",
+          "Header": "Kondak of the Forefeast, Tone 3"
+        }
+      }
+    }
+  },
+  "09002": {
+    "name": {
+      "nominative": "New Martyr John the Youth († 1654)",
+      "short": "New Martyr"
+    }
+  },
+  "09005": {
+    "name": {
+      "nominative": "Saint Juliana, Princess of Viazma († 1406)",
+      "short": "Saint Juliana"
+    }
+  },
+  "09006": {
+    "name": {
+      "nominative": "Eve of the Nativity of Christ",
+      "short": "Eve of Nativity"
+    },
+    "rank": 1
+  },
+  "09007": {
+    "name": {
+      "short": "Royal Hours",
+      "nominative": "Royal Hours of the Nativity"
+    },
+    "services": {
+      "ROYALHOURS": {
+        "IDIOMEL/11": {
+          "text": "Prepare, O Bethlehem, and let the manger make ready and the cave receive; for truth hath come,\nand shadow hath passed. And God hath appeared to mankind from the Virgin, taking our likeness\nand deifying our nature. Wherefore, Adam and Eve are made new, crying, Goodwill hath appeared\non earth to save our race.",
+          "Type": "11",
+          "Tone": "0",
+          "Header": "Tropar, Tone 8<BR>The Work of Sophronios, the Patriarch of Jerusalem",
+          "Author": "Sophronios, the Patriarch of Jerusalem"
+        },
+        "IDIOMEL/12": {
+          "text": "Now, hath come the time for the aforesaid prophecy mystically uttered to be fulfilled; namely, And\nthou Bethlehem in the land of Judah art not the least among princes, having gone before and\nprepared the cave; for out of thee shall come a Governor of nations, from the Virgin Maiden\nincarnate, by Whom I mean Christ God Who shall govern His people, the new Israel. Let us\ntherefore, ascribe unto Him magnification.",
+          "Type": "12",
+          "Tone": "3",
+          "Header": "Tropar, Tone 3"
+        },
+        "IDIOMEL/13": {
+          "text": "Thus saith Joseph to the Virgin, What is this thing, O Mary, which I behold in thee? Verily, I am\nsurprised and perplexed, and my mind is dazzled. Wherefore, henceforth from this moment be thou\nsecluded in secret. What is this matter, O Mary, that I behold in thee? For thou hast given me\ninstead of honor, disgrace; and instead of gladness, sorrow; and instead of being extolled, thou hast\nbrought me blame. Therefore, I cannot bear the reproach of men, from the Temple of the Lord I\ntook thee; from the priests I received thee as innocent of all blame. What then is this thing I\nbehold?",
+          "Type": "13",
+          "Tone": "0",
+          "Header": "Tropar, Tone 8",
+          "Author": ""
+        },
+        "IDIOMEL/31": {
+          "text": "This is our God, beside Whom none other may be considered. He it was Who was born of the\nVirgin and went about among men, the only Son, beheld as a man placed in a mean manger, the\nLord of the house wrapped in swaddling clothes. And the star pointeth for the Magi to worship\nHim; and we sing shouting, O Trinity, save our souls.",
+          "Type": "31",
+          "Tone": "6",
+          "Header": "Тropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/32": {
+          "text": "When the heavenly hosts beheld the mystery before Thy Birth, O Lord, they were struck with\nsurprise; for Thou Who didst adorn the heavens with stars was pleased to become like a babe, and\nlie in a manger for beasts, O Thou Almighty One in Whose grasp are all the regions of the earth;\nfor by Thy dispensation, Thy compassion was made known, O Christ, and Thy Great Mercy.\nWherefore, glory to Thee.",
+          "Type": "32",
+          "Tone": "0",
+          "Header": "Troparion, Tone 8"
+        },
+        "IDIOMEL/33": {
+          "text": "Tell us, O Joseph, how it is that thou dost bring the Virgin whom thou didst receive from the holy\nplaces to Bethlehem great with child? And he replieth, saying, I have searched the Prophets, and it\nwas revealed to me by the angel. Therefore, I am convinced that Mary shall give birth in an\ninexplicable manner to God, whom Magi from the east shall come to worship and to serve with\nprecious gifts. Wherefore, O Thou who wast incarnate for our sakes, glory to Thee.",
+          "Type": "33",
+          "Tone": "3",
+          "Header": "Tropar, Tone 3",
+          "Author": ""
+        },
+        "IDIOMEL/61": {
+          "text": "Come, ye believers, let us ascend in a divine manner and behold a divine condescension, revealed\nto us from on high, openly in Bethlehem. And having purified our minds by good conduct, let us\noffer virtues instead of frankincense. Let us go before and prepare with faith entrances for the\nNativity among the spiritual treasures, crying, Glory in the highest to God, the One in Trinity,\nthrough Whom good-will appeared among men to deliver Adam from the ancient curse; for He is\nthe Lover of mankind.",
+          "Type": "61",
+          "Tone": "1",
+          "Header": "Tropar, Tone 1",
+          "Author": ""
+        },
+        "IDIOMEL/62": {
+          "text": "Listen, O heaven, and give ear, O earth. Let the foundations shake, and let trembling fall on all\nbelow the earth; for God hath dwelt in a creation of flesh; and He Who made creation with a\nprecious hand is seen in the womb of a created one. O the depth of the riches and wisdom and\nknowledge of God! How unsearchable are His judgments, and His ways past finding out.",
+          "Type": "62",
+          "Tone": "4",
+          "Header": "Tropar, Tone 4"
+        },
+        "IDIOMEL/63": {
+          "text": "Come, ye nations that have put on Christ, let us behold a wonder that overtaketh all minds with\nastonishment; and as we kneel down in true worship, let us give praise in faith; for the Maiden,\nhaving conceived, cometh today to Bethlehem, to give birth to the Lord. The ranks of angels\nhasten, and Joseph, seeing these things, shouted, crying, What is this strange mystery that hath\nbefallen thee, O Virgin? And how shalt thou give birth, O ewe that hath not known wedlock?",
+          "Type": "63",
+          "Tone": "5",
+          "Header": "Tropar, Tone 5",
+          "Author": ""
+        },
+        "IDIOMEL/91": {
+          "text": "Verily, Herod was overtaken by astonishment when he saw the piety of the Magi. And having been\noverridden with wrath, he began to inquire of them about the time. He robbed the mothers of their\nchildren and ruthlessly reaped the tender bodies of the babes. And the breasts dried up, and the\nsprings of milk failed. Great then was the calamity. Wherefore, being gathered, O believers, in true\nworship, let us adore the Nativity of Christ.",
+          "Type": "91",
+          "Tone": "7",
+          "Header": "Tropar, Tone 7",
+          "Author": ""
+        },
+        "IDIOMEL/92": {
+          "text": "As Joseph was going his way to Bethlehem pierced with sadness, thou didst cry unto him, O\nVirgin, saying, Why frownest thou and art troubled when thou seest me great with child,\ncompletely ignorant of the terrible mystery that is in me? Drive away from thee all dismay,\ncomprehending the strange matter; for God, for His mercy’s sake, hath descended to earth and hath\nnow taken flesh in my womb, and thou shalt see Him born, as it pleased Him; for He is thy\nCreator, Whom the angels praise ceaselessly and glorify, with the Father and the Holy Spirit.",
+          "Type": "92",
+          "Tone": "2",
+          "Header": "Tropar, Tone 2"
+        },
+        "IDIOMEL/93.1": {
+          "text": "Today is born of the Virgin Him Who holdest all creation in the hollow of His hand.",
+          "Type": "93.1",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.2": {
+          "text": "He Whose essence is untouchable is wrapped in swaddling clothes as a babe.",
+          "Type": "93.2",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.3": {
+          "text": "The God Who from of old established the heavens lieth in a manger.",
+          "Type": "93.3",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.4": {
+          "text": "He Who showered the people with manna in the wilderness feedeth on milk from the breasts.",
+          "Type": "93.4",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.5": {
+          "text": "And the bridegroom of the Church calleth the Magi.",
+          "Type": "93.5",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.6": {
+          "text": "And the Son of the Virgin accepteth gifts from them.",
+          "Type": "93.6",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.7": {
+          "text": "We worship Thy Nativity, O Christ.",
+          "Type": "93.7",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.8": {
+          "text": "Show us also Thy divine Theophany!",
+          "Type": "93.8",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "VERSE/1": {
+          "text": "God will come from Theman, and the Holy One from a mountain overshadowed by forest.",
+          "Type": "1"
+        },
+        "VERSE/2": {
+          "text": "Lord, I heard your report and was afraid. Lord, I understood Your deeds and was scared.",
+          "Type": "2"
+        },
+        "VERSE/1P": {
+          "text": "Ask of me, and I shall give you the Nations as your inheritance.",
+          "Type": "1P"
+        },
+        "VERSE/3P": {
+          "text": "And the government is upon His shoulders.",
+          "Type": "3P"
+        },
+        "VERSE/6P": {
+          "text": "The Lord said to my Lord: Sit at my right hand, until I make your enemies a footstool for your feet.",
+          "Type": "6P"
+        },
+        "VERSE/9P": {
+          "text": "Her foundations are in the holy mountains.",
+          "Type": "9P"
+        },
+        "PROKEIMENON/1P": {
+          "text": "The Lord said to me, \"You are my Son, today I have begotten you.\"",
+          "Type": "1P",
+          "Tone": "4",
+          "Header": "Prokeimenon of the Prophecy, Tone 4"
+        },
+        "PROKEIMENON/3P": {
+          "text": "For a Child has been born for us, and a Son has been given to us.",
+          "Type": "3P",
+          "Tone": "4",
+          "Header": "The Prokeimenon of the Prophecy, Tone 4"
+        },
+        "PROKEIMENON/6P": {
+          "text": "From the womb before the Morning Star I have begotten you.",
+          "Type": "6P",
+          "Tone": "4",
+          "Header": "The Prokeimenon of the Prophecy, Tone 4"
+        },
+        "PROKEIMENON/9P": {
+          "text": "Sion is our mother, a man will say; and a man has been born in her.",
+          "Type": "9P",
+          "Tone": "4",
+          "Header": "The Prokeimenon of the Prophecy, Tone 4"
+        }
+      }
+    }
+  },
+  "09010000": {
+    "name": {
+      "nominative": "Venerable Meletius the New",
+      "short": "Meletius"
+    }
+  },
+  "09010001": {
+    "name": {
+      "nominative": "Venerable Evanthia",
+      "short": "Evanthia"
+    }
+  },
+  "090101": {
+    "name": {
+      "nominative": "Commemoration of the great fire at Constantinople under Emperor Leo I",
+      "short": "Great fire"
+    },
+    "life": {
+      "id": "",
+      "copyright": "",
+      "text": "We commemorate the great fire in Constantinople that occurred during the reign of Leo the Great about the year 470. It was a terrible fire that continued for six days. The Emperor frightened by the disaster left for the sea and built a Temple of St. Mamas in Sigma."
+    }
+  },
+  "09010200": {
+    "name": {
+      "nominative": "New Martyr Angeles",
+      "short": "Angeles"
+    },
+    "life": {
+      "id": "",
+      "copyright": "holytrinityorthodox.com",
+      "text": "He was a goldsmith living in Constantinople. While he was celebrating the Dormition of the Theotokos with some friends in a nearby village, the party was joined by some Turkish neighbors. The Christians and Turks drank a great amount together, and at one point entertained themselves by exchanging headgear. The next day, when everyone had sobered up, a Turk asked Angelis why he was not wearing a Muslim turban, for wearing it once was a sign of conversion. (To our knowledge this is not Islamic law, but was a ploy to pressure the young Angelis into conversion.) The dismayed Angelis was brought before a judge and given the choice of converting to Islam or being put to torture and death. Though the young man had shown little seriousness about his faith before this, he was filled with the Holy Spirit and boldly confessed Christ, willingly accepting a Martyr's end. He was beheaded on Sunday, September 1, 1680."
+    }
+  },
+  "09010201": {
+    "name": {
+      "nominative": "Venerable Nicholas",
+      "short": "Nicholas"
+    }
+  },
+  "09010202": {
+    "name": {
+      "nominative": "Venerable Anthony in Agyia",
+      "short": "Anthony"
+    }
+  },
+  "09010203": {
+    "name": {
+      "short": "Agathoclia",
+      "nominative": "Martyr Agathoclia"
+    }
+  },
+  "09010204": {
+    "name": {
+      "nominative": "Venerable New Martyr Tatiana (Gribkova) and New Martyr Natalia (Kozlova)",
+      "short": "Venerable New Martyrs"
+    }
+  },
+  "09010205": {
+    "name": {
+      "nominative": "Venerable New Martyr Tatiana (Gribkova)",
+      "short": "Tatiana"
+    }
+  },
+  "09010206": {
+    "name": {
+      "nominative": "Venerable New Martyr Natalia (Kozlova)",
+      "short": "Natalia"
+    }
+  },
+  "09010207": {
+    "name": {
+      "nominative": "“Chernigov-Gethsemane” Icon of the Theotokos",
+      "short": "Chernigov-Gethesemane"
+    },
+    "life": {
+      "id": "",
+      "copyright": "1996-2001 by translator Fr. S. Janos.",
+      "text": "The Chernigov-Gethsemane Icon of the Mother of God is a copy from the famed Chernigov-Il'insk Icon of the Mother of God, which was to be found at the Trinity Il'insk monastery near Chernigov on Mount Boldina, and where in the XI Century for a certain while the Monk Antonii of Pechersk pursued asceticism. To the description of the miracles from this icon, beginning with 16-24 April 1662, Sainted Dimitrii of Rostov in his book \"The Bedewed Fleece\" (Oroshennoe Runo) wrote in conclusion: \"The end of the booklet, but not of the miracles of the MostHoly Mother of God, since who is it that can count them\". The grace-bearing power of this icon is manifest also in its copies.\n      The Chernigov-Gethsemane Icon of the Mother of God was written in the mid XVIII Century and passed on in 1852 to the Trinity Sergiev Lavra by Alexandra Grigor'evna Philippova, piously having had it for a quarter century. (This icon was passed on to her by the priest Ioann Alekseev, to whom in turn it came from one of the monks of the Trinity Sergiev Lavra.) On the advice of the head of the Lavra, Archimandrite Antonii (+ 1 May 1877), the icon was placed in the newly-consecrated cave church named for the Holy Archistratigos [Leader of the Heavenly Hosts] Michael, which was consecrated on 27 October 1851 by the Metropolitan of Moscow Philaret (+ 19 November 1867), who assumed an active role in the building of the Gethsemane skete-monastery. In such manner, the icon took in the currents of grace of all the history of the Russian Church, – it acquired the blessing of the Monk Antonii of Pechersk, of the Monk Sergei of Radonezh and of his parents the schema-monastics Kirill and Maria (+ 1337, a votive liturgy for them with the reading of a special prayer is made on 28 September and on Thursday of the Week of the Publican and Pharisee), and finally, of the ascetics of the XIX Century. These spiritual connections providentially come forth through the Chernigov-Gethsemane Icon of the Mother of God.\n\n      It is remarkable, that the first miracle from this icon was witnessed on the day of the Church New Year – 1 September 1869, when the 28 year old peasant of Tula governance, Thekla Adrianova, was healed, having been completely crippled constantly for 9 years. Living at the hostel by the caves, and then at the Lavra during the celebration of the Repose of the Monk Sergei (25 September), Thekla recovered completely. Sainted Innocent (Innokentii) the Metropolitan of Moscow (1797-1879, Comm. 23 September and 31 March), learned of the miracle from his daughter the Nun Poliksenia, treasurer of the Borisovsk wilderness monastery. On the feast of the Monk Sergei, he himself met with Thekla and asked her about all the details of the healing. On 26 September 1869 Sainted Innocent arrived at the Gethsemane skete and gave the blessing to make molieben before the glorified icon while he himself prayed with tears.\n      By 26 September there had occurred already three graced healings and a whole series of miracles in November of that same year. The fame of the icon of the Mother of God spread with unusual swiftness. Exhausted by suffering and sickness, thirsting for bodily and spiritual healing, people from every class of society came with firm faith to the wonderworking icon, and the mercy of God did not forsake them. Towards the beginning of the XX Century more than 100 miracles were witnessed. By its great esteem the icon benefited the ascetics of the Gethsemane skete: the schema-monk Philip (+ 18 May 1868), the founder of the cave-monastery, and his three sons – the priest-schemamonks Ignatii (+ 1900), Porphyrii (+ 1905 ?) and Vasilii (+ 1 April 1915). They preserved accounts about the deep love, which the priestmonk starets (monastic elder) Isidor (+ 3 February 1908) displayed for the Chernigov-Gethsemane Icon.\n      The initial celebration of the icon was established on 16 April, on the day when also was the celebration of the Cherigov-Il'insk icon. Afterwards it was transferred to the day of glorification – 1 September. At the present time at Trinity-Sergiev Lavra there are venerable copies of the Chernigov-Gethsemane icon – within the temple in honour of the Monk Sergei, in the monastery refectory, and in the portico of the Trinity cathedral, – written by elders of the Gethsemane skete and the Zosimov wilderness-monastery."
+    }
+  },
+  "09010208": {
+    "name": {
+      "nominative": "Alexandria Icon of the Theotokos",
+      "short": "Alexandria"
+    }
+  },
+  "09010209": {
+    "name": {
+      "nominative": "Augustów Icon of the Theotokos",
+      "short": "Augustów"
+    }
+  },
+  "09010210": {
+    "name": {
+      "nominative": "“All Blessed” Icon of the Theotokos in Kazan",
+      "short": "“All Blessed”"
+    },
+    "life": {
+      "id": "",
+      "copyright": "1996-2001 by translator Fr. S. Janos.",
+      "text": "The \"All-Blessed\" or \"Pamakarista\" Icon of the Mother of God was sent in 1905 by His Holiness the Patriarch of Constantinople Joakim III in blessing and solace to the city of Kazan. This icon – an exact copy from a particularly venerated icon of the Mother of God situated in the Constantinople Patriarchal church, which is an uniquely ancient holy thing at Constantinople remaining intact from various plunderings."
+    }
+  },
+  "09010211": {
+    "name": {
+      "nominative": "St. Giles, Abbot and Confessor of Narbonne",
+      "short": "Giles"
+    }
+  },
+  "09010212": {
+    "name": {
+      "nominative": "Twelve Holy Brothers at Benevento",
+      "short": "Martyrs of Benevento"
+    }
+  },
+  "090102120": {
+    "name": {
+      "nominative": "Martyr Donatus of Benevento",
+      "short": "Donatus"
+    }
+  },
+  "090102121": {
+    "name": {
+      "nominative": "Martyr  Felix of Benevento",
+      "short": "Felix"
+    }
+  },
+  "0901021210": {
+    "name": {
+      "nominative": "Martyr  Sator of Benevento",
+      "short": "Sator"
+    }
+  },
+  "0901021211": {
+    "name": {
+      "nominative": "Martyr  Repositus of Benevento",
+      "short": "Repositus"
+    }
+  },
+  "090102122": {
+    "name": {
+      "nominative": "Martyr  Arontius of Benevento",
+      "short": "Arontius"
+    }
+  },
+  "090102123": {
+    "name": {
+      "nominative": "Martyr  Honoratus of Benevento",
+      "short": "Honoratus"
+    }
+  },
+  "090102124": {
+    "name": {
+      "nominative": "Martyr  Fortunatus of Benevento",
+      "short": "Fortunatus"
+    }
+  },
+  "090102125": {
+    "name": {
+      "nominative": "Martyr  Sabinian of Benevento",
+      "short": "Sabinian"
+    }
+  },
+  "090102126": {
+    "name": {
+      "nominative": "Martyr  Septimius of Benevento",
+      "short": "Septimius"
+    }
+  },
+  "090102127": {
+    "name": {
+      "nominative": "Martyr  Januarius of Benevento",
+      "short": "Januarius"
+    }
+  },
+  "090102128": {
+    "name": {
+      "nominative": "Martyr  Felix of Benevento",
+      "short": "Felix"
+    }
+  },
+  "090102129": {
+    "name": {
+      "nominative": "Martyr  Vitalis of Benevento",
+      "short": "Vitalis"
+    }
+  },
+  "09010213": {
+    "name": {
+      "nominative": "Hieromartyr Priscus, Bishop of Capua",
+      "short": "Priscus"
+    }
+  },
+  "09010214": {
+    "name": {
+      "nominative": "Hieromartyr Sixtus (Xystus), bishop of Rheims",
+      "short": "Sixtus"
+    }
+  },
+  "09010215": {
+    "name": {
+      "nominative": "Hieromartyr Terentian, Bishop of Todi in Umbria",
+      "short": "Terentian"
+    }
+  },
+  "09010216": {
+    "name": {
+      "nominative": "Martyrs Vincent and Lætus in Spain",
+      "short": "Martyrs"
+    }
+  },
+  "09010217": {
+    "name": {
+      "nominative": "Martyr Regulus in Piombino, Tuscany",
+      "short": "Regulus"
+    }
+  },
+  "09010218": {
+    "name": {
+      "nominative": "St. Lupus, Bishop of Sens",
+      "short": "Lupus"
+    }
+  },
+  "09010219": {
+    "name": {
+      "nominative": "St. Priscus, Bishop of Capua, Confessor, and his companions: Castrensis, Tammarus, Rosius, Heraclius, Secundinus, Adjutor, Mark, Augustus, Elpidius, Canion, and Vindonius",
+      "short": "Priscus"
+    }
+  },
+  "090102190": {
+    "name": {
+      "nominative": "St. Castrensis, companion of St. Priscus of Capua",
+      "short": "Castrensis"
+    }
+  },
+  "090102191": {
+    "name": {
+      "nominative": "St.  Tammarus, companion of St. Priscus of Capua",
+      "short": "Tammarus"
+    }
+  },
+  "0901021910": {
+    "name": {
+      "nominative": "St.  Vindonius, companion of St. Priscus of Capua",
+      "short": "Vindonius"
+    }
+  },
+  "0901021911": {
+    "name": {
+      "nominative": "St. Priscus the Confessor, Bishop of Capua",
+      "short": "Priscus"
+    }
+  },
+  "090102192": {
+    "name": {
+      "nominative": "St.  Rosius, companion of St. Priscus of Capua",
+      "short": "Rosius"
+    }
+  },
+  "090102193": {
+    "name": {
+      "nominative": "St.  Heraclius, companion of St. Priscus of Capua",
+      "short": "Heraclius"
+    }
+  },
+  "090102194": {
+    "name": {
+      "nominative": "St.  Secundinus, companion of St. Priscus of Capua",
+      "short": "Secundinus"
+    }
+  },
+  "090102195": {
+    "name": {
+      "nominative": "St.  Adjutor, companion of St. Priscus of Capua",
+      "short": "Adjutor"
+    }
+  },
+  "090102196": {
+    "name": {
+      "nominative": "St.  Mark, companion of St. Priscus of Capua",
+      "short": "Mark"
+    }
+  },
+  "090102197": {
+    "name": {
+      "nominative": "St.  Augustus, companion of St. Priscus of Capua",
+      "short": "Augustus"
+    }
+  },
+  "090102198": {
+    "name": {
+      "nominative": "St.  Elpidius, companion of St. Priscus of Capua",
+      "short": "Elpidius"
+    }
+  },
+  "090102199": {
+    "name": {
+      "nominative": "St.  Canion, companion of St. Priscus of Capua",
+      "short": "Canion"
+    }
+  },
+  "09010220": {
+    "name": {
+      "nominative": "St. Constantius, Bishop of Aquino",
+      "short": "Constantius"
+    }
+  },
+  "09010221": {
+    "name": {
+      "nominative": "St. Victorius, Bishop of Le Mans",
+      "short": "Victorius"
+    }
+  },
+  "09010222": {
+    "name": {
+      "nominative": "Venerable Verena at Zurzach",
+      "short": "Verena"
+    }
+  },
+  "09010300": {
+    "name": {
+      "nominative": "Synaxis of the Most Holy Theotokos at the Miasena Monastery (in honor of the finding of her icon)",
+      "short": "Miasena Icon"
+    },
+    "life": {
+      "id": "",
+      "copyright": "http://www.holytrinityorthodox.com/",
+      "text": "During the persecution of the Emperor Leo the Isaurian against the Holy Icons, the wonderworking image depicting the Synaxis of the Theotokos and found in the Miasini Monastery in Armenia was thrown into Lake Azurov. Within 100 years after the restoration of icon veneration, this holy icon appeared in the year 864 completely unharmed on the surface of the water. The feast is established in memory of this appearance that happened on September 1."
+    }
+  },
+  "09011": {
+    "name": {
+      "nominative": "Afterfeast of the Nativity of Our Lord",
+      "short": "Afterfeast"
+    }
+  },
+  "09013": {
+    "name": {
+      "nominative": "Eve of Theophany",
+      "short": "Eve"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": ""
+    },
+    "rank": 1,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "Once, the River Jordan was turned back by the mantle of Elisha when Elijah was borne aloft, and the waters were parted on either side, and the path which before was wet became dry for him, as a true image of baptism, whereby we pass through the flow of life. Christ hath appeared in the Jordan to sanctify the waters.",
+          "Type": "1",
+          "Tone": "4"
+        },
+        "KONTAKION/1": {
+          "text": "O Christ, Who in Thy compassion and infinite mercy takest away the multitude of all our transgressions, Thou comest as a man to be baptized in the waters of the Jordan, clothing me in the raiment of the ancient glory of which I was cruelly stripped bare.",
+          "Type": "1",
+          "Tone": "2",
+          "Podoben": "3"
+        }
+      }
+    }
+  },
+  "09014": {
+    "name": {
+      "nominative": "Eve of the Theophany",
+      "short": "Eve"
+    },
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "The River Jordan receded of old by the mantle of Elisha when Elijah ascended into heaven; and\nthe water was separated to this side and that, the wet element turning into a dry path for Him,\nbeing truly a symbol of Baptism, by which we cross the path of transient age. Christ appeared in\nthe Jordan to sanctify its waters.",
+          "Type": "1",
+          "Tone": "4",
+          "Author": "Unknown",
+          "Header": "Tropar of the Forefeast, Tone 4"
+        },
+        "KONTAKION/1": {
+          "text": "Today hath the Lord appeared in the courses of the Jordan, crying to John and saying, Be not\ndismayed at My Baptism; for I have verily come to save Adam, the first to be created.",
+          "Type": "1",
+          "Tone": "3",
+          "Author": "Unknown",
+          "Header": "Kondak of the Forefeast, Tone 4"
+        }
+      }
+    }
+  },
+  "090141": {
+    "name": {
+      "nominative": "Royal Hours of the Theophany"
+    },
+    "services": {
+      "ROYALHOURS": {
+        "IDIOMEL/11": {
+          "text": "Today the nature of water is sanctified, and the Jordan is cloven, and its waters shall be withheld from flowing; the Master being shown washed therein.",
+          "Type": "11",
+          "Tone": "0",
+          "Header": "Tropar, Tone 8<BR>The Work of Sophronios, the Patriarch of Jerusalem",
+          "Author": "Sophronios, the Patriarch of Jerusalem"
+        },
+        "IDIOMEL/12": {
+          "text": "Thou didst come to the river like a man, O Christ King. Thou dost hasten, O good One, to receive baptism as a servant at the hands of the Forerunner, for our sins, O Lover of mankind.",
+          "Type": "12",
+          "Tone": "3",
+          "Header": "Tropar, Tone 3"
+        },
+        "IDIOMEL/13": {
+          "text": "Toward the voice in the wilderness, Prepare ye the way of the Lord. Thou didst come taking the\nlikeness of a servant, seeking baptism, O Thou Who knowest no sin. The waters saw Thee and\nwere afraid, and the Forerunner trembled and cried, saying, How shall the Light seek to be\nlighted for the lamp? How shall the servant place His hand upon the Master? Wherefore, sanctify\nme and the waters, O Savior, carrying the sin of the world.",
+          "Type": "13",
+          "Tone": "0",
+          "Header": "Tropar, Tone 8",
+          "Author": ""
+        },
+        "IDIOMEL/31": {
+          "text": "Verily, the right hand of the Forerunner, Baptizer, and Prophet, exceeding all Prophets in honor,\ndid tremble when he beheld Thee, O Lamb of God that beareth the sins of the world. And being\nencompassed with fear, shouted, saying, I dare not touch Thy head, O Word. Sanctify Thou me\nand enlighten me, O compassionate One; for Thou art the Life, the Light, and the Safety of the\nworld.",
+          "Type": "31",
+          "Tone": "0",
+          "Header": "Tropar, Tone 8",
+          "Author": ""
+        },
+        "IDIOMEL/32": {
+          "text": "Our God the Trinity hath revealed Himself to us today as free from division; for the Father\nuttered the clear testimony to His Son, and the Spirit descended from heaven in the likeness of a\ndove, and the Son bowed His pure head to the Forerunner, and being baptized did save mankind\nfrom captivity, since He is the Lover of mankind.",
+          "Type": "32",
+          "Tone": "0",
+          "Header": "Troparion, Tone 8"
+        },
+        "IDIOMEL/33": {
+          "text": "O Life-giving Lord, when Thou didst come to the Jordan in the flesh, in the likeness of man,\nwilling to be baptized to lighten us who have erred, delivering us from all the wiles of the dragon\nand his gins, since Thou art compassionate, the Father testified of Thee, and the divine Spirit did\ncome to Thee in the likeness of a dove. Dwell Thou, therefore, in our souls, O Lover of mankind.",
+          "Type": "33",
+          "Tone": "3",
+          "Header": "Tropar, Tone 3",
+          "Author": ""
+        },
+        "IDIOMEL/61": {
+          "text": "Thus sayeth the Lord to John, Come, O Prophet, and baptize me, Who have created Thee, the\nIlluminator and Purifier of all by grace. Touch my divine head and falter not, O Prophet. Let be\nnow; for I have come to fulfill all justice. Be not doubtful, therefore, at all; for verily, I have\ncome to destroy the Archon of darkness, the Contender, who hideth in the waters, now rescuing\nthe world from his traps, and granting eternal life, since I am the Lover of mankind.",
+          "Type": "61",
+          "Tone": "0",
+          "Header": "Tropar, Tone 8",
+          "Author": ""
+        },
+        "IDIOMEL/62": {
+          "text": "Today it is the time for the prophecy of the Psalms to take effect; for it sayeth that the sea beheld\nand ran away; and Jordan turned back from the face of the Lord, from the face of the God of\nJacob, Who cometh to accept baptism from a servant, so that having been washed from\nabominable idolatry, our souls may be illuminated by Him.",
+          "Type": "62",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6"
+        },
+        "IDIOMEL/63": {
+          "text": "Why are thy waters troubled, O Jordan, and why turnest thou backward, not proceeding forward\naccording to thy natural flow? It shall answer, saying, I cannot bear a consuming fire. Therefore,\ndo I marvel and tremble at Thine exceeding condescension; for I am not accustomed to wash the\nPure; I have not learned to purify the sinless One, but to purify impure vessels. Christ, who\nJanuary 05 Royal Hours 15 Theophany of Christ\nbaptized in me, doth teach me to burn the thorns of sins. And John, the voice of the Word, doth\ntestify with me, crying, Behold the Lamb of God Who beareth the sin of the world. Let us believers\ntherefore cry unto Him, saying, O God that hath appeared for our salvation, glory to Thee.",
+          "Type": "63",
+          "Tone": "5",
+          "Header": "Tropar, Tone 5",
+          "Author": ""
+        },
+        "IDIOMEL/91": {
+          "text": "It is an astonishing thing how the Maker of heaven and earth is seen naked in the river, accepting\nlike a servant baptism from a servant for our salvation. Therefore, the ranks of the angels were\nastonished in fear and rejoicing. With them therefore, we worship Thee. Save us, O Lord.",
+          "Type": "91",
+          "Tone": "7",
+          "Header": "Tropar, Tone 7",
+          "Author": ""
+        },
+        "IDIOMEL/92": {
+          "text": "Verily, the Forerunner, seeing the Lord of glory coming towards him, cried, saying, Behold the\nRedeemer of the world cometh from corruption. Behold, He rescueth us from sorrow. Behold,\nHe Who granteth forgiveness of sins hath come to the earth from a pure Virgin, of His own\nmercy. Wherefore, He maketh us sons of God instead of servants; and instead of darkness He\nilluminateth mankind with the water of His divine baptism. Let us, therefore, glorify Him in\nunison with the Father and the Holy Spirit.",
+          "Type": "92",
+          "Tone": "2",
+          "Header": "Tropar, Tone 2"
+        },
+        "IDIOMEL/93.1": {
+          "text": "Thy hand which touched the head of the Master, free of corruption",
+          "Type": "93.1",
+          "Tone": "5",
+          "Header": "Tropar, Tone 5",
+          "Author": ""
+        },
+        "IDIOMEL/93.2": {
+          "text": "the same with which thou didst point Him to us by the pointing of the finger, raise thou it to\nHim for our sakes, O Forerunner. Thou hast attained great favor, since it was testified of thee by\nHim that thou art the greatest of all the Prophets. And thine eyes also, which did behold the All-\nHoly Spirit descending in the likeness of a dove, raise to Him, O Baptizer, granting mercy for us.",
+          "Type": "93.2",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.3": {
+          "text": "Come, thou, and stand with us",
+          "Type": "93.3",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.4": {
+          "text": "concluding our praise and beginning the celebration of the Feast.",
+          "Type": "93.4",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "IDIOMEL/93.5": {
+          "text": "And the bridegroom of the Church calleth the Magi.",
+          "Type": "93.5",
+          "Tone": "6",
+          "Header": "Tropar, Tone 6",
+          "Author": ""
+        },
+        "VERSE/1": {
+          "text": "Therefore will I remember Thee from the land of the Jordan and Hermoniem. The waters saw Thee, O God, the waters saw Thee and were afraid.",
+          "Type": "1"
+        },
+        "VERSE/2": {
+          "text": "The waters saw Thee, O God; the waters saw Thee and were afraid.",
+          "Type": "2"
+        },
+        "VERSE/1P": {
+          "text": "I will love Thee, O Lord, my strength; the Lord is my support, refuge and deliverer.",
+          "Type": "1P"
+        },
+        "VERSE/3P": {
+          "text": "The voice of the Lord is upon the waters; the God of glory thundered, the Lord is upon many waters.",
+          "Type": "3P"
+        },
+        "VERSE/6P": {
+          "text": "Bring unto the Lord, ye sons of God, bring unto the Lord glory and honor.",
+          "Type": "6P"
+        },
+        "VERSE/9P": {
+          "text": "The Lord is the defender of my life; of whom shall I be afraid?",
+          "Type": "9P"
+        },
+        "PROKEIMENON/1P": {
+          "text": "The voice of the Lord is upon many waters; the voice of Thy thunder was in heaven.",
+          "Type": "1P",
+          "Tone": "4",
+          "Header": "Prokeimenon of the Prophecy, Tone 4"
+        },
+        "PROKEIMENON/3P": {
+          "text": "The waters saw Thee, O God; the waters saw Thee and were afraid.",
+          "Type": "3P",
+          "Tone": "4",
+          "Header": "The Prokeimenon of the Prophecy, Tone 4"
+        },
+        "PROKEIMENON/6P": {
+          "text": "The voice of the Lord is upon the waters; the God of glory thundered, the Lord is upon many waters.",
+          "Type": "6P",
+          "Tone": "4",
+          "Header": "The Prokeimenon of the Prophecy, Tone 4"
+        },
+        "PROKEIMENON/9P": {
+          "text": "The Lord is my light and my salvation; whom shall I fear?",
+          "Type": "9P",
+          "Tone": "4",
+          "Header": "The Prokeimenon of the Prophecy, Tone 4"
+        }
+      }
+    }
+  },
+  "09017": {
+    "name": {
+      "nominative": "Afterfeast of the Theophany",
+      "short": "Afterfeast"
+    }
+  },
+  "090171": {
+    "name": {
+      "nominative": "Apodosis of the Theophany",
+      "short": "Apodosis"
+    },
+    "rank": 3
+  },
+  "09020": {
+    "name": {
+      "nominative": "Venerable Publius of Syria († c.  380)",
+      "short": "Venerable Publius"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "The Monk Publius (Poplios) of Syria was born in the city of Zeugma on the Euphrates and had the rank of senator. Renouncing the world, he gave off his possessions, took monastic vows and asceticised in a cave on a mountain in the Syrian wilderness, where he founded two monasteries: one for Greeks, and another for Syrians. He died in the year 380. Of his disciples who imitated Saint Poplios—Saints Theoteknos, Theodotos and Athonios were in particular glorified by sanctity of life. Saint Poplios in guiding the monastery for over 40 years was eventually granted the dignity of archimandrite, but being elevated in rank he changed neither his garb nor his manner of life, remaining instead a strict ascetic."
+    }
+  },
+  "09020000": {
+    "name": {
+      "nominative": "Righteous Eleazar, son of Aaron",
+      "short": "Righteous Eleazar"
+    }
+  },
+  "09020199": {
+    "name": {
+      "nominative": "Venerable Elpidius the Abbot",
+      "short": "Venerable Elpidius"
+    }
+  },
+  "09022": {
+    "name": {
+      "nominative": "Translation of the Relics of Saint John Chrysostom (438), Archbishop of Constantinople",
+      "short": "St John Chrysostom"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "Saint John Chrysostom—a great ecumenical teacher and hierarch, died in the city of Comene in the year 407 on his way to a place of exile, having been condemned by the intrigues of the empress Eudoxia because of his daring denunciation of the vices ruling over Constantinople. The transfer of his venerable relics was made in the year 438: after 30 years following the death of the saint during the reign of Eudoxia’s son emperor Theodosius II (408-450). </p><p>Saint John Chrysostom had the warm love and deep respect of the people, and grief over his untimely death lived on in the hearts of christians. Saint John’s student Saint Proclus, Patriarch of Constantinople (434-447), making Divine-services in the Church of Saint Sophia, preached a sermon which in glorifying Saint John he said: “O John! Thy life was filled with difficulties, but thy death was glorious, thy grave is blessed and reward abundant through the grace and mercy of our Lord Jesus Christ. O graced one, having conquered the bounds of time and place! Love hath conquered space, unforgetting memory hath annihilated the limits, and place doth not hinder the miracles of the saint.” Those who were present in church, deeply touched by the words of Saint Proclus, did not allow him even to finish his sermon. With one accord they began to entreat the Patriarch to intercede with the emperor, so that the relics of Saint John might be transferred to Constantinople. The emperor, overwhelmed by Saint Proclus, gave his consent and made the order to transfer the relics of Saint John. But the people dispatched by him were by no means able to lift up the holy relics—not until that moment when the emperor realising his oversight that he had not sent the message to Saint John, humbly beseeching of him forgiveness for himself and for his mother Eudoxia. The message was read at the grave of Saint John and after this they easily lifted up the relics, carried them onto a ship and arrived at Constantinople. The reliquary coffin with the relics was placed in the Church of the holy Martyr Irene. The Patriarch opened the coffin: the body of Saint John had remained without decay. The emperor, having approached the coffin with tears, asked forgiveness. All day and night people did not leave the coffin. In the morning the reliquary coffin with its relics was brought to the Church of the Holy Apostles. The people cried out: “Receive back thy throne, father!” Then Patriarch Proclus and the clergy standing at the relics—saw Saint John open his mouth and pronounce: “Peace be to all.”</p><p>In the IX Century the feastday in honour of the transfer of the relics of Saint John Chrysostom was written into church singing."
+    },
+    "rank": 4,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "Grace shining forth from thy mouth like a beacon hath illumined the universe, * and disclosed to the world treasures of uncovetousness, and shown us the heights of humility; * but while instructing by thy words, O father John Chrysostom, ** intercede with the Word, Christ our God, to save our souls.",
+          "Type": "1",
+          "Tone": "0"
+        },
+        "KONTAKION/1": {
+          "text": "The honored Church was mystically gladdened by the return of thy precious relics; * and having hidden them like most precious gold, * by thy supplication she bountifully imparteth the grace of healings unto them that hymn thee, ** O John Chrysostom.",
+          "Type": "1",
+          "Tone": "1",
+          "Podoben": "2"
+        }
+      }
+    }
+  },
+  "09030": {
+    "name": {
+      "short": "the Synaxis",
+      "nominative": "Synaxis of the “Three Hierarchs”—Basil the Great, Gregory the Theologian, and John Chrysostom",
+      "cmd": "nday != -52 && nday != -54"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Clergyman’s Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "<p>“Three Saints”—the Synaxis (Assembly; Slavonic Соборъ) of the Holy Œcumenical Teachers of the Church and Saint-Hierarchs: Basil the Great, Gregory the Theologian, and John Chrysostom: At Constantinople for a long time there raged disputes about which one of the three sainted-hierarchs should be accorded the primacy of honour. One faction of the people preferred Saint Basil (Comm. 1 January), others stood forth for Saint Gregory the Theologian (Comm. 25 January), while a third reverenced Saint John Chrysostom (Comm. 13 November). </p> <p>From this arose among church factions amongst Christians: some called themselves Basilians, others–Gregorians, and the third–Johannites. In accord with the will of God, in the year 1084 the three sainted-hierarchs appeared to the Euchantine metropolitan John, and in declaring that they were equal before God, they gave orders that the disputes should stop and that a day in common celebration of their memory should be established. </p>"
+    },
+    "rank": 5,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "In that ye share in the ways of the apostles, O teachers of the whole world, entreat the Master of all, that He grant peace to the world and great mercy to our souls.",
+          "Type": "1",
+          "Tone": "4"
+        },
+        "KONTAKION/1": {
+          "text": "The sacred and divinely eloquent preachers, the foremost among the teachers, O Lord, hast Thou received into the delight of Thy good things and into rest; for Thou hast accepted their pangs and labors as greater than any wholeburnt offering, O Thou Who alone dost glorify Thy saints.",
+          "Type": "1",
+          "Tone": "2",
+          "Podoben": "5"
+        }
+      }
+    }
+  },
+  "09030000": {
+    "name": {
+      "nominative": "Hieromartyr Aristonus, Bishop of Alexandria",
+      "short": "Hieromartyr Aristonus"
+    }
+  },
+  "09030199": {
+    "name": {
+      "nominative": "St Anastasius I, Patriarch of Jerusalem",
+      "short": "St Anastasius"
+    }
+  },
+  "09031": {
+    "name": {
+      "short": "St Ignatius",
+      "nominative": "Translation of the relics of the Hieromartyr Ignatius the God-bearer, Bishop of Antioch <i>(from Thursday)</i> († 107)",
+      "cmd": "nday == -51"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "<p>The Transfer of the Relics of the hieromartyr Ignatios the God-Bearer: (the account about him is located under 20 December). After the holy hieromartyr Ignatios was thrown for devouring by wild beasts at Rome dying in the year 107–on orders of the emperor Trajan, Christians gathered up his bones and preserved them at Rome. Later in the year 108 they were transferred to the outskirts of Antioch. A second transfer–into the city of Antioch itself, was done in the year 438. And after the taking of Antioch by the Persians, the relics of hieromartyr Ignatios were returned to Rome and placed into the church in honour of the holy hieromartyr Pope Clement in the year 540 (but according to other histories, the year was 637). The hieromartyr introduced antiphonal singing into Church Divine-services. He has left us seven archpastoral epistles in which he provided instruction on faith, love and good works, he urged likewise the preserving of the oneness of the faith and to beware of heretics, and he bid the obeying and honouring of bishops, “looking upon the bishop as upon Christ Himself.”</p> <p> “Hearken ye unto the bishop, so that God in turn might hearken unto you… let Baptism remain with you, like a shield and buckler; faith–like an helmet; love–like a spear; patience–like full armour.” </p>"
+    },
+    "rank": 2,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "As thou didst share in the ways of the apostles * and didst occupy their throne, * thou didst find thine activity to be a passage to divine vision, * O divinely inspired one. * Wherefore, ordering the word of truth, * thou didst suffer for the Faith even to the shedding of thy blood. ** O hieromartyr Ignatius, entreat Christ God, that our souls be saved.",
+          "Type": "1",
+          "Tone": "4"
+        },
+        "KONTAKION/1": {
+          "text": "Thou didst shine forth from the East today, * illumining all creation with thy doctrines, O God-bearing and divine Ignatius, ** and art adorned with martyrdom.",
+          "Type": "1",
+          "Tone": "4",
+          "Podoben": "1"
+        }
+      }
+    }
+  },
+  "09033": {
+    "name": {
+      "nominative": "Repose of Saint Cyril, Equal-to-the-Apostles and Teacher of the Slavs († 869)",
+      "short": "Repose of"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "<p>The Holy Equal-to-the-Apostles Cyril, Teacher of the Slavs (named Constantine—upon his assuming of the Schema), and his older brother Methodius (Comm. 6 April), were by descent Slavs, born in Macedonia in the city of Thessalonica. Saint Cyril received the finest of educations, and from age 14 he was raised together with the son of the emperor. He early accepted the dignity of presbyter. Upon his return to Constantinople, he worked as a librarian of the cathedral church, and as a professor of philosophy. Saint Cyril successfully held debates with iconoclast heretics and with Muslims. Yearning for solitude, he set off to Mount Olympus to his older brother Methodius, but his solitude lasted only a short while. Both brothers were dispatched by the emperor Michael in the year 857 on a missionary journey to preach Christianity to the Khazars. Along the way they stopped off at Kherson and discovered there the relics of the hieromartyr Clement, Pope of Rome (Comm. 25 November). Arriving at the Khazars, the holy brothers spoke with them about the Christian faith. Persuaded by the preaching of Saint Cyril, the Khazar prince together with all his people accepted Christianity. The grateful prince wanted to reward the preachers with rich presents, but they refused this and instead asked the prince to free and send home with them all the Greek captives. Saint Cyril returned to Constantinople together with 200 such captives set free.</p><p>In the year 862 began the chief exploit of the holy brothers. At the request of prince Rostislav, the emperor sent them to Moravia for preaching Christianity in the Slavic language. Saints Cyril and Methodius by a revelation from God compiled a Slavonic alphabet and translated into the Slavonic language–the Gospel, Epistles, the Psalter and many Divine service books. They introduced Divine services in the Slavonic tongue. The holy brothers were then summoned to Rome at the invitation of the Roman pope. Pope Adrian received them with great honour, since they brought with them the relics of the hieromartyr Clement, Pope of Rome. By nature sickly and of weak health, Saint Cyril from his many labours soon fell ill, and having taken the schema, he died in the year 869 at age 42. Before his death, he expressed last wishes for his brother to continue with the Christian enlightenment of the Slavs. Saint Cyril was buried in the Roman church of Saint Clement, whose own relics also rest there, brought to Italy from Kherson by the Enlighteners of the Slavs.</p>"
+    },
+    "rank": 4
+  },
+  "09040000": {
+    "name": {
+      "nominative": "Venerable Petronius, desciple of Venerable Pachomius",
+      "short": "Venerable Petronius"
+    }
+  },
+  "09040200": {
+    "name": {
+      "nominative": "Hieromartyr Peter, Metropolitan of Dabro and Bosnia",
+      "short": "Hieromartyr Peter"
+    }
+  },
+  "09050000": {
+    "name": {
+      "nominative": "Appearance of the Apostle Peter to Emperor Justinian in Athyra",
+      "short": "Appearance of"
+    }
+  },
+  "09050100": {
+    "name": {
+      "nominative": "Martyr Serbilus",
+      "short": "Martyr Serbilus"
+    }
+  },
+  "09070000": {
+    "name": {
+      "nominative": "Venerable Clodius the Confessor",
+      "short": "Venerable Clodius"
+    }
+  },
+  "09070100": {
+    "name": {
+      "nominative": "New Hieromartyr John Maslovsky († 1921)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "09070199": {
+    "name": {
+      "nominative": "Righteous Judith",
+      "short": "Righteous Judith"
+    }
+  },
+  "09080000": {
+    "name": {
+      "nominative": "Venerable Arsenius of Konevets",
+      "short": "Venerable Arsenius"
+    }
+  },
+  "09080200": {
+    "name": {
+      "nominative": "Venerable Lukian",
+      "short": "Venerable Lukian"
+    }
+  },
+  "09080300": {
+    "name": {
+      "nominative": "New Martyr Athanasius of Thessaloniki",
+      "short": "New Martyr"
+    }
+  },
+  "09090000": {
+    "name": {
+      "nominative": "Venerable Joachim of Opochesk",
+      "short": "Venerable Joachim"
+    }
+  },
+  "09100000": {
+    "name": {
+      "nominative": "Martyr Barispsabus",
+      "short": "Martyr Barispsabus"
+    }
+  },
+  "09107": {
+    "name": {
+      "short": "Forerunner",
+      "nominative": "The First (IV) and the Second Discovery of the Head of St. John the Forerunner",
+      "cmd": "doy == 54"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "<p>After the cutting off of the Head of the Prophet, Forerunner and Baptist John (Comm. 29 August), his body was buried by disciples in the Samarian city of Sebasteia, and the venerable head was hidden by Herodias in an unclean place. Pious Joanna, wife of king Herod’s steward Chuza (there is made mention about him by the holy evangelist Luke–<a href=\"bible=Lk#8:3\">Lk 8: 3</a>), secretly took the holy head and placed it into a vessel and buried it on the Mount of Olives–in one of the properties of Herod. After many years this property passed into the possession of the dignitary Innocentius, who began to build a church there. When they dug a trench for the foundation, the vessel with the venerable head of John the Baptist was uncovered. Innocentius recognised the great holiness of it from the signs of grace occurring from it. Thus occurred the First Discovery of the Head. Innocentius preserved it with great piety, but before his own death, fearful so that the holy relic should not be abused by unbelievers, he again hid it in that same place, where it was found…Upon his death the church fell into ruin and was destroyed.</p><p>During the days of Equal-to-the-Apostles Constantine the Great († 337, Comm. 21 May), when the Christian faith began to flourish, the holy Forerunner himself appeared twice unto two monks journeying to Jerusalem on pilgrimage to the holy places, and he revealed the location of his venerable head. The monks uncovered the holy relic and, placing it into a sack of camel-hair, they proceeded homewards. Along the way they encountered an unnamed potter and gave him to carry the precious burden. Not knowing what he was carrying, the potter continued on his way. But the holy Forerunner himself appeared to him and ordered him to flee from the careless and lazy monks, together with that which was in his hands. The potter concealed himself from the monks and at home he preserved the venerable head with reverence. Before his death he sealed it into a water-carrying vessel and gave it over to his sister. From that time the venerable head was successively preserved by pious Christians, until the priest Eustathios infected with the Arian heresy–came into possession of it. He seduced a multitude of the infirm, healed by the holy head, adding abundance to the heresy. When his blasphemy was uncovered, he was compelled to flee. Having buried the holy relic in a cave, near Emessus, the heretic intended to afterwards return and again take possession of it for disseminating falsehood. But God did not permit this. Pious monks settled into the cave, and then at this place arose a monastery. In the year 452 Saint John the Baptist in a vision to the archimandrite of this monastery Marcellus indicated the place of concealment of his head. This became celebrated as the Second Discovery. The holy relic was transferred to Emessus, and later to Constantinople.</p>"
+    },
+    "rank": 4,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "The head of the Forerunner, * which hath shone forth from the earth, * doth shed rays of incorruption * and healing upon the faithful. * On High it assembleth a multitude of angels, * and below it calleth upon the human race ** with one voice to send up glory to Christ God.",
+          "Type": "1",
+          "Tone": "1"
+        },
+        "KONTAKION/1": {
+          "text": "O prophet of God and Forerunner of grace, * having obtained thy head from the earth like a most sacred rose, * we ever receive healings, ** for again, as of old, thou dost preach repentance in the world.",
+          "Type": "1",
+          "Tone": "2",
+          "Podoben": "3"
+        }
+      }
+    }
+  },
+  "0910701": {
+    "name": {
+      "nominative": "<i>The service for the finding of the Forerunner's Head is observed on St. Theodore Sunday</i>",
+      "cmd": "nday == -47 || nday == -46 || nday == -45 || nday == -44"
+    }
+  },
+  "0910702": {
+    "name": {
+      "short": "Forerunner",
+      "nominative": "Holy Prophet, Forerunner and Baptist John"
+    }
+  },
+  "09110000": {
+    "name": {
+      "nominative": "Martyrs Serapion, Crondidus, and Leontius of Alexandria",
+      "short": "Martyrs Serapion"
+    }
+  },
+  "09110100": {
+    "name": {
+      "nominative": "Martyrs Diodorus and Didimus of Syria",
+      "short": "Martyrs Diodorus"
+    }
+  },
+  "09110200": {
+    "name": {
+      "nominative": "Venerable Paphnuty the Confessor, Bishop of Taissi",
+      "short": "Venerable Paphnuty"
+    }
+  },
+  "09110298": {
+    "name": {
+      "nominative": "New Hieromartyrs Priests Nicholas and Victor († 1918)",
+      "short": "New Hieromartyrs"
+    }
+  },
+  "09110300": {
+    "name": {
+      "nominative": "Glorification of Blessed Xenia of St Petersburg (1978)",
+      "short": "Glorification of"
+    }
+  },
+  "09110400": {
+    "name": {
+      "nominative": "Venerable Silouan of Mt Athos († 1938)",
+      "short": "Venerable Silouan"
+    },
+    "rank": 4
+  },
+  "09113": {
+    "name": {
+      "nominative": "Glorification of St Hilarion, Archbishop of Vereya (1999)",
+      "short": "Glorification"
+    }
+  },
+  "0911301": {
+    "name": {
+      "nominative": "New Hieromartyr Hillarion, Archbishop of Vereya († 1929)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "09130200": {
+    "name": {
+      "nominative": "Venerable Hierotheus of Iberia (Georgia)",
+      "short": "Venerable Hierotheus"
+    }
+  },
+  "09140000": {
+    "name": {
+      "nominative": "Martyr Papas of Licaonia",
+      "short": "Martyr Papas"
+    }
+  },
+  "09140100": {
+    "name": {
+      "nominative": "Venerable Queen Placylla",
+      "short": "Venerable Queen Placylla"
+    }
+  },
+  "09140200": {
+    "name": {
+      "nominative": "Venerable Mary of Egissa",
+      "short": "Venerable Mary"
+    }
+  },
+  "09140300": {
+    "name": {
+      "nominative": "New Venerable Martyr Macarius of Thessaloniki",
+      "short": "New Venerable"
+    }
+  },
+  "09150100": {
+    "name": {
+      "nominative": "Saint Bissarion, Archbishop of Larissa",
+      "short": "Saint Bissarion"
+    }
+  },
+  "09150200": {
+    "name": {
+      "nominative": "Venerable Gerasim",
+      "short": "Venerable Gerasim"
+    }
+  },
+  "09150400": {
+    "name": {
+      "nominative": "New Martyr John of Crete",
+      "short": "New Martyr"
+    }
+  },
+  "09150500": {
+    "name": {
+      "nominative": "St Acacius, Bishop of Melitene (3<sup>rd</sup> C)",
+      "short": "St Acacius"
+    }
+  },
+  "09160000": {
+    "name": {
+      "nominative": "Venerable Procopius, Abbot of Sazavsk, in Bohemia",
+      "short": "Venerable Procopius"
+    }
+  },
+  "09170000": {
+    "name": {
+      "nominative": "Hieromartyr Heraclidus and Miron, bishops of Tomas in Cyprus",
+      "short": "Hieromartyr Heraclidus"
+    }
+  },
+  "09170100": {
+    "name": {
+      "nominative": "Martyr Lucia and her son Geminian",
+      "short": "Martyr Lucia"
+    }
+  },
+  "09170399": {
+    "name": {
+      "nominative": "Icon of the Mother of God of Constantinople",
+      "short": "Icon of"
+    }
+  },
+  "09180000": {
+    "name": {
+      "nominative": "Martyrs Sophia and Irene of Egypt (3<sup>rd</sup> C)",
+      "short": "Martyrs Sophia"
+    }
+  },
+  "09180200": {
+    "name": {
+      "nominative": "Saint Arkady, Bishop of Novgorod",
+      "short": "Saint Arkady"
+    }
+  },
+  "09190000": {
+    "name": {
+      "nominative": "Holy Schema-Hieromonk Alexis of Zosimovskaya Hermitage († 1928)",
+      "short": "Holy Schema-Hieromonk"
+    }
+  },
+  "091902": {
+    "name": {
+      "nominative": "Hieromartyr Jannuarius, Bishop of Benebent and those with him",
+      "short": "Hieromartyr Jannuarius"
+    }
+  },
+  "09200000": {
+    "name": {
+      "nominative": "Martyr John of Egypt",
+      "short": "Martyr John"
+    }
+  },
+  "09200200": {
+    "name": {
+      "nominative": "Venerable Anastasius, another Anastasius, Theodore and Euprepius the Confessors, disciples of St Maximus the Confessor",
+      "short": "Venerable Anastasius"
+    }
+  },
+  "09210000": {
+    "name": {
+      "nominative": "Martyr Priscus of Phrygia",
+      "short": "Martyr Priscus"
+    }
+  },
+  "092101": {
+    "name": {
+      "nominative": "Martyr Eusebius of Phœnicia",
+      "short": "Martyr Eusebius"
+    }
+  },
+  "09210100": {
+    "name": {
+      "nominative": "Sts Isaak and Meletius of Cyprus",
+      "short": "Sts Isaak"
+    }
+  },
+  "09216": {
+    "name": {
+      "nominative": "Hieromartyr Theodotus the Bishop of Ancyra († 303)",
+      "short": "Hieromartyr Theodotus"
+    },
+    "rank": 1
+  },
+  "09220000": {
+    "name": {
+      "nominative": "26 Venerable Martyrs of Zographou Monastery",
+      "short": "26 Venerable"
+    }
+  },
+  "09220100": {
+    "name": {
+      "nominative": "Venerable Cosmas of the Zographou Monastery on Mt. Athos",
+      "short": "Venerable Cosmas"
+    }
+  },
+  "09224": {
+    "name": {
+      "nominative": "Venerable Cyril the Abbot of White Lake († 1427)",
+      "short": "Venerable Cyril"
+    },
+    "rank": 3
+  },
+  "09230000": {
+    "name": {
+      "nominative": "New Martyrs Nicholas of Pentapolis and John of Aepyra",
+      "short": "New Martyrs"
+    }
+  },
+  "09240000": {
+    "name": {
+      "nominative": "Venerable Abraham, Abbot of Mirozh († 1158)",
+      "short": "Venerable Abraham"
+    }
+  },
+  "09250000": {
+    "name": {
+      "nominative": "Remembrance of the Earthquake in Constantinople",
+      "short": "Remembrance of"
+    }
+  },
+  "09253": {
+    "name": {
+      "nominative": "Apostles Aristarchus, Pudens and Trophimus of the Seventy († c. 67)",
+      "short": "Apostles Aristarchus"
+    },
+    "rank": 1
+  },
+  "09260000": {
+    "name": {
+      "nominative": "Righteous Gedeon, the Judge of Israel",
+      "short": "Righteous Gedeon"
+    }
+  },
+  "09260100": {
+    "name": {
+      "nominative": "Venerable Nilus of Calabria and his disciple Bartholomew",
+      "short": "Venerable Nilus"
+    }
+  },
+  "09262": {
+    "name": {
+      "nominative": "Venerable Arsenius the Great († 449-450)",
+      "short": "Venerable Arsenius"
+    },
+    "rank": 1
+  },
+  "09270000": {
+    "name": {
+      "nominative": "New Martyr Aquilina",
+      "short": "New Martyr Achilina"
+    }
+  },
+  "09270199": {
+    "name": {
+      "nominative": "Saint Flavian, Patriarch of Antioch (381-404), and with him Theodotus and Pelagia",
+      "short": "Saint Flavian"
+    }
+  },
+  "09279": {
+    "name": {
+      "nominative": "Apostles of the Seventy: Archippus and Philemon, and martyred Equal-to-the-Apostles Apphia (1<sup>st</sup> C)",
+      "short": "Apostles"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "<p>The Holy Disciples from the Seventy: Archippos, Philemon and Apthea (2<sup>nd</sup> Comm. 22 November) were students and companions of the holy Apostle Paul. In the Epistle to Philemon, the Apostle Paul names Saint Archippos as his companion.</p><p>The Disciple Archippos was bishop of the city of Colossa in Phrygia. The Disciple Philemon was an eminent citizen of this city, and in his home the Christians gathered to celebrate Divine-services. He was likewise ordained to the dignity of bishop by the Apostle Paul and he went about the cities of Phrygia, preaching the Gospel. Later on, he became archpastor of the city of Gaza. Saint Apthea, his spouse, took into her home the sick and vagrants, zealously attending to them. She was indeed a veritable co-worker to her spouse in proclaiming the Word of God. </p><p>During the persecution against Christians under the emperor Nero (54-68), the holy Disciples Archippos and Philemon and Equal-to-the-Apostles Apthea were brought to trial by the city-governor Artocles for confessing faith in Christ. The Disciple Archippos was brutally hacked at with knives. After torture, they buried Saints Philemon and Apthea up to the waist in the ground, and stoned them until the holy martyrs died. </p>"
+    },
+    "rank": 1,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "O holy apostle Archippus * entreat the merciful God ** that He grant to our souls remission of transgressions.",
+          "Type": "1",
+          "Tone": "3"
+        },
+        "KONTAKION/1": {
+          "text": "The Church, possessing thee as a great star, * O Archippus, * and illumined by the rays of thy miracles, * crieth out to thee: ** Save those who honor thy memory with faith!",
+          "Type": "1",
+          "Tone": "4",
+          "Podoben": "1"
+        }
+      }
+    }
+  },
+  "09280000": {
+    "name": {
+      "nominative": "Venerable Chareton of Sianzhemsk",
+      "short": "Venerable Chareton"
+    }
+  },
+  "09280099": {
+    "name": {
+      "nominative": "Venerable women Eustochia and Paula",
+      "short": "Venerable women"
+    }
+  },
+  "09288": {
+    "name": {
+      "nominative": "Venerable Peter of Mt. Athos († 734)",
+      "short": "Venerable Peter"
+    },
+    "rank": 1
+  },
+  "09290000": {
+    "name": {
+      "nominative": "Venerable Gudelia of Persia",
+      "short": "Venerable Gudelia"
+    }
+  },
+  "09290100": {
+    "name": {
+      "nominative": "Holy 80 Martyrs at Byzantium",
+      "short": "Holy 80"
+    }
+  },
+  "09290299": {
+    "name": {
+      "nominative": "Venerable Mary of Palestine",
+      "short": "Venerable Mary"
+    }
+  },
+  "09290300": {
+    "name": {
+      "nominative": "New Hieromartyr John, Archbishop of Riga († 1934)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "09294": {
+    "name": {
+      "nominative": "Martyr Aquilina of Byblos in Syria († 293)",
+      "short": "Martyr Aquilina"
+    },
+    "rank": 1
+  },
+  "09365": {
+    "name": {
+      "nominative": "Return of the relics of the Apostle Bartholomew from Anastasiopolis to Lipari (6<sup>th</sup> C)",
+      "short": "Apostle Bartholomew"
+    },
+    "rank": 2
+  },
+  "09392": {
+    "name": {
+      "nominative": "Virginmartyr Febronia of Nisibis († c. 304)",
+      "short": "Virginmartyr Febronia"
+    },
+    "life": {
+      "id": "",
+      "copyright": "The Clergyman’s Handbook. Moscow. 1978. English translation Copyright 1997 Fr. S. Janos.",
+      "text": "The Virgin-Martyr Febronia suffered during the reign of Diocletian (284-305). She was raised at a monastery in the city of Sivapolis (Assyria region). The head of the women’s monastery was the hegumenia Brienna, the aunt of Saint Febronia, and being concerned about the salvation of Saint Febronia, she assigned her a stricter form of life than the other nuns. According to their monastic ustav-rule, on Fridays the sisters left aside their other duties and spent the whole day at prayer and the reading of Holy Scripture, and usually the hegumenia appointed the reading to Saint Febronia.</p><p>News about her pious life spread throughout the city. The illustrious young widow Hieria, a pagan, began to visit her, and under the influence of her guidance and prayer she accepted holy Baptism, bringing then to the Christian faith her parents and kinsfolk.</p><p>Diocletian dispatched to Assyria for the destruction of Christians a detachment of soldiers under the command of Lysimachus, Selenus and Primus. Selenos, the uncle of Lysimachus, was noted for his fierce attitude against Christians, but Lysimachus was of a different frame of mind from him, since his mother had sought to inspire love for the Christian faith in her son, and she had died a Christian. And Lysimachus had discussed with his kinsman Primus how far possible it would be to deliver Christians from the hands of the torturer. When the detachment of soldiers approached the convent, its inhabitants hid. There remained only the hegumenia Brienna, her helper Thomaida and Saint Febronia, who at the time was seriously ill. It sorrowed the hegumenia terribly, that her niece would fall into the hands of the torturers, possibly to defile her, and she prayed fervently that the Lord would preserve her and strengthen her in the confession of Christ the Saviour. Selenus gave orders to bring him all the nuns of the convent. Primus with the detachment of soldiers found no one, except the two old women and Saint Febronia. He regretted that they had not hidden, and he suggested to the nuns to be gone. But the nuns decided not to quit the place of their labours and they entrusted themselves to the will of the Lord. </p><p>Primus told Lysimachus about the particular beauty of Saint Febronia and advised him to take her for himself in marriage. Lysimachus answered, that he did not wish to seduce a virgin dedicated to God, and he asked Primus to hide the other nuns somewhere, so that they would not fall into the hands of Selenus. One of the soldiers overheard the conversation and told Selenus. They led Saint Febronia off to the military commander with her hands bound and a chain on her neck. Selenus urged her to recant from the faith in Christ and he promised her honours, rewards, and marriage with Lysimachus. The holy virgin firmly and fearlessly answered, that she had the Immortal Bridegroom and she would not exchange Him for some worldly blessing. Selenus subjected her to fierce torture. The saint prayed: “My Saviour, do not abandon me in this terrible hour!” They beat the martyress for a long time, and blood from her handcuffs flowed from the wounds. In order to intensify the suffering of Saint Febronia, they tied her to a tree and set a fire under it. The tortures were so inhuman, that the people began to shout, urging a stop to the torture since there was no confession of guilt by the girl. But Selenus continued to mock and jeer at the martyress. Saint Febronia became silent. Because of weakness she was unable to utter a word. In a rage Selenus gave orders to tear out her tongue, smash her teeth, and finally, to cut off both hands and legs. The people were unable to bear such an horrid spectacle and they left the scene of the torture, cursing Diocletian and his gods. </p><p>Among the crowd was the Nun Thomaida, who afterwards recorded in detail the martyr’s act of Saint Febronia, and also her student Hieria. She came forth out of the crowd and in the hearing of all reproached Selenus for his boundless cruelty. He gave orders to arrest her, but learning that Hieria was of illustrious standing whom he could not readily subject to torture, he stopped her, saying: “By thy speech thou hast brought on Febronia yet greater torment.” Finally, they beheaded the holy Martyress Febronia.</p><p>Departing the place of execution, Lysimachus wept and withdrew to his quarters. Selenus made ready to eat, but he was not able to take food, and went off to the quiet of his own chambers. Suddenly, looking upwards, he all at once lost his speech, bellowed like an ox, fell down, and having struck a marble column, he cracked his head and there he died. When Lysimachus learned of this, he said: “O Great God of the Christians, Who art worthy of respect, in that innocent blood hath been revenged!” He prepared a coffin, placed in it the mutilated body of the martyress and took it to the convent. Hegumenia Brienna fell senseless, seeing the mutilated remains of Saint Febronia. By evening time she returned to her senses and gave orders to open the convent gates, so that all would be able to come and venerate the holy martyress and glorify God—having given her such endurance in suffering for Christ the Saviour. Lysimachus and Primus thereupon renounced their idol-worship, and accepted both Baptism and monasticism. Hieria gave her wealth to the convent and petitioned hegumenia Brienna to accept her at the convent in place of Saint Febronia.</p><p>Every year, on the day of the martyress death of Saint Febronia there was celebrated at the convent a solemn feast. During the time of the all-night vigil the monastic sisters always saw Saint Febronia, who occupied her usual place in church. From the relics of Saint Febronia occurred numerous miracles and healings. The Life of Saint Febronia was recorded by the Nun Thomaida, an eye-witness to her deeds. </p><p>In the year 363 the relics of Saint Febronia were transferred to Constantinople.</p><p>Soon after the death of Saint Febronia, Saint James the Bishop of Niziba (Comm. 13 January) built a church and transferred into it part of the relics of the holy martyress."
+    },
+    "rank": 1,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "Thy ewe-lamb Febronia crieth out to Thee with a loud voice, O Jesus: * \"I love Thee, O my Bridegroom, * and, seeking Thee, I pass through many struggles: * I am crucified and buried with Thee in Thy baptism, * and suffer for Thy sake, that I may reign with Thee; * I die for Thee that I might live with Thee. * As an unblemished sacrifice accept me, * who sacrifice myself with love for Thee ** By her supplications save Thou our souls, in that Thou art merciful.",
+          "Tone": "4",
+          "Type": "1"
+        },
+        "KONTAKION/1": {
+          "text": "\"O my Bridegroom, Jesus most sweet\" cried Febronia, * \"it is not difficult for me to follow Thee, * for the sweetness of Thy love hath given wings of hope to my soul, * and the beauty of Thy mercy hath sweetened my heart, * that I might drain the cup of sufferings in emulation of Thee, * that Thou mayest worthily reckon me among the wise virgins who dance with Thee in Thy bridal chamber.\" * Wherefore, O venerable passion-bearer, honoring the struggles of thy labor, we entreat thee: ** Pray thou, that we not find the portals of the bridal-chamber locked to us.",
+          "Tone": "6",
+          "Podoben": "2",
+          "Type": "1"
+        }
+      }
+    }
+  },
+  "09426": {
+    "name": {
+      "nominative": "Beginning of the Indiction (that is, the New Year)",
+      "short": "Indiction",
+      "shortF": "for the Indiction"
+    }
+  },
+  "09497": {
+    "name": {
+      "short": "Holy Great Martyr",
+      "nominative": "Holy Great Martyr, Trophy-bearer and Wonderworker George († 303) (transferred from Holy and Great Friday)",
+      "cmd": "doy == 115"
+    },
+    "life": {
+      "id": "",
+      "copyright": "Bulgakov Handbook. Copyright 1997 by translator Fr. S. Janos.",
+      "text": "<p>The Holy Great Martyr George the Victory-Bearer, was a native of Cappadocia (a district in Asia Minor), and he grew up in a deeply believing Christian family. His father had accepted a martyr’s death for Christ, when George was yet a child. His mother, owning lands in Palestine, resettled there with her son and raised him in strict piety.</p><p>Having grown up, Saint George entered into the service of the Roman army. He was handsome, brave and valiant in battle, and he came to the notice of the emperor Diocletian (284-305) and was accepted into the imperial guards with the rank-title of “comes”—one of the higher military officer ranks.</p><p>The pagan emperor, while having done much for the restoration of Roman might, and who was quite clearly concerned, as to what sort of danger the triumphing of the Crucified Saviour might present for pagan civilisation, in especially the final years of his reign intensified his persecution against the Christians. Upon the advice of the Senate at Nicomedia, Diocletian afforded all his governors full freedom in their court proceedings over Christians and in this he promised them all possible help. </p><p>Saint George, having learned about the decision of the emperor, distributed to the poor all his wealth, set free his servants, and then appeared in the Senate. The brave soldier of Christ spoke out openly against the emperor’s designs, he confessed himself a Christian and appealed to all to acknowledge the true faith in Christ: “I am a servant of Christ, my God, and trusting on Him, I have come amidst ye at mine own will, to witness concerning the Truth.” “What is Truth?”—one of the dignitaries said, in repeating the question of Pontius Pilate. “Truth is Christ Himself, persecuted by you,”—answered the saint.</p><p>Stunned by the bold speech of the valiant warrior, the emperor—who loved and had promoted George, attempted to persuade him not to throw away his youth and glory and honours, but rather in the Roman custom to offer sacrifice to the gods. To this followed the resolute reply of the confessor: “Nothing in this inconstant life can weaken my resolve to serve God.” Then by order of the enraged emperor the armed-guards began to jostle Saint George out of the assembly hall with their spears, and they then led him off to prison. But the deadly steel became soft and it bent, just as the spears would touch the body of the saint, and it caused him no hurt. In prison they put the feet of the martyr in stocks and placed an heavy stone on his chest.</p><p>The next day at the interrogation, powerless but firm of spirit, Saint George again answered the emperor: “Thou wilt become exhausted sooner, tormenting me, than I being tormented of thee.” Then Diocletian gave orders to subject Saint George to some very intense tortures. They tied the Great Martyr to a wheel, beneath which were set up boards inset with sharp pieces of iron. With the turning of the wheel the sharp edges tore at the bared body of the saint. At first the sufferer loudly cried out to the Lord, but soon he quieted, not letting out even a single groan. Diocletian decided that the tortured one was already dead, and he gave orders to remove the battered body from the wheel, and set off then to a pagan temple to offer a thank-offering. But at this very moment it got dark all over, thunder boomed, and a voice was heard: “Fear not, George, for I am with thee.” Then a wondrous light shone, and at the wheel appeared an Angel of the Lord in the form of a radiant youth. And just as he laid his hand upon the martyr, saying to him: “Rejoice!”—Saint George stood up healed. And when the soldiers led him off to the pagan temple, where the emperor was, the emperor could not believe his own eyes and he thought, that in front of him was some other man or even a ghost. In confusion and in terror the pagans looked Saint George over carefully, and they became convinced, that actually a miracle had occurred. Many thereupon came to believe in the Life-Creating God of the Christians. Two illustrious officials, Saints Anatolios and Protoleon,—secretly Christians, therewith openly confessed Christ. And right away, without a trial, by order of the emperor they were beheaded with the sword. Present also in the pagan temple was the Empress Alexandra, the wife of Diocletian, and she too knew the truth. She was on the point of glorifying Christ, but one of the servants of the emperor took her and led her off to the palace.</p><p>The emperor became all the more furious. But not having lost all hope of swaying Saint George, he gave him over to new quite fiercesome torments. Having thrown him down a deep pit, they covered it over with lime. Three days later they dug him out, but found him cheerful and unharmed. They shod the saint in iron sandals with red-hot nails, and with blows they drove him back to the prison. In the morning, when they led him back to the interrogation, cheerful and with healthy feet, he said to the emperor, that the sandals had fit him. Then they beat him with ox-thongs so much, that his body and blood became mingled with the ground, but the brave sufferer, strengthened by the power of God, remained unyielding.</p><p>Having decided, that magic was helping the saint, the emperor summoned the sorcerer Athanasias, so that he should try to deprive the saint of his miraculous powers, or else poison him. The sorcerer gave Saint George two goblets with drugged ingredients, the one of which should have quieted him, and the other—to kill him. But the drugs also did not work—and the saint as before continued to denounce the pagan superstitions and glorify the True God.</p><p>To the question of the emperor, what sort of power it was that helped the saint, Saint George answered: “Think not, that the torments do me no harm thanks to human powers,—I am saved only by calling upon Christ and His Power. Whoso believeth on Him hath no regard for tortures and is able to do the deeds, that Christ did” (<a href=\"bible=Jn#14:12\">Jn. 14: 12</a>). Diocletian asked, what sort of deeds were they that Christ did:—“To give sight to the blind, to cleanse the leprous, to grant walking to the lame, and to the deaf—hearing, to cast out devils, and to raise up the dead.”</p><p>Knowing, that never whether by sorcery, nor by any of the gods known to him, never had they been able to resurrect the dead, and wanting to test the trust of the saint the emperor commanded him to raise up a dead person right in front of his eyes. To this the saint replied: “Thou wouldst tempt me, but for the salvation of the people which shalt see the deed of Christ, my God wilt work this sign.” And when they led Saint George down to the graveyard, he cried out: “O Lord! Show to those here present, that Thou art the One-Only God throughout all the world, let them know Thee as the Almighty Lord.” And the earth did quake, a grave opened up, the dead one came alive and emerged from it. Having seen with their own eyes the Almighty Power of Christ, the people wept and glorified the True God. The sorcerer Athanasias, falling down at the feet of Saint George, confessed Christ as the All-Powerful God and besought forgiveness of his sins, committed in ignorance. The obdurate emperor in his impiety thought otherwise: in a rage he commanded to be beheaded both the new-believer Athanasias and likewise the man resuscitated from the dead, and he had Saint George again locked up in prison. The people, weighed down with their infirmities, began in various ways to penetrate the prison and they there received healings and help from the saint. There resorted to him also a certain farmer named Glycerios, whose ox had collapsed. The saint with a smile consoled him and assured him, that God would restore his ox to life. Seeing at home the ox alive, the farmer began to glorify the God of the Christians throughout all the city. By order of the emperor, Saint Glycerios was arrested and beheaded.</p><p>The exploits and the miracles of the Great Martyr George had increased the number of the Christians, and therefore Diocletian decided to make a final attempt to compel the saint to offer sacrifice to the idols. They began to set up a court at the pagan temple of Apollo. On the final night the holy martyr prayed fervently, and when he dozed off, he beheld the Lord Himself, Who raised him up with His hand, and hugged him in giving him a kiss of greeting. The Saviour placed on the head of the Great Martyr a crown and said: “Fear not, but rather make bold and be vouchsafed My Kingdom.”</p><p>In the morning at the court the emperor offered Saint George a new test—he proposed to him to become his co-emperor. The holy martyr with a feigned willingness answered, that from the very beginning the emperor had seemed inclined not to torture him but rather show mete mercy, and with this he expressed the wish to go forthwith into the pagan temple of Apollo. Diocletian decided, that the martyr was accepting his offer, and he followed after him into the pagan temple with his accompanying retinue and the people. Everyone waited, whether Saint George would offer sacrifice to the gods. He, however in going up to the idol, made the sign of the Cross and turned towards it, as though it were alive: “Thou wishest to receive from me sacrifice befitting God?\" The demon inhabiting the idol cried out: “I am not God and none of those like me are God. The One-Only God is He Whom thou preachest. We are of those servant-angels of His, which became apostate, and in the grips of jealousy we do tempt people.” “How dare ye to be here, when hither have come I, the servant of the True God?”—asked the saint. Then was heard a crash and wailing, and the idols fell down and were shattered.</p><p>There began a general confusion. In a frenzy pagan-priests and many of the throng pounced upon the holy martyr, they tied him up and began to beat him and demand his immediate execution. </p><p>Into the noise and the shouts rushed the holy empress Alexandra. Pushing her way through the crowd, she cried out: “Thou God of George, help me, in as Thou Alone art All-Powerful.” At the feet of the Great Martyr the holy empress glorified Christ, Who had humiliated the idols and those worshipping them. </p><p>Diocletian in a rage immediately pronounced the death sentence against the Great Martyr George and the holy Empress Alexandra, who without being accompanied, followed Saint George to execution. Along the way she collapsed and slumped senseless against a wall. Everyone thought, that the empress was dead. Saint George offered up thanks to God and he prayed, that he should end his path worthily. At the place of execution the saint in heated prayer besought the Lord, that He would forgive the torturers that knew not what they did, and that He would lead them to the knowledge of Truth. Calmly and bravely, the holy Great Martyr George bent his neck beneath the sword. This occurred on April 23<sup>th</sup>, 303.</p><p>In confusion the executioners and the judges catch glimpse of their Conqueror. In a bloody agony and mindless thrashing about ended the era of paganism. It lasted for all of ten years more—up until the time of the holy Equal-to-the-Apostles Constantine, who was one of the successors to Diocletian upon the Roman throne, and who gave orders to imprint the Cross on his military-banners, as a testament also sealed by the blood of the Great Martyr George and that of the blood of thousands of unknown martyrs: “By this sign thou wilt conquer.”</p><p>Of the many miracles, worked by the holy Great Martyr George, the most famous are depicted in iconography. In the native-region of the saint, at the city of Beirut, were many idol-worshippers. Outside the city, near Mount Lebanon, was situated a large lake, in which lived an enormous dragon-like serpent. Coming out of the lake, it devoured people, and there was nothing the people could do, since from one of its nostrils it infected the very air.</p><p>On the advice of the demons inhabiting the idols, the ruler there adopted this decision: each day the people would draw lots to give over as food their own children, and when the turn reached him, he promised to hand over his only daughter. That time indeed did come, and the ruler, having dressed her in her finest attire, sent her off to the lake. The girl wailed bitterly, awaiting the moment of death. Unexpectedly for her, the Great Martyr George rode up on his horse and with spear in hand. The girl implored him not to leave her, lest she perish. But the saint, having caught sight of the serpent, signed himself with the Sign of the Cross and with the words “In the Name of the Father and of the Son and of the Holy Spirit,” he rushed off after it. The Great Martyr George pierced the throat of the serpent with his spear and trampled it with his horse. Then he bid the girl bind the serpent with her sash, and like a dog, lead it into the city. The people fled in terror, but the saint halted them with the words: “Be not afraid, but rather trust on the Lord Jesus Christ and believe in Him, since it be He Who hath sent me to you, to save you.” Then the saint killed the serpent with a sword, and the people burned it outside the city. Twenty-five thousand men, not counting women and children, were then baptised, and there was later built a church in the name of the Most Holy Mother of God and the Great Martyr George.</p><p>Saint George went on to become a talented military officer and to amaze the world by his military exploits. He died, when he was not even 30 years old. Hastening to unite with the Heavenly army, he entered into the history of the Church as the Victory-Bearer (Russian: Победносец/Pobedonosets). With this title he was glorified in early Christianity and Holy Rus′.</p><p>Saint George the Victory-Bearer is the patron saint and protector of several of the great builders of the Russian state and Russian military might. The son of holy Equal-to-the-Apostles Vladimir, Yaroslav the Wise—in holy Baptism George († 1054), much advanced the veneration of the saint in the Russian Church. He built the city of Yur′ev (<i>i.e.</i> “of Yurii”—“Yurii” (Russian: Юрий) being the Slavic form of “George,” much like “Ivan” is to John)), he founded likewise the Yur′ev (St. George’s) monastery at Novgorod, and he erected a church of Saint George the Victory-Bearer in Kiev. The day of the consecration of the temple of St. George in Kiev, on November 26<sup>th</sup>, 1051 by Saint Ilarion, Metropolitan of Kiev and All Rus′, entered forever into the liturgical treasury of the Church as a special churchly feast-day—Yur′ev Day, beloved by the Russian people as an \"Autumn Saint George’s Day.”</p><p>The name of Saint George was indeed also borne by the founder of Moscow—Yurii Dolgoruky († 1157), who was the builder of many churches dedicated to St. George, and the builder of the city of Yur′ev-Pol′sk. In the year 1238, the heroic fight of the Russian nation against the Mongol Horde was headed by the Great Prince of Vladimir George Vsevolodovich († 1238, see <a href=\"comm=487\">February 4</a>), fallen into eternal rest in the Battle at the Sita River. His memory, just like that of Igor the Brave, and defender of his native-land, was reflected in Russian spiritual versification and ballads. The first great-prince of Moscow, in the period when Moscow had become the centre of the gathering together of the Russian Land, was Yurii Danilovich († 1325)—son of Saint Daniel of Moscow, and grandson of Saint Alexander Nevsky. From that time Saint George the Victory-Bearer—the horseman, smiting the serpent—became the coat of arms of Moscow and emblem of the Russian state. And this has more deeply strengthened the connections with Christian peoples and especially with the same-believing Georgia (Russian: Грузия/Gruzia—the Land of Saint George).</p>"
+    },
+    "rank": 4,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "O Great Among the Saints and Glorious Martyr George, since you are a deliverer of captives and a defender of the poor, a doctor for the sick and a noble attendant to kings: intercede with Christ God, that He may save our souls.",
+          "Type": "1",
+          "Tone": "4"
+        },
+        "KONTAKION/1": {
+          "text": "Thou wast cultivated by God and didst become a most wonderful cultivator of piety, and didst harvest for thyself the sheaves of virtue, for having sown in tears thou didst reap in joy and having withstood to death thou art garnered for Christ. By thy intercessions, O Saint, thou dost obtain for us all remission of our sins.",
+          "Type": "1",
+          "Tone": "4",
+          "Podoben": "1"
+        }
+      }
+    }
+  },
+  "0949701": {
+    "name": {
+      "nominative": "<i>The service for St. George is transferred to Bright Monday.</i>"
+    }
+  },
+  "09635": {
+    "name": {
+      "nominative": "Translation of the relics (1667) of the Venerable Nilus of Stolbensk",
+      "short": "Translation of"
+    },
+    "rank": 3
+  },
+  "09779": {
+    "name": {
+      "nominative": "Translation of the relics of Saint Peter, Metropolitan of Moscow and All Russia (1479)",
+      "short": "Saint Peter"
+    },
+    "rank": 3
+  },
+  "09785": {
+    "name": {
+      "nominative": "The Holy Glorious and All-Praised Leaders of the Apostles, Peter and Paul",
+      "short": "Peter and Paul"
+    },
+    "rank": 6
+  },
+  "09812": {
+    "name": {
+      "nominative": "Meeting of the Vladimir Icon of the Mother of God",
+      "short": "Vladimir Icon"
+    },
+    "rank": 4
+  },
+  "09946": {
+    "name": {
+      "nominative": "Holy Glorious Prophet Elijah (9<sup>th</sup> C BC)",
+      "short": "Prophet Elijah"
+    },
+    "life": {
+      "id": "",
+      "copyright": "The Clergyman’s Handbook. Moscow. 1978. English translation Copyright 1997 Fr. S. Janos.",
+      "text": "<p>The Holy Prophet Elias (Ilias) (Elijah)—one of the greatest of the prophets and the first dedicated to virginity in the Old Testament—he was born in Galaadian Thesbia (Tishbe) into the Levite tribe 900 years before the Incarnation of the Word of God. </p><p>Saint Epiphanios of Cyprus gives the following account about the birth of the Prophet Elias: “When Elias was born, his father Sobach saw in a vision, that handsome men greeted him, they swaddled him in fire and fed the fiery flame.” The name Elias (the Lord’s strength) given to the infant defined his whole life. From the years of his youth he dedicated himself to the One God, settled in the wilderness and spent his whole life in strict fasting, Divine-meditation and prayer. Called to prophetic service afront the Israelite king Ahab, the prophet became a fiery zealot of the true faith and piety. During this time the Israelite nation had fallen away from the faith of their fathers, they abandoned the One God and worshipped pagan idols, the worship of which was introduced by the impious king Jereboam. An especial advocate of idol-worship was the wife of king Ahab, the paganess Jezebel. The worship of the idol of Baal led the Israelites towards complete moral decay. Beholding the ruin of his nation, the Prophet Elias began to denounce king Ahab for impiety, and exhorting him to repent and turn to the True God. The king would not listen to him. The Prophet Elias then declared to him, that in punishment there would then be neither rain nor dew upon the ground, and the dryness would cease only through his prayer. And indeed, through the prayer of the prophet the heavens were closed, and there befell drought and famine throughout all the land. The nation suffered from the incessant heat and hunger. The Lord through His mercy, seeing the suffering of the people, was prepared to forgive all and send rain upon the earth, but did not want to annul the words of the Prophet Elias, sorrowed with the desire to turn about the hearts of the Israelites to repentance and return them to the true worship of God. Having saved the Prophet Elias from the hands of Jezebel, the Lord during this time of tribulation sent him into a secret place of the stream Horath. The Lord ordered rapacious ravens to bring food to the prophet, moving him to pity for the suffering nation. When the stream Horath dried up, the Lord sent the Prophet Elias to Sidonian Sarepta to a poor widow, who suffered together with her children in the expectation of death by starvation. At the request of the prophet she prepared him a bread with the last measure of flour and the remainder of the oil. Thereafter through the prayer of the Prophet Elias, flour and oil were not depleted in the home of the widow for all the duration of the famine. By the power of his prayer the prophet did another miracle—he resuscitated the dead son of the widow. After the end of three years of drought the Merciful Lord sent the prophet to king Ahab to bring an end to the misfortune. The Prophet Elias gave orders to gather upon Mount Carmel all Israel and the pagan-priests of Baal. When the nation had gathered, the Prophet Elias proposed the building of two sacrificial altars: one—for the pagan-priests of Baal, and the other—for the Prophet Elias in the service of the True God. “Upon whichever shalt come down upon it fire from the heavens, that one wilt be shewn to have the True God,—said the Prophet Elias,—and all shalt be obliged to worship Him, and if not invoking Him shalt be given over to death.” The prophets of Baal rushed off first to offer sacrifice: they called out to the idol from morning till evening, but in vain—the heavens were silent. Towards evening the holy Prophet Elias built up his sacrificial altar from 12 stones—the number of the tribes of Israel; he placed the sacrifice upon the fire-wood, gave orders to dig a ditch around the altar and commanded that the sacrifice and the fire-wood be soaked with water. When the ditch had filled with water, the fiery prophet turned to God with a prayer and asked, that the Lord send down fire from the heavens to teach the wayward and obdurate Israelite people and turn their hearts to Himself. Through the prayer of the prophet there came down fire from the heavens and it fell upon the sacrifice, the wood, the stones and even the water. The people fell down to the ground, crying out: “In truth the Lord is the One God and there is no other besides Him!.” Then the Prophet Elias had put to death all the pagan-priests of Baal and he began to pray for the sending down of rain. Through his prayer the heavens opened and there came down an abundant rain, watering the parched earth.</p><p>King Ahab acknowledged his error and repented his sins, but his wife Jezebel threatened to kill the prophet of God. The Prophet Elias fled into the kingdom of Judea and, grieving over his failure to eradicate idol-worship, he asked of God his death. An Angel of the Lord came before him, strengthened him with food and commanded him to go upon a long journey. The Prophet Elias went for forty days and nights and, having arrived at Mount Horeb, he settled in a cave. Here after a terrible storm, an earthquake and a burst of flame the Lord appeared “in a quiet wind” (3 Kings 19: 12) and revealed to the grieving prophet, that He preserved seven thousand faithful servants who were not worshippers of Baal. The Lord commanded the Prophet Elias to anoint Elisei (Elisha) unto prophetic service. Because of his fiery zeal for the Glory of God the Prophet Elias was taken up alive to Heaven on a fiery chariot. The Prophet Elisei (Elisha) began with the testimony of the ascent of the Prophet Elias to the heavens on a fiery chariot and received together with his fallen-down mantle (cloak) a gift of prophetic spirit twice as great, than the Prophet Elias had possessed. </p><p>According to the tradition of Holy Church, the Prophet Elias will be a ForeRunner of the Terrible Second Coming of Christ upon the earth and during the time of preaching will be a sign of bodily death. </p><p>The life of the holy Prophet Elias is recorded in the Old Testament books (3 Kings; 4 Kings; Sirach/Ecclesiastes 48: 1-15; 1 Maccabees 2: 58). At the time of the Transfiguration [Preobrazhenie] the Prophet Elias conversed with the Saviour upon Mount Thabor (Tabor) (Mt. 17: 3; Mk. 9: 4; Lk. 9: 30).</p><p>For the day of the fiery ascent to Heaven of the Prophet Elias his veneration in the Church of Christ was constant over the centuries. The Russian Orthodox Church venerates the Prophet Elias among the saints. The first church, built at Kiev under prince Igor, was in the name of the Prophet Elias. After Baptism the holy Equal-to-the-Apostles princess Ol′ga (Comm. 14 July) built a temple of the holy Prophet Elias in his native region, at the village of Vibuta.</p><p>The iconographic tradition portrays the Prophet Elias rising up on a chariot with fiery wheels, which are encircled on all sides with flames and harnessed to four winged horses.</p>"
+    },
+    "rank": 2,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "The angel in the flesh, the foundation of the prophets, * the second forerunner of the Coming of Christ, * the glorious Elijah from on High sent down grace upon Elisha * to dispel infirmities and to cleanse lepers. ** Wherefore, he poureth forth healings upon them that honor him.",
+          "Tone": "4",
+          "Type": "1"
+        },
+        "KONTAKION/1": {
+          "text": "O prophet, foreseer of the mighty works of our God, * Elijah of great renown, * who by thy voice didst restrain the cloud of rain; ** in our behalf entreat thou Him that alone is the Lover of mankind.",
+          "Tone": "2",
+          "Type": "1"
+        }
+      }
+    }
+  },
+  "09951": {
+    "name": {
+      "nominative": "Nine Holy Martyrs of Cyzicus: Theognidus, Rufus, Antipater, Theostichus, Artemas, Magnus, Theodotus, Thaumasius, and Philemon († 286-299)",
+      "short": "Nine Holy Martyrs"
+    },
+    "life": {
+      "id": "",
+      "copyright": "The Clergyman’s Handbook. Moscow. 1978. English translation Copyright 1997 Fr. S. Janos.",
+      "text": "<p>The Nine Holy Martyrs of Kyzika: The city of Kyzika is located in Asia Minor at the coast of the Dardenelles (Hellespont) Straits. Christianity there began to spread about already during the time of the preaching of the Apostle Paul (Comm. 29 June). But under the times of persecutions by the pagans events came to this—that some of the Christians fled the city, while others kept their faith in Christ in secret. Therefore by the time of the end of the III Century Kyzika was still basically a pagan city, although there was also a Christian church there. The situation in the city distressed true Christians, who sought to uphold the Christian faith. From there were also the Nine holy Martyrs: Theognides, Ruphos, Antipater, Theostikhos, Artemon, Magnos, Theodotos, Thaumasios and Philemon. They hailed from various places, and were of different ages: both the young like Saint Antipater, and the very old like Saint Ruphos, and they came from various positions in society: among them were soldiers, countryfolk and city-people, and clergy. But all of them declared their faith in Christ and were all the more intense in their yearning for the spread and strengthening of the True Faith.</p><p>Having shown up in the city of Kyzika, the saints boldly confessed Christ and fearlessly denounced the pagan impiety. They were arrested and brought to trial before the city governor. Over the course of several days they were tortured, locked up in prison and again led out from it, and promised their freedom for a renunciation of Christ. But the valiant martyrs of Christ continued to glorify the Name of Christ. All nine martyrs were beheaded by the sword († c.  284-292), and their bodies buried nearby the city. </p><p>In the year 324,—when the Eastern half of the Roman empire came under the rule of Saint Constantine the Great (306-337, Comm. 21 May), and the persecutions against Christians ended, the Kyzika Christians removed the undecayed bodies of the 9 martyrs from the ground and placed them in a church, built in their honour. </p><p>Various miracles occurred from the holy relics: the sick were healed, and the mentally aberrant brought to their senses. The faith of Christ grew within the city through the intercession of the holy martyrs, and many of the pagans were converted to Christianity.</p><p>When Julian the Apostate (361-363) came to rule, the pagans of Kyzika turned to him with a complaint against the Christians for the destruction of pagan temples. Julian gave orders to rebuild the pagan temples and to lock up in prison bishop Eleusios. Bishop Eleusios was set free after the death of Julian, and the light of the Christian faith shined anew through the assist of the holy martyrs. </p><p>In Russia not far from the city of Kazan was built a monastery in honour of the Nine Martyrs of Kyzika. It was built by the monk-deacon Stefan, who brought with him from Palestine part of the relics of the saints. This monastery was built in the hope of deliverance through their intercession and prayers from various infirmities and ills, particularly the fever which raged through Kazan in the year 1687, “since,—writes Saint Dimitrii of Rostov († 1709, Comm. 21 September), the compiler of the service to the 9 Martyrs,—by these saints was given abundant grace for the dispelling of feverish and trembling sicknesses.” Saint Dimitrii likewise described the sufferings of the holy martyrs and compiled a sermon on the day of their memory.</p>"
+    },
+    "rank": 1,
+    "services": {
+      "LITURGY": {
+        "KONTAKION/1": {
+          "text": "The steadfast and most splendid choir of the nine martyrs, * who confessed the three-Sunned Godhead, * cried out to Him at the tribunal: * \"O Master, we offer our blood, souls and bodies to thee as an unblemished sacrifice! ** Number us among Thy heavenly choir, in that Thou art our merciful God!\"",
+          "Tone": "2",
+          "Podoben": "3",
+          "Type": "1"
+        }
+      }
+    }
+  },
+  "09968": {
+    "name": {
+      "nominative": "Finding of the relics of Venerable Seraphim the Wonderworker of Sarov (1903)",
+      "short": "Venerable Seraphim"
+    },
+    "life": {
+      "id": "",
+      "copyright": "The Clergyman’s Handbook. Moscow. 1978. English translation Copyright 1997 Fr. S. Janos.",
+      "text": "<p>Uncovering of the Relics of the Monk Seraphim, Wonderworker of Sarov: At the beginning of the last century (i.e. the 1800’s) a new bright taper blazed upon the candle-tiara of the Russian Orthodox Church. The Lord deigned to send to us on earth a great man of prayer, an ascetic and wonderworker.</p><p>In 1903 occurred the glorification of the Monk Seraphim of Sarov, 70 years after his repose (the Vita (Life) of the saint is located under 2 January, the day of his repose). On 19 July, the birthday of the saint, his relics were opened with great solemnity and placed in a prepared reliquary. The long awaited event was accompanied by numerous miraculous healings of the sick, who in large number had gathered at Sarov. Very widely esteemed while yet alive, the Monk Seraphim became one of the most beloved saints of the Russian Orthodox nation, indeed like the Monk Sergei of Radonezh.</p><p>The spiritual path of the Monk Seraphim was marked by great modesty, inherent to the Russian saint. From childhood having been chosen by God, the Sarovsk ascetic without hesitation or misgiving ascended from strength to strength in his striving for spiritual perfection. Eight years of novitiate tasks and eight years of temple service in the dignity of deacon and priestmonk, wilderness-dwelling and pillar-dwelling, hermitage and solitude followed upon each other and crown his eldership. His deeds, by far exceeding natural human abilities (for example, the prayer upon the stone for a thousand days and nights), harmoniously and readily enter into the life of the saint. </p><p>The mystery of a living and prayerful communality defines the spiritual legacy of the Monk Seraphim, but he left to the Church still another precious thing—a short but fine directive, written in part by himself, and in parts by those listening to him. Shortly before the glorification of the saint there was found and printed in 1903 his “Conversation of the Monk Seraphim of Sarov, Concerning the Goal of Christian Life,” compiled at the end of November 1831, roughly a year before his repose. This conversation was a very precious contribution of the ascetic into the treasury of teachings of Russian holy-fathers. Besides his teaching about the essence of Christian life, in it are contained new explanations of many important places of Holy Scripture.</p><p>”Fasting, prayer, vigil and every good deed,—taught the Monk Seraphim,—being howso no less fine in themselves, yet however in fact the goal of our Christian life does not consist only but in them, though they serve as means for its attainment. The true goal of our Christian life is the acquisition of the Holy Spirit of God.” Once however situated in the Spirit of God, the monk glimpsed all the Russian land, and it was filled and as it were covered over by the incense-cloud of the prayers of the faithful, rising up in supplication to the Lord. </p><p>In the recorded life and deeds of Saint Seraphim are quoted many eye-witness accounts of the graced gift of perspicacity (i.e. insight), which he utilised for stimulating within people repentance of sins and moral rectification.</p><p>”The Lord hath revealed to me,—said he,—that there shalt be a time, when the hierarchs of the Russian land and other spiritual persons will deviate from the preservation of Orthodoxy in all its purity, and for this the wrath of God wilt strike them. For three days I stood, I besought the Lord to have mercy on them and besought it better to deprive me, the wretch Seraphim, of the Kingdom of Heaven, than to punish them. But the Lord inclined not to the plea of the wretch Seraphim and said, that there would be not mercy for them, since they will teach human teachings and commandments, while their hearts stand far from Me.” </p><p>Manifesting the graced gifts and power of God to people, the Monk Seraphim instructed those coming to him, on how to transverse the narrow path of salvation. He commanded obedience of his spiritual children and to the end of his life he was faithful to it. Having spent all his life in ascetic deeds beyond the power of ordinary people, his advice was to go by “the royal (middle) way” of the holy-fathers and not take upon oneself excessive difficult works: “to take on excessive measure of exploit is not necessary; but strive, so that the other aspect—our flesh—be true and capable for the doing of good deeds.” </p><p>The monk considered prayer to be the prime exploit and means for the acquisition of the Holy Spirit. “Every good deed, done on account of Christ, bestows the grace of the Holy Spirit, but… prayer most of all beareth the Holy Spirit, and it is most convenient of all for each to improve.”</p><p>The Monk Seraphim advised during the time of Divine-services to stand in temple now with eyes closed, and then to turn one’s gaze upon an image or burning candle and ponder this thought,—that it would suggest the fine comparison of human life with a waxen candle.</p><p>If someone complained to the holy elder about the impossibility to fulfill the rule of prayer, he then advised them to pray unceasingly: both during the time of work, and when going wherever, and even in bed. And if anyone can make the time, said the monk, let them take on soul-edifying prayers and readings of prayer-canons, akathists, psalms, the Gospel and Epistles. The saint also advised to study the order of Divine-services and to commit them to memory. </p><p>The Monk Seraphim regarded a lengthy rule of prayer as non-obligatory and he gave his Diveevsk community of women monastics a light rule. The Mother of God forbade Father seraphim to obligate novices with the reading of long akathists, so as not to impose an excessive burden on the incapable. But with this the saint strictly mentioned, that prayer ought not to be a formality: “Those monks, who do not unite external prayer with the inner, are not monks, but black torch-heads!” There thus became known the Seraphim Rule for those laypeople, who under the circumstances of life were not able to read the customary morning and evening prayers—in the morning, before lunch and at evening to read the “Our Father,” thrice the “Hail Mary, Virgin Mother of God,” the Creed “I Believe” once; attending to necessary tasks, from morning til dinner to do the Jesus Prayer “Lord, Jesus Christ Son of God, have mercy on me a sinner” or but simply “Lord, have mercy,” and from dinner til evening the prayer “Most Holy Mother of God, save me a sinner” or “Lord, Jesus Christ, through the Mother of God have mercy on me a sinner.”</p><p>”In prayers be attentive to thyself,—advised the ascetic,—that is, prepare the mind and unite it with the soul. On the first day, twice or more make this prayer with the whole mind, attending separately to each particular word. Later on, when the Lord heats thy heart with His warm grace and unites that in thee in one spirit: then flows within thee unceasingly that prayer and always will it be with thee, delighting and nourishing thee…” The monk said that in fulfilling this rule with humility, it is possible to attain Christian perfection even in worldly life.</p><p>”One mustneeds provide the soul with the Word of God. Most of all one ought to exercise in the reading of the New Testament and the Psalter. From this occurs enlightenment of the intellect, which is transformed by a Divine transformation,”—advised the holy ascetic of Sarov, himself constantly reading through all the New Testament during the course of the week. </p><p>Communing the Holy Mysteries each Sunday and each feastday without fail,—to the question of how often one should approach for Communion, the Monk Seraphim answered: “the more often, the better.” He said to the priest of the Diveevsk community, Vasilii Sadovsky: “The Grace, given us by Communion, is so great, that though a man be unworthy and sinful, if such a man in humility conscious of his all-sinfulness approacheth nigh [for Communion] to the Lord, Who hath redeemed us all, though he be covered head to foot by the bounds of sin, yet shalt he be cleansed by the grace of Christ, for all the more and more it illumineth him, and altogether it doth enlighten and save him.”</p><p>”I believe, that through the great blessing of God grace doth make its mark also upon those communing…” The saint however did not give everyone the identical advice regarding frequent Communion. For many he advised to make the preparatory fast during all four lenten periods and during all the twelve feastdays. But it is necessary to remember his warning about the possibility of communing unto condemnation: “Sometimes thus it doth happen: here on earth they indeed do commune, but with the Lord they remain noncommunicants!”</p><p>”There is no worse a sin and nothing is more terrible and harmful of spirit than despondency,”—said Saint Seraphim. He himself shone with a spiritual joy, and with this quiet peaceful joy he in abundance filled the hearts of those about him, greeting them with the words: “My joy! Christ is Risen!” Every burden of life became light while being close to the ascetic, and a multitude of the grieving people and seekers of God crowded about his cell and together with them hermits, wanting to share in the graces radiating from the God-pleasing saint. In the eyes of all was affirmed the truth, expressed by the saint himself in a great angelic calling-out: “Acquire peace, and around thee a thousand wilt be saved.” This command about the acquisition of peace leads up to the teaching about the acquisition of the Holy Spirit, but of itself it appears as a most important step on the way of spiritual growth. The Monk Seraphim, in experience having passed through all the ancient Orthodox science of ascetic deed, foresaw how the spiritual activity of coming generations would be, and he taught to seek out peace of soul and to condemn no one: “Whoso gœth about in a worldly manner, that one as though a liar draweth up spiritual gifts.” “For preserving peace of soul… everyone ought to flee the judging of others… In order to be delivered from judgement, one ought to attend to oneself, and not from whomever to adopt extraneous ideas and become deadened towards everything.” </p><p>The Monk Seraphim rightly can be called a disciple of the Mother of God. The Most Holy Mother of God thrice healed him from grievous illness, and repeatedly She appeared to him, guiding and encouraging him. While still at the beginning of his way he heard, how the Mother of God in directing him as he lay upon his sick bed, said to the Apostle John the Theologian: “This one is of our kind.” </p><p>Upon emerging from seclusion the monk devoted much effort to the building up of the women’s monastic community at Diveevo and he himself said, that he gave no particular directives on his own, but rather he gave everything through the will of the Queen of Heaven.</p><p>The Monk Seraphim stands at the head of a remarkable upwards-flight of Russian Orthodox spirituality. With great strength resounds his recollection: “The Lord seeketh out the heart, overflowing with love towards God and neighbour; here is the throne, upon which He doth love to preside and appear in the fullness of His supra-heavenly Glory. “Son, give Me thine heart,—sayeth He,—and all else I Myself wilt provide thee,”—wherefore it is in the human heart that the Kingdom of Heaven can be realised.”</p>"
+    },
+    "rank": 5,
+    "services": {
+      "LITURGY": {
+        "TROPARION/1": {
+          "text": "From thy youth didst thou love Christ, O blessed one; * and, aflame with the desire to serve Him alone, * thou didst struggle in the wilderness in unceasing prayer and labor; * and with compunction of heart acquiring the love of Christ, * thou wast shown to be the beloved favorite of the Mother of God. * Wherefore, we cry unto thee: * Save us by thy prayers, O our venerable father Seraphim.",
+          "Tone": "4",
+          "Type": "1"
+        },
+        "KONTAKION/1": {
+          "text": "Having forsaken the beauty of the world and the corruption therein, * thou didst take up thine abode in the Monastery of Sarov./And having lived there as an angel, thou didst become a path for many to salvation. * Wherefore, Christ hath glorified thee, O father Seraphim, * and enriched thee with the gift of healings and miracles. * Therefore, we cry out to thee: ** Rejoice, O our venerable father Seraphim!",
+          "Tone": "2",
+          "Type": "1"
+        }
+      }
+    }
+  }
+}

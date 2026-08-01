@@ -1,0 +1,392 @@
+{
+  "LANGUAGEPACKS": {
+    "PHRASE": [
+      {
+        "@_Key": "NameLocal",
+        "@_Value": "церковнославѧнский"
+      },
+      {
+        "@_Key": "NameEnglish",
+        "@_Value": "Church Slavonic"
+      },
+      {
+        "@_Key": "BibleV",
+        "@_Value": "cu/bible/elis"
+      },
+      {
+        "@_Key": "Authors",
+        "@_Value": "А҆леѯа́ндръ А҆ндреевъ/,Ю҆рѣ́й Ша́рдтъ"
+      },
+      {
+        "@_Key": "Year",
+        "@_Value": ".҂в҃ѕ. до .҂ві҃г. лѣ́тъ"
+      },
+      {
+        "@_Key": "And",
+        "@_Value": "и҆"
+      },
+      {
+        "@_Key": "Comma",
+        "@_Value": ","
+      },
+      {
+        "@_Key": "Copyright",
+        "@_Value": "Все права защищены ^YY ^AA"
+      },
+      {
+        "@_Key": "0",
+        "@_Value": "Понома́рь",
+        "@_Comment": "This is the only entry for this key."
+      },
+      {
+        "@_Key": "1",
+        "@_Value": "і҆аннꙋарїй/,феѵрꙋа́лїй/,ма́ртъ/,а҆прі́ллїй/,ма́їй/,і҆ꙋ́нїй/,і҆ꙋ́лїй/,а҆́ѵгꙋстъ/,септе́мврїй/,о҆ктѡ́врїй/,ное́мврїй/,деке́мврїй",
+        "@_Comment": "The names of the months in the nominative case, that is, for use in the format 'Month 2008'."
+      },
+      {
+        "@_Key": "2",
+        "@_Value": "недѣ́лѧ/,понедѣ́льникъ/,вто́рникъ/,сре́да/,четверто́къ/,пѧто́къ/,сꙋббѡ́та",
+        "@_Comment": "The names of the week in the nominative case, that is, for use in the format 'Week, Month Date, Year'."
+      },
+      {
+        "@_Key": "3",
+        "@_Value": "і҆аннꙋарїа/,феѵрꙋа́лїа/,ма́рта/,а҆прі́ллїа/,ма́їа/,і҆ꙋ́нїа/,і҆ꙋ́лїа/,а҆́ѵгꙋста/,септе́мврїа/,о҆ктѡ́врїа/,ное́мврїа/,деке́мврїа",
+        "@_Comment": "The names of the months in the genitive case, that is, for use in the format 'Wednesday, 28 March 2008'."
+      },
+      {
+        "@_Key": "5",
+        "@_Value": "недѣ́лѧ/,понедѣ́льникъ/,вто́рникъ/,сре́да/,четверто́къ/,пѧто́къ/,сꙋббѡ́та",
+        "@_Comment": "The names of the week in the nominative case, that is, for use in the format 'Week, Month Date, Year'."
+      },
+      {
+        "@_Key": "4",
+        "@_Value": "і҆аннꙋарїа/,феѵрꙋа́лїа/,ма́рта/,а҆прі́ллїа/,ма́їа/,і҆ꙋ́нїа/,і҆ꙋ́лїа/,а҆́ѵгꙋста/,септе́мврїа/,о҆ктѡ́врїа/,ное́мврїа/,деке́мврїа",
+        "@_Comment": "The names of the months in the genitive case, that is, for use in the format 'Wednesday, 28 March 2008'."
+      },
+      {
+        "@_Key": "Options",
+        "@_Value": "Настройкѝ"
+      },
+      {
+        "@_Key": "File",
+        "@_Value": "Фа́йлъ/,Сохрани́ть/,Ѡ҆быкнове́нное меню̀ фа́йлъ/,Сохранѧ́етъ текꙋ́щꙋю и҆нформа́цїю/,Выхо́дъ/,Оканчиваетъ рабо́тꙋ про́граммы/,Печа́ть/,Печа́тетъ текꙋ́щꙋю и҆нформа́цїю."
+      },
+      {
+        "@_Key": "SMenu",
+        "@_Value": "Ст҃и/,Пои́скъ и҆ сорти́ровка по ст҃имъ/,Пои́ск/,Пои́ск и҆нформа́ции о҆ ст҃омъ"
+      },
+      {
+        "@_Key": "Services",
+        "@_Value": "Богослꙋженїе/,Литꙋргі́ѧ/,Вече́рнѧ/,Повече́рїе/,Оу҆́тренѧ/,Ча́съ пе́рвый/,Ча́съ тре́тїй/,Ча́съ шесты́й/,Ча́съ девѧ́тый/,Часѡ́въ ца́рскихъ/,Всено́щное Бде́нїе/,Полуно́щница/,Тѷпїка̀/,This allows the user to compile the services/,Compile the Divine Liturgy for the given day/,Compile Vespers for the given day/,Compile the Complines for the given day/,Compile Matins for the day/,Compile Prime (First Hour) for the given day/,Compile Terce (Third Hour) for the given day/,Compile Sext (Sixth Hour) for the given day/,Compile None (Ninth Hour) for the given day/,Compile the Royal Hours for the given day/,Compile the All-Night Vigil for the given day/,Compile the Midnight Office for the given day/,Compile the Typica for the given day"
+      },
+      {
+        "@_Key": "Bible",
+        "@_Value": "Библи́ѧ/,Ѿкрыва́етъ те́ѯтъ ст агѡ писа́нїѧ"
+      },
+      {
+        "@_Key": "Help",
+        "@_Value": "Спра́вка/,Ѿкрыва́етъ фа́йлъ спра́вки/,О҆ про́грамми/,И҆нформа́цїѧ о҆ програ́мми/,Ѿкрыва́етъ спра́вкꙋ"
+      },
+      {
+        "@_Key": "LanguageMenu",
+        "@_Value": "Ѧ҆зы́къ/,Выбо́ръ ѧ҆зы́ка про́граммы/,Выбо́ръ ѧ҆зы́ка и҆нтерфейса̀/,Да̀/,Что́бы помѣ́нѧть ѧ҆зы́къ и҆нтерфейса҆, презагрꙋзи́те про́граммꙋ./,Нѣ̀/,Вы̀ дѣйствительно жела́ете и҆змѣ́нити фа́йлъ:/,Вы҆ дѣ́йствительно хочи́те закры́ти е҆то̀ ѻ҆кно̀;"
+      },
+      {
+        "@_Key": "About",
+        "@_Value": "Ве́рсїѧ/,Ponomar is designed to provide the user with access to understand and experience the richness and beauty of the Orthodox tradition. The programme is currently in its developmental phase./,At Ponomar, we believe that Orthodox liturgical texts should be free for use and distribution. God did not copyright the Bible. St John of Damascus did not copyright the Octoechos. Thus, Ponomar and all incorporated texts are distributable under the terms of the GPL./,Copyright/,by/,Acknowledgements: (None)"
+      },
+      {
+        "@_Key": "GospelSelection",
+        "@_Value": "НЀ и҆спользо́вати Воздви́женскꙋю ѿстꙋ́пкꙋ/,И҆спользо́вати Воздви́женскꙋю ѿстꙋ́пкꙋ/,Лекционарий/,Выбо́ръ лекционария."
+      },
+      {
+        "@_Key": "Tones",
+        "@_Value": "и҃-й/,а҃-й/,в҃-й/,г҃-й/,д҃-й/,е҃-й/,ѕ҃-й/,з҃-й/,и҃-й",
+        "@_Comments": "To allow different formatting of the tones in other languages, such as Greek (with letters) and Old Church Slavonic (with Cyrillic letters)"
+      },
+      {
+        "@_Key": "Main",
+        "@_Value": "по гражда́нскомꙋ стилю̀/,Восхо́дъ со́лнца: /,Захо́дъ со́лнца: /,Фа́за мѣ́сѧца: /,Гла́съ TT/,И҆нформа́цїѧ о҆ /,Вы̀ дѣ̀йствительно хочитѐ закры́ти про́граммꙋ;"
+      },
+      {
+        "@_Key": "gospel",
+        "@_Value": "Є҆ѵⷢ҇лїе"
+      },
+      {
+        "@_Key": "apostol",
+        "@_Value": "А҆пⷭ҇лъ"
+      },
+      {
+        "@_Key": "matins",
+        "@_Value": "Оу҆́тренѧ"
+      },
+      {
+        "@_Key": "vespers",
+        "@_Value": "Вече́рнѧ"
+      },
+      {
+        "@_Key": "1st hour",
+        "@_Value": "Ча́съ пе́рвый"
+      },
+      {
+        "@_Key": "3rd hour",
+        "@_Value": "Ча́съ тре́тїй"
+      },
+      {
+        "@_Key": "6th hour",
+        "@_Value": "Ча́съ шесты́й"
+      },
+      {
+        "@_Key": "9th hour",
+        "@_Value": "Ча́съ девѧ́тый"
+      },
+      {
+        "@_Key": "Fasts",
+        "@_Value": "По́ста нѣ̀ /,Стро́гий по́стъ/,По́стъ: разрѣша́етсѧ на вїно̀ и҆ є҆ле́й /,По́стъ: разрѣша́етсѧ на рыбꙋ̀ /,Оу҆каза́нїе варе́нїѧ: /,Ошибка при вычеслении указаний /,: Монасты́рская кꙋхнѧ: /,Стро́гий по́стъ/,Сꙋхоѧде́нїе /,Варе́нїе бе́з̾ є҆ле́ѧ/,По́стъ: Разрѣша́етсѧ на ры́бною и҆крꙋ̀ /,Ма́сленца (варе́нїе бе́з̾ мѧ́са) /,По́стъ: Разрѣша́етсѧ вїно̀҆ /,мѧ́со/,мла҆чные продꙋ́кты/,ры́ба/,ры́бнаѧ и҆́кпа/,є҆ле́й/,вїно̀/,сухоѧденїе/,/,/,/,разрѣша́етсѧ/,запрещается/,и҆/,, пока/,По́стъ:"
+      },
+      {
+        "@_Key": "Week1",
+        "@_Value": "ндⷧ҇ѧ/,пнⷣе/,втоⷬ҇/,срⷣе/,чеⷦ҇/,пѧⷦ҇/,сꙋⷠ҇",
+        "@_Comment": "This the abbreviation of the days of the week."
+      },
+      {
+        "@_Key": "Phases",
+        "@_Value": "но́вый мѣ́сѧцъ/,растꙋ́щь се́рпъ/,пе́рваѧ че́тверть/,растꙋ́щь мѣ́сѧцъ/,по́лный мѣ́сѧцъ,/,ѹ҆быва́ющь мѣ́сѧцъ/,послѣ́днѧѧ че́тверть/,ѹ҆быва́ющъ се́рпъ",
+        "@_Comment": "Lunar Phases"
+      },
+      {
+        "@_Key": "Primes",
+        "@_Value": "No Service Today/,Ча́съ пе́рвый/,The tropar for/,is missing/,The kontakion for/,Kathisma"
+      },
+      {
+        "@_Key": "DayReading",
+        "@_Value": "длѧ̀ недѣ́ли/,длѧ̀ понедѣ́льника/,длѧ̀ вто́рника/,длѧ̀ сре́ды/,длѧ̀ четвертка̀/,длѧ̀ пѧтка̀/,длѧ̀ сꙋббѡ́ты",
+        "@_Comment": "These are the forms put in brackets after transferred readings (Gospel and Apostol)."
+      },
+      {
+        "@_Key": "DateFormat",
+        "@_Value": "WW, DD_й де́нь MM YY лѣ́та",
+        "@_Comment": "This will display a type similar to Wednesday, 28 August 2008. The permissible codes are WW for Weekname, DD for the day number, MM for the month, YY for the year. Any additonal formatting can be included such as comma after any number."
+      },
+      {
+        "@_Key": "Feasts",
+        "@_Value": "Ѡ҆брѣ́занїе гдⷭ҇а/,Бг҃оѧвле́нїе/,Ржⷭ҇тво̀ прⷣте́чи/,Ст҃ы́й а҆пⷭ҇ль петро̀ и҆ па́ѵло/,Преѡбраже́нїе/,Оу҆спе́нїе бцⷣы/,Оу҆сѣкнове́нїе прⷣте́чи/,Ржⷭ҇тво̀ бцⷣы/,Воздви́женїе честна́гѡ крⷭ҇та/,Покро́въ бцⷣы/,Введе́нїе во хра́мъ бцⷣы/,Хрⷭ҇то́ве ржⷭ҇тво̀/,Кѷрїопа́сха: Па́сха и҆ бл҃говѣ́щенїе/,Па́сха/,Бл҃говѣ́щенїе/,Пентико́стїи/,Вознесе́нїе/,Недѣ́лѧ ва́їй/,Срѣ́тенїе гдⷭ҇а"
+      },
+      {
+        "@_Key": "Helpers",
+        "@_Value": "Save to a html file."
+      },
+      {
+        "@_Key": "ServiceRead",
+        "@_Value": "The desired title is missing./,There was a serious error reading the file: /,The desired command is missing./,The desired header is missing./,Error finding the desired information:"
+      },
+      {
+        "@_Key": "Errors",
+        "@_Value": "Unable to find /,Unable to process floater # /,Error at day /,Malformed expression: Not Enough Brackets/,Malformed expression:/,was not found/,Error Reading the values/,Invalid Month/,Invalid Day:/,in/,A julian day must be greater than 0"
+      },
+      {
+        "@_Key": "PrimeSelection",
+        "@_Value": "Reader/,Priest/,Bishop/,Independent/,Without Beginning/,Without Ending/,Without Beginning or Ending/,Type"
+      },
+      {
+        "@_Key": "RoyalHours",
+        "@_Value": "The Royal Hours are not served today/,Часѡ́въ ца́рскихъ"
+      },
+      {
+        "@_Key": "Commemoration",
+        "@_Value": "Error reading the Hashtable! Missing element: /, with Tag: /,Error reading the Hashtable! Missing Node: /,Error reading the Hashtable!!!",
+        "@_Comments": "The spaces must be maintained, as well as the new lines"
+      },
+      {
+        "@_Key": "BibleW",
+        "@_Value": "Previous Chapter/,Entire Chapter/,Next Chapter/,Bookmark Passage/,Copy Passage/,Save Passage/,Print Passage/,Ponomar Scripture Reader/,Error reading bmlfile: /,Resource not found:"
+      },
+      {
+        "@_Key": "Terce",
+        "@_Value": "No Service Today/,Ча́съ тре́тїй/,The tropar for/,is missing/,The kontakion for/,Kathisma"
+      },
+      {
+        "@_Key": "Sexte",
+        "@_Value": "No Service Today/,Ча́съ шесты́й/,The tropar for/,is missing/,The kontakion for/,Kathisma"
+      },
+      {
+        "@_Key": "None",
+        "@_Value": "No Service Today/,Ча́съ девѧ́тый/,The tropar for/,is missing/,The kontakion for/,Kathisma"
+      },
+      {
+        "@_Key": "FontFaceM",
+        "@_Value": "Ponomar Unicode TT",
+        "@_Comment": "This is the font to be used for displaying all the relevant information on screen  for the Main interface. A blank entry of \"\" will select the default font."
+      },
+      {
+        "@_Key": "FontSizeM",
+        "@_Value": "18",
+        "@_Comment": "The size of the font  for the Main interface, since some languages need a larger font size to be legible. A blank entry will give the default value of 12."
+      },
+      {
+        "@_Key": "FontFaceL",
+        "@_Value": "Ponomar Unicode TT",
+        "@_Comment": "This is the font to be used for displaying information in the Liturgical aspect. At times, the font of the Liturgics will be different from that of the main Screen (for example, Russian interface; Church Slavonic Liturgics)."
+      },
+      {
+        "@_Key": "FontSizeL",
+        "@_Value": "18",
+        "@_Comment": "The size of the font  for the Liturgics aspect (see FontFaceL) for explanation, since some languages need a larger font size to be legible. A blank entry will give the default value of 12."
+      },
+      {
+        "@_Key": "CommSep",
+        "@_Value": ":",
+        "@_Comment": "This is the mark to separate the different commemorations that are dispalyed."
+      },
+      {
+        "@_Key": "ReadSep",
+        "@_Value": ":",
+        "@_Comment": "This is the mark to separate the readings."
+      },
+      {
+        "@_Key": "Colon",
+        "@_Value": ":",
+        "@_Comment": "This is for everytime that a colon is required."
+      },
+      {
+        "@_Key": "Language",
+        "@_Value": "ru",
+        "@_Comment": "This is the 2 letter ISO code for the given language. This will also determine component orientation, for example left-to-right, right-to-left (Hebrew, Arabic, Farsi), top-right-to-bottom-left (Traditional Chinese, Korean, Japanese), and top-left-to-bottom-right (Traditional Mongolian)."
+      },
+      {
+        "@_Key": "Country",
+        "@_Value": "RU",
+        "@_Comment": "This is the 2 letter ISO code for the given country. This may be required later on for some things."
+      },
+      {
+        "@_Key": "ZeroPoint",
+        "@_Value": "0",
+        "@_Comment": "This is the Unicode location for the starting point of the numbers. Changing it to a different starting point will allow any non-Western decimal system to be used. For 'Arabic' numerals (0,1,2,3,4,5...) the starting point is 0!"
+      },
+      {
+        "@_Key": "Ideographic",
+        "@_Value": "1",
+        "@_Comment": "This allows ideographic numerals to be displayed instead of the normal decimal based values, that is, 145 will be displayed as for example, CXLV. 1 = yes!"
+      },
+      {
+        "@_Key": "TimeF",
+        "@_Value": "HH-й ча́съ MM-а минꙋ́та",
+        "@_Comment": "This gives the format for the time. The 24-hour clock will be used."
+      },
+      {
+        "@_Key": "LivesW",
+        "@_Value": "Жи́тїе/,Тропа́рь/, Подо́бенъ: /,Конда́къ/,Гла́съ TT/,; /,Information about this commemoration is missing.",
+        "@_Comment": "A space (ifrequired) should be placed before and after the 2nd entry."
+      },
+      {
+        "@_Key": "IconW",
+        "@_Value": "Previous і҆конꙋ/,Слѣ́дꙋющꙋ і҆конꙋ/,І҆ко́нъ немаетъ."
+      },
+      {
+        "@_Key": "Colon",
+        "@_Value": ":",
+        "@_Note": "This is how a colon is to appear in the given texts."
+      },
+      {
+        "@_Key": "Commemoration2",
+        "@_Value": "(длѧ̀ %getN(^CC,Genetive))",
+        "@_Comments": "%getN is a generalised grammar engine that will return the appropriate grammatical form. The format is Noun (in this case to be specified so ^CC) and the desired case (as defined in the commemoration files)"
+      },
+      {
+        "@_Key": "Commemoration3",
+        "@_Value": "И҆мⷬ҇къ",
+        "@_Comments": "Failure to find any name for a given commemoration!"
+      },
+      {
+        "@_Key": "Rank0",
+        "@_Value": "^NF"
+      },
+      {
+        "@_Key": "Rank1",
+        "@_Value": "^NF"
+      },
+      {
+        "@_Key": "Rank2",
+        "@_Value": "<span style=\"font-family:Ponomar Unicode TT;font-size:130%\">🕃</span> ^NF"
+      },
+      {
+        "@_Key": "Rank3",
+        "@_Value": "<span style=\"color:red;font-family:Ponomar Unicode TT;font-size:130%\">🕃</span> ^NF"
+      },
+      {
+        "@_Key": "Rank4",
+        "@_Value": "<span style=\"letter-spacing:0.2em\"><span style=\"color:red;font-family:Ponomar Unicode TT;font-size:130%;\">🕂</span> <B>^NF</B></span>"
+      },
+      {
+        "@_Key": "Rank5",
+        "@_Value": "<span style=\"color:red;letter-spacing:0.2em\"><span style=\"font-family:Ponomar Unicode TT;font-size:130%;\">🕁</span> ^NF</span>"
+      },
+      {
+        "@_Key": "Rank6",
+        "@_Value": "<span style=\"color:red;letter-spacing:0.2em\"><span style=\"font-family:Ponomar Unicode TT;font-size:130%;\">🕀</span> <B>^NF</B></span>"
+      },
+      {
+        "@_Key": "PadH",
+        "@_Value": "1",
+        "@_Note": "This allows the time value to be displayed with at least the given number of digits. Must be equal to or greater than 1"
+      },
+      {
+        "@_Key": "PadM",
+        "@_Value": "2",
+        "@_Note": "This allows the time value to be displayed with at least the given number of digits. Must be equal to or greater than 1"
+      },
+      {
+        "@_Key": "IconSearch",
+        "@_Value": "el/,en",
+        "@_Note": "There is no need to include the current language and its path up, as it will be searched by default. Similarly, only the lowest desired searachable path should be considered, as the programme will by default search up the tree from the given point."
+      },
+      {
+        "@_Key": "OrderBox",
+        "@_Value": "MM",
+        "@_Note": "This determine the order in which the Month Year selection boxes in the Main display for the calendar are displayed. MM implies that the month will come first, while YY implies that the year will do so."
+      },
+      {
+        "@_Key": "AM",
+        "@_Value": "(^YYAM лѣ́та свѣ́та)",
+        "@_Note": "This displays the anno mundi year in brackets in the calendar, only for the Julian date"
+      },
+      {
+        "@_Key": "AMC",
+        "@_Value": "1",
+        "@_Note": "This determines whether or not the Anno Mundi value will be displayed. 1 = Yes, 0 = No."
+      },
+      {
+        "@_Key": "AML",
+        "@_Value": "A",
+        "@_Note": "This determines whether the AM value comes before (B) the rest of the date or after (A) it"
+      },
+      {
+        "@_Key": "NoIcon",
+        "@_Value": "Ponomar/languages/cu/icons/4447/0.jpg",
+        "@_Note": "This is a relative path to the default icon desired for the case where there is no icons available."
+      },
+      {
+        "@_Key": "Options2",
+        "@_Value": "Понома́рь: Defaults/,Географическаѧ и҆҆нформацїѧ/,Широта̀: /,°, отрицательнаѧ къ ю҆́гꙋ/,Долгота̀: /,°, отрицательнаѧ на за́падѣ/,Часовой по́ѧсъ: /, г по Гринвичꙋ/,Гражданская и҆҆нформацїѧ/,Отображений календарь:/,ю҆лїанский/,григорїанский/,Да̀/,Нѣ̀"
+      },
+      {
+        "@_Key": "OptionsW",
+        "@_Value": "700",
+        "@_Note": "Width of the Options window"
+      },
+      {
+        "@_Key": "OptionsH",
+        "@_Value": "300",
+        "@_Note": "Height of the Options window"
+      },
+      {
+        "@_Key": "OptionMenu",
+        "@_Value": "Defaults…"
+      },
+      {
+        "@_Key": "BibleW2",
+        "@_Value": "Toggle Verse Numbers on/off"
+      }
+    ]
+  }
+}

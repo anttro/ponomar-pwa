@@ -1,0 +1,717 @@
+{
+  "030103": {
+    "name": {
+      "nominative": "Sts. Marcel et Antoine",
+      "short": "Sts. Marcel"
+    }
+  },
+  "030104": {
+    "name": {
+      "nominative": "St. Agapios de Vatopédi",
+      "short": "St. Agapios"
+    }
+  },
+  "03010697": {
+    "name": {
+      "nominative": "St. Aubin, Evêque d’Angers",
+      "short": "St. Aubin"
+    }
+  },
+  "03011100": {
+    "name": {
+      "nominative": "Sts. Sylvestre et Sophrone",
+      "short": "Sts. Sylvestre"
+    }
+  },
+  "03011200": {
+    "name": {
+      "nominative": "St. Nestorien",
+      "short": "St. Nestorien"
+    }
+  },
+  "03011300": {
+    "name": {
+      "nominative": "Sts. Charise, Nicéphore et Agapios",
+      "short": "Sts. Charise"
+    }
+  },
+  "03011400": {
+    "name": {
+      "nominative": "St. David, Evêque du pays de Galles",
+      "short": "St. David"
+    }
+  },
+  "030200": {
+    "name": {
+      "nominative": "Sts. Troadios et ses compagnons",
+      "short": "Sts. Troadios"
+    }
+  },
+  "030201": {
+    "name": {
+      "nominative": "St. Chad, Evêque de Lichfield",
+      "short": "St. Chad"
+    }
+  },
+  "03020195": {
+    "name": {
+      "nominative": "St. Nicolas Planas (Papa Planas)",
+      "short": "St. Nicolas"
+    }
+  },
+  "030203": {
+    "name": {
+      "nominative": "St. Quintus le Thaumaturge",
+      "short": "St. Quintus"
+    }
+  },
+  "03020497": {
+    "name": {
+      "nominative": "Sts. Sabas et Barsanuphe de Tver",
+      "short": "Sts. Sabas"
+    }
+  },
+  "030208": {
+    "name": {
+      "nominative": "Sts. Sabbatius et Euphrosynus de Tver",
+      "short": "Sts. Sabbatius"
+    }
+  },
+  "03021100": {
+    "name": {
+      "nominative": "St. Hesichius le Palatin",
+      "short": "St. Hesichius"
+    }
+  },
+  "03024696": {
+    "name": {
+      "nominative": "Sts. Nestor et Tribimios",
+      "short": "Sts. Nestor"
+    }
+  },
+  "030301": {
+    "name": {
+      "nominative": "St. Zénon et Zoile",
+      "short": "St. Zénon"
+    }
+  },
+  "03030297": {
+    "name": {
+      "nominative": "St. Guénolé, fondateur de l’abbaye de Landevennec",
+      "short": "St. Guénolé"
+    }
+  },
+  "030303": {
+    "name": {
+      "nominative": "St. Caluppan d’Auvergne",
+      "short": "St. Caluppan d’Auvergne"
+    }
+  },
+  "030304": {
+    "name": {
+      "nominative": "St. Théodoret d’Antioche",
+      "short": "St. Théodoret d’Antioche"
+    }
+  },
+  "030401": {
+    "name": {
+      "nominative": "St. Grégoire, Evêque de Constantia en Chypre",
+      "short": "St. Grégoire"
+    }
+  },
+  "030402": {
+    "name": {
+      "nominative": "St. Grégoire, Evêque d’Assos",
+      "short": "St. Grégoire"
+    }
+  },
+  "030502": {
+    "name": {
+      "nominative": "St. Archélaos et ses 152 compagnons",
+      "short": "St. Archélaos"
+    }
+  },
+  "030503": {
+    "name": {
+      "nominative": "St. Marc d’Athènes",
+      "short": "St. Marc d’Athènes"
+    }
+  },
+  "030504": {
+    "name": {
+      "nominative": "St. Jean le Bulgare",
+      "short": "St. Jean"
+    }
+  },
+  "03050497": {
+    "name": {
+      "nominative": "Sts. Adrien de Pochekhonie et Léonide",
+      "short": "Sts. Adrien"
+    }
+  },
+  "030507": {
+    "name": {
+      "nominative": "St. Nicolas Velimirovitch,  Evêque de Jitcha et d’Ochrid, le  « Chrysostome serbe »",
+      "short": "St. Nicolas"
+    }
+  },
+  "030509": {
+    "name": {
+      "nominative": "St. Virgile, Archevêque d’Arles",
+      "short": "St. Virgile"
+    }
+  },
+  "030511": {
+    "name": {
+      "nominative": "St. Parthénios de Didymoteichon",
+      "short": "St. Parthénios"
+    }
+  },
+  "030512": {
+    "name": {
+      "nominative": "St. Georges de Rapsanée",
+      "short": "St. Georges"
+    }
+  },
+  "03060097": {
+    "name": {
+      "nominative": "St. Maxime",
+      "short": "St. Maxime"
+    }
+  },
+  "030601": {
+    "name": {
+      "nominative": "St. Fridolin de Seckingen",
+      "short": "St. Fridolin"
+    }
+  },
+  "03061100": {
+    "name": {
+      "nominative": "St. Euphrosynos",
+      "short": "St. Euphrosynos"
+    }
+  },
+  "03061200": {
+    "name": {
+      "nominative": "Sts. Julien et Eubule",
+      "short": "Sts. Julien"
+    }
+  },
+  "03061300": {
+    "name": {
+      "nominative": "St. Arcade",
+      "short": "St. Arcade"
+    }
+  },
+  "030703": {
+    "name": {
+      "nominative": "St. Ephrem, Patriarche d’Antioche",
+      "short": "St. Ephrem"
+    }
+  },
+  "030706": {
+    "name": {
+      "nominative": "St. Laurent, fondateur du monastère de la Mère de Dieu ’Phanéroménie’ à Salamine",
+      "short": "St. Laurent"
+    }
+  },
+  "03071100": {
+    "name": {
+      "nominative": "Sts. Arcade et Nestor, Evêques de Trimithonte",
+      "short": "Sts. Arcade"
+    }
+  },
+  "030802": {
+    "name": {
+      "nominative": "St. Dométios",
+      "short": "St. Dométios"
+    }
+  },
+  "030804": {
+    "name": {
+      "nominative": "St. Paul le Confesseur, Evêque de Plousias",
+      "short": "St. Paul"
+    }
+  },
+  "03081100": {
+    "name": {
+      "nominative": "St. Dion",
+      "short": "St. Dion"
+    }
+  },
+  "030903": {
+    "name": {
+      "nominative": "St. Pacien, Evêque de Barcelone",
+      "short": "St. Pacien"
+    }
+  },
+  "031001": {
+    "name": {
+      "nominative": "St. Dimitri de Moscou",
+      "short": "St. Dimitri"
+    },
+    "rank": 3
+  },
+  "03100197": {
+    "name": {
+      "nominative": "St. Michel d’Agrapha",
+      "short": "St. Michel d’Agrapha"
+    }
+  },
+  "031004": {
+    "name": {
+      "nominative": "St. Attale de Bobbio",
+      "short": "St. Attale"
+    }
+  },
+  "03101100": {
+    "name": {
+      "nominative": "St. Marcien",
+      "short": "St. Marcien"
+    }
+  },
+  "031103": {
+    "name": {
+      "nominative": "St. Georges le Sinaïte",
+      "short": "St. Georges"
+    }
+  },
+  "031104": {
+    "name": {
+      "nominative": "St. Alexis de la Skite Goloseievski à Kiev",
+      "short": "St. Alexis"
+    }
+  },
+  "031105": {
+    "name": {
+      "nominative": "St. Euloge de Cordoue",
+      "short": "St. Euloge"
+    }
+  },
+  "031106": {
+    "name": {
+      "nominative": "Sts. Trophime et Thalle",
+      "short": "Sts. Trophime"
+    }
+  },
+  "031107": {
+    "name": {
+      "nominative": "St. Georges le Nouveau le Thaumaturge",
+      "short": "St. Georges"
+    }
+  },
+  "031108": {
+    "name": {
+      "nominative": "Ste. Théodora, reine de l’Epire",
+      "short": "Ste. Théodora"
+    }
+  },
+  "031203": {
+    "name": {
+      "nominative": "St. Nicodème de Mammola en Calabre",
+      "short": "St. Nicodème"
+    }
+  },
+  "031204": {
+    "name": {
+      "nominative": "St. Paul, Evêque de Léon",
+      "short": "St. Paul"
+    }
+  },
+  "031304": {
+    "name": {
+      "nominative": "St. Publius, Evêque d’Athènes",
+      "short": "St. Publius"
+    }
+  },
+  "031401": {
+    "name": {
+      "nominative": "St. Théognoste, Métropolite de Kiev, Vladimir et toute la Russie",
+      "short": "St. Théognoste"
+    }
+  },
+  "03140197": {
+    "name": {
+      "nominative": "St. Lubin de Chartres",
+      "short": "St. Lubin"
+    }
+  },
+  "03140297": {
+    "name": {
+      "nominative": "St. Euperge de Fréjus",
+      "short": "St. Euperge"
+    }
+  },
+  "031502": {
+    "name": {
+      "nominative": "St. Manuel le Crétois",
+      "short": "St. Manuel"
+    }
+  },
+  "031503": {
+    "name": {
+      "nominative": "St. Nicandre de Gorodno",
+      "short": "St. Nicandre"
+    }
+  },
+  "031600": {
+    "name": {
+      "nominative": "St. Christodule le Thaumaturge, fondateur du Monastère de St. Jean le Théologien à Patmos",
+      "short": "St. Christodule"
+    }
+  },
+  "031601": {
+    "name": {
+      "nominative": "St. Malachie",
+      "short": "St. Malachie"
+    }
+  },
+  "03161100": {
+    "name": {
+      "nominative": "St. Jean du Monastère des Roufinianes",
+      "short": "St. Jean"
+    }
+  },
+  "03161200": {
+    "name": {
+      "nominative": "St. Romain de Parion",
+      "short": "St. Romain"
+    }
+  },
+  "03161300": {
+    "name": {
+      "nominative": "St. Aninas le Thaumaturge",
+      "short": "St. Aninas"
+    }
+  },
+  "031702": {
+    "name": {
+      "nominative": "St. Paul",
+      "short": "St. Paul"
+    }
+  },
+  "031703": {
+    "name": {
+      "nominative": "St. Patrick, Illuminateur de l’Irlande",
+      "short": "St. Patrick"
+    }
+  },
+  "031708": {
+    "name": {
+      "nominative": "St. Théostéricte le Confesseur, Higoumène du Monastère du Pélécète",
+      "short": "St. Théostéricte"
+    }
+  },
+  "032001": {
+    "name": {
+      "nominative": "St. Myron le Crétois",
+      "short": "St. Myron"
+    }
+  },
+  "032002": {
+    "name": {
+      "nominative": "St. Cuthbert, Evêque de Lindisfarne",
+      "short": "St. Cuthbert"
+    }
+  },
+  "03201100": {
+    "name": {
+      "nominative": "St. Rodien",
+      "short": "St. Rodien"
+    }
+  },
+  "03201200": {
+    "name": {
+      "nominative": "St. Akylas le Prefet",
+      "short": "St. Akylas"
+    }
+  },
+  "03201300": {
+    "name": {
+      "nominative": "St. Lollion",
+      "short": "St. Lollion"
+    }
+  },
+  "03201400": {
+    "name": {
+      "nominative": "St. Emmanuel",
+      "short": "St. Emmanuel"
+    }
+  },
+  "032101": {
+    "name": {
+      "nominative": "St. Sérapion le Sidonite",
+      "short": "St. Sérapion"
+    }
+  },
+  "032102": {
+    "name": {
+      "nominative": "St. Sérapion, Evêque de Thmuis en Egypte",
+      "short": "St. Sérapion"
+    }
+  },
+  "032103": {
+    "name": {
+      "nominative": "St. Lupicin de Lauconne",
+      "short": "St. Lupicin"
+    }
+  },
+  "032104": {
+    "name": {
+      "nominative": "Sts. Philémon et Domnin",
+      "short": "Sts. Philémon"
+    }
+  },
+  "032200": {
+    "name": {
+      "nominative": "Stes Callinique et Basilisse",
+      "short": "Stes Callinique"
+    }
+  },
+  "03220097": {
+    "name": {
+      "nominative": "Ste. Drosis d’Antioche",
+      "short": "Ste. Drosis d’Antioche"
+    }
+  },
+  "032202": {
+    "name": {
+      "nominative": "St. Euthyme l’Athonite",
+      "short": "St. Euthyme l’Athonite"
+    }
+  },
+  "032203": {
+    "name": {
+      "nominative": "St. Paul de Narbonne",
+      "short": "St. Paul"
+    }
+  },
+  "03220397": {
+    "name": {
+      "nominative": "St. Ruf, Fondateur de l’Eglise d’Avignon",
+      "short": "St. Ruf"
+    }
+  },
+  "032302": {
+    "name": {
+      "nominative": "St. Dométios de Phrygie",
+      "short": "St. Dométios"
+    }
+  },
+  "032303": {
+    "name": {
+      "nominative": "St. Luc de Mytilène",
+      "short": "St. Luc"
+    }
+  },
+  "032304": {
+    "name": {
+      "nominative": "St. Pachome de Nerekhta",
+      "short": "St. Pachome"
+    }
+  },
+  "032400": {
+    "name": {
+      "nominative": "Le prefête de l’Annonciation de la Mère de Dieu",
+      "short": "le prefête"
+    }
+  },
+  "032402": {
+    "name": {
+      "nominative": "St. Parthénios, Patriarche de Contantinople",
+      "short": "St. Parthénios"
+    }
+  },
+  "032406": {
+    "name": {
+      "nominative": "St. Martin de Thèbes",
+      "short": "St. Martin"
+    }
+  },
+  "032503": {
+    "name": {
+      "nominative": "Stes Pélagie et Théodosie",
+      "short": "Stes Pélagie"
+    }
+  },
+  "032504": {
+    "name": {
+      "nominative": "St. Senouphios le Sémiophore",
+      "short": "St. Senouphios"
+    }
+  },
+  "032505": {
+    "name": {
+      "nominative": "St. Parthène de Kiev",
+      "short": "St. Parthène"
+    }
+  },
+  "032600": {
+    "name": {
+      "nominative": "L’Apodose de l’Annonciation",
+      "short": "l’Apodose"
+    }
+  },
+  "032602": {
+    "name": {
+      "nominative": "Sts. Codrat, Théodose, Emmanuel et 40 autres Martyrs",
+      "short": "Sts. Codrat"
+    }
+  },
+  "03260297": {
+    "name": {
+      "nominative": "St. Abraham du Mont Latros",
+      "short": "St. Abraham"
+    }
+  },
+  "032603": {
+    "name": {
+      "nominative": "St. Etienne de Triglia le Confesseur",
+      "short": "St. Etienne"
+    }
+  },
+  "03260397": {
+    "name": {
+      "nominative": "St. Nicéphore, Evêque de Milet",
+      "short": "St. Nicéphore"
+    }
+  },
+  "032700": {
+    "name": {
+      "nominative": "St. Cyrique d’Apros",
+      "short": "St. Cyrique d’Apros"
+    }
+  },
+  "032701": {
+    "name": {
+      "nominative": "St. Hanani, Prophète",
+      "short": "St. Hanani, Prophète"
+    }
+  },
+  "032702": {
+    "name": {
+      "nominative": "St. Paul, Evêque de Corinthe",
+      "short": "St. Paul"
+    }
+  },
+  "03270597": {
+    "name": {
+      "nominative": "St. Jean de Lycopolis",
+      "short": "St. Jean"
+    }
+  },
+  "03270697": {
+    "name": {
+      "nominative": "St. Matthieu de Beauvais",
+      "short": "St. Matthieu"
+    }
+  },
+  "03271100": {
+    "name": {
+      "nominative": "St. Philet le sénateur, Lydie sa femme et ses compagnons",
+      "short": "St. Philet"
+    }
+  },
+  "03271200": {
+    "name": {
+      "nominative": "St. Eutyche, Evêque",
+      "short": "St. Eutyche, Evêque"
+    }
+  },
+  "03280397": {
+    "name": {
+      "nominative": "Ste. Mère Gwendoline de Niedermunster",
+      "short": "Ste. Mère"
+    }
+  },
+  "032804": {
+    "name": {
+      "nominative": "St. Hésichius de Jérusalem",
+      "short": "St. Hésichius"
+    }
+  },
+  "032805": {
+    "name": {
+      "nominative": "St. Denys le Miséricordieux, Evêque de Larissa et fondateur du Monastère de Saint Nicolas dit l’Anapavsas aux Météores",
+      "short": "St. Denys"
+    }
+  },
+  "03280596": {
+    "name": {
+      "nominative": "St. Hérodion , Apôtre (commémoré le 8 avril avec ses compagnons)",
+      "short": "St. Hérodion"
+    }
+  },
+  "032902": {
+    "name": {
+      "nominative": "Sts. Jonas, Barachise et leurs compagnons",
+      "short": "Sts. Jonas"
+    }
+  },
+  "032903": {
+    "name": {
+      "nominative": "St. Diadoque, Evêque de Photicée en Epire",
+      "short": "St. Diadoque"
+    }
+  },
+  "032904": {
+    "name": {
+      "nominative": "St. Eustaise de Luxeuil",
+      "short": "St. Eustaise"
+    }
+  },
+  "033000": {
+    "name": {
+      "nominative": "St. Jean, Patriarche de Jérusalem",
+      "short": "St. Jean"
+    }
+  },
+  "033001": {
+    "name": {
+      "nominative": "St. Zacharie, Evêque de Corinthe",
+      "short": "St. Zacharie"
+    }
+  },
+  "033002": {
+    "name": {
+      "nominative": "St. Jean qui pratiqua l’ascèse dans un puits",
+      "short": "St. Jean"
+    }
+  },
+  "03300397": {
+    "name": {
+      "nominative": "St. Rieul d’Arles",
+      "short": "St. Rieul d’Arles"
+    }
+  },
+  "033102": {
+    "name": {
+      "nominative": "St. Acace le Confesseur",
+      "short": "St. Acace"
+    }
+  },
+  "03311100": {
+    "name": {
+      "nominative": "St. Ménandre",
+      "short": "St. Ménandre"
+    }
+  },
+  "03311200": {
+    "name": {
+      "nominative": "St. Blaise d’Amorium",
+      "short": "St. Blaise d’Amorium"
+    }
+  },
+  "03311300": {
+    "name": {
+      "nominative": "St. Etienne le thaumaturge",
+      "short": "St. Etienne"
+    }
+  },
+  "03314593": {
+    "name": {
+      "nominative": "St. Euphrosynus de Pskov",
+      "short": "St. Euphrosynus"
+    }
+  }
+}

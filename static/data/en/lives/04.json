@@ -1,0 +1,602 @@
+{
+  "040100": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Sergey († 1938)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "040101": {
+    "name": {
+      "nominative": "Prophet Akhaz",
+      "short": "Prophet Akhaz"
+    }
+  },
+  "040102": {
+    "name": {
+      "nominative": "Holy Schema-bishop Macarius, the Confessor († 1944)",
+      "short": "Holy Schema-bishop"
+    }
+  },
+  "04010299": {
+    "name": {
+      "nominative": "Venerable Procopius of Sasaba",
+      "short": "Venerable Procopius"
+    }
+  },
+  "040200": {
+    "name": {
+      "nominative": "Venerable Gregory of Nicomedia",
+      "short": "Venerable Gregory"
+    }
+  },
+  "040300": {
+    "name": {
+      "nominative": "Martyrs Euagrius, Benign, Christos, Arestus, Kinnudius, Ruthus, Patric, and Zosimas",
+      "short": "Martyrs Euagrius"
+    }
+  },
+  "040301": {
+    "name": {
+      "nominative": "New Martyr Paul",
+      "short": "New Martyr Paul"
+    }
+  },
+  "040302": {
+    "name": {
+      "nominative": "Venerable Necratius of Bezhetsk",
+      "short": "Venerable Necratius"
+    }
+  },
+  "040400": {
+    "name": {
+      "nominative": "Venerable New Martyrs Benjamin and Niciphorus († 1928)",
+      "short": "Venerable New"
+    }
+  },
+  "040401": {
+    "name": {
+      "nominative": "New Hieromartyr Nicholas, Bishop of Velsk, Venerable Martyr Mary († 1932)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "040402": {
+    "name": {
+      "nominative": "New Martyr John († 1943)",
+      "short": "New Martyr"
+    }
+  },
+  "040403": {
+    "name": {
+      "nominative": "New Hieromartyr Nikita of Albania",
+      "short": "New Hieromartyr"
+    }
+  },
+  "040404": {
+    "name": {
+      "nominative": "Venerable Theonas, Metropolitan of Thessaloniki",
+      "short": "Venerable Theonas"
+    }
+  },
+  "040405": {
+    "name": {
+      "nominative": "Icon of the Mother of God “Gerondissa”",
+      "short": "Icon of"
+    }
+  },
+  "040500": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Alexis († 1930)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "040501": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Nicholas († 1931)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "040502": {
+    "name": {
+      "nominative": "Venerable Theonas, Simeon, and  Phorbinus of Egypt (4<sup>th</sup> C)",
+      "short": "Venerable Theonas"
+    }
+  },
+  "040600": {
+    "name": {
+      "nominative": "Holy 120 Martyrs of Persia († 344-347)",
+      "short": "Holy 120"
+    }
+  },
+  "040603": {
+    "name": {
+      "nominative": "Venerable Gregory of Mt Athos",
+      "short": "Venerable Gregory"
+    }
+  },
+  "040700": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Arcadius († 1933)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "040701": {
+    "name": {
+      "nominative": "Venerable New Martyr Eudocia († 1939)",
+      "short": "Venerable New"
+    }
+  },
+  "040702": {
+    "name": {
+      "nominative": "Venerable Nilus of Sorsk († 1508)",
+      "short": "Venerable Nilus"
+    }
+  },
+  "040703": {
+    "name": {
+      "nominative": "Venerable Leucius of Volokolamsk",
+      "short": "Venerable Leucius"
+    }
+  },
+  "040800": {
+    "name": {
+      "nominative": "Holy Hierarch Niphon, Bishop of Novgorod († 1156)",
+      "short": "Holy Hierarch"
+    }
+  },
+  "040801": {
+    "name": {
+      "nominative": "New Martyr John",
+      "short": "New Martyr John"
+    }
+  },
+  "040900": {
+    "name": {
+      "nominative": "New Martyr Gabriel († 1942)",
+      "short": "New Martyr"
+    }
+  },
+  "040901": {
+    "name": {
+      "nominative": "Holy Hierarch Akakios, Bishop of Amida",
+      "short": "Holy Hierarch"
+    }
+  },
+  "041000": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Phlegon († 1938)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "041001": {
+    "name": {
+      "nominative": "New Martyr Demetrius († 1942)",
+      "short": "New Martyr"
+    }
+  },
+  "041002": {
+    "name": {
+      "nominative": "Prophetess Olda",
+      "short": "Prophetess Olda"
+    }
+  },
+  "041003": {
+    "name": {
+      "nominative": "New Martyr Dimus",
+      "short": "New Martyr Dimus"
+    }
+  },
+  "041100": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Nicholas († 1938)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "041101": {
+    "name": {
+      "nominative": "Holy Hierarch Philip, Bishop of Gortina",
+      "short": "Holy Hierarch"
+    }
+  },
+  "041102": {
+    "name": {
+      "nominative": "Hieromartyr Damian, Bishop of Thessalonica",
+      "short": "Hieromartyr Damian"
+    }
+  },
+  "04111200": {
+    "name": {
+      "nominative": "Venerable Euthemius and Chariton of Sianzhemsk",
+      "short": "Venerable Euthemius"
+    }
+  },
+  "041200": {
+    "name": {
+      "nominative": "Venerable New Martyr Sergius († 1938)",
+      "short": "Venerable New"
+    }
+  },
+  "041201": {
+    "name": {
+      "nominative": "Holy Hierarch Sergius II, Patriarch of Constantinople",
+      "short": "Holy Hierarch"
+    }
+  },
+  "041202": {
+    "name": {
+      "nominative": "Venerable Acacius the Younger of Mt Athos († 1730)",
+      "short": "Venerable Acacius"
+    }
+  },
+  "041203": {
+    "name": {
+      "nominative": "Holy Hierarch Basil, Bishop of Ryazan",
+      "short": "Holy Hierarch"
+    }
+  },
+  "041204": {
+    "name": {
+      "nominative": "Translation of the Precious Belt of the Mother of God to Constantinople",
+      "short": "Translation of"
+    }
+  },
+  "041300": {
+    "name": {
+      "nominative": "Venerable New Martyr Martha († 1941)",
+      "short": "Venerable New"
+    }
+  },
+  "041301": {
+    "name": {
+      "nominative": "New Martyr Dimitry of the Peloponeses",
+      "short": "New Martyr"
+    }
+  },
+  "041400": {
+    "name": {
+      "nominative": "St Alexander the New Hieroconfessor († 1941)",
+      "short": "St Alexander"
+    }
+  },
+  "041401": {
+    "name": {
+      "nominative": "Venerable Christopher the Sabbaite",
+      "short": "Venerable Christopher"
+    }
+  },
+  "041500": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Alexander († 1930)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "041501": {
+    "name": {
+      "nominative": "Holy Hierarch Leonidus, Bishop of Athens",
+      "short": "Holy Hierarch"
+    }
+  },
+  "041502": {
+    "name": {
+      "nominative": "Blessed Great Prince Mstislav-Theodore of Kiev",
+      "short": "Blessed Great"
+    }
+  },
+  "041600": {
+    "name": {
+      "nominative": "Martyr Irene of Greece († 258)",
+      "short": "Martyr Irene"
+    }
+  },
+  "041601": {
+    "name": {
+      "nominative": "New Martyr Michael",
+      "short": "New Martyr Michael"
+    }
+  },
+  "041602": {
+    "name": {
+      "nominative": "Venerable Princess Theodora-Bassa of Nizhny Novgorod",
+      "short": "Venerable Princess"
+    }
+  },
+  "041700": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Theodore († 1942)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "041701": {
+    "name": {
+      "nominative": "Venerable Paisius of Kiev, the Fool-for-Christ",
+      "short": "Venerable Paisius"
+    }
+  },
+  "041800": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Bessarion († 1918)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "041801": {
+    "name": {
+      "nominative": "New Venerable Martyr Tamara († 1942)",
+      "short": "New Venerable"
+    }
+  },
+  "041802": {
+    "name": {
+      "nominative": "Venerable Anthony, Euthymius, and Felix, Enlighteners of Karelia and Finland (15<sup>th</sup> C)",
+      "short": "Venerable Anthony"
+    }
+  },
+  "04180299": {
+    "name": {
+      "nominative": "Martyr Mappalycus",
+      "short": "Martyr Mappalycus"
+    }
+  },
+  "041900": {
+    "name": {
+      "nominative": "Venerable Simeon the Barefooted",
+      "short": "Venerable Simeon"
+    }
+  },
+  "041901": {
+    "name": {
+      "nominative": "Venerable Martyr Agathangelus of Esphigmenou on Mt Athos († 1818)",
+      "short": "Venerable Martyr"
+    }
+  },
+  "042000": {
+    "name": {
+      "nominative": "New Hieroconfessor Theodosius, bishop of Kolomensk († 1937)",
+      "short": "New Hieroconfessor"
+    }
+  },
+  "04200199": {
+    "name": {
+      "nominative": "Holy Hierarch Betranus, Bishop of Lesser Scythia",
+      "short": "Holy Hierarch"
+    }
+  },
+  "042100": {
+    "name": {
+      "nominative": "Finding of the relics of Venerable Theodore of Sanaxara († 1999)",
+      "short": "Finding of"
+    }
+  },
+  "042101": {
+    "name": {
+      "nominative": "Righteous Alexis of Bortsurman († 1848)",
+      "short": "Righteous Alexis"
+    }
+  },
+  "042102": {
+    "name": {
+      "nominative": "New Hieromartyr Priest John († 1918)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "042103": {
+    "name": {
+      "nominative": "New Hieroconfessor Priest Nicholas († 1933)",
+      "short": "New Hieroconfessor"
+    }
+  },
+  "042104": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Alexis († 1938)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "042105": {
+    "name": {
+      "nominative": "Martyr Alexandra",
+      "short": "Martyr Alexandra"
+    }
+  },
+  "042200": {
+    "name": {
+      "nominative": "Holy New Hieromartyr Priest Eustathius († 1918)",
+      "short": "HNew Hieromartyr"
+    }
+  },
+  "042201": {
+    "name": {
+      "nominative": "Martyr Demetrius († 1942)",
+      "short": "Martyr Demetrius († 1942)"
+    }
+  },
+  "042202": {
+    "name": {
+      "nominative": "New Hieromartyr Platon, Bishop of Banja Luka († 1941)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "042203": {
+    "name": {
+      "nominative": "Martyr Epipodus of Lyon",
+      "short": "Martyr Epipodus"
+    }
+  },
+  "042300": {
+    "name": {
+      "nominative": "New Hieromartyr Priest John († 1940)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "042301": {
+    "name": {
+      "nominative": "Martyr Glicerie the farmer, Athanasius the magus, Valerius, Donatus, and Therinus",
+      "short": "Martyr Glicerie"
+    }
+  },
+  "042302": {
+    "name": {
+      "nominative": "New Martyr George of Ptolemaida († 1752)",
+      "short": "New Martyr"
+    }
+  },
+  "042303": {
+    "name": {
+      "nominative": "New Martyr Lazarus of Bulgaria († 1802)",
+      "short": "New Martyr"
+    }
+  },
+  "042304": {
+    "name": {
+      "nominative": "Venerable George of Shenkura",
+      "short": "Venerable George"
+    }
+  },
+  "042400": {
+    "name": {
+      "nominative": "Martyr Sergius († 1938)",
+      "short": "Martyr Sergius († 1938)"
+    }
+  },
+  "042401": {
+    "name": {
+      "nominative": "New Hieromartyr Priest Branko of Serbia († 1941)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "042402": {
+    "name": {
+      "nominative": "Martyr Alexander of Lyon († 177)",
+      "short": "Martyr Alexander"
+    }
+  },
+  "042403": {
+    "name": {
+      "nominative": "New Martyr Nicholas of Magnesia († 1795)",
+      "short": "New Martyr"
+    }
+  },
+  "042404": {
+    "name": {
+      "nominative": "New Martyr George in Anatolia († 1796)",
+      "short": "New Martyr"
+    }
+  },
+  "042405": {
+    "name": {
+      "nominative": "New Martyr Ducas of Mitylene († 1564)",
+      "short": "New Martyr"
+    }
+  },
+  "042406": {
+    "name": {
+      "nominative": "Venerable Innocent the Presbyter on the Mount of Olives (4<sup>th</sup> C)",
+      "short": "Venerable Innocent"
+    }
+  },
+  "042500": {
+    "name": {
+      "nominative": "Venerable Basil Polianomerulsk († 1767) (Roman.)",
+      "short": "Venerable Basil"
+    }
+  },
+  "042501": {
+    "name": {
+      "nominative": "Holy Hierarch Macedonius, Patriarch of Constantinople († 516)",
+      "short": "Holy Hierarch"
+    }
+  },
+  "042502": {
+    "name": {
+      "nominative": "Holy Hierarch Aninanus, Bishop of Alexandria († 86)",
+      "short": "Holy Hierarch"
+    }
+  },
+  "042503": {
+    "name": {
+      "nominative": "Holy Hieromartyr Stephen, Bishop of Antioch († 479)",
+      "short": "Holy Hieromartyr"
+    }
+  },
+  "042600": {
+    "name": {
+      "nominative": "New Hieromartyr Priest John and his children Nicholas and Peter († 1918)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "042700": {
+    "name": {
+      "nominative": "New Hieromartyrs Priests Paul and John, and Martyrs Peter, Nicholas, Auxentius, Sergius, and Anastasia († 1922)",
+      "short": "New Hieromartyrs"
+    }
+  },
+  "042701": {
+    "name": {
+      "nominative": "Venerable Martyr Mary (1938)",
+      "short": "Venerable Martyr"
+    }
+  },
+  "042702": {
+    "name": {
+      "nominative": "New Hieromartyr Priest John († 1941)",
+      "short": "New Hieromartyr"
+    }
+  },
+  "042703": {
+    "name": {
+      "nominative": "Venerable John, Abbot of Cathares Monastery at Constantinople",
+      "short": "Venerable John"
+    }
+  },
+  "042800": {
+    "name": {
+      "nominative": "New Martyr Anna († 1939)",
+      "short": "New Martyr"
+    }
+  },
+  "042801": {
+    "name": {
+      "nominative": "Venerable Auxibius, bishop of Soli in Cyprus († 102)",
+      "short": "Venerable Auxibius"
+    }
+  },
+  "042802": {
+    "name": {
+      "nominative": "Venerable Cyriacus of Kargopol († 1462)",
+      "short": "Venerable Cyriacus"
+    }
+  },
+  "042900": {
+    "name": {
+      "nominative": "Venerable Nectarius of Optina († 1928)",
+      "short": "Venerable Nectarius"
+    }
+  },
+  "042901": {
+    "name": {
+      "nominative": "Holy Martyrs of Lazeti (17<sup>th</sup>-18<sup>th</sup> C)(Georg.)",
+      "short": "Holy Martyrs"
+    }
+  },
+  "042902": {
+    "name": {
+      "nominative": "Venerable Nikita, Abbot of Synada (9<sup>th</sup> C)",
+      "short": "Venerable Nikita"
+    }
+  },
+  "043000": {
+    "name": {
+      "nominative": "Icon of the Mother of God “Strastnaya” (of the Passion)",
+      "short": "Icon of"
+    }
+  },
+  "043001": {
+    "name": {
+      "nominative": "Venerable Clement, the Composer of Hymns (9<sup>th</sup> C)",
+      "short": "Venerable Clement"
+    }
+  },
+  "043002": {
+    "name": {
+      "nominative": "New Martyr Argyra († 1725)",
+      "short": "New Martyr"
+    }
+  }
+}
