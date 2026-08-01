@@ -57,8 +57,25 @@ export class MenaionView {
     this.container.innerHTML = `
       <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
         <div class="flex flex-wrap gap-2 mb-4">
-          <button class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1 border border-gold bg-gold/10 text-navy font-bold">${this.t.nav.menaion}</button>
-          <button class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1 border border-gold/20 bg-white/50 text-navy hover:border-gold/50" data-view="triodion">${this.t.nav.triodion}</button>
+          ${[
+            { id: 'prayer', view: 'prayer', label: this.t.nav.prayer },
+            { id: 'akathists', view: 'akathists', label: this.t.nav.akathists },
+            { id: 'horologion', view: 'horologion', label: this.t.nav.horologion },
+            { id: 'sbornik', view: 'sbornik', label: this.t.nav.sbornik },
+            { id: 'parimii', view: 'parimii', label: this.t.nav.parimii },
+            { id: 'paraclete', view: 'paraclete', label: this.t.nav.paraclete },
+            { id: 'irmologion', view: 'irmologion', label: this.t.nav.irmologion },
+            { id: 'menaion', view: 'menaion', label: this.t.nav.menaion },
+            { id: 'triodion', view: 'triodion', label: this.t.nav.triodion },
+          ].map(item => `
+            <button
+              class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1
+                ${item.id === 'menaion'
+                  ? 'border border-gold bg-gold/10 text-navy font-bold'
+                  : 'border border-gold/20 bg-white/50 text-navy hover:border-gold/50'}"
+              data-view="${item.view}"
+            >${item.label}</button>
+          `).join('')}
         </div>
         <div id="menaion-calendar"></div>
         <div id="menaion-content" class="bg-white/50 border border-gold/20 rounded-lg p-6 min-h-[300px]">

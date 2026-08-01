@@ -208,6 +208,7 @@ export class PrayerView {
       { id: 'parimii', view: 'parimii', label: this.t.nav.parimii },
       { id: 'paraclete', view: 'paraclete', label: this.t.nav.paraclete },
       { id: 'irmologion', view: 'irmologion', label: this.t.nav.irmologion },
+      { id: 'menaion', view: 'menaion', label: this.t.nav.menaion },
       { id: 'triodion', view: 'triodion', label: this.t.nav.triodion },
     ];
 
