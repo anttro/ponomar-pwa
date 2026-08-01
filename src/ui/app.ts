@@ -118,7 +118,7 @@ export class App {
     this.container.innerHTML = `
       <div class="app-container min-h-screen flex flex-col">
         <header class="bg-navy text-parchment p-3 flex items-center shadow-md">
-          <nav class="flex flex-wrap gap-4 text-sm justify-end">
+          <nav class="flex flex-wrap gap-4 text-sm justify-end w-full">
             <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
             <details class="nav-group relative" data-nav="library">
               <summary class="cursor-pointer list-none hover:text-gold transition-colors flex items-center gap-1">${t.nav.library} <span class="text-xs">▾</span></summary>
