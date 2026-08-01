@@ -10,7 +10,9 @@ import type { FastingPeriod } from '../core/fasting';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { DataCache } from '../core/data-cache';
 import { fontClass } from './settings-view';
+import { loadSettings } from './settings-view';
 import { ServiceView } from './service-view';
+import { calcSolarTimes, getMoonInfo, getMoonPhaseName } from '../core/astronomy';
 
 let cachedFastingPeriods: FastingPeriod[] | null = null;
 const lifeCache = new Map<string, LifeData | null>();
@@ -596,6 +598,10 @@ export class CalendarView {
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
+            <div id="astro-panel" class="mb-4 p-2 bg-white/50 border border-gold/20 rounded-lg text-sm text-navy">
+              <span class="text-navy-light italic">${this.t.loading}</span>
+            </div>
+
             <div id="services-panel" class="mb-4 border-t border-gold/20 pt-3"></div>
           </div>
         </div>
@@ -925,6 +931,35 @@ export class CalendarView {
           <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
           <div class="space-y-1">${groupsHtml}</div>
         `;
+      }
+    }
+
+    // Astro panel: sunrise/sunset + moon phase
+    const astroPanel = document.getElementById('astro-panel');
+    if (astroPanel) {
+      try {
+        const settings = loadSettings();
+        const lat = settings.latitude;
+        const lng = settings.longitude;
+        if (lat !== undefined && lng !== undefined && !isNaN(lat) && !isNaN(lng)) {
+          const solar = calcSolarTimes(this.currentDate, lat, lng, 3);
+          const moon = getMoonInfo(this.currentDate);
+          const moonName = getMoonPhaseName(moon.phase, this.language);
+          astroPanel.innerHTML = `
+            <span class="font-bold text-navy">☀ ${this.t.calendar.sunrise}:</span>
+            <span class="text-navy">${solar?.sunrise ?? '—'}</span>
+            <span class="mx-2 text-gold/40">|</span>
+            <span class="font-bold text-navy">${this.t.calendar.sunset}:</span>
+            <span class="text-navy">${solar?.sunset ?? '—'}</span>
+            <span class="mx-2 text-gold/40">|</span>
+            <span class="font-bold text-navy">${this.t.calendar.moonPhase}:</span>
+            <span class="text-navy">${moon.emoji} ${moonName} (${moon.illumination}%)</span>
+          `;
+        } else {
+          astroPanel.innerHTML = `<span class="text-navy-light italic">${this.t.calendar.noLocation}</span>`;
+        }
+      } catch {
+        astroPanel.innerHTML = `<span class="text-navy-light italic">${this.t.loading}</span>`;
       }
     }
 

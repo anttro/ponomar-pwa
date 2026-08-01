@@ -33,6 +33,8 @@ interface Settings {
   verseNewLine: boolean;
   calendarType: 'julian' | 'gregorian';
   serviceRole: 'priest' | 'reader' | 'auto';
+  latitude: number;
+  longitude: number;
 }
 
 const DEFAULT_SETTINGS: Settings = {
@@ -44,6 +46,8 @@ const DEFAULT_SETTINGS: Settings = {
   verseNewLine: false,
   calendarType: 'julian',
   serviceRole: 'priest',
+  latitude: 55.7558,
+  longitude: 37.6176,
 };
 
 function defaultBibleForLanguage(lang: string): string {
@@ -172,6 +176,29 @@ export class SettingsView {
                 class="accent-gold">
               <span class="text-sm text-navy">${t.settings.gregorian}</span>
             </label>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-red mb-3">${t.settings.locationTitle}</h3>
+          <div class="flex gap-2 mb-2">
+            <div class="flex-1">
+              <label class="block text-xs font-bold text-navy mb-1">${t.settings.latitude}</label>
+              <input type="number" id="latitude" step="0.0001" value="${this.settings.latitude}"
+                class="w-full border border-gold/30 rounded p-2 bg-white text-navy text-sm">
+            </div>
+            <div class="flex-1">
+              <label class="block text-xs font-bold text-navy mb-1">${t.settings.longitude}</label>
+              <input type="number" id="longitude" step="0.0001" value="${this.settings.longitude}"
+                class="w-full border border-gold/30 rounded p-2 bg-white text-navy text-sm">
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="request-location" class="bg-navy text-parchment rounded px-3 py-1 text-sm hover:bg-navy-light transition-colors">
+              ${t.settings.requestLocation}
+            </button>
+            <span class="text-xs text-navy-light">${t.settings.locationNote}</span>
           </div>
         </div>
 
@@ -350,6 +377,35 @@ export class SettingsView {
         await prompt.userChoice;
         (window as any).__deferredPrompt = null;
         document.getElementById('install-pwa')?.remove();
+      }
+    });
+
+    // Location
+    const saveLatLng = () => {
+      const lat = parseFloat((document.getElementById('latitude') as HTMLInputElement)?.value);
+      const lng = parseFloat((document.getElementById('longitude') as HTMLInputElement)?.value);
+      if (!isNaN(lat) && !isNaN(lng)) {
+        this.settings.latitude = lat;
+        this.settings.longitude = lng;
+        saveSettings(this.settings);
+      }
+    };
+    document.getElementById('latitude')?.addEventListener('change', saveLatLng);
+    document.getElementById('longitude')?.addEventListener('change', saveLatLng);
+    document.getElementById('request-location')?.addEventListener('click', () => {
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            this.settings.latitude = Math.round(pos.coords.latitude * 10000) / 10000;
+            this.settings.longitude = Math.round(pos.coords.longitude * 10000) / 10000;
+            saveSettings(this.settings);
+            (document.getElementById('latitude') as HTMLInputElement).value = String(this.settings.latitude);
+            (document.getElementById('longitude') as HTMLInputElement).value = String(this.settings.longitude);
+          },
+          () => alert('Could not get location. Make sure location access is allowed.')
+        );
+      } else {
+        alert('Geolocation is not available in this browser.');
       }
     });
 

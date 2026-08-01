@@ -240,6 +240,10 @@ export interface Translations {
     yearOfWorld: string;
     fromYear: string;
     fromAdam: string;
+    sunrise: string;
+    sunset: string;
+    moonPhase: string;
+    noLocation: string;
   };
 
   // Services
@@ -495,6 +499,11 @@ export interface Translations {
     offlineDone: string;
     offlineSelectLang: string;
     offlineCleared: string;
+    locationTitle: string;
+    latitude: string;
+    longitude: string;
+    requestLocation: string;
+    locationNote: string;
   };
 
   // Common
@@ -779,6 +788,10 @@ const translations: Record<LanguageCode, Translations> = {
       yearOfWorld: 'year of the world',
       fromYear: 'from Christ',
       fromAdam: 'from Adam',
+      sunrise: 'Sunrise',
+      sunset: 'Sunset',
+      moonPhase: 'Moon',
+      noLocation: 'Set location in Settings',
     },
 
     services: {
@@ -1031,6 +1044,11 @@ const translations: Record<LanguageCode, Translations> = {
       offlineDone: 'Done! Data cached for offline use.',
       offlineSelectLang: 'Please select at least one language.',
       offlineCleared: 'Cache cleared.',
+      locationTitle: 'Location',
+      latitude: 'Latitude',
+      longitude: 'Longitude',
+      requestLocation: 'Request location',
+      locationNote: 'Used for sunrise/sunset calculation',
     },
 
     common: {
@@ -1313,6 +1331,10 @@ const translations: Record<LanguageCode, Translations> = {
       yearOfWorld: 'год от сотворения мира',
       fromYear: 'от РХ',
       fromAdam: 'от Адама',
+      sunrise: 'Восход',
+      sunset: 'Закат',
+      moonPhase: 'Луна',
+      noLocation: 'Укажите местоположение в настройках',
     },
 
     services: {
@@ -1565,6 +1587,11 @@ const translations: Record<LanguageCode, Translations> = {
       offlineDone: 'Готово! Данные закэшированы для офлайн-использования.',
       offlineSelectLang: 'Пожалуйста, выберите хотя бы один язык.',
       offlineCleared: 'Кэш очищен.',
+      locationTitle: 'Местоположение',
+      latitude: 'Широта',
+      longitude: 'Долгота',
+      requestLocation: 'Запросить местоположение',
+      locationNote: 'Используется для расчёта восхода/заката',
     },
 
     common: {
@@ -1847,6 +1874,10 @@ const translations: Record<LanguageCode, Translations> = {
       yearOfWorld: 'лѣта отъ сотворенiя мiра',
       fromYear: 'от РХ',
       fromAdam: 'от Адама',
+      sunrise: 'Восходъ',
+      sunset: 'Закатъ',
+      moonPhase: 'Лꙋна̀',
+      noLocation: 'Оу҆кажі́те мѣстоположе́нїе въ настройкахъ',
     },
 
     services: {
@@ -2099,6 +2130,11 @@ const translations: Record<LanguageCode, Translations> = {
       offlineDone: 'Готово! Данныя закешированы для офлайн-потребленїя.',
       offlineSelectLang: 'Пожалуйста, изберите хотя бы единъ языкъ.',
       offlineCleared: 'Кешъ очищенъ.',
+      locationTitle: 'Мѣстоположе́нїе',
+      latitude: 'Широта̀',
+      longitude: 'Долгота̀',
+      requestLocation: 'Запроси́ти мѣстоположе́нїе',
+      locationNote: 'И҆спо́льзꙋетсѧ длѧ ра́счета восхо́да / зака́та',
     },
 
     common: {
