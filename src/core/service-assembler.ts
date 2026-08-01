@@ -421,7 +421,7 @@ export async function assembleService(
         flushGroup();
         const value = str(n.value);
         if (value) {
-          html += `<h3 class="mt-4 mb-1 font-bold text-center">${value}</h3>\n`;
+          html += `<h3 class="mt-4 mb-1 font-bold text-center text-red">${value}</h3>\n`;
         }
         break;
       }
