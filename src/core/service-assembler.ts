@@ -490,6 +490,26 @@ export async function assembleService(
         break;
       }
 
+      /** Convert Arabic number to Church Slavonic numeral (1–999). */
+      function arabicToSlavonic(num: number): string {
+        if (num < 1 || num > 999) return String(num);
+        const units = ['', 'а', 'в', 'г', 'д', 'є', 'ѕ', 'з', 'и', 'ѳ'];
+        const tens = ['', 'і', 'к', 'л', 'м', 'н', 'ѯ', 'ѻ', 'п', 'ч'];
+        const hundreds = ['', 'р', 'с', 'т', 'у', 'ф', 'х', 'ѱ', 'ѡ', 'ц'];
+        let s = '';
+        const h = Math.floor(num / 100);
+        const t = Math.floor(num / 10) % 10;
+        const u = num % 10;
+        if (h > 0) s += hundreds[h];
+        if (t === 1) {
+          s += (u > 0 ? units[u] : '') + 'і';
+        } else {
+          if (t > 0) s += tens[t];
+          if (u > 0) s += units[u];
+        }
+        return s + '\u0483';
+      }
+
       case 'BIBLE': {
         const whoRaw = str(n.who);
         const who = whoRaw !== undefined ? localizeWho(whoRaw, ctx) : '';
@@ -514,7 +534,16 @@ export async function assembleService(
         let header = '';
         if (n.header && !str(n.twostars)) {
           const bookName = getHeaderName(book, ctx.lang);
-          header = passage ? `${bookName} ${passage}` : bookName;
+          if (passage && ctx.lang === 'cu' && book === 'Psalm') {
+            const chapterNum = parseInt(passage, 10);
+            if (!isNaN(chapterNum)) {
+              header = `${bookName} ${arabicToSlavonic(chapterNum)}`;
+            } else {
+              header = `${bookName} ${passage}`;
+            }
+          } else {
+            header = passage ? `${bookName} ${passage}` : bookName;
+          }
         }
 
         let text = await ctx.fetchBibleText(book, passage, false, verseNewLine);
