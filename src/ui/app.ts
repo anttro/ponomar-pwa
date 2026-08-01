@@ -152,15 +152,6 @@ export class App {
       const isActive = v === this.currentView;
       el.classList.toggle('text-gold', isActive);
       el.classList.toggle('font-bold', isActive);
-      if (isActive) {
-        let parent = el.parentElement;
-        while (parent) {
-          if (parent.tagName === 'DETAILS') {
-            parent.setAttribute('open', '');
-          }
-          parent = parent.parentElement;
-        }
-      }
     });
 
     // Re-read settings fresh on each navigation
