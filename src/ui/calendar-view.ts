@@ -953,7 +953,7 @@ export class CalendarView {
             <span class="text-navy">${solar?.sunset ?? '—'}</span>
             <span class="mx-2 text-gold/40">|</span>
             <span class="font-bold text-navy">${this.t.calendar.moonPhase}:</span>
-            <span class="text-navy">${moon.emoji} ${moonName} ${moon.trend === 'waxing' ? '↗' : '↘'} (day ${moon.moonDay}, ${phaseToFraction(moon.phase)}, ${moon.illumination}%)</span>
+            <span class="text-navy">${moon.emoji} ${moonName} ${moon.trend === 'waxing' ? '↗' : '↘'} (${this.t.calendar.moonDay} ${moon.moonDay}, ${phaseToFraction(moon.phase)}, ${moon.illumination}%)</span>
           `;
         } else {
           astroPanel.innerHTML = `<span class="text-navy-light italic">${this.t.calendar.noLocation}</span>`;

@@ -244,6 +244,7 @@ export interface Translations {
     sunset: string;
     moonPhase: string;
     noLocation: string;
+    moonDay: string;
   };
 
   // Services
@@ -793,6 +794,7 @@ const translations: Record<LanguageCode, Translations> = {
       sunset: 'Sunset',
       moonPhase: 'Moon',
       noLocation: 'Set location in Settings',
+      moonDay: 'day',
     },
 
     services: {
@@ -1337,6 +1339,7 @@ const translations: Record<LanguageCode, Translations> = {
       sunset: 'Закат',
       moonPhase: 'Луна',
       noLocation: 'Укажите местоположение в настройках',
+      moonDay: 'день',
     },
 
     services: {
@@ -1881,6 +1884,7 @@ const translations: Record<LanguageCode, Translations> = {
       sunset: 'Закатъ',
       moonPhase: 'Лꙋна̀',
       noLocation: 'Оу҆кажі́те мѣстоположе́нїе въ настройкахъ',
+      moonDay: 'де́нь',
     },
 
     services: {
