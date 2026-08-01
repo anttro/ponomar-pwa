@@ -217,35 +217,22 @@ export class PrayerView {
     this.container.innerHTML = `
       <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
         <h2 class="text-2xl font-bold text-red mb-2">${title}</h2>
-        <p class="text-navy-light mb-6">${subtitle}</p>
-        <div class="grid gap-2 sm:grid-cols-2 mb-6">
+        <p class="text-navy-light mb-4">${subtitle}</p>
+        <select id="prayer-select" class="w-full border border-gold/20 bg-white/50 text-navy rounded-lg px-3 py-2 text-sm mb-6">
           ${sections.map(s => `
-            <button
-              class="prayer-section text-left px-4 py-3 rounded-lg border transition-colors
-                ${this.activeSection === s.id ? 'border-gold bg-gold/10 text-navy font-bold' : 'border-gold/20 bg-white/50 text-navy hover:border-gold/50'}"
-              data-section="${s.id}"
-            >
-              <div class="text-sm font-bold">${s.name}</div>
-              ${s.description ? `<div class="text-xs text-navy-light">${s.description}</div>` : ''}
-            </button>
+            <option value="${s.id}" ${this.activeSection === s.id ? 'selected' : ''}>${s.name}</option>
           `).join('')}
-        </div>
+        </select>
         <div id="prayer-content" class="bg-white/50 border border-gold/20 rounded-lg p-6 min-h-[300px]">
           <p class="text-navy-light italic">${this.t.prayer.selectSection}</p>
         </div>
       </div>
     `;
 
-    this.container.querySelectorAll('.prayer-section').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-section')!;
-        this.activeSection = id;
-        this.container.querySelectorAll('.prayer-section').forEach(b => {
-          const bid = b.getAttribute('data-section');
-          b.className = `prayer-section text-left px-4 py-3 rounded-lg border transition-colors ${bid === id ? 'border-gold bg-gold/10 text-navy font-bold' : 'border-gold/20 bg-white/50 text-navy hover:border-gold/50'}`;
-        });
-        this.loadSection(id);
-      });
+    document.getElementById('prayer-select')?.addEventListener('change', (e) => {
+      const id = (e.target as HTMLSelectElement).value;
+      this.activeSection = id;
+      this.loadSection(id);
     });
   }
 

@@ -1,6 +1,6 @@
 /**
  * Menaion view — browse the daily Menaion by month and day.
- * Two-step selector: month → day grid → section list.
+ * Calendar-style navigation with prev/next month arrows.
  */
 
 import { assembleService, type ServiceContext } from '../core/service-assembler';
@@ -13,6 +13,7 @@ export class MenaionView {
   private language: LanguageCode;
   private t: ReturnType<typeof getTranslations>;
   private index: Record<string, number> = {};
+  private currentMonth: number = 1;
 
   constructor(container: HTMLElement, language: LanguageCode) {
     this.container = container;
@@ -26,7 +27,20 @@ export class MenaionView {
   }
 
   private getMonthNames(): string[] {
-    return this.t.calendar.monthsGenitive;
+    const months = this.t.calendar.monthsGenitive;
+    // Some i18n month lists are genitive (used in date contexts).
+    // For labels we need nominative — derive from genitive or use indices.
+    const NOMINATIVE: Record<string, string> = {
+      'января': 'Январь', 'февраля': 'Февраль', 'марта': 'Март',
+      'апреля': 'Апрель', 'мая': 'Май', 'июня': 'Июнь',
+      'июля': 'Июль', 'августа': 'Август', 'сентября': 'Сентябрь',
+      'октября': 'Октябрь', 'ноября': 'Ноябрь', 'декабря': 'Декабрь',
+      'january': 'January', 'february': 'February', 'march': 'March',
+      'april': 'April', 'may': 'May', 'june': 'June',
+      'july': 'July', 'august': 'August', 'september': 'September',
+      'october': 'October', 'november': 'November', 'december': 'December',
+    };
+    return months.map(m => NOMINATIVE[m.toLowerCase()] || m);
   }
 
   async render() {
@@ -37,68 +51,75 @@ export class MenaionView {
       }
     } catch { /* empty */ }
 
-    const months = this.getMonthNames();
-    const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     const today = new Date();
-
-    // Count sections per month
-    const monthCounts: number[] = new Array(12).fill(0);
-    for (const [dk, n] of Object.entries(this.index)) {
-      const m = parseInt(dk.slice(0, 2), 10) - 1;
-      if (m >= 0 && m < 12) monthCounts[m] += n;
-    }
-
-    const monthHtml = months.map((m, i) => `
-      <button class="menaion-month px-3 py-1.5 text-sm rounded border transition-colors
-        border-gold/20 bg-white/50 text-navy hover:border-gold/50" data-month="${i + 1}">
-        ${m} <span class="text-xs text-navy-light">(${monthCounts[i]})</span>
-      </button>
-    `).join('');
+    this.currentMonth = today.getMonth() + 1;
 
     this.container.innerHTML = `
       <div class="p-6 max-w-4xl xl:max-w-6xl mx-auto">
         <h2 class="text-2xl font-bold text-red mb-2">${this.t.menaion.title}</h2>
-        <p class="text-navy-light mb-4">${months[0]}</p>
-        <div class="flex flex-wrap gap-1 mb-6">
-          ${monthHtml}
-        </div>
-        <div id="menaion-days" class="grid gap-1 sm:grid-cols-7 mb-6"></div>
+        <div id="menaion-calendar"></div>
         <div id="menaion-content" class="bg-white/50 border border-gold/20 rounded-lg p-6 min-h-[300px]">
           <p class="text-navy-light italic">${this.t.prayer.selectSection}</p>
         </div>
       </div>
     `;
 
-    this.container.querySelectorAll('.menaion-month').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const month = parseInt(btn.getAttribute('data-month')!, 10);
-        this.renderMonth(month, daysInMonth[month - 1]);
-      });
-    });
-
-    // Default: current month
-    this.renderMonth(today.getMonth() + 1, daysInMonth[today.getMonth()]);
+    this.renderCalendar(this.currentMonth);
   }
 
-  private renderMonth(month: number, maxDay: number) {
-    const daysEl = this.container.querySelector('#menaion-days');
-    if (!daysEl) return;
+  private renderCalendar(month: number) {
+    const calEl = this.container.querySelector('#menaion-calendar');
+    if (!calEl) return;
+
+    const months = this.getMonthNames();
+    const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    const maxDay = daysInMonth[month - 1];
     const mm = String(month).padStart(2, '0');
-    const days = [];
+
+    // First day of month (Julian) — approximate day-of-week
+    // Use a simple approach: Jan 1 Julian 2025 = Wednesday (3)
+    const firstDow = (month === 1 ? 3 : new Date(2025, month - 1, 1).getDay() + 1) % 7;
+
+    let daysHtml = '';
+    for (let i = 0; i < firstDow; i++) {
+      daysHtml += '<div></div>';
+    }
     for (let d = 1; d <= maxDay; d++) {
       const dd = String(d).padStart(2, '0');
       const key = `${mm}-${dd}`;
       const n = this.index[key];
-      days.push(`
-        <button class="menaion-day px-2 py-1 text-xs rounded border transition-colors
-          ${n ? 'border-gold/40 bg-gold/10 text-navy hover:border-gold' : 'border-gold/10 text-navy-light opacity-40 cursor-default'}"
+      daysHtml += `
+        <button class="px-1.5 py-0.5 text-xs rounded border transition-colors
+          ${n ? 'border-gold/40 bg-gold/10 text-navy hover:border-gold cursor-pointer' : 'border-transparent text-navy-light opacity-30 cursor-default'}"
           data-date="${key}" ${n ? '' : 'disabled'}>
-          ${d}${n ? ` <span class="text-[10px]">(${n})</span>` : ''}
+          ${d}
         </button>
-      `);
+      `;
     }
-    daysEl.innerHTML = days.join('');
-    this.container.querySelectorAll('.menaion-day:not([disabled])').forEach(btn => {
+
+    calEl.innerHTML = `
+      <div class="flex items-center justify-between mb-3">
+        <button id="menaion-prev" class="text-sm text-navy-light hover:text-navy px-2 py-1">◀</button>
+        <span class="text-base font-bold text-navy">${months[month - 1]}</span>
+        <button id="menaion-next" class="text-sm text-navy-light hover:text-navy px-2 py-1">▶</button>
+      </div>
+      <div class="grid gap-1 grid-cols-7 mb-4">
+        ${daysHtml}
+      </div>
+    `;
+
+    document.getElementById('menaion-prev')?.addEventListener('click', () => {
+      const prev = this.currentMonth <= 1 ? 12 : this.currentMonth - 1;
+      this.currentMonth = prev;
+      this.renderCalendar(prev);
+    });
+    document.getElementById('menaion-next')?.addEventListener('click', () => {
+      const next = this.currentMonth >= 12 ? 1 : this.currentMonth + 1;
+      this.currentMonth = next;
+      this.renderCalendar(next);
+    });
+
+    calEl.querySelectorAll('[data-date]:not([disabled])').forEach(btn => {
       btn.addEventListener('click', () => {
         this.loadDay(btn.getAttribute('data-date')!);
       });
