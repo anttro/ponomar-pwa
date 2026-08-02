@@ -14,6 +14,7 @@ Derived from the original [Java Ponomar application](https://github.com/typiconm
 - **Multi-language UI** — English, Russian, Church Slavonic (with dedicated Slavonic fonts).
 - **PWA** — Installable on desktop and mobile devices.
 - **Navigation** — 3 top-level items (Calendar, Library, Settings) with Library dropdown: Bible, Service (Horologion, Sbornik, Prayer Rule, Canons & Akathists, Parimii, Paraclete, Irmologion), Feasts (Menaion, Lenten Triodion).
+- **Astronomy** — Sunrise/sunset times and ecclesiastical moon phase (day, trend, illumination) displayed in the calendar day detail panel. Location configurable in settings.
 
 ## Tech Stack
 
