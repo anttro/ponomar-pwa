@@ -12,7 +12,7 @@ import { DataCache } from '../core/data-cache';
 import { fontClass } from './settings-view';
 import { loadSettings } from './settings-view';
 import { ServiceView } from './service-view';
-import { calcSolarTimes, getMoonInfo, getMoonPhaseName, phaseToFraction } from '../core/astronomy';
+import { calcSolarTimes, getMoonInfo, getMoonPhaseName } from '../core/astronomy';
 
 let cachedFastingPeriods: FastingPeriod[] | null = null;
 const lifeCache = new Map<string, LifeData | null>();
@@ -953,7 +953,7 @@ export class CalendarView {
             <span class="text-navy">${solar?.sunset ?? '—'}</span>
             <span class="mx-2 text-gold/40">|</span>
             <span class="font-bold text-navy">${this.t.calendar.moonPhase}:</span>
-            <span class="text-navy">${moon.emoji} ${moonName} ${moon.trend === 'waxing' ? '↗' : '↘'} (${this.t.calendar.moonDay} ${moon.moonDay}, ${phaseToFraction(moon.phase)}, ${moon.illumination}%)</span>
+            <span class="text-navy">${moon.emoji} ${moonName} ${moon.trend === 'waxing' ? '↗' : '↘'} (${this.t.calendar.moonDay} ${moon.moonDay}, ${moon.illumination}%)</span>
           `;
         } else {
           astroPanel.innerHTML = `<span class="text-navy-light italic">${this.t.calendar.noLocation}</span>`;
