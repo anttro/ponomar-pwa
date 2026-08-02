@@ -1,1 +1,429 @@
-{"600": {"rank": 3}, "654": {"rank": 1}, "6552": {"rank": 4, "services": {"MATINS": {"SCRIPTURE/1": {"text": "", "Type": "1", "Reading": "Mt_11:27-30", "Pericope": "43", "Cmd": "dow != 0"}}, "LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "Gal_5:22-6:2", "Pericope": "213"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Lk_6:17-23a", "Pericope": "24"}}}, "scripture": [{"Type": "1", "Reading": "Mt_11:27-30", "Pericope": "43", "Cmd": "dow != 0"}, {"Type": "apostol", "Reading": "Gal_5:22-6:2", "Pericope": "213"}, {"Type": "gospel", "Reading": "Lk_6:17-23a", "Pericope": "24"}]}, "6557": {"rank": 2, "services": {"LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "Gal_5:22-6:2", "Pericope": "213"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Mt_11:27-30", "Pericope": "43"}}}, "scripture": [{"Type": "apostol", "Reading": "Gal_5:22-6:2", "Pericope": "213"}, {"Type": "gospel", "Reading": "Mt_11:27-30", "Pericope": "43"}]}, "6613": {"rank": 5, "services": {"VESPERS": {"SCRIPTURE/1": {"text": "", "Type": "1", "Reading": "Isa_43:9-14a", "Note": "for the New Martyrs"}, "SCRIPTURE/2": {"text": "", "Type": "2", "Reading": "Wisd_3:1-9", "Note": "for the New Martyrs"}, "SCRIPTURE/3": {"text": "", "Type": "3", "Reading": "Wisd_4:7-15", "Note": "for the New Martyrs"}}, "LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "Rom_8:28-39", "Pericope": "99", "Note": "for the New Martyrs"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Lk_21:12-19", "Pericope": "106", "Note": "for the New Martyrs"}}}, "scripture": [{"Type": "1", "Reading": "Isa_43:9-14a", "Note": "for the New Martyrs"}, {"Type": "2", "Reading": "Wisd_3:1-9", "Note": "for the New Martyrs"}, {"Type": "3", "Reading": "Wisd_4:7-15", "Note": "for the New Martyrs"}, {"Type": "apostol", "Reading": "Rom_8:28-39", "Pericope": "99", "Note": "for the New Martyrs"}, {"Type": "gospel", "Reading": "Lk_21:12-19", "Pericope": "106", "Note": "for the New Martyrs"}]}, "6616": {"services": {"LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "I Jn_4:7-11"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Lk_6:31-36", "Pericope": "26"}}}, "scripture": [{"Type": "apostol", "Reading": "I Jn_4:7-11"}, {"Type": "gospel", "Reading": "Lk_6:31-36", "Pericope": "26"}]}, "6630": {"rank": 5, "services": {"VESPERS": {"SCRIPTURE/1": {"text": "", "Type": "1", "Reading": "Composite_3"}, "SCRIPTURE/2": {"text": "", "Type": "2", "Reading": "Composite_4"}, "SCRIPTURE/3": {"text": "", "Type": "3", "Reading": "Wisd_4:7-15"}}, "MATINS": {"SCRIPTURE/1": {"text": "", "Type": "1", "Reading": "Jn_10:1-9", "Pericope": "35 (mid.)"}}, "LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "Heb_7:26-8:2", "Pericope": "318"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Jn_10:9-16", "Pericope": "36"}}}, "scripture": [{"Type": "1", "Reading": "Composite_3"}, {"Type": "2", "Reading": "Composite_4"}, {"Type": "3", "Reading": "Wisd_4:7-15"}, {"Type": "1", "Reading": "Jn_10:1-9", "Pericope": "35 (mid.)"}, {"Type": "apostol", "Reading": "Heb_7:26-8:2", "Pericope": "318"}, {"Type": "gospel", "Reading": "Jn_10:9-16", "Pericope": "36"}]}, "6673": {"rank": 1}, "6797": {"rank": 3, "services": {"LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "Gal_5:22-6:2", "Pericope": "213"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Mt_4:25-5:12a", "Pericope": "10"}}}, "scripture": [{"Type": "apostol", "Reading": "Gal_5:22-6:2", "Pericope": "213"}, {"Type": "gospel", "Reading": "Mt_4:25-5:12a", "Pericope": "10"}]}, "6892": {"rank": 4, "services": {"LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "Heb_7:26-8:2", "Pericope": "318"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Jn_10:9-16", "Pericope": "36"}}}, "scripture": [{"Type": "apostol", "Reading": "Heb_7:26-8:2", "Pericope": "318"}, {"Type": "gospel", "Reading": "Jn_10:9-16", "Pericope": "36"}]}, "6969": {"rank": 1, "services": {"LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "Philip_3:20-4:3", "Pericope": "246"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Mt_5:14-19", "Pericope": "11"}}}, "scripture": [{"Type": "apostol", "Reading": "Philip_3:20-4:3", "Pericope": "246"}, {"Type": "gospel", "Reading": "Mt_5:14-19", "Pericope": "11"}]}, "60401": {"rank": 4, "services": {"MATINS": {"SCRIPTURE/1": {"text": "", "Type": "1", "Reading": "Mt_10:16-22", "Pericope": "36", "Cmd": "dow != 0"}}, "LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "II Tim_2:1-10", "Pericope": "292"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Jn_15:17-16:2", "Pericope": "52"}}}, "scripture": [{"Type": "1", "Reading": "Mt_10:16-22", "Pericope": "36", "Cmd": "dow != 0"}, {"Type": "apostol", "Reading": "II Tim_2:1-10", "Pericope": "292"}, {"Type": "gospel", "Reading": "Jn_15:17-16:2", "Pericope": "52"}]}, "60501": {"rank": 3, "services": {"LITURGY": {"SCRIPTURE/apostol": {"text": "", "Type": "apostol", "Reading": "II Tim_2:1-10", "Pericope": "292"}, "SCRIPTURE/gospel": {"text": "", "Type": "gospel", "Reading": "Jn_15:17-16:2", "Pericope": "52"}}}, "scripture": [{"Type": "apostol", "Reading": "II Tim_2:1-10", "Pericope": "292"}, {"Type": "gospel", "Reading": "Jn_15:17-16:2", "Pericope": "52"}]}}
+{
+  "600": {
+    "rank": 3
+  },
+  "654": {
+    "rank": 1
+  },
+  "6552": {
+    "rank": 4,
+    "services": {
+      "MATINS": {
+        "SCRIPTURE/1": {
+          "text": "",
+          "Type": "1",
+          "Reading": "Mt_11:27-30",
+          "Pericope": "43",
+          "Cmd": "dow != 0"
+        }
+      },
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "Gal_5:22-6:2",
+          "Pericope": "213"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Lk_6:17-23a",
+          "Pericope": "24"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "1",
+        "Reading": "Mt_11:27-30",
+        "Pericope": "43",
+        "Cmd": "dow != 0"
+      },
+      {
+        "Type": "apostol",
+        "Reading": "Gal_5:22-6:2",
+        "Pericope": "213"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Lk_6:17-23a",
+        "Pericope": "24"
+      }
+    ]
+  },
+  "6557": {
+    "rank": 2,
+    "services": {
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "Gal_5:22-6:2",
+          "Pericope": "213"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Mt_11:27-30",
+          "Pericope": "43"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "apostol",
+        "Reading": "Gal_5:22-6:2",
+        "Pericope": "213"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Mt_11:27-30",
+        "Pericope": "43"
+      }
+    ]
+  },
+  "6613": {
+    "rank": 5,
+    "services": {
+      "VESPERS": {
+        "SCRIPTURE/1": {
+          "text": "",
+          "Type": "1",
+          "Reading": "Isa_43:9-14a",
+          "Note": "for the New Martyrs"
+        },
+        "SCRIPTURE/2": {
+          "text": "",
+          "Type": "2",
+          "Reading": "Wisd_3:1-9",
+          "Note": "for the New Martyrs"
+        },
+        "SCRIPTURE/3": {
+          "text": "",
+          "Type": "3",
+          "Reading": "Wisd_4:7-15",
+          "Note": "for the New Martyrs"
+        }
+      },
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "Rom_8:28-39",
+          "Pericope": "99",
+          "Note": "for the New Martyrs"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Lk_21:12-19",
+          "Pericope": "106",
+          "Note": "for the New Martyrs"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "1",
+        "Reading": "Isa_43:9-14a",
+        "Note": "for the New Martyrs"
+      },
+      {
+        "Type": "2",
+        "Reading": "Wisd_3:1-9",
+        "Note": "for the New Martyrs"
+      },
+      {
+        "Type": "3",
+        "Reading": "Wisd_4:7-15",
+        "Note": "for the New Martyrs"
+      },
+      {
+        "Type": "apostol",
+        "Reading": "Rom_8:28-39",
+        "Pericope": "99",
+        "Note": "for the New Martyrs"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Lk_21:12-19",
+        "Pericope": "106",
+        "Note": "for the New Martyrs"
+      }
+    ]
+  },
+  "6616": {
+    "services": {
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "I Jn_4:7-11"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Lk_6:31-36",
+          "Pericope": "26"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "apostol",
+        "Reading": "I Jn_4:7-11"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Lk_6:31-36",
+        "Pericope": "26"
+      }
+    ]
+  },
+  "6630": {
+    "rank": 5,
+    "services": {
+      "VESPERS": {
+        "SCRIPTURE/1": {
+          "text": "",
+          "Type": "1",
+          "Reading": "Wisd_3:1-9"
+        },
+        "SCRIPTURE/2": {
+          "text": "",
+          "Type": "2",
+          "Reading": "Wisd_5:15-6:3"
+        },
+        "SCRIPTURE/3": {
+          "text": "",
+          "Type": "3",
+          "Reading": "Wisd_4:7-15"
+        }
+      },
+      "MATINS": {
+        "SCRIPTURE/1": {
+          "text": "",
+          "Type": "1",
+          "Reading": "Jn_10:1-9",
+          "Pericope": "35 (mid.)"
+        }
+      },
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "Heb_7:26-8:2",
+          "Pericope": "318"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Jn_10:9-16",
+          "Pericope": "36"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "1",
+        "Reading": "Wisd_3:1-9"
+      },
+      {
+        "Type": "2",
+        "Reading": "Wisd_5:15-6:3"
+      },
+      {
+        "Type": "3",
+        "Reading": "Wisd_4:7-15"
+      },
+      {
+        "Type": "1",
+        "Reading": "Jn_10:1-9",
+        "Pericope": "35 (mid.)"
+      },
+      {
+        "Type": "apostol",
+        "Reading": "Heb_7:26-8:2",
+        "Pericope": "318"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Jn_10:9-16",
+        "Pericope": "36"
+      }
+    ]
+  },
+  "6673": {
+    "rank": 1
+  },
+  "6797": {
+    "rank": 3,
+    "services": {
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "Gal_5:22-6:2",
+          "Pericope": "213"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Mt_4:25-5:12a",
+          "Pericope": "10"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "apostol",
+        "Reading": "Gal_5:22-6:2",
+        "Pericope": "213"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Mt_4:25-5:12a",
+        "Pericope": "10"
+      }
+    ]
+  },
+  "6892": {
+    "rank": 4,
+    "services": {
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "Heb_7:26-8:2",
+          "Pericope": "318"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Jn_10:9-16",
+          "Pericope": "36"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "apostol",
+        "Reading": "Heb_7:26-8:2",
+        "Pericope": "318"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Jn_10:9-16",
+        "Pericope": "36"
+      }
+    ]
+  },
+  "6969": {
+    "rank": 1,
+    "services": {
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "Philip_3:20-4:3",
+          "Pericope": "246"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Mt_5:14-19",
+          "Pericope": "11"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "apostol",
+        "Reading": "Philip_3:20-4:3",
+        "Pericope": "246"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Mt_5:14-19",
+        "Pericope": "11"
+      }
+    ]
+  },
+  "60401": {
+    "rank": 4,
+    "services": {
+      "MATINS": {
+        "SCRIPTURE/1": {
+          "text": "",
+          "Type": "1",
+          "Reading": "Mt_10:16-22",
+          "Pericope": "36",
+          "Cmd": "dow != 0"
+        }
+      },
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "II Tim_2:1-10",
+          "Pericope": "292"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Jn_15:17-16:2",
+          "Pericope": "52"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "1",
+        "Reading": "Mt_10:16-22",
+        "Pericope": "36",
+        "Cmd": "dow != 0"
+      },
+      {
+        "Type": "apostol",
+        "Reading": "II Tim_2:1-10",
+        "Pericope": "292"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Jn_15:17-16:2",
+        "Pericope": "52"
+      }
+    ]
+  },
+  "60501": {
+    "rank": 3,
+    "services": {
+      "LITURGY": {
+        "SCRIPTURE/apostol": {
+          "text": "",
+          "Type": "apostol",
+          "Reading": "II Tim_2:1-10",
+          "Pericope": "292"
+        },
+        "SCRIPTURE/gospel": {
+          "text": "",
+          "Type": "gospel",
+          "Reading": "Jn_15:17-16:2",
+          "Pericope": "52"
+        }
+      }
+    },
+    "scripture": [
+      {
+        "Type": "apostol",
+        "Reading": "II Tim_2:1-10",
+        "Pericope": "292"
+      },
+      {
+        "Type": "gospel",
+        "Reading": "Jn_15:17-16:2",
+        "Pericope": "52"
+      }
+    ]
+  }
+}
