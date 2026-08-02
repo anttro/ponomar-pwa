@@ -28,6 +28,7 @@ export interface Translations {
     triodion: string;
     settings: string;
     library: string;
+    appTitle: string;
     festal: string;
   };
 
@@ -500,6 +501,7 @@ export interface Translations {
     offlineCalculating: string;
     offlineDone: string;
     offlineSelectLang: string;
+    offlineSelectAll: string;
     offlineCleared: string;
     offlineCacheInfo: string;
     locationTitle: string;
@@ -529,7 +531,7 @@ const translations: Record<LanguageCode, Translations> = {
     nav: {
       calendar: '📅 Calendar',
       service: '📖 Service',
-      bible: '☦ Bible',
+      bible: 'Bible',
       prayer: '📿 Prayer Rule',
       akathists: '📜 Canons & Akathists',
       parimii: '📖 Paroemia',
@@ -541,6 +543,7 @@ const translations: Record<LanguageCode, Translations> = {
       triodion: '📗 Lenten Triodion',
       settings: '⚙ Settings',
       library: '📚 Library',
+      appTitle: 'Ponomar',
       festal: '📗 Feasts',
     },
 
@@ -1048,6 +1051,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineCalculating: 'Calculating storage...',
       offlineDone: 'Done! Data cached for offline use.',
       offlineSelectLang: 'Please select at least one language.',
+      offlineSelectAll: 'Select all',
       offlineCleared: 'Cache cleared.',
       offlineCacheInfo: 'Cache: {0} / {1} ({2} files)',
       locationTitle: 'Location',
@@ -1075,7 +1079,7 @@ const translations: Record<LanguageCode, Translations> = {
     nav: {
       calendar: '📅 Календарь',
       service: '📖 Устав',
-      bible: '☦ Библия',
+      bible: 'Библия',
       prayer: '📿 Молитвослов',
       akathists: '📜 Каноны и акафисты',
       parimii: '📖 Паримии',
@@ -1087,6 +1091,7 @@ const translations: Record<LanguageCode, Translations> = {
       triodion: '📗 Триодь постная',
       settings: '⚙ Настройки',
       library: '📚 Библиотека',
+      appTitle: 'Пономарь',
       festal: '📗 Праздники',
     },
 
@@ -1594,6 +1599,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineCalculating: 'Расчёт размера...',
       offlineDone: 'Готово! Данные закэшированы для офлайн-использования.',
       offlineSelectLang: 'Пожалуйста, выберите хотя бы один язык.',
+      offlineSelectAll: 'Выбрать все',
       offlineCleared: 'Кэш очищен.',
       offlineCacheInfo: 'Кэш: {0} / {1} ({2} файлов)',
       locationTitle: 'Местоположение',
@@ -1621,7 +1627,7 @@ const translations: Record<LanguageCode, Translations> = {
     nav: {
       calendar: '📅 Календарь',
       service: '📖 Уставъ',
-      bible: '☦ Библия',
+      bible: 'Библия',
       prayer: '📿 Молитвосло́въ',
       akathists: '📜 Кано́ны и҆ а҆ка́ѳїсты',
       parimii: '📖 Паремі́и',
@@ -1633,6 +1639,7 @@ const translations: Record<LanguageCode, Translations> = {
       triodion: '📗 Трїѡ́дь по́стнаѧ',
       settings: '⚙ Настройки',
       library: '📚 Библіоте́ка',
+      appTitle: 'Понома́рь',
       festal: '📗 Пра́здники',
     },
 
@@ -2140,6 +2147,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineCalculating: 'Расчётъ размѣра...',
       offlineDone: 'Готово! Данныя закешированы для офлайн-потребленїя.',
       offlineSelectLang: 'Пожалуйста, изберите хотя бы единъ языкъ.',
+      offlineSelectAll: 'И҆збра́ти всѧ̑',
       offlineCleared: 'Кешъ очищенъ.',
       offlineCacheInfo: 'Кешъ: {0} / {1} ({2} фа́йлѡвъ)',
       locationTitle: 'Мѣстоположе́нїе',

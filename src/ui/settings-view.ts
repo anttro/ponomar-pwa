@@ -4,6 +4,7 @@
 
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { OfflineManager } from '../core/offline-manager';
+import { DataCache } from '../core/data-cache';
 
 const LANGUAGES = [
   { code: 'en', name: 'English', local: 'English' },
@@ -292,9 +293,10 @@ export class SettingsView {
               <label class="flex items-center gap-1 cursor-pointer">
                 <input type="checkbox" value="menaion" class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineMenaion}</span>
               </label>
-              <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="bible" class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineBible}</span>
-              </label>
+              <div id="bible-row" class="flex items-center gap-1 cursor-pointer">
+                <span class="text-sm">${t.settings.offlineBible} <span id="bible-count" class="text-xs text-navy-light">(0/0)</span></span>
+                <span id="bible-chevron" class="text-xs text-navy-light hover:text-navy select-none">▶</span>
+              </div>
             </div>
             <div id="bible-translations" class="hidden ml-4 mt-1 space-y-1 border-l border-gold/20 pl-3"></div>
           </div>
@@ -413,24 +415,50 @@ export class SettingsView {
       }
     });
 
-    // Bible translation sub-list
-    document.querySelector('.offline-type[value="bible"]')?.addEventListener('change', async (e) => {
-      const checked = (e.target as HTMLInputElement).checked;
+    // Bible translations expand/collapse via Bible row
+    document.getElementById('bible-row')?.addEventListener('click', async () => {
       const container = document.getElementById('bible-translations');
-      if (!container) return;
-      container.classList.toggle('hidden', !checked);
-      if (!checked) { container.innerHTML = ''; return; }
-      try {
-        const resp = await fetch('/data/bible/versions.json');
-        const versions = await resp.json();
-        container.innerHTML = versions.map((v: any) => `
-          <label class="flex items-center gap-1 cursor-pointer">
-            <input type="checkbox" value="${v.id}" class="bible-trans accent-gold">
-            <span class="text-xs text-navy">${v.name}</span>
-            <span class="text-[10px] text-navy-light">(${OfflineManager.getBibleSize(v.id) || '?'})</span>
-          </label>
-        `).join('');
-      } catch {}
+      const chevron = document.getElementById('bible-chevron');
+      if (!container || !chevron) return;
+      const isHidden = container.classList.contains('hidden');
+      if (isHidden) {
+        // Load translations on first expand
+        if (container.innerHTML === '') {
+          try {
+            const resp = await fetch('/data/bible/versions.json');
+            const versions = await resp.json();
+            const html = await Promise.all(versions.map(async (v: any) => {
+              const firstBook = v.books?.[0]?.id;
+              let isCached = false;
+              if (firstBook) {
+                isCached = (await DataCache.get(`url:/data/${v.id}/${firstBook}.text`)) !== null;
+              }
+              return `
+                <label class="flex items-center gap-1 cursor-pointer">
+                  <input type="checkbox" value="${v.id}" class="bible-trans accent-gold" ${isCached ? 'checked' : ''}>
+                  <span class="text-xs text-navy">${v.name}</span>
+                  <span class="text-[10px] text-navy-light">(${OfflineManager.getBibleSize(v.id) || '?'})</span>
+                </label>
+              `;
+            }));
+            container.innerHTML = `
+              <div class="mb-1">
+                <button id="select-all-bible" class="text-xs text-blue-600 underline hover:text-blue-800 cursor-pointer">${t.settings.offlineSelectAll}</button>
+              </div>
+            ` + html.join('');
+            document.getElementById('select-all-bible')?.addEventListener('click', () => {
+              document.querySelectorAll('.bible-trans').forEach(el => {
+                (el as HTMLInputElement).checked = true;
+              });
+            });
+          } catch {}
+        }
+        container.classList.remove('hidden');
+        chevron.textContent = '▼';
+      } else {
+        container.classList.add('hidden');
+        chevron.textContent = '▶';
+      }
     });
 
     // Offline content - auto-select ru+cu when ru is selected
@@ -452,6 +480,8 @@ export class SettingsView {
         .map(el => (el as HTMLInputElement).value) as ('lives' | 'bible' | 'calendar' | 'menaion')[];
 
       if (selectedLangs.length === 0) {
+        const progressDiv = document.getElementById('offline-progress');
+        if (progressDiv) progressDiv.classList.remove('hidden');
         const progressText = document.getElementById('offline-progress-text');
         if (progressText) progressText.textContent = t.settings.offlineSelectLang;
         return;
@@ -515,6 +545,59 @@ export class SettingsView {
         .replace('{2}', String(stats.cachedFiles));
       }
     });
+
+    // Check cache status for each data type and set checkbox states
+    (async () => {
+      const checkCache = async (key: string): Promise<boolean> => {
+        return (await DataCache.get(key)) !== null;
+      };
+      const setChecked = (selector: string, checked: boolean) => {
+        const el = document.querySelector(selector) as HTMLInputElement | null;
+        if (el) el.checked = checked;
+      };
+
+      // Check main types
+      setChecked('.offline-type[value="lives"]', await checkCache('url:/data/ru/lives/01.json'));
+      setChecked('.offline-type[value="calendar"]', await checkCache('url:/data/shared/fasting.json'));
+      setChecked('.offline-type[value="menaion"]', await checkCache('url:/data/en/menaion-bundle.json'));
+
+      // Count cached Bible translations
+      (async () => {
+        try {
+          const resp = await fetch('/data/bible/versions.json');
+          const versions = await resp.json();
+          const total = versions.length;
+          let cached = 0;
+          for (const v of versions) {
+            const firstBook = v.books?.[0]?.id;
+            if (firstBook && await checkCache(`url:/data/${v.id}/${firstBook}.text`)) {
+              cached++;
+            }
+          }
+          const countEl = document.getElementById('bible-count');
+          if (countEl) countEl.textContent = `(${cached}/${total})`;
+        } catch {}
+      })();
+
+      // Check language checkboxes based on cache status
+      for (const lang of ['en', 'ru', 'cu']) {
+        const isCached = await checkCache(`url:/data/${lang}/lives/01.json`);
+        setChecked(`.offline-lang[value="${lang}"]`, isCached);
+      }
+
+      // If nothing cached, default to current interface language
+      const anyChecked = document.querySelector('.offline-lang:checked');
+      if (!anyChecked) {
+        setChecked(`.offline-lang[value="${this.settings.language}"]`, true);
+      }
+
+      // Auto-select cu when ru is checked
+      const ruChecked = (document.querySelector('.offline-lang[value="ru"]') as HTMLInputElement)?.checked;
+      const cuCheckbox = document.querySelector('.offline-lang[value="cu"]') as HTMLInputElement;
+      if (ruChecked && cuCheckbox) {
+        cuCheckbox.checked = true;
+      }
+    })();
 
     this.updateFontPreview();
   }

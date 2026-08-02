@@ -798,10 +798,10 @@ export class CalendarView {
               ? `<div class="life-text hidden mt-2 p-3 bg-white border border-gold/20 rounded text-sm leading-relaxed max-h-60 overflow-y-auto">${lifeText}</div>`
               : '';
             commHtmlParts.push(
-              `<div class="comm-item">
-                <div class="text-sm font-medium ${lifeText ? 'text-blue-600 underline cursor-pointer hover:text-blue-800' : 'text-navy'}">${iconHtml}${name}</div>
-                ${lifeHtml}
-              </div>`
+`<div class="comm-item">
+                 <div class="text-sm font-medium ${lifeText ? 'text-blue-600 underline cursor-pointer hover:text-blue-800' : 'text-navy'}">${iconHtml}${name}${lifeText ? '<span class="comm-chevron text-xs align-middle ml-1 inline-block">▶</span>' : ''}</div>
+                 ${lifeHtml}
+               </div>`
             );
           }
         }
@@ -810,14 +810,18 @@ export class CalendarView {
             <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
             <div class="space-y-1">${commHtmlParts.join('')}</div>
           `;
-          commPanel.addEventListener('click', (e) => {
-            const target = e.target as HTMLElement;
-            const item = target.closest('.comm-item');
-            if (item) {
-              const lifeDiv = item.querySelector('.life-text') as HTMLElement;
-              if (lifeDiv) lifeDiv.classList.toggle('hidden');
-            }
-          });
+commPanel.addEventListener('click', (e) => {
+              const target = e.target as HTMLElement;
+              const item = target.closest('.comm-item');
+              if (item) {
+                const lifeDiv = item.querySelector('.life-text') as HTMLElement;
+                if (lifeDiv) {
+                  lifeDiv.classList.toggle('hidden');
+                  const chevron = item.querySelector('.comm-chevron') as HTMLElement;
+                  if (chevron) chevron.textContent = lifeDiv.classList.contains('hidden') ? '▶' : '▼';
+                }
+              }
+            });
         } else {
           commPanel.innerHTML = `
             <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>

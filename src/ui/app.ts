@@ -114,16 +114,21 @@ export class App {
   }
 
   private render() {
+    this.settings = loadSettings();
     const t = getTranslations(this.settings.language as LanguageCode);
     this.container.innerHTML = `
       <div class="app-container min-h-screen flex flex-col">
-        <header class="bg-navy text-parchment p-3 flex items-center shadow-md">
+        <header class="bg-navy text-parchment p-3 flex items-center shadow-md relative">
+          <span id="app-title" class="hidden md:inline-flex items-center gap-2 text-lg font-bold whitespace-nowrap absolute left-3 top-1/2 -translate-y-1/2">
+            <img src="/icons/icon-192.png" class="w-6 h-6" alt="">
+            ${t.nav.appTitle}
+          </span>
           <nav class="flex flex-wrap gap-4 text-sm mx-auto">
             <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
             <details class="nav-group relative" data-nav="library">
               <summary class="cursor-pointer list-none hover:text-gold transition-colors flex items-center gap-1">${t.nav.library} <span class="text-xs">▾</span></summary>
               <div class="absolute left-0 top-full mt-1 z-50 min-w-56 rounded-lg bg-navy-light shadow-xl p-2 flex flex-col gap-1">
-                <a href="#bible" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="bible">${t.nav.bible}</a>
+                <a href="#bible" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="bible"><span>📖</span> <span class="font-bold">${t.nav.bible}</span></a>
                 <a href="#prayer" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="prayer">${t.nav.prayer}</a>
                 <a href="#akathists" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="akathists">${t.nav.akathists}</a>
                 <a href="#horologion" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="horologion">${t.nav.horologion}</a>
