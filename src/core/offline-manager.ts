@@ -19,6 +19,7 @@ import { DataCache } from './data-cache';
 export interface PreloadOptions {
   languages: string[];
   types: ('lives' | 'bible' | 'calendar' | 'menaion')[];
+  bibleTranslations?: string[];
 }
 
 export interface PreloadProgress {
@@ -35,6 +36,15 @@ export interface CacheStats {
   cachedLanguages: string[];
   cachedTypes: string[];
 }
+
+/** Bible translation sizes (pre-computed). */
+const BIBLE_SIZES: Record<string, string> = {
+  'en/bible/kjv': '5.1 MB', 'en/bible/brenton': '4.1 MB', 'en/bible/nonkjv': '0.9 MB',
+  'ru/bible/synod': '7.3 MB', 'ru/bible/kassian': '1.5 MB', 'ru/bible/yungerov': '1.7 MB',
+  'cu/bible/elis': '8.4 MB', 'el/bible/spt': '8.6 MB', 'fr/bible/ls': '5.2 MB',
+  'la/bible/vulgate': '4.4 MB', 'ar/bible/svd': '7.9 MB',
+  'zh/Hans/bible/cuv': '3.7 MB', 'zh/Hant/bible/cuv': '3.7 MB',
+};
 
 /** Data files to preload per language, grouped by type. */
 const DATA_FILES: Record<string, (lang: string) => string[]> = {
@@ -59,16 +69,34 @@ const DATA_FILES: Record<string, (lang: string) => string[]> = {
   menaion: (lang) => [
     `/data/${lang}/menaion-bundle.json`,
   ],
-  bible: (lang) => [
-    // Bible version index
+  bible: (_lang) => [
     '/data/bible/versions.json',
-    // Main Bible text files per language
-    `/data/${lang}/bible/synod.text`,
   ],
 };
 
 export class OfflineManager {
   private static _progress: PreloadProgress | null = null;
+
+  /** Get size string for a Bible translation. */
+  static getBibleSize(translationPath: string): string {
+    return BIBLE_SIZES[translationPath] || '?';
+  }
+
+  /** Discover all book files for a Bible translation from versions.json. */
+  static async getBibleFiles(translationPath: string): Promise<string[]> {
+    const files: string[] = [];
+    try {
+      const resp = await fetch('/data/bible/versions.json');
+      const versions = await resp.json() as any[];
+      const ver = versions.find((v: any) => v.id === translationPath);
+      if (ver && ver.books) {
+        for (const book of ver.books) {
+          files.push(`/data/${translationPath}/${book.id}.text`);
+        }
+      }
+    } catch {}
+    return files;
+  }
 
   /** Get current preload progress */
   static getProgress(): PreloadProgress | null {
@@ -93,6 +121,17 @@ export class OfflineManager {
 
     // Deduplicate
     const uniqueFiles = [...new Set(filesToFetch)];
+
+    // Add Bible translation files
+    for (const trans of options.bibleTranslations || []) {
+      const bibleFiles = await OfflineManager.getBibleFiles(trans);
+      for (const f of bibleFiles) {
+        if (!uniqueFiles.includes(f)) uniqueFiles.push(f);
+      }
+    }
+    if (!uniqueFiles.includes('/data/bible/versions.json')) {
+      uniqueFiles.unshift('/data/bible/versions.json');
+    }
 
     const progress: PreloadProgress = {
       current: 0,

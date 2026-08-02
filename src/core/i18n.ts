@@ -494,6 +494,7 @@ export interface Translations {
     offlineLives: string;
     offlineCalendar: string;
     offlineMenaion: string;
+    offlineBible: string;
     offlinePreload: string;
     offlineClearCache: string;
     offlineCalculating: string;
@@ -1041,6 +1042,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineLives: 'Lives',
       offlineCalendar: 'Calendar',
       offlineMenaion: 'Menaion',
+      offlineBible: 'Bible',
       offlinePreload: 'Preload',
       offlineClearCache: 'Clear cache',
       offlineCalculating: 'Calculating storage...',
@@ -1586,6 +1588,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineLives: 'Жития',
       offlineCalendar: 'Календарь',
       offlineMenaion: 'Минея',
+      offlineBible: 'Библия',
       offlinePreload: 'Загрузить',
       offlineClearCache: 'Очистить кэш',
       offlineCalculating: 'Расчёт размера...',
@@ -2131,6 +2134,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineLives: 'Житїя',
       offlineCalendar: 'Календарь',
       offlineMenaion: 'Минїа',
+      offlineBible: 'Би́блїа',
       offlinePreload: 'Загрузити',
       offlineClearCache: 'Очистити кешъ',
       offlineCalculating: 'Расчётъ размѣра...',

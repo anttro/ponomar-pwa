@@ -292,7 +292,11 @@ export class SettingsView {
               <label class="flex items-center gap-1 cursor-pointer">
                 <input type="checkbox" value="menaion" class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineMenaion}</span>
               </label>
+              <label class="flex items-center gap-1 cursor-pointer">
+                <input type="checkbox" value="bible" class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineBible}</span>
+              </label>
             </div>
+            <div id="bible-translations" class="hidden ml-4 mt-1 space-y-1 border-l border-gold/20 pl-3"></div>
           </div>
 
           <!-- Storage info and controls -->
@@ -409,6 +413,26 @@ export class SettingsView {
       }
     });
 
+    // Bible translation sub-list
+    document.querySelector('.offline-type[value="bible"]')?.addEventListener('change', async (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const container = document.getElementById('bible-translations');
+      if (!container) return;
+      container.classList.toggle('hidden', !checked);
+      if (!checked) { container.innerHTML = ''; return; }
+      try {
+        const resp = await fetch('/data/bible/versions.json');
+        const versions = await resp.json();
+        container.innerHTML = versions.map((v: any) => `
+          <label class="flex items-center gap-1 cursor-pointer">
+            <input type="checkbox" value="${v.id}" class="bible-trans accent-gold">
+            <span class="text-xs text-navy">${v.name}</span>
+            <span class="text-[10px] text-navy-light">(${OfflineManager.getBibleSize(v.id) || '?'})</span>
+          </label>
+        `).join('');
+      } catch {}
+    });
+
     // Offline content - auto-select ru+cu when ru is selected
     document.querySelectorAll('.offline-lang').forEach(el => {
       el.addEventListener('change', () => {
@@ -438,8 +462,15 @@ export class SettingsView {
       const progressText = document.getElementById('offline-progress-text');
       if (progressDiv) progressDiv.classList.remove('hidden');
 
+      const bibleTrans = Array.from(document.querySelectorAll('.bible-trans:checked'))
+        .map(el => (el as HTMLInputElement).value);
+
       // Start preloading in background
-      OfflineManager.preload({ languages: selectedLangs, types: selectedTypes }).then(() => {
+      OfflineManager.preload({
+        languages: selectedLangs,
+        types: selectedTypes,
+        bibleTranslations: bibleTrans,
+      }).then(() => {
         if (progressBar) progressBar.style.width = '100%';
         if (progressText) progressText.textContent = t.settings.offlineDone;
         OfflineManager.getStats().then(stats => {
