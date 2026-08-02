@@ -6,10 +6,11 @@
 - **CRITICAL**: Never overwrite existing `life.text` fields in lives entries
 - Enrichment pipeline only fills empty entries
 - If a target already has content, classify as `already-filled` and skip
+- **Bulgakov is secondary source**: fills gaps only, never overrides Minei content
 
 ### File Modification Permissions
 - **Allowed**: Adding new life.text to empty entries
-- **Allowed**: Adding manual fixes to `enrich-lives.ts` MANUAl_FIXES
+- **Allowed**: Adding manual fixes to `enrich-lives.ts` MANUAL_FIXES
 - **Allowed**: Correcting menaion-bundle.json for CId date corrections
 - **Forbidden**: Modifying existing life.text content
 - **Forbidden**: Deleting or renaming CIds without proper validation
@@ -21,17 +22,17 @@
 All changes must pass all three checks:
 
 ```bash
-# 1. Data validation
-npx tsx scripts/validate-data.ts
-# Expected: "All files valid!" or specific error count
-
-# 2. Type safety
+# 1. Type safety
 npx tsc --noEmit
 # Expected: No TypeScript errors
 
-# 3. Build verification
+# 2. Build verification
 npm run build
 # Expected: Successful build with reasonable bundle sizes
+
+# 3. Data validation
+npx tsx scripts/validate-data.ts
+# Expected: "All files valid!" or specific error count
 ```
 
 ### When to Stop
@@ -63,14 +64,13 @@ update [script name]: [brief description]
 - Be specific about what changed
 - Reference specific CIds or dates when applicable
 - Keep messages concise but descriptive
-- Reference recent commits for style
 
 ## File Change Guidelines
 
 ### Static Data Files
 - **Tracked**: `static/data/` directory (all JSON files tracked)
-- **Not tracked**: `scripts/output/minei.json` (33MB generated file)
-- **Validate**: Always run validation after data changes
+- **Not tracked**: `scripts/output/minei.json`, `scripts/output/bulgakov.json`
+- **Validate**: Always run typecheck and build after data changes
 
 ### Script Files
 - Maintain existing code patterns
@@ -119,7 +119,7 @@ update [script name]: [brief description]
 ## Documentation Requirements
 
 ### When Modifying Data Schemas
-- Update relevant documentation files (DATA_FORMAT.md, DATA_RUS.md)
+- Update relevant documentation files (DATA_EN.md, DATA_RUS.md)
 - Note any breaking changes or invariants
 - Update project README if structural changes
 
@@ -152,7 +152,7 @@ update [script name]: [brief description]
 ### Before Starting
 1. Review existing MANUAL_FIXES in `enrich-lives.ts`
 2. Understand the current coverage status
-3. Identify which dates/cases you're targeting
+3. Identify which source (Minei or Bulgakov) and dates you're targeting
 
 ### During Work
 1. Use dry runs first: `npx tsx scripts/enrich-lives.ts`
@@ -170,8 +170,8 @@ update [script name]: [brief description]
 ## Quality Assurance Standards
 
 ### Coverage Tracking
-- Monitor coverage statistics: `1190/3046 lives with text`
-- Track unmatched count: currently 27 (floor for this data source)
+- Monitor coverage statistics: `1203/3046 lives with text`
+- Track unmatched counts: 27 Minei + 121 Bulgakov (floor)
 - Report changes in coverage when adding MANUAL_FIXES
 
 ### Content Verification
@@ -198,11 +198,17 @@ const MANUAL_FIXES: Record<string, string> = {
 
 ### Running Enrichment
 ```bash
-# Dry run
+# Minei dry run
 npx tsx scripts/enrich-lives.ts
 
-# Write changes
+# Minei write
 npx tsx scripts/enrich-lives.ts --write
+
+# Bulgakov dry run
+npx tsx scripts/enrich-lives.ts --bulgakov
+
+# Bulgakov write
+npx tsx scripts/enrich-lives.ts --bulgakov --write
 
 # Single month
 npx tsx scripts/enrich-lives.ts --month 01
@@ -224,7 +230,7 @@ npx tsx scripts/validate-triodion.ts
 python3 -c "
 import json,glob,os
 total=has=0
-for fp in glob.glob('static/data/ru/lives/*.json'):
+for fp in sorted(glob.glob('static/data/ru/lives/*.json') + glob.glob('static/data/ru/lives/misc/*.json')):
     data=json.load(open(fp))
     for cid,entry in data.items():
         total+=1

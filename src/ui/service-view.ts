@@ -86,7 +86,7 @@ export class ServiceView {
     const availableServices = this.getAvailableServices(dayInfo);
     const fontClass = this.getFontClass();
 
-    const contentClass = `bg-white/50 border border-gold/20 rounded-lg p-4 ${this.activeService ? 'min-h-[300px]' : ''} ${fontClass}`;
+    const contentClass = `bg-surface/50 border border-gold/20 rounded-lg p-4 ${this.activeService ? 'min-h-[300px]' : ''} ${fontClass}`;
 
     const tabHtml = `
       <h3 class="font-bold text-red mb-2">${this.t.services.title}</h3>
@@ -96,7 +96,7 @@ export class ServiceView {
             class="service-tab text-sm transition-colors
               ${this.activeService === s.id
                 ? 'border border-gold bg-gold/10 text-navy font-bold rounded-lg px-3 py-1'
-                : 'border border-gold/20 bg-white/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1'}"
+                : 'border border-gold/20 bg-surface/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1'}"
             data-service="${s.id}"
           >${s.name}</button>
         `).join('')}
@@ -134,7 +134,7 @@ export class ServiceView {
             if (id === serviceId) {
               t.className = 'service-tab text-sm transition-colors border border-gold bg-gold/10 text-navy font-bold rounded-lg px-3 py-1';
             } else {
-              t.className = 'service-tab text-sm transition-colors border border-gold/20 bg-white/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1';
+              t.className = 'service-tab text-sm transition-colors border border-gold/20 bg-surface/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1';
             }
           });
           this.loadService(service);

@@ -532,9 +532,9 @@ export class CalendarView {
       let classes = 'day-cell p-1 text-center text-sm cursor-pointer rounded transition-colors ';
       if (isSelected) classes += 'bg-navy text-parchment font-bold ';
       else if (isToday) classes += 'bg-gold/20 font-bold ';
-      else if (dayRank >= 6) classes += 'bg-red-100 text-red-800 font-bold ';
-      else if (fast === 1) classes += 'bg-purple-50 ';
-      else if (fast === 2) classes += 'bg-blue-50 ';
+      else if (dayRank >= 6) classes += 'bg-red/20 text-red font-bold ';
+      else if (fast === 1) classes += 'bg-purple/20 ';
+      else if (fast === 2) classes += 'bg-blue/20 ';
 
       gridHtml += `<div class="${classes}" data-day="${d}">${d}</div>`;
 
@@ -583,21 +583,21 @@ export class CalendarView {
 
             <div id="day-title" class="mb-2"></div>
 
-            <div id="astro-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg text-sm text-navy">
+            <div id="astro-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg text-sm text-navy">
               <span class="text-navy-light italic">${this.t.loading}</span>
             </div>
 
-            <div id="commemorations-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="commemorations-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
 
-            <div id="fasting-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="fasting-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.fastingRule}</h3>
               <p class="text-sm italic text-navy-light">${this.t.loading}</p>
             </div>
 
-            <div id="readings-panel" class="mb-2 p-2 bg-white/50 border border-gold/20 rounded-lg ${fnClass}">
+            <div id="readings-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
               <p class="text-sm text-navy-light italic">${this.t.loading}</p>
             </div>
@@ -795,7 +795,7 @@ export class CalendarView {
             const icon = this.t.calendar.rankIcons[rank] || '';
             const iconHtml = icon ? `<span class="font-slavonic text-lg mr-1">${icon}</span>` : '';
             const lifeHtml = lifeText
-              ? `<div class="life-text hidden mt-2 p-3 bg-white border border-gold/20 rounded text-sm leading-relaxed max-h-60 overflow-y-auto">${lifeText}</div>`
+              ? `<div class="life-text hidden mt-2 p-3 bg-surface border border-gold/20 rounded text-sm leading-relaxed max-h-60 overflow-y-auto">${lifeText}</div>`
               : '';
             commHtmlParts.push(
 `<div class="comm-item">
@@ -957,7 +957,7 @@ commPanel.addEventListener('click', (e) => {
             <span class="text-navy">${solar?.sunset ?? '—'}</span>
             <span class="mx-2 text-gold/40">|</span>
             <span class="font-bold text-navy">${this.t.calendar.moonPhase}:</span>
-            <span class="text-navy">${moon.emoji} ${moonName} ${moon.trend === 'waxing' ? '↗' : '↘'} (${this.t.calendar.moonDay} ${moon.moonDay}, ${moon.illumination}%)</span>
+            <span class="text-navy"><span title="${moonName}">${moon.emoji}</span> ${moon.trend === 'waxing' ? '↗' : '↘'} ${this.t.calendar.moonDay} ${moon.moonDay}, ${moon.illumination}%</span>
           `;
         } else {
           astroPanel.innerHTML = `<span class="text-navy-light italic">${this.t.calendar.noLocation}</span>`;

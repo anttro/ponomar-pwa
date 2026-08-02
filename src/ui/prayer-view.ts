@@ -220,18 +220,18 @@ export class PrayerView {
               class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1
                 ${this.collection === item.id
                   ? 'border border-gold bg-gold/10 text-navy font-bold'
-                  : 'border border-gold/20 bg-white/50 text-navy hover:border-gold/50'}"
+                  : 'border border-gold/20 bg-surface/50 text-navy hover:border-gold/50'}"
               data-view="${item.view}"
             >${item.label}</button>
           `).join('')}
         </div>
         <p class="text-navy-light text-sm mb-2">${subtitle}</p>
-        <select id="prayer-select" class="w-full border border-gold/20 bg-white/50 text-navy rounded-lg px-3 py-2 text-sm mb-3">
+        <select id="prayer-select" class="w-full border border-gold/20 bg-surface/50 text-navy rounded-lg px-3 py-2 text-sm mb-3">
           ${sections.map(s => `
             <option value="${s.id}" ${this.activeSection === s.id ? 'selected' : ''}>${s.name}</option>
           `).join('')}
         </select>
-        <div id="prayer-content" class="bg-white/50 border border-gold/20 rounded-lg p-4 min-h-[300px]">
+        <div id="prayer-content" class="bg-surface/50 border border-gold/20 rounded-lg p-4 min-h-[300px]">
           <p class="text-navy-light italic">${this.t.prayer.selectSection}</p>
         </div>
       </div>

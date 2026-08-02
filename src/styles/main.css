@@ -1,17 +1,97 @@
 @import "tailwindcss";
 
 @theme {
-  --color-parchment: #f5f0e8;
-  --color-parchment-dark: #e8dfd0;
-  --color-navy: #1a1a2e;
-  --color-navy-light: #2a2a4e;
-  --color-gold: #c5a55a;
-  --color-gold-light: #d4b96e;
-  --color-red: #8b0000;
-  --color-red-light: #a52a2a;
-  --color-purple: #4a0e4e;
-  --color-green: #2d5a27;
-  --color-blue: #1a3a6e;
+  --color-parchment: var(--clr-parchment);
+  --color-parchment-dark: var(--clr-parchment-dark);
+  --color-navy: var(--clr-navy);
+  --color-navy-light: var(--clr-navy-light);
+  --color-gold: var(--clr-gold);
+  --color-gold-light: var(--clr-gold-light);
+  --color-red: var(--clr-red);
+  --color-red-light: var(--clr-red-light);
+  --color-purple: var(--clr-purple);
+  --color-green: var(--clr-green);
+  --color-blue: var(--clr-blue);
+  --color-surface: var(--clr-surface);
+  --color-header-bg: var(--clr-header-bg);
+  --color-header-text: var(--clr-header-text);
+  --color-dropdown-bg: var(--clr-dropdown-bg);
+}
+
+:root, .theme-default {
+  --clr-parchment: #f5f0e8;
+  --clr-parchment-dark: #e8dfd0;
+  --clr-navy: #1a1a2e;
+  --clr-navy-light: #2a2a4e;
+  --clr-gold: #c5a55a;
+  --clr-gold-light: #d4b96e;
+  --clr-red: #8b0000;
+  --clr-red-light: #a52a2a;
+  --clr-purple: #4a0e4e;
+  --clr-green: #2d5a27;
+  --clr-blue: #1a3a6e;
+  --clr-surface: #ffffff;
+  --clr-header-bg: #1a1a2e;
+  --clr-header-text: #f5f0e8;
+  --clr-dropdown-bg: #2a2a4e;
+  --clr-browser-chrome: #1a1a2e;
+}
+
+.theme-dark {
+  --clr-parchment: #121212;
+  --clr-parchment-dark: #0a0a1a;
+  --clr-navy: #e0e0e0;
+  --clr-navy-light: #a0a0b0;
+  --clr-gold: #c5a55a;
+  --clr-gold-light: #d4b96e;
+  --clr-red: #ff6b6b;
+  --clr-red-light: #ff4444;
+  --clr-purple: #b07cc6;
+  --clr-green: #6bcf7f;
+  --clr-blue: #6ba3d6;
+  --clr-surface: #2a2a3e;
+  --clr-header-bg: #1a1a2e;
+  --clr-header-text: #f5f0e8;
+  --clr-dropdown-bg: #0e0e1a;
+  --clr-browser-chrome: #1a1a2e;
+}
+
+.theme-sepia {
+  --clr-parchment: #f4ecd8;
+  --clr-parchment-dark: #e8dcc8;
+  --clr-navy: #3b2f2f;
+  --clr-navy-light: #5c4a4a;
+  --clr-gold: #8b7355;
+  --clr-gold-light: #a08868;
+  --clr-red: #8b3a3a;
+  --clr-red-light: #a54a4a;
+  --clr-purple: #4a0e4e;
+  --clr-green: #2d5a27;
+  --clr-blue: #1a3a6e;
+  --clr-surface: #faf3e6;
+  --clr-header-bg: #3b2f2f;
+  --clr-header-text: #f4ecd8;
+  --clr-dropdown-bg: #5c4a4a;
+  --clr-browser-chrome: #3b2f2f;
+}
+
+.theme-hc {
+  --clr-parchment: #ffffff;
+  --clr-parchment-dark: #e6e6e6;
+  --clr-navy: #000000;
+  --clr-navy-light: #222222;
+  --clr-gold: #666666;
+  --clr-gold-light: #888888;
+  --clr-red: #000000;
+  --clr-red-light: #333333;
+  --clr-purple: #555555;
+  --clr-green: #555555;
+  --clr-blue: #555555;
+  --clr-surface: #ffffff;
+  --clr-header-bg: #000000;
+  --clr-header-text: #ffffff;
+  --clr-dropdown-bg: #222222;
+  --clr-browser-chrome: #000000;
 }
 
 @font-face {
@@ -166,7 +246,7 @@ nav details.nav-group > div {
   z-index: 50;
   min-width: 14rem;
   border-radius: 0.5rem;
-  background-color: var(--color-navy-light);
+  background-color: var(--color-dropdown-bg);
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   padding: 0.5rem;
   display: flex;

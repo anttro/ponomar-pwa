@@ -29,6 +29,7 @@ interface Settings {
   language: string;
   cuFont: string;
   fontSize: number;
+  theme: string;
   defaultBibleVersion: string;
   showVerseNumbers: boolean;
   verseNewLine: boolean;
@@ -42,6 +43,7 @@ const DEFAULT_SETTINGS: Settings = {
   language: 'en',
   cuFont: 'Ponomar',
   fontSize: 16,
+  theme: 'default',
   defaultBibleVersion: 'kjv',
   showVerseNumbers: true,
   verseNewLine: false,
@@ -123,7 +125,7 @@ export class SettingsView {
         <!-- Language -->
         <div class="mb-6">
           <label class="block text-sm font-bold text-navy mb-2">${t.settings.language}</label>
-          <select id="language" class="w-full border border-gold/30 rounded p-2 bg-white text-navy">
+          <select id="language" class="w-full border border-gold/30 rounded p-2 bg-surface text-navy">
             ${LANGUAGES.map(l => `
               <option value="${l.code}" ${l.code === this.settings.language ? 'selected' : ''}>
                 ${l.name} (${l.local})
@@ -132,12 +134,25 @@ export class SettingsView {
           </select>
         </div>
 
+        <!-- Theme -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-red mb-3">${t.settings.theme}</h3>
+          <div class="mb-3">
+            <select id="theme" class="w-full border border-gold/30 rounded p-2 bg-surface text-navy">
+              <option value="default" ${this.settings.theme === 'default' ? 'selected' : ''}>${t.settings.themeDefault}</option>
+              <option value="dark" ${this.settings.theme === 'dark' ? 'selected' : ''}>${t.settings.themeDark}</option>
+              <option value="sepia" ${this.settings.theme === 'sepia' ? 'selected' : ''}>${t.settings.themeSepia}</option>
+              <option value="hc" ${this.settings.theme === 'hc' ? 'selected' : ''}>${t.settings.themeHC}</option>
+            </select>
+          </div>
+        </div>
+
         <!-- Font Settings -->
         <div class="mb-6">
           <h3 class="text-lg font-bold text-red mb-3">${t.settings.fontSettings}</h3>
 
           <div class="mb-3">
-            <select id="cu-font" class="w-full border border-gold/30 rounded p-2 bg-white text-navy">
+            <select id="cu-font" class="w-full border border-gold/30 rounded p-2 bg-surface text-navy">
               ${CU_FONTS.map(f => `
                 <option value="${f.id}" ${f.id === this.settings.cuFont ? 'selected' : ''}>
                    ${f.id === '' ? t.settings.systemFont : f.name}
@@ -187,12 +202,12 @@ export class SettingsView {
             <div class="flex-1">
               <label class="block text-xs font-bold text-navy mb-1">${t.settings.latitude}</label>
               <input type="number" id="latitude" step="0.0001" value="${this.settings.latitude}"
-                class="w-full border border-gold/30 rounded p-2 bg-white text-navy text-sm">
+                class="w-full border border-gold/30 rounded p-2 bg-surface text-navy text-sm">
             </div>
             <div class="flex-1">
               <label class="block text-xs font-bold text-navy mb-1">${t.settings.longitude}</label>
               <input type="number" id="longitude" step="0.0001" value="${this.settings.longitude}"
-                class="w-full border border-gold/30 rounded p-2 bg-white text-navy text-sm">
+                class="w-full border border-gold/30 rounded p-2 bg-surface text-navy text-sm">
             </div>
           </div>
           <div class="flex items-center gap-2">
@@ -209,7 +224,7 @@ export class SettingsView {
 
           <div class="mb-3">
             <label class="block text-sm font-bold text-navy mb-1">${t.settings.defaultTranslation}</label>
-            <select id="default-bible" class="w-full border border-gold/30 rounded p-2 bg-white text-navy">
+            <select id="default-bible" class="w-full border border-gold/30 rounded p-2 bg-surface text-navy">
               <optgroup label="English">
                 <option value="kjv" ${this.settings.defaultBibleVersion === 'kjv' ? 'selected' : ''}>KJV (${t.settings.bibleComments.fullBible})</option>
                 <option value="brenton" ${this.settings.defaultBibleVersion === 'brenton' ? 'selected' : ''}>Brenton LXX (${t.settings.bibleComments.otOnly})</option>
@@ -353,6 +368,16 @@ export class SettingsView {
       document.getElementById('font-size-value')!.textContent = `${this.settings.fontSize}px`;
       document.documentElement.style.setProperty('--liturgical-font-size', this.settings.fontSize + 'px');
       saveSettings(this.settings);
+    });
+
+    document.getElementById('theme')?.addEventListener('change', (e) => {
+      this.settings.theme = (e.target as HTMLSelectElement).value;
+      saveSettings(this.settings);
+      document.documentElement.className = 'theme-' + this.settings.theme;
+      const chromeColor = getComputedStyle(document.documentElement).getPropertyValue('--clr-browser-chrome').trim();
+      if (chromeColor) {
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', chromeColor);
+      }
     });
 
     document.getElementById('default-bible')?.addEventListener('change', (e) => {

@@ -472,6 +472,11 @@ export interface Translations {
     fontPreviewNoteInactive: string;
     fontSize: string;
     systemFont: string;
+    theme: string;
+    themeDefault: string;
+    themeDark: string;
+    themeSepia: string;
+    themeHC: string;
     bibleSettings: string;
     defaultTranslation: string;
     showVerseNumbers: string;
@@ -1022,6 +1027,11 @@ const translations: Record<LanguageCode, Translations> = {
       fontPreviewNoteInactive: 'System font active — rank icons will use Ponomar font regardless',
       fontSize: 'Liturgical Text Size: ',
       systemFont: 'System Default',
+      theme: 'Color Scheme',
+      themeDefault: 'Default',
+      themeDark: 'Dark',
+      themeSepia: 'Sepia',
+      themeHC: 'High Contrast',
       bibleSettings: 'Bible',
       defaultTranslation: 'Default Translation',
       showVerseNumbers: 'Show verse numbers',
@@ -1570,6 +1580,11 @@ const translations: Record<LanguageCode, Translations> = {
       fontPreviewNoteInactive: 'Системный шрифт активен — иконы чинов будут использовать Понома́рь в любом случае',
       fontSize: 'Размер литургического текста: ',
       systemFont: 'Системный шрифт',
+      theme: 'Цветовая схема',
+      themeDefault: 'Стандартная',
+      themeDark: 'Тёмная',
+      themeSepia: 'Сепия',
+      themeHC: 'Высокая контрастность',
       bibleSettings: 'Библия',
       defaultTranslation: 'Перевод по умолчанию',
       showVerseNumbers: 'Показывать номера стихов',
@@ -2118,6 +2133,11 @@ const translations: Record<LanguageCode, Translations> = {
       fontPreviewNoteInactive: 'Системный шрифтъ активенъ — иконы чинѣвъ будутъ использовать Понома́рь въ любомъ случаи',
       fontSize: 'Размеръ литургическаго текста: ',
       systemFont: 'Системный шрифтъ',
+      theme: 'Цвѣтова́ѧ схе́ма',
+      themeDefault: 'Станда́ртнаѧ',
+      themeDark: 'Тёмнаѧ',
+      themeSepia: 'Се́пїѧ',
+      themeHC: 'Высо́каѧ контра́стность',
       bibleSettings: 'Библия',
       defaultTranslation: 'Переводъ по умолчанiю',
       showVerseNumbers: 'Показывать номера стиховъ',

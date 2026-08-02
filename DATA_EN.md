@@ -45,7 +45,9 @@ static/data/
 │   ├── en-menaion-bundle.json       # Language-specific overrides
 │   ├── lives/                       # Saint lives by month
 │   │   ├── 01.json through 12.json  # Month-prefixed CIds (01XX-12XX)
-│   │   └── misc.json                # Non-month-prefixed CIds
+│   │   ├── misc/                    # Non-month-prefixed CIds
+│   │   │   ├── 1.json               # CIds starting with digit 1
+│   │   │   ├── 2.json
 │   ├── menaion/                     # Daily menaion entries (366 days)
 │   ├── calendar/                    # Calendar metadata
 │   └── services/                    # Service templates
@@ -140,13 +142,13 @@ Lives bundles are routed based on CId prefix:
 | `02XX-02ZZ` | `02.json` | `023456`, `027890` |
 | ... | ... | ... |
 | `12XX-12ZZ` | `12.json` | `123456`, `127890` |
-| Other CIds | `misc.json` | `772426`, `373`, `2396` |
+| Other CIds | `misc/{n}.json` | `772426→misc/7.json`, `373→misc/3.json` |
 
 **Examples:**
 - `010101` → `01.json`
 - `1253` → `12.json`  
-- `772426` → `misc.json`
-- `373` → `misc.json`
+- `772426` → `misc/7.json`
+- `373` → `misc/3.json`
 
 ### Bundle File Naming
 - Main bundle: `menaion-bundle.json` (per language)
@@ -192,8 +194,8 @@ Lives bundles are routed based on CId prefix:
 }
 ```
 
-**Coverage**: 3046 total CIds, 1190 with life.text enriched
-**Routing**: Prefix-based (01.json-12.json + misc.json)
+**Coverage**: 3046 total CIds, 1203 with life.text enriched
+**Routing**: Prefix-based (01.json-12.json + misc/{digit}.json)
 **Usage**: Lives display on saint detail pages
 
 ### Calendar Data
@@ -275,7 +277,7 @@ Converts XML data from Java Ponomar sources to JSON format.
 
 **`convert-lives.ts`** — Saint lives XML → JSON conversion
 - Input: `ponomar/Ponomar/languages/{lang}/xml/lives/*.xml`
-- Output: `{lang}/lives/{01.json|misc.json}` bundles
+- Output: `{lang}/lives/{01.json|misc/{digit}.json}` bundles
 - Features:
   - XML parsing with attribute extraction
   - Name case normalization
@@ -474,7 +476,7 @@ Key format: `{date}|{distinctive substring}` → CId
 function bundleFileForCid(cid: string): string {
   return /^(0[1-9]|1[0-2])\d+/.test(cid) 
     ? `${cid.substring(0, 2)}.json` 
-    : 'misc.json';
+    : `misc/${cid.charAt(0)}.json`;
 }
 ```
 
@@ -536,7 +538,7 @@ git commit -m "enrich 121 more ru lives with Chetyi-Minei texts"
 ```bash
 python3 -c "
 import json, re
-misc = json.load(open('static/data/ru/lives/misc.json'))
+misc = json.load(open('static/data/ru/lives/misc/4.json'))
 for cid in ['493', '1674', '257401']:  # Known collision targets
     text = misc[cid]['life']['text']
     headings = re.findall(r'<b>([^<]+)</b>', text)
@@ -679,9 +681,9 @@ npm run dev
 **Problem:** Ambiguous routing for CIds at boundaries
 
 **Edge Cases:**
-- `00` prefixes → misc.json (not 00.json)
-- `99` prefixes → misc.json (not 09.json)
-- Non-numeric CIds → misc.json
+- `00` prefixes → misc/{first-digit}.json (not 00.json)
+- `99` prefixes → misc/{first-digit}.json (not 09.json)
+- Non-numeric CIds → misc/{first-digit}.json
 
 **Solution:** 
 ```typescript
@@ -770,7 +772,7 @@ scripts/output/lives-match-report.json      # Match report
 
 **Current Status:**
 - Total CIds: 3046
-- Lives with text: 1190 (39%)
+- Lives with text: 1203 (39%)
 - Empty lives: 1856 (61%)
 
 **Enrichment Progress:**

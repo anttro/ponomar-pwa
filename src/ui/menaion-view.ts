@@ -72,13 +72,13 @@ export class MenaionView {
               class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1
                 ${item.id === 'menaion'
                   ? 'border border-gold bg-gold/10 text-navy font-bold'
-                  : 'border border-gold/20 bg-white/50 text-navy hover:border-gold/50'}"
+                  : 'border border-gold/20 bg-surface/50 text-navy hover:border-gold/50'}"
               data-view="${item.view}"
             >${item.label}</button>
           `).join('')}
         </div>
         <div id="menaion-calendar"></div>
-        <div id="menaion-content" class="bg-white/50 border border-gold/20 rounded-lg p-4 min-h-[300px]">
+        <div id="menaion-content" class="bg-surface/50 border border-gold/20 rounded-lg p-4 min-h-[300px]">
           <p class="text-navy-light italic">${this.t.prayer.selectSection}</p>
         </div>
       </div>
