@@ -556,7 +556,7 @@ export class CalendarView {
     const julianStr = `${julianDayName}, ${this.currentDate.getDay()} ${this.t.calendar.monthsGenitive[this.currentDate.getMonth() - 1]}, год ${julianYear} ${this.t.calendar.fromYear}, ${annoMundi} ${this.t.calendar.fromAdam}`;
 
     this.container.innerHTML = `
-      <div class="flex flex-col lg:flex-row h-full">
+      <div class="flex flex-col lg:flex-row h-full justify-center">
         <div class="lg:w-80 bg-parchment-dark border-r border-gold/20 p-4 flex-shrink-0">
           <div class="flex items-center justify-between mb-4">
             <button id="prev-month" class="p-2 hover:bg-navy/10 rounded">◀</button>
