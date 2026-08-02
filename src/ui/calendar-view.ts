@@ -573,7 +573,7 @@ export class CalendarView {
         </div>
 
         <div class="flex-1 p-3 overflow-auto">
-          <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+          <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
             <h2 class="text-base font-bold text-red mb-1">
               ${julianStr}
             </h2>
