@@ -8,6 +8,7 @@
 
 import { JDate } from './jdate';
 import { Paschalion } from './paschalion';
+import { FOUNDATION } from './paschalion';
 
 /** Result of sunrise/sunset calculation for a given day. */
 export interface SolarTimes {
@@ -120,11 +121,52 @@ export function calcSolarTimes(jdate: JDate, lat: number, lon: number, tz: numbe
   };
 }
 
+/**
+ * Calculate ecclesiastical moon day using the foundation (age on March 1)
+ * and alternating 29/30-day months.
+ * Returns 1-based day of the current lunar cycle (1-30).
+ */
+function calcMoonDay(jdate: JDate): number {
+  const year = jdate.getYear();
+  const cycle = Paschalion.getLunarCycle(year);
+  const foundation = FOUNDATION[cycle - 1];
+
+  // Days from March 1 to the target date
+  const march1 = new JDate(3, 1, year);
+  let diff = jdate.difference(march1);
+  if (diff < 0) {
+    // Date is before March 1 — use previous year's foundation
+    const prevCycle = cycle === 1 ? 19 : cycle - 1;
+    const prevFoundation = FOUNDATION[prevCycle - 1];
+    const prevMarch1 = new JDate(3, 1, year - 1);
+    const diffFromPrevMarch = jdate.difference(prevMarch1);
+    const adjusted = 29.53 * 12 + diffFromPrevMarch; // ~354 days for 12 lunar months
+    let total = prevFoundation + adjusted;
+    // Subtract full lunar cycles (alternating 29/30, starting with 29)
+    const ml = (idx: number) => (idx % 2 === 0) ? 29 : 30;
+    let monthIdx = 0;
+    while (total >= ml(monthIdx)) { total -= ml(monthIdx); monthIdx++; }
+    return Math.floor(total) + 1;
+  }
+
+  let total = foundation + diff;
+
+  // Subtract alternating 29/30-day months (starting with 29)
+  const monthLen = (idx: number) => (idx % 2 === 0) ? 29 : 30;
+  let monthIdx = 0;
+  while (total >= monthLen(monthIdx)) {
+    total -= monthLen(monthIdx);
+    monthIdx++;
+  }
+
+  return Math.floor(total) + 1;
+}
+
 /** Moon phase info for a given Julian date. */
 export function getMoonInfo(jdate: JDate): LunarInfo {
   const phase = Paschalion.getLunarPhase(jdate);
   const trend = phase < 0.5 ? 'waxing' : 'waning';
-  const moonDay = Math.floor(phase * 29.53) + 1;
+  const moonDay = calcMoonDay(jdate);
 
   // Map phase (0-1) to emoji (0=new, 0.5=full)
   let emoji: string;

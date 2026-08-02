@@ -11,8 +11,8 @@ import { JDate } from './jdate';
 
 const LUNAR_MONTH = 29.52916667;
 
-/** Age of the moon on March 1 for each year in the 19-year Metonic cycle (hours since midnight). */
-const FOUNDATION = [
+/** Age of the moon on March 1 for each year in the 19-year Metonic cycle (days). */
+export const FOUNDATION = [
   14.042016807, 25.462184874, 6.084033613, 17.966386555, 28.336134454,
   9.210084034, 20.504201681, 1.420168067, 12.294117647, 23.168067227,
   4.546218487, 15.042016807, 26.294117647, 7.630252101, 18.546218487,
