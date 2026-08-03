@@ -492,8 +492,14 @@ export interface Translations {
     gregorian: string;
     about: string;
     aboutText: string;
+    aboutAppName: string;
     aboutLicense: string;
     installPwa: string;
+    offlineOfferTitle: string;
+    offlineOfferText: string;
+    offlineOfferPreloadAll: string;
+    offlineOfferChoose: string;
+    offlineOfferSkip: string;
     offlineContent: string;
     offlineLangs: string;
     offlineDataTypes: string;
@@ -1046,9 +1052,15 @@ const translations: Record<LanguageCode, Translations> = {
       julian: 'Julian',
       gregorian: 'Gregorian',
       about: 'About Ponomar',
-      aboutText: 'Ponomar is an Orthodox Church calendar application providing liturgical information, service texts, and Bible readings in multiple languages.',
+      aboutText: ' is an Orthodox Church calendar application providing liturgical information, service texts, and Bible readings in multiple languages.',
+      aboutAppName: 'Ponomar',
       aboutLicense: 'Based on the Ponomar Java desktop application by Aleksandr Andreev and Yuri Shardt. Licensed under GPL v3.',
       installPwa: 'Install Ponomar',
+      offlineOfferTitle: 'Offline Data',
+      offlineOfferText: 'If you plan to use the application without internet access, you should preload data for offline usage.',
+      offlineOfferPreloadAll: 'Pre-load everything',
+      offlineOfferChoose: 'Choose data to preload',
+      offlineOfferSkip: 'Don\'t preload',
       offlineContent: 'Offline Content',
       offlineLangs: 'Languages to cache',
       offlineDataTypes: 'Data to cache',
@@ -1063,7 +1075,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineSelectLang: 'Please select at least one language.',
       offlineSelectAll: 'Select all',
       offlineCleared: 'Cache cleared.',
-      offlineCacheInfo: 'Cache: {0} / {1} ({2} files)',
+      offlineCacheInfo: '{0}, {2} files',
       locationTitle: 'Location',
       latitude: 'Latitude',
       longitude: 'Longitude',
@@ -1599,9 +1611,15 @@ const translations: Record<LanguageCode, Translations> = {
       julian: 'Юлианский',
       gregorian: 'Григорианский',
       about: 'О Понома́ре',
-      aboutText: 'Понома́рь — приложение православного календаря, предоставляющее литургическую информацию, тексты служб и библейские чтения на нескольких языках.',
+      aboutText: ' — приложение православного календаря, предоставляющее литургическую информацию, тексты служб и библейские чтения на нескольких языках.',
+      aboutAppName: 'Пономарь',
       aboutLicense: 'Основано на Java-приложении Понома́рь от Александра Андреева и Юрия Шардт. Лицензия GPL v3.',
       installPwa: 'Установить Пономарь',
+      offlineOfferTitle: 'Офлайн-данные',
+      offlineOfferText: 'Если вы планируете использовать приложение без интернета, предзагрузите данные для офлайн-использования.',
+      offlineOfferPreloadAll: 'Загрузить всё',
+      offlineOfferChoose: 'Выбрать данные',
+      offlineOfferSkip: 'Не загружать',
       offlineContent: 'Офлайн-контент',
       offlineLangs: 'Языки для кэширования',
       offlineDataTypes: 'Типы данных',
@@ -1616,7 +1634,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineSelectLang: 'Пожалуйста, выберите хотя бы один язык.',
       offlineSelectAll: 'Выбрать все',
       offlineCleared: 'Кэш очищен.',
-      offlineCacheInfo: 'Кэш: {0} / {1} ({2} файлов)',
+      offlineCacheInfo: '{0}, {2} файлов',
       locationTitle: 'Местоположение',
       latitude: 'Широта',
       longitude: 'Долгота',
@@ -2152,9 +2170,15 @@ const translations: Record<LanguageCode, Translations> = {
       julian: 'Юліанскій',
       gregorian: 'Григоріанскій',
       about: 'О Понома́ри',
-      aboutText: 'Понома́рь — приложенiе православнаго календаря, предоставляющее литургическiю информацию, тексты службъ и библейскія чтения на нескольких языкахъ.',
+      aboutText: ' — приложенiе православнаго календаря, предоставляющее литургическiю информацию, тексты службъ и библейскія чтения на нескольких языкахъ.',
+      aboutAppName: 'Пономарь',
       aboutLicense: 'Основано на Java-приложенiи Понома́рь отъ Александра Андреева и Юрия Шардт. Лицензия GPL v3.',
       installPwa: 'Оустановити Понома́рь',
+      offlineOfferTitle: 'Офлайн-данныѧ',
+      offlineOfferText: 'А҆́ще плани́рꙋете и҆спо́льзовати приложе́нїе без̾ и҆нтернета, предзагризите да́нныѧ длѧ офлайн-потребле́нїѧ.',
+      offlineOfferPreloadAll: 'Загризи́ти всѧ̑',
+      offlineOfferChoose: 'И҆збра́ти да́нныѧ',
+      offlineOfferSkip: 'Не загрꙋжа́ти',
       offlineContent: 'Офлайн-контентъ',
       offlineLangs: 'Языки для кеширования',
       offlineDataTypes: 'Типы данныхъ',
@@ -2169,7 +2193,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineSelectLang: 'Пожалуйста, изберите хотя бы единъ языкъ.',
       offlineSelectAll: 'И҆збра́ти всѧ̑',
       offlineCleared: 'Кешъ очищенъ.',
-      offlineCacheInfo: 'Кешъ: {0} / {1} ({2} фа́йлѡвъ)',
+      offlineCacheInfo: '{0}, {2} фа́йловъ',
       locationTitle: 'Мѣстоположе́нїе',
       latitude: 'Широта̀',
       longitude: 'Долгота̀',

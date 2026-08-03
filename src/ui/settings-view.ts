@@ -108,11 +108,13 @@ export class SettingsView {
   private container: HTMLElement;
   private settings: Settings;
   private onLanguageChange?: () => void;
+  private action?: string;
 
-  constructor(container: HTMLElement, onLanguageChange?: () => void) {
+  constructor(container: HTMLElement, onLanguageChange?: () => void, action?: string) {
     this.container = container;
     this.settings = loadSettings();
     this.onLanguageChange = onLanguageChange;
+    this.action = action;
   }
 
   render() {
@@ -336,7 +338,7 @@ export class SettingsView {
         <div class="mt-8 pt-6 border-t border-gold/20">
           <h3 class="text-lg font-bold text-red mb-2">${t.settings.about}</h3>
           <p class="text-sm text-navy-light">
-            ${t.settings.aboutText}
+            <a href="https://github.com/anttro/ponomar-pwa" target="_blank" rel="noopener" class="underline hover:text-gold">${t.settings.aboutAppName}</a>${t.settings.aboutText}
           </p>
           <p class="text-xs text-navy-light mt-2">
             <a href="https://github.com/typiconman/ponomar" target="_blank" rel="noopener" class="underline hover:text-gold">
@@ -367,6 +369,7 @@ export class SettingsView {
       this.settings.fontSize = parseInt((e.target as HTMLInputElement).value, 10);
       document.getElementById('font-size-value')!.textContent = `${this.settings.fontSize}px`;
       document.documentElement.style.setProperty('--liturgical-font-size', this.settings.fontSize + 'px');
+      this.updateFontPreview();
       saveSettings(this.settings);
     });
 
@@ -533,7 +536,6 @@ export class SettingsView {
           if (statsEl) {
             statsEl.textContent = t.settings.offlineCacheInfo
               .replace('{0}', OfflineManager.formatBytes(stats.usageBytes))
-              .replace('{1}', OfflineManager.formatBytes(stats.quotaBytes))
               .replace('{2}', String(stats.cachedFiles));
           }
         });
@@ -622,6 +624,19 @@ export class SettingsView {
       if (ruChecked && cuCheckbox) {
         cuCheckbox.checked = true;
       }
+
+      // Auto-preload everything if triggered from first-launch offer
+      if (this.action === 'autopreload') {
+        document.querySelectorAll('.offline-lang').forEach(el => (el as HTMLInputElement).checked = true);
+        document.querySelectorAll('.offline-type').forEach(el => (el as HTMLInputElement).checked = true);
+        const bibleChevron = document.getElementById('bible-chevron');
+        if (bibleChevron) bibleChevron.click();
+        setTimeout(() => {
+          document.querySelectorAll('.bible-trans').forEach(el => (el as HTMLInputElement).checked = true);
+          document.getElementById('offline-preload')?.click();
+        }, 300);
+        window.history.replaceState(null, '', '#settings');
+      }
     })();
 
     this.updateFontPreview();
@@ -631,6 +646,7 @@ export class SettingsView {
     const preview = document.getElementById('font-preview');
     if (preview) {
       preview.className = `${fontClass(this.settings.cuFont)} text-lg`;
+      preview.style.fontSize = `${this.settings.fontSize}px`;
     }
   }
 }

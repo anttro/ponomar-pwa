@@ -12,13 +12,14 @@ import { loadSettings, type Settings } from './settings-view';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { DataCache } from '../core/data-cache';
 
-type View = 'calendar' | 'bible' | 'prayer' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'menaion' | 'triodion' | 'settings';
+type View = 'calendar' | 'bible' | 'prayer' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'menaion' | 'triodion' | 'lives' | 'settings';
 
 export class App {
   private container: HTMLElement;
   private currentView: View = 'calendar';
   private currentDate: JDate;
   private settings: Settings;
+  private routeParam: string = '';
 
   constructor(container: HTMLElement) {
     this.container = container;
@@ -36,11 +37,27 @@ export class App {
     }
   }
 
+  private async checkDataVersion() {
+    const DATA_VERSION = '2026-08-04'; // bump when data structure changes
+    try {
+      const cachedVer = await DataCache.get('__data_version__') as string | null;
+      if (cachedVer !== DATA_VERSION) {
+        await DataCache.clear();
+        await DataCache.set('__data_version__', DATA_VERSION);
+      }
+    } catch {
+      // Silently fail — cache is best-effort
+    }
+  }
+
   init() {
     this.container.innerHTML = '';
     this.render();
     this.handleRoute();
     window.addEventListener('hashchange', () => this.handleRoute());
+
+    // Data version check — bump DATA_VERSION when static data structure changes
+    this.checkDataVersion();
 
     // Close dropdown menus on click/touch outside
     const closeOpenDropdowns = (e: Event) => {
@@ -71,6 +88,18 @@ export class App {
       (window as any).__deferredPrompt = e;
     });
 
+    // Clear first-launch flag on re-install
+    window.addEventListener('appinstalled', () => {
+      localStorage.removeItem('ponomar-installed');
+    });
+
+    // Show offline offer on first standalone launch
+    const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone;
+    if (isStandalone() && !localStorage.getItem('ponomar-installed')) {
+      localStorage.setItem('ponomar-installed', '1');
+      this.showOfflineOfferModal();
+    }
+
     // Auto-preload essential data for the current language
     this.autoPreload();
   }
@@ -82,13 +111,10 @@ export class App {
       const lang = this.settings.language as LanguageCode;
       const languages = lang === 'ru' ? ['ru', 'cu'] : [lang];
       for (const l of languages) {
-        // Preload menaion bundle
         await DataCache.fetch(`/data/${l}/menaion-bundle.json`).catch(() => {});
-        // Preload current month lives
         const mm = String(JDate.today().getMonth()).padStart(2, '0');
         await DataCache.fetch(`/data/${l}/lives/${mm}.json`).catch(() => {});
       }
-      // Preload calendar data
       await DataCache.fetch('/data/shared/fasting.json').catch(() => {});
       localStorage.setItem(key, '1');
     } catch {
@@ -96,10 +122,42 @@ export class App {
     }
   }
 
+  private showOfflineOfferModal() {
+    const t = getTranslations(this.settings.language as LanguageCode);
+    const overlay = document.createElement('div');
+    overlay.id = 'offline-offer-overlay';
+    overlay.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50';
+    overlay.innerHTML = `
+      <div class="bg-surface rounded-xl shadow-2xl p-6 max-w-md mx-4">
+        <h3 class="text-lg font-bold text-navy mb-2">${t.settings.offlineOfferTitle}</h3>
+        <p class="text-sm text-navy mb-4">${t.settings.offlineOfferText}</p>
+        <div class="flex flex-col gap-2">
+          <button id="offline-offer-all" class="w-full bg-navy text-parchment rounded-lg px-4 py-2 font-bold hover:bg-navy-light transition-colors">${t.settings.offlineOfferPreloadAll}</button>
+          <button id="offline-offer-choose" class="w-full bg-gold text-navy rounded-lg px-4 py-2 font-bold hover:bg-gold-light transition-colors">${t.settings.offlineOfferChoose}</button>
+          <button id="offline-offer-skip" class="w-full text-sm text-navy-light underline hover:text-navy text-center cursor-pointer">${t.settings.offlineOfferSkip}</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    document.getElementById('offline-offer-all')?.addEventListener('click', () => {
+      overlay.remove();
+      window.location.hash = '#settings/autopreload';
+    });
+    document.getElementById('offline-offer-choose')?.addEventListener('click', () => {
+      overlay.remove();
+      window.location.hash = '#settings';
+    });
+    document.getElementById('offline-offer-skip')?.addEventListener('click', () => {
+      overlay.remove();
+    });
+  }
+
   private handleRoute() {
     const hash = window.location.hash.slice(1) || 'calendar';
     const parts = hash.split('/');
     this.currentView = parts[0] as View || 'calendar';
+    this.routeParam = parts[1] || '';
     this.renderView();
   }
 
@@ -234,7 +292,7 @@ export class App {
         new SettingsView(viewContainer, () => {
           this.render();
           this.renderView();
-        }).render();
+        }, this.routeParam).render();
         break;
     }
   }

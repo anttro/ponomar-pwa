@@ -16,7 +16,7 @@
 const DB_NAME = 'ponomar-cache';
 const DB_VERSION = 1;
 const STORE_NAME = 'data';
-const DEFAULT_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+const DEFAULT_TTL_MS = Infinity; // never expire — static data
 
 interface CacheEntry {
   key: string;

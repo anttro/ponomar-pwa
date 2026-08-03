@@ -34,6 +34,8 @@ npm run dev
 
 Data files in `static/data/` are tracked in git. The only gitignored output is `scripts/output/minei.json` (33MB Chetyi-Minei source).
 
+**Data version**: `DATA_VERSION` in `src/ui/app.ts` controls cache invalidation. Bump it when restructuring data (new fields, reorganized bundles, updated sources) to force users to re-fetch cached data on next app load.
+
 ```bash
 npm run build    # production build
 npm run preview  # preview production build

@@ -146,6 +146,10 @@ export class OfflineManager {
       progress.current++;
       progress.file = file;
 
+      // Skip if already cached
+      const cacheKey = `url:${file}`;
+      if (await DataCache.get(cacheKey) !== null) continue;
+
       // Use DataCache.fetch to cache the file in IndexedDB
       // The service worker will also cache it via runtime caching
       try {
