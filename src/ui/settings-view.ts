@@ -302,13 +302,7 @@ export class SettingsView {
             <label class="block text-sm font-bold text-navy mb-2">${t.settings.offlineDataTypes}</label>
             <div id="offline-types" class="flex flex-wrap gap-3">
               <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="lives" checked class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineLives}</span>
-              </label>
-              <label class="flex items-center gap-1 cursor-pointer">
                 <input type="checkbox" value="calendar" checked class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineCalendar}</span>
-              </label>
-              <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="menaion" class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineMenaion}</span>
               </label>
               <div id="bible-row" class="flex items-center gap-1 cursor-pointer">
                 <span class="text-sm">${t.settings.offlineBible} <span id="bible-count" class="text-xs text-navy-light">(0/0)</span></span>
@@ -505,7 +499,7 @@ export class SettingsView {
       const selectedLangs = Array.from(document.querySelectorAll('.offline-lang:checked'))
         .map(el => (el as HTMLInputElement).value);
       const selectedTypes = Array.from(document.querySelectorAll('.offline-type:checked'))
-        .map(el => (el as HTMLInputElement).value) as ('lives' | 'bible' | 'calendar' | 'menaion')[];
+        .map(el => (el as HTMLInputElement).value) as ('calendar' | 'bible')[];
 
       if (selectedLangs.length === 0) {
         const progressDiv = document.getElementById('offline-progress');
@@ -584,9 +578,7 @@ export class SettingsView {
       };
 
       // Check main types
-      setChecked('.offline-type[value="lives"]', await checkCache('url:/data/ru/lives/01.json'));
       setChecked('.offline-type[value="calendar"]', await checkCache('url:/data/shared/fasting.json'));
-      setChecked('.offline-type[value="menaion"]', await checkCache('url:/data/en/menaion-bundle.json'));
 
       // Count cached Bible translations
       (async () => {

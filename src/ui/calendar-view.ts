@@ -957,7 +957,7 @@ commPanel.addEventListener('click', (e) => {
             <span class="text-navy">${solar?.sunset ?? '—'}</span>
             <span class="mx-2 text-gold/40">|</span>
             <span class="font-bold text-navy">${this.t.calendar.moonPhase}:</span>
-            <span class="text-navy"><span title="${moonName}">${moon.emoji}</span> ${moon.trend === 'waxing' ? '↗' : '↘'} ${this.t.calendar.moonDay} ${moon.moonDay}, ${moon.illumination}%</span>
+            <span class="text-navy"><span title="${moonName}">${moon.emoji}</span> ${moon.trend === 'waxing' ? '↗' : '↘'}</span>
           `;
         } else {
           astroPanel.innerHTML = `<span class="text-navy-light italic">${this.t.calendar.noLocation}</span>`;
