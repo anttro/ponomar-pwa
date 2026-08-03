@@ -10,6 +10,7 @@
     "convert": "tsx scripts/convert-all.ts",
     "migrate": "tsx scripts/migrate-data.ts",
     "migrate:dry": "tsx scripts/migrate-data.ts --dry-run",
+    "generate-manifest": "tsx scripts/generate-preload-manifest.ts",
     "validate": "tsx scripts/validate-data.ts",
     "search": "tsx scripts/tools/search-texts.ts",
     "stats": "tsx scripts/tools/stats.ts",

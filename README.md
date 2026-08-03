@@ -36,6 +36,12 @@ Data files in `static/data/` are tracked in git. The only gitignored output is `
 
 **Data version**: `DATA_VERSION` in `src/ui/app.ts` controls cache invalidation. Bump it when restructuring data (new fields, reorganized bundles, updated sources) to force users to re-fetch cached data on next app load.
 
+**Preload manifest**: After adding or removing data files, regenerate the preload manifest:
+```bash
+npm run generate-manifest
+```
+Then commit the updated `static/data/shared/preload-manifest.json` along with the data changes.
+
 ```bash
 npm run build    # production build
 npm run preview  # preview production build

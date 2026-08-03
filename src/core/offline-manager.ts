@@ -395,11 +395,10 @@ export class OfflineManager {
   /**
    * Get cache usage statistics.
    */
-  static async getStats(): Promise<CacheStats> {
+static async getStats(): Promise<CacheStats> {
     const estimate = await DataCache.estimate();
     const cachedCount = await DataCache.count();
 
-    // Determine which languages and types are cached
     const cachedLanguages = new Set<string>();
     const cachedTypes = new Set<string>();
 
