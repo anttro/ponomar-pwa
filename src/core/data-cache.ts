@@ -26,19 +26,24 @@ interface CacheEntry {
   ttl: number;
 }
 
-function openDB(): Promise<IDBDatabase> {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
-    request.onupgradeneeded = () => {
-      const db = request.result;
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        const store = db.createObjectStore(STORE_NAME, { keyPath: 'key' });
-        store.createIndex('storedAt', 'storedAt', { unique: false });
-      }
-    };
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
-  });
+let dbPromise: Promise<IDBDatabase> | null = null;
+
+function getDB(): Promise<IDBDatabase> {
+  if (!dbPromise) {
+    dbPromise = new Promise((resolve, reject) => {
+      const request = indexedDB.open(DB_NAME, DB_VERSION);
+      request.onupgradeneeded = () => {
+        const db = request.result;
+        if (!db.objectStoreNames.contains(STORE_NAME)) {
+          const store = db.createObjectStore(STORE_NAME, { keyPath: 'key' });
+          store.createIndex('storedAt', 'storedAt', { unique: false });
+        }
+      };
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  }
+  return dbPromise;
 }
 
 export class DataCache {
@@ -48,7 +53,7 @@ export class DataCache {
    */
   static async get(key: string): Promise<unknown | null> {
     try {
-      const db = await openDB();
+      const db = await getDB();
       return new Promise<unknown | null>((resolve) => {
         const tx = db.transaction(STORE_NAME, 'readonly');
         const store = tx.objectStore(STORE_NAME);
@@ -82,7 +87,7 @@ export class DataCache {
    */
   static async set(key: string, data: unknown, ttl: number = DEFAULT_TTL_MS): Promise<void> {
     try {
-      const db = await openDB();
+      const db = await getDB();
       return new Promise((resolve, reject) => {
         const tx = db.transaction(STORE_NAME, 'readwrite');
         const store = tx.objectStore(STORE_NAME);
@@ -107,7 +112,7 @@ export class DataCache {
    */
   static async remove(key: string): Promise<void> {
     try {
-      const db = await openDB();
+      const db = await getDB();
       return new Promise((resolve) => {
         db.transaction(STORE_NAME, 'readwrite')
           .objectStore(STORE_NAME)
@@ -124,7 +129,7 @@ export class DataCache {
    */
   static async clear(): Promise<void> {
     try {
-      const db = await openDB();
+      const db = await getDB();
       return new Promise((resolve) => {
         db.transaction(STORE_NAME, 'readwrite')
           .objectStore(STORE_NAME)
@@ -157,7 +162,7 @@ export class DataCache {
    */
   static async count(): Promise<number> {
     try {
-      const db = await openDB();
+      const db = await getDB();
       return new Promise((resolve) => {
         const tx = db.transaction(STORE_NAME, 'readonly');
         const store = tx.objectStore(STORE_NAME);
