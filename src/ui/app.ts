@@ -248,7 +248,8 @@ export class App {
         const biblePassage = bp[3] || '';
         let bibleVersion: string;
         if (!versionSpec) {
-          bibleVersion = this.resolveBibleVersion(this.settings.defaultBibleVersion, lang);
+          const lastVersion = localStorage.getItem('ponomar-last-bible-version');
+          bibleVersion = lastVersion || this.resolveBibleVersion(this.settings.defaultBibleVersion, lang);
         } else if (versionSpec.includes('~')) {
           // Format: lang~short e.g. "en~kjv" → "en/bible/kjv"
           const [vl, vs] = versionSpec.split('~');

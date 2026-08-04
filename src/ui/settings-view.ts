@@ -58,12 +58,6 @@ function defaultBibleForLanguage(lang: string): string {
   return map[lang] || 'kjv';
 }
 
-const LANG_LABELS: Record<string, string> = {
-  en: 'English', ru: 'Русский', cu: 'Церковнославянский',
-  el: 'Ἑλληνικά', fr: 'Français', la: 'Latina',
-  zh: '中文', ar: 'العربية',
-};
-
 function versionPriority(lang: string, userLang: string): number {
   if (lang === userLang) return 0;
   if ((userLang === 'ru' || userLang === 'cu') && (lang === 'ru' || lang === 'cu')) return 1;
@@ -339,26 +333,15 @@ export class SettingsView {
           return pa - pb || a.name.localeCompare(b.name);
         });
 
-        // Group by language
-        const groups: Record<string, any[]> = {};
-        for (const v of versions) {
-          if (!groups[v.language]) groups[v.language] = [];
-          groups[v.language].push(v);
-        }
-
-        // Build optgroups in priority order
-        const orderedLangs = [...new Set(versions.map((v: any) => v.language))] as string[];
+        // Build options in priority order
         const select = document.getElementById('default-bible') as HTMLSelectElement;
         if (select) {
-          select.innerHTML = orderedLangs.map((lang: string) => {
-            const items = groups[lang];
-            return `<optgroup label="${LANG_LABELS[lang] || lang}">${items.map((v: any) => {
+          select.innerHTML = versions.map((v: any) => {
               const shortId = v.id.split('/').pop();
               const size = OfflineManager.getBibleSize(v.id);
               const comment = size ? ` (${size})` : '';
               return `<option value="${shortId}" ${this.settings.defaultBibleVersion === shortId ? 'selected' : ''}>${v.name}${comment}</option>`;
-            }).join('')}</optgroup>`;
-          }).join('');
+            }).join('');
         }
       } catch {}
     })();

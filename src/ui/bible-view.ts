@@ -298,5 +298,6 @@ export class BibleView {
     }
 
     saveBibleState(this.currentVersion, this.currentBook, this.currentPassage);
+    localStorage.setItem('ponomar-last-bible-version', this.currentVersion);
   }
 }
