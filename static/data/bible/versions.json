@@ -778,13 +778,6 @@
         "intro": "A reading from the Lamentations of Jeremiah"
       },
       {
-        "id": "Epistle",
-        "name": "Epistle of Jeremiah",
-        "short": "Epistle",
-        "chapters": 1,
-        "intro": "A reading from the Epistle of Jeremiah"
-      },
-      {
         "id": "Baruch",
         "name": "Baruch",
         "short": "Baruch",
@@ -1122,13 +1115,6 @@
         "short": "Heb",
         "chapters": 13,
         "intro": "A reading from the Epistle to the Hebrews"
-      },
-      {
-        "id": "Apoc",
-        "name": "Apocalypse",
-        "short": "Apoc",
-        "chapters": 22,
-        "intro": "A reading from the Book of Revelations"
       }
     ],
     "formatting": {
@@ -3689,20 +3675,6 @@
         "intro": "恭读史书补遗二（纪年书二）"
       },
       {
-        "id": "II_Esdra",
-        "name": "艾斯德拉纪一",
-        "short": "拉／厄上",
-        "chapters": 9,
-        "intro": "恭读艾斯德拉纪一"
-      },
-      {
-        "id": "I_Esdra",
-        "name": "艾斯德拉纪二",
-        "short": "艾斯德拉纪二",
-        "chapters": 10,
-        "intro": "恭读艾斯德拉纪二"
-      },
-      {
         "id": "Nehem",
         "name": "奈俄弥亚纪",
         "short": "尼／厄下",
@@ -3715,13 +3687,6 @@
         "short": "多",
         "chapters": 14,
         "intro": "恭读托维特传"
-      },
-      {
-        "id": "Judith",
-        "name": "虞狄特传",
-        "short": "友",
-        "chapters": 16,
-        "intro": "恭读虞狄特传"
       },
       {
         "id": "Esther",
@@ -3925,27 +3890,6 @@
         "short": "加下",
         "chapters": 15,
         "intro": "恭读玛喀维传三"
-      },
-      {
-        "id": "III_Macc",
-        "name": "玛喀维传三",
-        "short": "玛喀维传三",
-        "chapters": 7,
-        "intro": "恭读玛喀维传三"
-      },
-      {
-        "id": "IV_Macc",
-        "name": "玛喀维传四",
-        "short": "玛喀维传四",
-        "chapters": 18,
-        "intro": "恭读玛喀维传四"
-      },
-      {
-        "id": "III_Esdra",
-        "name": "艾斯德拉纪三",
-        "short": "艾斯德拉纪三",
-        "chapters": 16,
-        "intro": "恭读艾斯德拉纪三"
       },
       {
         "id": "Mt",
@@ -4260,20 +4204,6 @@
         "intro": "恭讀史書補遺二（紀年書二）"
       },
       {
-        "id": "II_Esdra",
-        "name": "艾斯德拉紀一",
-        "short": "艾斯德拉紀一",
-        "chapters": 9,
-        "intro": "恭讀艾斯德拉紀一"
-      },
-      {
-        "id": "I_Esdra",
-        "name": "艾斯德拉紀二",
-        "short": "拉／厄上",
-        "chapters": 10,
-        "intro": "恭讀艾斯德拉紀二"
-      },
-      {
         "id": "Nehem",
         "name": "奈俄彌亞紀",
         "short": "尼／厄下",
@@ -4286,13 +4216,6 @@
         "short": "多",
         "chapters": 14,
         "intro": "恭讀托維特傳"
-      },
-      {
-        "id": "Judith",
-        "name": "虞狄特傳",
-        "short": "友",
-        "chapters": 16,
-        "intro": "恭讀虞狄特傳"
       },
       {
         "id": "Esther",
@@ -4496,27 +4419,6 @@
         "short": "加下",
         "chapters": 15,
         "intro": "恭讀瑪喀維傳三"
-      },
-      {
-        "id": "III_Macc",
-        "name": "瑪喀維傳三",
-        "short": "瑪喀維傳三",
-        "chapters": 7,
-        "intro": "恭讀瑪喀維傳三"
-      },
-      {
-        "id": "IV_Macc",
-        "name": "瑪喀維傳四",
-        "short": "瑪喀維傳四",
-        "chapters": 18,
-        "intro": "恭讀瑪喀維傳四"
-      },
-      {
-        "id": "III_Esdra",
-        "name": "艾斯德拉紀三",
-        "short": "艾斯德拉紀三",
-        "chapters": 16,
-        "intro": "恭讀艾斯德拉紀三"
       },
       {
         "id": "Mt",
