@@ -511,6 +511,7 @@ export interface Translations {
     offlineClearCache: string;
     offlineCalculating: string;
     offlineDone: string;
+    offlineFailed: string;
     offlineSelectLang: string;
     offlineSelectAll: string;
     offlineCleared: string;
@@ -1072,6 +1073,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineClearCache: 'Clear cache',
       offlineCalculating: 'Calculating storage...',
       offlineDone: 'Done! Data cached for offline use.',
+      offlineFailed: 'files failed to load (retry to attempt again)',
       offlineSelectLang: 'Please select at least one language.',
       offlineSelectAll: 'Select all',
       offlineCleared: 'Cache cleared.',
@@ -1631,6 +1633,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineClearCache: 'Очистить кэш',
       offlineCalculating: 'Расчёт размера...',
       offlineDone: 'Готово! Данные закэшированы для офлайн-использования.',
+      offlineFailed: 'файлов не загружено (повторите для повторной попытки)',
       offlineSelectLang: 'Пожалуйста, выберите хотя бы один язык.',
       offlineSelectAll: 'Выбрать все',
       offlineCleared: 'Кэш очищен.',
@@ -2190,6 +2193,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineClearCache: 'Очистити кешъ',
       offlineCalculating: 'Расчётъ размѣра...',
       offlineDone: 'Готово! Данныя закешированы для офлайн-потребленїя.',
+      offlineFailed: 'фа́йловъ не загружено (повтори́те для повторной попытки)',
       offlineSelectLang: 'Пожалуйста, изберите хотя бы единъ языкъ.',
       offlineSelectAll: 'И҆збра́ти всѧ̑',
       offlineCleared: 'Кешъ очищенъ.',

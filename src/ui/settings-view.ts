@@ -522,9 +522,15 @@ export class SettingsView {
         languages: selectedLangs,
         types: selectedTypes,
         bibleTranslations: bibleTrans,
-      }).then(() => {
+      }).then((prog) => {
         if (progressBar) progressBar.style.width = '100%';
-        if (progressText) progressText.textContent = t.settings.offlineDone;
+        if (progressText) {
+          if (prog.failed > 0) {
+            progressText.textContent = `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}`;
+          } else {
+            progressText.textContent = t.settings.offlineDone;
+          }
+        }
         OfflineManager.getStats().then(stats => {
           const statsEl = document.getElementById('offline-stats');
           if (statsEl) {
