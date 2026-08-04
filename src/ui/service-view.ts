@@ -791,6 +791,10 @@ export class ServiceView {
     const contentEl = document.getElementById('service-content');
     if (!contentEl) return;
 
+    const prevHeight = contentEl.offsetHeight;
+    if (prevHeight > 0) {
+      contentEl.style.minHeight = prevHeight + 'px';
+    }
     contentEl.innerHTML = `<p class="text-navy-light italic">${this.t.loading}</p>`;
 
     try {

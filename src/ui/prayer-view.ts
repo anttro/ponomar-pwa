@@ -226,7 +226,7 @@ export class PrayerView {
           `).join('')}
         </div>
         <p class="text-navy-light text-sm mb-2">${subtitle}</p>
-        <select id="prayer-select" class="w-full border border-gold/20 bg-surface/50 text-navy rounded-lg px-3 py-2 text-sm mb-3">
+        <select id="prayer-select" class="w-full appearance-none bg-surface text-navy border border-gold/20 rounded-lg px-3 py-2 text-sm mb-3">
           ${sections.map(s => `
             <option value="${s.id}" ${this.activeSection === s.id ? 'selected' : ''}>${s.name}</option>
           `).join('')}

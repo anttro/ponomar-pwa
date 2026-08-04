@@ -131,22 +131,22 @@ export class BibleView {
 
     this.container.innerHTML = `
       <div class="flex flex-col h-full">
-        <div class="bg-navy text-parchment p-3 flex items-center gap-4 flex-wrap">
-          <select id="version-select" class="bg-navy-light text-parchment border border-gold/30 rounded px-2 py-1 text-sm">
+        <div class="bg-surface/50 border border-gold/20 rounded-lg p-3 flex items-center gap-4 flex-wrap">
+          <select id="version-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-sm">
             ${this.versions.map(v =>
               `<option value="${v.id}" ${v.id === this.currentVersion ? 'selected' : ''}>${v.name}</option>`
             ).join('')}
           </select>
-          <select id="book-select" class="bg-navy-light text-parchment border border-gold/30 rounded px-2 py-1 text-sm">
+          <select id="book-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-sm">
             ${this.getBooksForVersion().map(b =>
               `<option value="${b.id}" ${b.id === this.currentBook ? 'selected' : ''}>${b.name}</option>`
             ).join('')}
           </select>
           <div class="flex items-center gap-1">
-            <button id="prev-chapter" class="bg-navy-light text-parchment border border-gold/30 rounded px-2 py-1 text-sm hover:bg-gold/20 disabled:opacity-40">◀</button>
-            <select id="chapter-select" class="bg-navy-light text-parchment border border-gold/30 rounded px-2 py-1 text-sm">
+            <button id="prev-chapter" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-sm hover:bg-gold/20 disabled:opacity-40">◀</button>
+            <select id="chapter-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-sm">
             </select>
-            <button id="next-chapter" class="bg-navy-light text-parchment border border-gold/30 rounded px-2 py-1 text-sm hover:bg-gold/20 disabled:opacity-40">▶</button>
+            <button id="next-chapter" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-sm hover:bg-gold/20 disabled:opacity-40">▶</button>
           </div>
         </div>
 
