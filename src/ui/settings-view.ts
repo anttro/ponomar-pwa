@@ -58,6 +58,18 @@ function defaultBibleForLanguage(lang: string): string {
   return map[lang] || 'kjv';
 }
 
+const LANG_LABELS: Record<string, string> = {
+  en: 'English', ru: 'Русский', cu: 'Церковнославянский',
+  el: 'Ἑλληνικά', fr: 'Français', la: 'Latina',
+  zh: '中文', ar: 'العربية',
+};
+
+function versionPriority(lang: string, userLang: string): number {
+  if (lang === userLang) return 0;
+  if ((userLang === 'ru' || userLang === 'cu') && (lang === 'ru' || lang === 'cu')) return 1;
+  return 2;
+}
+
 function detectBrowserLanguage(): LanguageCode {
   const lang = navigator.language || (navigator as any).userLanguage || '';
   if (lang.startsWith('ru')) return 'ru';
@@ -227,37 +239,7 @@ export class SettingsView {
           <div class="mb-3">
             <label class="block text-sm font-bold text-navy mb-1">${t.settings.defaultTranslation}</label>
             <select id="default-bible" class="w-full border border-gold/30 rounded p-2 bg-surface text-navy">
-              <optgroup label="English">
-                <option value="kjv" ${this.settings.defaultBibleVersion === 'kjv' ? 'selected' : ''}>KJV (${t.settings.bibleComments.fullBible})</option>
-                <option value="brenton" ${this.settings.defaultBibleVersion === 'brenton' ? 'selected' : ''}>Brenton LXX (${t.settings.bibleComments.otOnly})</option>
-                <option value="nonkjv" ${this.settings.defaultBibleVersion === 'nonkjv' ? 'selected' : ''}>Modern (${t.settings.bibleComments.ntOnly})</option>
-              </optgroup>
-              <optgroup label="Русский">
-                <option value="synod" ${this.settings.defaultBibleVersion === 'synod' ? 'selected' : ''}>Синодальный (${t.settings.bibleComments.fullBible})</option>
-                <option value="kassian" ${this.settings.defaultBibleVersion === 'kassian' ? 'selected' : ''}>Еп. Кассиана (${t.settings.bibleComments.ntOnly})</option>
-                <option value="yungerov" ${this.settings.defaultBibleVersion === 'yungerov' ? 'selected' : ''}>Юнгеров (${t.settings.bibleComments.otProphets})</option>
-              </optgroup>
-              <optgroup label="Церковнославянский">
-                <option value="elis" ${this.settings.defaultBibleVersion === 'elis' ? 'selected' : ''}>Елисаветинская (${t.settings.bibleComments.fullBible})</option>
-              </optgroup>
-              <optgroup label="Ἑλληνικά">
-                <option value="spt" ${this.settings.defaultBibleVersion === 'spt' ? 'selected' : ''}>Ἡ Ἁγία Γραφή (${t.settings.bibleComments.fullBible})</option>
-              </optgroup>
-              <optgroup label="Français">
-                <option value="ls" ${this.settings.defaultBibleVersion === 'ls' ? 'selected' : ''}>Louis Segond (${t.settings.bibleComments.fullBible})</option>
-              </optgroup>
-              <optgroup label="Latina">
-                <option value="vulgate" ${this.settings.defaultBibleVersion === 'vulgate' ? 'selected' : ''}>Vulgata (${t.settings.bibleComments.fullBible})</option>
-              </optgroup>
-              <optgroup label="简体中文">
-                <option value="cuv" ${this.settings.defaultBibleVersion === 'cuv' ? 'selected' : ''}>简体圣经 (${t.settings.bibleComments.fullBible})</option>
-              </optgroup>
-              <optgroup label="正體中文">
-                <option value="cuv-hant" ${this.settings.defaultBibleVersion === 'cuv-hant' ? 'selected' : ''}>正體聖經 (${t.settings.bibleComments.fullBible})</option>
-              </optgroup>
-              <optgroup label="العربية">
-                <option value="svd" ${this.settings.defaultBibleVersion === 'svd' ? 'selected' : ''}>Smith - van Dyck (${t.settings.bibleComments.fullBible})</option>
-              </optgroup>
+              <option value="">${t.settings.offlineCalculating}</option>
             </select>
           </div>
 
@@ -342,6 +324,44 @@ export class SettingsView {
         </div>
       </div>
     `;
+
+    // Load default Bible versions dynamically
+    (async () => {
+      try {
+        const resp = await fetch('/data/bible/versions.json');
+        const versions = await resp.json();
+        const userLang = this.settings.language;
+
+        // Sort by language priority
+        versions.sort((a: any, b: any) => {
+          const pa = versionPriority(a.language, userLang);
+          const pb = versionPriority(b.language, userLang);
+          return pa - pb || a.name.localeCompare(b.name);
+        });
+
+        // Group by language
+        const groups: Record<string, any[]> = {};
+        for (const v of versions) {
+          if (!groups[v.language]) groups[v.language] = [];
+          groups[v.language].push(v);
+        }
+
+        // Build optgroups in priority order
+        const orderedLangs = [...new Set(versions.map((v: any) => v.language))] as string[];
+        const select = document.getElementById('default-bible') as HTMLSelectElement;
+        if (select) {
+          select.innerHTML = orderedLangs.map((lang: string) => {
+            const items = groups[lang];
+            return `<optgroup label="${LANG_LABELS[lang] || lang}">${items.map((v: any) => {
+              const shortId = v.id.split('/').pop();
+              const size = OfflineManager.getBibleSize(v.id);
+              const comment = size ? ` (${size})` : '';
+              return `<option value="${shortId}" ${this.settings.defaultBibleVersion === shortId ? 'selected' : ''}>${v.name}${comment}</option>`;
+            }).join('')}</optgroup>`;
+          }).join('');
+        }
+      } catch {}
+    })();
 
     // Event listeners
     document.getElementById('language')?.addEventListener('change', (e) => {
@@ -449,6 +469,12 @@ export class SettingsView {
           try {
             const resp = await fetch('/data/bible/versions.json');
             const versions = await resp.json();
+            const userLang = this.settings.language;
+            versions.sort((a: any, b: any) => {
+              const pa = versionPriority(a.language, userLang);
+              const pb = versionPriority(b.language, userLang);
+              return pa - pb || a.name.localeCompare(b.name);
+            });
             const html = await Promise.all(versions.map(async (v: any) => {
               const firstBook = v.books?.[0]?.id;
               let isCached = false;

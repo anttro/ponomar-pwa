@@ -80,9 +80,11 @@ export class BibleView {
   private versions: BibleVersion[] = [];
   private loadedText: Map<string, string> = new Map();
   private t: ReturnType<typeof getTranslations>;
+  private language: LanguageCode;
 
   constructor(container: HTMLElement, language: LanguageCode = 'en', version = '', book = '', passage = '') {
     this.container = container;
+    this.language = language;
     this.t = getTranslations(language);
     this.currentVersion = version || 'en/bible/kjv';
 
@@ -100,6 +102,7 @@ export class BibleView {
     try {
       const resp = await fetch('/data/bible/versions.json');
       this.versions = await resp.json();
+      this.sortVersionsByLanguage();
     } catch {
       this.versions = [
         { id: 'en/bible/kjv', name: 'English (KJV)', language: 'en', books: [] },
@@ -107,6 +110,20 @@ export class BibleView {
         { id: 'cu/bible/elis', name: 'Церковнославянская', language: 'cu', books: [] },
       ];
     }
+  }
+
+  private sortVersionsByLanguage() {
+    const lang = this.language;
+    const priority = (l: string) => {
+      if (l === lang) return 0;
+      if ((lang === 'ru' || lang === 'cu') && (l === 'ru' || l === 'cu')) return 1;
+      return 2;
+    };
+    this.versions.sort((a, b) => {
+      const pa = priority(a.language);
+      const pb = priority(b.language);
+      return pa - pb || a.name.localeCompare(b.name);
+    });
   }
 
   async render() {
