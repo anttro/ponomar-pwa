@@ -398,7 +398,7 @@ export class CalendarView {
   private t: ReturnType<typeof getTranslations>;
   private calendarType: 'julian' | 'gregorian';
 
-  constructor(container: HTMLElement, date: JDate, onDateChange: (d: JDate) => void, language: LanguageCode = 'en', calendarType: 'julian' | 'gregorian' = 'julian') {
+  constructor(container: HTMLElement, date: JDate, onDateChange: (d: JDate) => void, language: LanguageCode = 'en', calendarType: 'julian' | 'gregorian' = 'gregorian') {
     this.container = container;
     this.currentDate = date;
     this.onDateChange = onDateChange;
@@ -550,10 +550,9 @@ export class CalendarView {
     const gregorianDayName = this.t.calendar.dayNamesFull[gregorianDate.getDay()];
     const gregorianStr = `${gregorianDayName}, ${gregorianDate.getDate()} ${this.t.calendar.monthsGenitive[gregorianDate.getMonth()]} ${gregorianDate.getFullYear()} г.`;
     // Julian date (church calendar)
-    const julianDayName = this.t.calendar.dayNamesFull[this.currentDate.getDayOfWeek()];
     // Anno Mundi year (Old Slavonic year = year + 5508)
     const annoMundi = julianYear + 5508;
-    const julianStr = `${julianDayName}, ${this.currentDate.getDay()} ${this.t.calendar.monthsGenitive[this.currentDate.getMonth() - 1]}, год ${julianYear} ${this.t.calendar.fromYear}, ${annoMundi} ${this.t.calendar.fromAdam}`;
+    const julianStr = `${this.currentDate.getDay()} ${this.t.calendar.monthsGenitive[this.currentDate.getMonth() - 1]}, год ${julianYear} ${this.t.calendar.fromYear}, ${annoMundi} ${this.t.calendar.fromAdam}`;
 
     this.container.innerHTML = `
       <div class="flex flex-col lg:flex-row h-full justify-center">
@@ -574,14 +573,15 @@ export class CalendarView {
 
         <div class="flex-1 p-3 overflow-auto">
           <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
-            <h2 class="text-base font-bold text-red mb-1">
+            <h2 class="text-sm font-bold text-red mb-1">
               ${julianStr}
             </h2>
+
+            <div id="day-title" class="mb-2"></div>
+
             <div class="text-sm text-navy-light mb-2">
               ${this.t.calendar.gregorianDate[0].toLowerCase() + this.t.calendar.gregorianDate.slice(1)}: ${gregorianStr}
             </div>
-
-            <div id="day-title" class="mb-2"></div>
 
             <div id="astro-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg text-sm text-navy">
               <span class="text-navy-light italic">${this.t.loading}</span>
@@ -754,7 +754,7 @@ export class CalendarView {
         const toneSuffix = tone > 0 ? `; ${this.t.calendar.tone}${tone}` : '';
         const feastSuffix = feastName && feastCid !== periodCid ? `; ${feastName}` : '';
         const titleColor = feastName ? 'text-red-700' : 'text-navy';
-        titleEl.innerHTML = `<span class="text-base font-semibold ${titleColor} italic">${periodName}${toneSuffix}${feastSuffix}</span>`;
+        titleEl.innerHTML = `<span class="text-sm font-semibold ${titleColor} italic">${periodName}${toneSuffix}${feastSuffix}</span>`;
       }
 
       if (feastCid) this.skipCids.add(feastCid);

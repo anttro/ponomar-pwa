@@ -231,7 +231,7 @@ export class App {
     // Re-read settings fresh on each navigation
     this.settings = loadSettings();
     const lang = this.settings.language as LanguageCode;
-    const calendarType = this.settings.calendarType || 'julian';
+    const calendarType = this.settings.calendarType || 'gregorian';
 
     switch (this.currentView) {
       case 'calendar':

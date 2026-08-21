@@ -548,7 +548,7 @@ const translations: Record<LanguageCode, Translations> = {
       akathists: '📜 Canons & Akathists',
       parimii: '📖 Paroemia',
       horologion: '⏰ Horologion',
-      sbornik: '📚 Sbornik',
+      sbornik: '📚 Hymnal',
       paraclete: '📗 Paraclete',
       irmologion: '🎵 Irmologion',
       menaion: '📕 Menaion',
@@ -601,7 +601,7 @@ const translations: Record<LanguageCode, Translations> = {
     },
 
     sbornik: {
-      title: 'Богослужебный сборник',
+      title: 'Liturgical Hymnal',
       subtitle: 'Reference collection: troparia, kontakia, theotokia and biblical songs (Church Slavonic)',
       sections: {
         sunday: 'Troparia and Kontakia: Sunday',

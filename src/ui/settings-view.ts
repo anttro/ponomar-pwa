@@ -47,7 +47,7 @@ const DEFAULT_SETTINGS: Settings = {
   defaultBibleVersion: 'kjv',
   showVerseNumbers: true,
   verseNewLine: false,
-  calendarType: 'julian',
+  calendarType: 'gregorian',
   serviceRole: 'priest',
   latitude: 55.7558,
   longitude: 37.6176,
