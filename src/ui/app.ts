@@ -72,7 +72,7 @@ export class App {
     document.addEventListener('touchstart', closeOpenDropdowns, { passive: true });
 
     // Close library dropdown when a nav link inside it is clicked
-    document.querySelector('nav')?.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       const link = target.closest('.nav-link');
       if (link) {

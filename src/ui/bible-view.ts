@@ -236,6 +236,9 @@ export class BibleView {
     const select = document.getElementById('book-select') as HTMLSelectElement;
     if (!select) return;
     const books = this.getBooksForVersion();
+    if (!this.currentBook || !books.some(b => b.id === this.currentBook)) {
+      this.currentBook = books[0]?.id || 'Gen';
+    }
     select.innerHTML = books.map(b =>
       `<option value="${b.id}" ${b.id === this.currentBook ? 'selected' : ''}>${b.name}</option>`
     ).join('');
@@ -247,12 +250,14 @@ export class BibleView {
     if (!select) return;
     const books = this.getBooksForVersion();
     const book = books.find(b => b.id === this.currentBook);
-    const chapters = book?.chapters ?? 50;
+    const chapters = (book && Number.isInteger(book.chapters) && book.chapters > 0) ? book.chapters : 50;
+    const parsedCh = parseInt(this.currentPassage, 10);
+    const selectedCh = isNaN(parsedCh) || parsedCh < 1 ? 1 : parsedCh;
     select.innerHTML = Array.from({ length: chapters }, (_, i) =>
-      `<option value="${i + 1}" ${i + 1 === parseInt(this.currentPassage, 10) ? 'selected' : ''}>${i + 1}</option>`
+      `<option value="${i + 1}" ${i + 1 === selectedCh ? 'selected' : ''}>${i + 1}</option>`
     ).join('');
     // Sync passage to selected chapter
-    this.currentPassage = select.value;
+    this.currentPassage = select.value || '1';
   }
 
   private async loadReading() {

@@ -64,6 +64,19 @@ function loadManifest(): Promise<Record<string, Record<string, string[]>> | null
   return manifestPromise;
 }
 
+function getFallbackCalendarFiles(lang: string): string[] {
+  const files = [
+    `/data/${lang}/menaion-bundle.json`,
+    '/data/shared/fasting.json',
+    '/data/shared/menaion-daily/index.json',
+  ];
+  for (let m = 1; m <= 12; m++) {
+    const mm = String(m).padStart(2, '0');
+    files.push(`/data/${lang}/lives/${mm}.json`);
+  }
+  return files;
+}
+
 export class OfflineManager {
   private static _progress: PreloadProgress | null = null;
 
@@ -104,7 +117,7 @@ export class OfflineManager {
     for (const lang of options.languages) {
       for (const type of options.types) {
         if (type === 'calendar') {
-          const list = m?.[lang]?.calendar ?? [];
+          const list = m?.[lang]?.calendar ?? getFallbackCalendarFiles(lang);
           filesToFetch.push(...list);
         } else if (type === 'bible') {
           filesToFetch.push('/data/bible/versions.json');

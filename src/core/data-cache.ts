@@ -39,8 +39,19 @@ function getDB(): Promise<IDBDatabase> {
           store.createIndex('storedAt', 'storedAt', { unique: false });
         }
       };
-      request.onsuccess = () => resolve(request.result);
-      request.onerror = () => reject(request.error);
+      request.onsuccess = () => {
+        const db = request.result;
+        db.onclose = () => { dbPromise = null; };
+        db.onversionchange = () => {
+          db.close();
+          dbPromise = null;
+        };
+        resolve(db);
+      };
+      request.onerror = () => {
+        dbPromise = null;
+        reject(request.error);
+      };
     });
   }
   return dbPromise;

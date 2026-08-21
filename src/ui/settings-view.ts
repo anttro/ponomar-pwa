@@ -636,12 +636,52 @@ export class SettingsView {
       if (this.action === 'autopreload') {
         document.querySelectorAll('.offline-lang').forEach(el => (el as HTMLInputElement).checked = true);
         document.querySelectorAll('.offline-type').forEach(el => (el as HTMLInputElement).checked = true);
-        const bibleChevron = document.getElementById('bible-chevron');
-        if (bibleChevron) bibleChevron.click();
-        setTimeout(() => {
-          document.querySelectorAll('.bible-trans').forEach(el => (el as HTMLInputElement).checked = true);
-          document.getElementById('offline-preload')?.click();
-        }, 300);
+        const progressDiv = document.getElementById('offline-progress');
+        const progressBar = document.getElementById('offline-progress-bar');
+        const progressText = document.getElementById('offline-progress-text');
+        if (progressDiv) progressDiv.classList.remove('hidden');
+
+        const selectedLangs = LANGUAGES.map(l => l.code);
+        const selectedTypes: ('calendar' | 'bible')[] = ['calendar', 'bible'];
+
+        let bibleTrans: string[] = [];
+        try {
+          const resp = await fetch('/data/bible/versions.json');
+          const versions = await resp.json();
+          bibleTrans = versions.map((v: any) => v.id);
+        } catch {}
+
+        OfflineManager.preload({
+          languages: selectedLangs,
+          types: selectedTypes,
+          bibleTranslations: bibleTrans,
+        }).then((prog) => {
+          if (progressBar) progressBar.style.width = '100%';
+          if (progressText) {
+            progressText.textContent = prog.failed > 0
+              ? `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}`
+              : t.settings.offlineDone;
+          }
+          OfflineManager.getStats().then(stats => {
+            const statsEl = document.getElementById('offline-stats');
+            if (statsEl) {
+              statsEl.textContent = t.settings.offlineCacheInfo
+                .replace('{0}', OfflineManager.formatBytes(stats.usageBytes))
+                .replace('{2}', String(stats.cachedFiles));
+            }
+          });
+        });
+
+        const pollInterval = setInterval(() => {
+          const prog = OfflineManager.getProgress();
+          if (prog && prog.total > 0) {
+            const pct = Math.round((prog.current / prog.total) * 100);
+            if (progressBar) progressBar.style.width = `${pct}%`;
+            if (progressText) progressText.textContent = `${prog.current} / ${prog.total} ${t.settings.offlineDataTypes} — ${prog.file.substring(0, 60)}...`;
+          }
+          if (!prog || prog.done) clearInterval(pollInterval);
+        }, 200);
+
         window.history.replaceState(null, '', '#settings');
       }
     })();
