@@ -108,7 +108,7 @@ async function loadSharedScriptureIndex(): Promise<Record<string, unknown[]> | n
 }
 
 async function loadMenaionBundle(lang: string): Promise<Record<string, unknown> | null> {
-  const key = lang === 'cu' ? 'cu' : lang;
+  const key = lang === 'ru' || lang === 'cu' ? 'cu' : lang;
   if (menaionBundles.has(key)) return menaionBundles.get(key)!;
   try {
     const bundle = await DataCache.fetch<Record<string, unknown>>(`/data/${key}/menaion-bundle.json`);
@@ -698,9 +698,10 @@ export class CalendarView {
     const sharedComms: Map<string, CommemorationData> = new Map();
     
     for (const cid of cids.slice(0, 30)) {
+      const sharedId = CID_TO_SHARED_COMM[cid];
       const [life, shared] = await Promise.all([
         loadLife(this.language, cid),
-        loadCommemoration(CID_TO_SHARED_COMM[cid] || cid),
+        sharedId ? loadCommemoration(sharedId) : Promise.resolve(null),
       ]);
       if (life) livesData.set(cid, life);
       if (shared) sharedComms.set(cid, shared);

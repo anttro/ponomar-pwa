@@ -109,9 +109,12 @@ export class App {
       const key = 'ponomar-preloaded';
       if (localStorage.getItem(key)) return;
       const lang = this.settings.language as LanguageCode;
-      const languages = lang === 'ru' ? ['ru', 'cu'] : [lang];
-      for (const l of languages) {
+      const liturgicalLangs = lang === 'ru' || lang === 'cu' ? ['cu'] : [lang];
+      for (const l of liturgicalLangs) {
         await DataCache.fetch(`/data/${l}/menaion-bundle.json`).catch(() => {});
+      }
+      const livesLangs = lang === 'ru' ? ['ru', 'cu'] : [lang];
+      for (const l of livesLangs) {
         const mm = String(JDate.today().getMonth()).padStart(2, '0');
         await DataCache.fetch(`/data/${l}/lives/${mm}.json`).catch(() => {});
       }
