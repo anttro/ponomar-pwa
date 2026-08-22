@@ -253,7 +253,7 @@ export class SettingsView {
 
         <!-- Install PWA -->
         <div class="mb-6">
-          <button id="install-pwa" class="w-full bg-navy text-parchment rounded p-3 font-bold hover:bg-navy-light transition-colors ${!('serviceWorker' in navigator) || window.matchMedia('(display-mode: standalone)').matches ? 'hidden' : ''}">
+          <button id="install-pwa" class="hidden w-full bg-navy text-parchment rounded p-3 font-bold hover:bg-navy-light transition-colors">
             ${t.settings.installPwa}
           </button>
           <p id="install-hint" class="hidden text-sm text-navy-light mt-2"></p>
@@ -416,9 +416,8 @@ export class SettingsView {
       }
       if (!hintEl) return;
       const ua = navigator.userAgent;
-      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone === true;
       let hint: string;
-      if (isStandalone) {
+      if (await this.isPwaInstalled()) {
         hint = t.settings.installPwaAlreadyInstalled;
       } else if (/firefox/i.test(ua)) {
         hint = t.settings.installPwaHintFirefox;
@@ -430,6 +429,15 @@ export class SettingsView {
       hintEl.textContent = hint;
       hintEl.classList.remove('hidden');
     });
+
+    // Show install button only when actually installable
+    (async () => {
+      const btn = document.getElementById('install-pwa');
+      if (!btn || !('serviceWorker' in navigator)) return;
+      try {
+        if (!(await this.isPwaInstalled())) btn.classList.remove('hidden');
+      } catch { /* stay hidden */ }
+    })();
 
     // Location
     const saveLatLng = () => {
@@ -728,5 +736,20 @@ export class SettingsView {
       preview.className = `${fontClass(this.settings.cuFont)} text-lg`;
       preview.style.fontSize = `${this.settings.fontSize}px`;
     }
+  }
+
+  private async isPwaInstalled(): Promise<boolean> {
+    if (window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone === true) {
+      return true;
+    }
+    if (localStorage.getItem('ponomar-installed')) return true;
+    try {
+      const navAny = navigator as any;
+      if (typeof navAny.getInstalledRelatedApps === 'function') {
+        const apps = await navAny.getInstalledRelatedApps();
+        if (Array.isArray(apps) && apps.length > 0) return true;
+      }
+    } catch { /* not supported */ }
+    return false;
   }
 }

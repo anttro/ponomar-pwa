@@ -42,6 +42,7 @@ export default defineConfig({
         ],
       },
       manifest: {
+        id: '/',
         name: 'Ponomar — Orthodox Calendar',
         short_name: 'Ponomar',
         description: 'Orthodox Church calendar and liturgical information',
