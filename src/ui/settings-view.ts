@@ -5,6 +5,7 @@
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { OfflineManager } from '../core/offline-manager';
 import { DataCache } from '../core/data-cache';
+import { diagTail } from '../core/diag-log';
 
 const LANGUAGES = [
   { code: 'en', name: 'English', local: 'English' },
@@ -303,6 +304,7 @@ export class SettingsView {
             </div>
             <p id="offline-progress-text" class="text-xs text-navy-light">0 / 0 ${t.settings.offlineDataTypes}</p>
           </div>
+          <pre id="diag-log" class="text-[10px] font-mono text-navy-light whitespace-pre-wrap max-h-32 overflow-auto mt-1"></pre>
         </div>
 
         <!-- About -->
@@ -552,13 +554,17 @@ export class SettingsView {
       }).then((prog) => {
         if (progressBar) progressBar.style.width = '100%';
         if (progressText) {
-          if (prog.failed > 0) {
+          if (prog.aborted) {
+            progressText.textContent = t.settings.offlineAborted;
+          } else if (prog.failed > 0) {
             const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
             progressText.textContent = `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`;
           } else {
             progressText.textContent = t.settings.offlineDone;
           }
         }
+        const diagEl = document.getElementById('diag-log');
+        if (diagEl) diagEl.textContent = diagTail();
         OfflineManager.getStats().then(stats => {
           const statsEl = document.getElementById('offline-stats');
           if (statsEl) {
@@ -600,6 +606,9 @@ export class SettingsView {
         .replace('{2}', String(stats.cachedFiles));
       }
     });
+
+    const diagEl = document.getElementById('diag-log');
+    if (diagEl) diagEl.textContent = diagTail();
 
     // Check cache status for each data type and set checkbox states
     (async () => {
@@ -678,10 +687,14 @@ export class SettingsView {
           if (progressBar) progressBar.style.width = '100%';
           if (progressText) {
             const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
-            progressText.textContent = prog.failed > 0
-              ? `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`
-              : t.settings.offlineDone;
+            progressText.textContent = prog.aborted
+              ? t.settings.offlineAborted
+              : prog.failed > 0
+                ? `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`
+                : t.settings.offlineDone;
           }
+          const diagEl = document.getElementById('diag-log');
+          if (diagEl) diagEl.textContent = diagTail();
           OfflineManager.getStats().then(stats => {
             const statsEl = document.getElementById('offline-stats');
             if (statsEl) {

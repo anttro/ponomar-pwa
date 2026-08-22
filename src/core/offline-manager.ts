@@ -15,6 +15,7 @@
  */
 
 import { DataCache } from './data-cache';
+import { diagLog } from './diag-log';
 
 export interface PreloadOptions {
   languages: string[];
@@ -29,6 +30,7 @@ export interface PreloadProgress {
   done: boolean;
   failed: number;
   failedFiles?: string[];
+  aborted?: boolean;
 }
 
 export interface CacheStats {
@@ -60,7 +62,14 @@ function loadManifest(): Promise<Record<string, Record<string, string[]>> | null
       } catch {
         return null;
       }
-    })();
+    })().then((m) => {
+      // Don't cache a failure forever — allow retry on next call
+      if (m === null) {
+        diagLog('manifest-unavailable');
+        manifestPromise = null;
+      }
+      return m;
+    });
   }
   return manifestPromise;
 }
@@ -112,6 +121,7 @@ export class OfflineManager {
    * Returns a PreloadProgress object that can be polled for progress.
    */
   static async preload(options: PreloadOptions): Promise<PreloadProgress> {
+    const startedAt = Date.now();
     const filesToFetch: string[] = [];
     const m = await loadManifest();
 
@@ -149,7 +159,16 @@ export class OfflineManager {
     };
     OfflineManager._progress = progress;
 
+    diagLog('preload-start', {
+      langs: options.languages.join(','),
+      types: options.types.join(','),
+      bibles: (options.bibleTranslations || []).length,
+      total: progress.total,
+      manifest: m !== null,
+    });
+
     // Fetch files sequentially to avoid overwhelming the network
+    let netFailStreak = 0;
     for (const file of uniqueFiles) {
       progress.current++;
       progress.file = file;
@@ -186,12 +205,28 @@ export class OfflineManager {
       }
       if (!success && !notFound) {
         progress.failed++;
+        netFailStreak++;
         if (!progress.failedFiles) progress.failedFiles = [];
         if (progress.failedFiles.length < 10) progress.failedFiles.push(file);
+        if (netFailStreak >= 5) {
+          // Circuit breaker — network appears dead; abort instead of grinding
+          progress.aborted = true;
+          diagLog('preload-abort', { failed: progress.failed, current: progress.current });
+          break;
+        }
+      } else {
+        // Success or 404 both prove connectivity
+        netFailStreak = 0;
       }
     }
 
     progress.done = true;
+    diagLog('preload-done', {
+      total: progress.total,
+      failed: progress.failed,
+      ms: Date.now() - startedAt,
+      aborted: progress.aborted === true,
+    });
     OfflineManager._progress = null;
     return progress;
   }

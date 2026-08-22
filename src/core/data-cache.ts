@@ -94,6 +94,24 @@ export class DataCache {
   }
 
   /**
+   * Tri-state presence probe: true/false when known, null on read error.
+   * Unlike get(), lets callers distinguish "absent" from "unreadable".
+   */
+  static async has(key: string): Promise<boolean | null> {
+    try {
+      const db = await getDB();
+      return await new Promise<boolean | null>((resolve) => {
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const request = tx.objectStore(STORE_NAME).count(IDBKeyRange.only(key));
+        request.onsuccess = () => resolve(request.result > 0);
+        request.onerror = () => resolve(null);
+      });
+    } catch {
+      return null;
+    }
+  }
+
+  /**
    * Store a value in the cache.
    */
   static async set(key: string, data: unknown, ttl: number = DEFAULT_TTL_MS): Promise<void> {

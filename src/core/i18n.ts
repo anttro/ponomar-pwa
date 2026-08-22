@@ -515,6 +515,7 @@ export interface Translations {
     offlineMenaion: string;
     offlineBible: string;
     offlinePreload: string;
+    offlineAborted: string;
     offlineClearCache: string;
     offlineCalculating: string;
     offlineDone: string;
@@ -1084,6 +1085,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineMenaion: 'Menaion',
       offlineBible: 'Bible',
       offlinePreload: 'Preload',
+      offlineAborted: 'Preloading stopped: network unavailable. Check your connection and try again.',
       offlineClearCache: 'Clear cache',
       offlineCalculating: 'Calculating storage...',
       offlineDone: 'Done! Data cached for offline use.',
@@ -1651,6 +1653,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineMenaion: 'Минея',
       offlineBible: 'Библия',
       offlinePreload: 'Загрузить',
+      offlineAborted: 'Загрузка прервана: сеть недоступна. Проверьте соединение и повторите попытку.',
       offlineClearCache: 'Очистить кэш',
       offlineCalculating: 'Расчёт размера...',
       offlineDone: 'Готово! Данные закэшированы для офлайн-использования.',
@@ -2218,6 +2221,7 @@ const translations: Record<LanguageCode, Translations> = {
       offlineMenaion: 'Минїа',
       offlineBible: 'Би́блїа',
       offlinePreload: 'Загрузити',
+      offlineAborted: 'Загрузка прервана: сеть недостꙋпна. Про̀верьте соедине́нiе и҆ повтори́те попы́ткꙋ.',
       offlineClearCache: 'Очистити кешъ',
       offlineCalculating: 'Расчётъ размѣра...',
       offlineDone: 'Готово! Данныя закешированы для офлайн-потребленїя.',

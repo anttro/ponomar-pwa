@@ -11,6 +11,7 @@ import { JDate } from '../core/jdate';
 import { loadSettings, type Settings } from './settings-view';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { DataCache } from '../core/data-cache';
+import { diagLog } from '../core/diag-log';
 
 type View = 'calendar' | 'bible' | 'prayer' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'menaion' | 'triodion' | 'lives' | 'settings';
 
@@ -75,13 +76,25 @@ export class App {
   private async checkDataVersion() {
     const DATA_VERSION = '2026-08-04'; // bump when data structure changes
     try {
+      const present = await DataCache.has('__data_version__');
+      if (present === null) {
+        // Unreadable IDB — never wipe the cache on a flaky read
+        diagLog('version-check', { result: 'read-error', action: 'skip' });
+        return;
+      }
+      if (!present) {
+        await DataCache.set('__data_version__', DATA_VERSION);
+        diagLog('version-init');
+        return;
+      }
       const cachedVer = await DataCache.get('__data_version__') as string | null;
       if (cachedVer !== DATA_VERSION) {
         await DataCache.clear();
         await DataCache.set('__data_version__', DATA_VERSION);
+        diagLog('version-clear', { old: cachedVer });
       }
-    } catch {
-      // Silently fail — cache is best-effort
+    } catch (err) {
+      diagLog('idb-error', { where: 'checkDataVersion', msg: String(err) });
     }
   }
 
