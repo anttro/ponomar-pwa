@@ -29,12 +29,47 @@ export class App {
     this.applyTheme();
   }
 
+  private faviconImage: HTMLImageElement | null = null;
+  private faviconCanvas: HTMLCanvasElement | null = null;
+
   private applyTheme() {
     document.documentElement.className = 'theme-' + (this.settings.theme || 'default');
     const chromeColor = getComputedStyle(document.documentElement).getPropertyValue('--clr-browser-chrome').trim();
     if (chromeColor) {
       document.querySelector('meta[name="theme-color"]')?.setAttribute('content', chromeColor);
     }
+    this.updateFavicon(chromeColor || '#1a1a2e');
+  }
+
+  private updateFavicon(bgColor: string) {
+    const size = 64;
+    if (!this.faviconCanvas) this.faviconCanvas = document.createElement('canvas');
+    const canvas = this.faviconCanvas;
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(0, 0, size, size);
+    const draw = () => {
+      if (!this.faviconImage?.complete || !this.faviconImage.naturalWidth) return;
+      const artSize = Math.round(size * 0.8);
+      ctx.drawImage(this.faviconImage, (size - artSize) / 2, (size - artSize) / 2, artSize, artSize);
+      let link = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      link.type = 'image/png';
+      link.href = canvas.toDataURL('image/png');
+    };
+    if (!this.faviconImage) {
+      this.faviconImage = new Image();
+      this.faviconImage.onload = draw;
+      this.faviconImage.src = '/icons/cross-gold.png';
+    }
+    draw();
   }
 
   private async checkDataVersion() {
