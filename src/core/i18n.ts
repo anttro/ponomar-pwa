@@ -498,6 +498,10 @@ export interface Translations {
     aboutAppName: string;
     aboutLicense: string;
     installPwa: string;
+    installPwaAlreadyInstalled: string;
+    installPwaHintFirefox: string;
+    installPwaHintIos: string;
+    installPwaHintGeneric: string;
     offlineOfferTitle: string;
     offlineOfferText: string;
     offlineOfferPreloadAll: string;
@@ -1063,6 +1067,10 @@ const translations: Record<LanguageCode, Translations> = {
       aboutAppName: 'Ponomar',
       aboutLicense: 'Based on the Ponomar Java desktop application by Aleksandr Andreev and Yuri Shardt. Licensed under GPL v3.',
       installPwa: 'Install Ponomar',
+      installPwaAlreadyInstalled: 'App is already installed.',
+      installPwaHintFirefox: 'Use the install icon in the address bar, or open the menu and choose "Install".',
+      installPwaHintIos: 'Tap the Share button and choose "Add to Home Screen".',
+      installPwaHintGeneric: 'Use your browser menu and choose "Install app" / "Add to Home screen".',
       offlineOfferTitle: 'Offline Data',
       offlineOfferText: 'If you plan to use the application without internet access, you should preload data for offline usage.',
       offlineOfferPreloadAll: 'Pre-load everything',
@@ -1626,6 +1634,10 @@ const translations: Record<LanguageCode, Translations> = {
       aboutAppName: 'Пономарь',
       aboutLicense: 'Основано на Java-приложении Понома́рь от Александра Андреева и Юрия Шардт. Лицензия GPL v3.',
       installPwa: 'Установить Пономарь',
+      installPwaAlreadyInstalled: 'Приложение уже установлено.',
+      installPwaHintFirefox: 'Используйте значок установки в адресной строке или меню браузера → «Установить».',
+      installPwaHintIos: 'Нажмите «Поделиться» и выберите «На экран “Домой”».',
+      installPwaHintGeneric: 'Откройте меню браузера и выберите «Установить приложение» / «Добавить на главный экран».',
       offlineOfferTitle: 'Офлайн-данные',
       offlineOfferText: 'Если вы планируете использовать приложение без интернета, предзагрузите данные для офлайн-использования.',
       offlineOfferPreloadAll: 'Загрузить всё',
@@ -2189,6 +2201,10 @@ const translations: Record<LanguageCode, Translations> = {
       aboutAppName: 'Пономарь',
       aboutLicense: 'Основано на Java-приложенiи Понома́рь отъ Александра Андреева и Юрия Шардт. Лицензия GPL v3.',
       installPwa: 'Оустановити Понома́рь',
+      installPwaAlreadyInstalled: 'Приложе́нiе ужѐ оустановлено́.',
+      installPwaHintFirefox: 'Оустановле́нiе: зна́чокъ въ адре́сной строкѐ и҆лѝ меню̀ браꙋ́зера → «Оустанови́ти».',
+      installPwaHintIos: 'Нажми́те «Подели́тися» и҆ избери́те «На экра́нъ “Домо́въ”».',
+      installPwaHintGeneric: 'Откро́йте меню̀ браꙋ́зера и҆ избери́те «Оустанови́ти приложе́нiе».',
       offlineOfferTitle: 'Офлайн-данныѧ',
       offlineOfferText: 'А҆́ще плани́рꙋете и҆спо́льзовати приложе́нїе без̾ и҆нтернета, предзагризите да́нныѧ длѧ офлайн-потребле́нїѧ.',
       offlineOfferPreloadAll: 'Загризи́ти всѧ̑',

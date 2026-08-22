@@ -28,6 +28,7 @@ export interface PreloadProgress {
   file: string;
   done: boolean;
   failed: number;
+  failedFiles?: string[];
 }
 
 export interface CacheStats {
@@ -157,11 +158,15 @@ export class OfflineManager {
       if (await DataCache.get(cacheKey) !== null) continue;
 
       let success = false;
+      let notFound = false;
       for (let attempt = 0; attempt < 3; attempt++) {
         if (attempt > 0) await new Promise(r => setTimeout(r, 1000));
         try {
           const resp = await fetch(file);
-          if (resp.status === 404) break;
+          if (resp.status === 404) {
+            notFound = true;
+            break;
+          }
           if (!resp.ok) continue;
           const ct = resp.headers.get('content-type');
           if (ct && ct.includes('text/html')) break;
@@ -179,7 +184,11 @@ export class OfflineManager {
           // Retry on network error
         }
       }
-      if (!success) progress.failed++;
+      if (!success && !notFound) {
+        progress.failed++;
+        if (!progress.failedFiles) progress.failedFiles = [];
+        if (progress.failedFiles.length < 10) progress.failedFiles.push(file);
+      }
     }
 
     progress.done = true;

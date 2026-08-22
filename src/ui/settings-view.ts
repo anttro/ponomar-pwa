@@ -255,6 +255,7 @@ export class SettingsView {
           <button id="install-pwa" class="w-full bg-navy text-parchment rounded p-3 font-bold hover:bg-navy-light transition-colors ${!('serviceWorker' in navigator) || window.matchMedia('(display-mode: standalone)').matches ? 'hidden' : ''}">
             ${t.settings.installPwa}
           </button>
+          <p id="install-hint" class="hidden text-sm text-navy-light mt-2"></p>
         </div>
 
         <!-- Offline Content -->
@@ -403,12 +404,29 @@ export class SettingsView {
     });
     document.getElementById('install-pwa')?.addEventListener('click', async () => {
       const prompt = (window as any).__deferredPrompt;
+      const hintEl = document.getElementById('install-hint');
       if (prompt) {
         prompt.prompt();
         await prompt.userChoice;
         (window as any).__deferredPrompt = null;
         document.getElementById('install-pwa')?.remove();
+        return;
       }
+      if (!hintEl) return;
+      const ua = navigator.userAgent;
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone === true;
+      let hint: string;
+      if (isStandalone) {
+        hint = t.settings.installPwaAlreadyInstalled;
+      } else if (/firefox/i.test(ua)) {
+        hint = t.settings.installPwaHintFirefox;
+      } else if (/iphone|ipad|ipod/i.test(ua)) {
+        hint = t.settings.installPwaHintIos;
+      } else {
+        hint = t.settings.installPwaHintGeneric;
+      }
+      hintEl.textContent = hint;
+      hintEl.classList.remove('hidden');
     });
 
     // Location
@@ -535,7 +553,8 @@ export class SettingsView {
         if (progressBar) progressBar.style.width = '100%';
         if (progressText) {
           if (prog.failed > 0) {
-            progressText.textContent = `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}`;
+            const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
+            progressText.textContent = `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`;
           } else {
             progressText.textContent = t.settings.offlineDone;
           }
@@ -658,8 +677,9 @@ export class SettingsView {
         }).then((prog) => {
           if (progressBar) progressBar.style.width = '100%';
           if (progressText) {
+            const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
             progressText.textContent = prog.failed > 0
-              ? `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}`
+              ? `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`
               : t.settings.offlineDone;
           }
           OfflineManager.getStats().then(stats => {
