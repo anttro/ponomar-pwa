@@ -171,12 +171,14 @@ export function formatPassageHTML(
 
     if (verseNewLine && p.verse > 0) {
       const num = showVerseNum ? `<sup class="text-red text-xs">${p.verse}</sup> ` : '';
-      html += `<span class="block mt-1">${num}${text.charAt(0).toUpperCase() + text.slice(1)}</span>`;
+      html += `<span id="v${p.chapter}-${p.verse}" class="block mt-1">${num}${text.charAt(0).toUpperCase() + text.slice(1)}</span>`;
     } else {
+      const vid = p.verse > 0 ? ` id="v${p.chapter}-${p.verse}"` : '';
       if (showVerseNum && p.verse > 0) {
-        html += `<sup class="text-red text-xs">${p.verse}</sup> `;
+        html += `${vid ? `<span${vid}>` : ''}<sup class="text-red text-xs">${p.verse}</sup> ${text} ${vid ? '</span>' : ''}`;
+      } else {
+        html += text + ' ';
       }
-      html += text + ' ';
     }
   }
 

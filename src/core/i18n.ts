@@ -458,6 +458,9 @@ export interface Translations {
     noTextFound: string;
     notAvailableOffline: string;
     ensureDataConverted: string;
+    bookmarkAdd: string;
+    bookmarkEmpty: string;
+    bookmarkRename: string;
   };
 
   // Settings
@@ -1021,6 +1024,9 @@ const translations: Record<LanguageCode, Translations> = {
       noTextFound: 'No text found for this passage.',
       notAvailableOffline: 'Text not available for offline viewing.',
       ensureDataConverted: 'Bible text files are lazy-loaded on demand. Please ensure the data has been converted and is available.',
+      bookmarkAdd: 'Add bookmark',
+      bookmarkEmpty: 'No bookmarks yet',
+      bookmarkRename: 'Bookmark name:',
     },
 
     settings: {
@@ -1581,6 +1587,9 @@ const translations: Record<LanguageCode, Translations> = {
       noTextFound: 'Текст не найден для этого отрывка.',
       notAvailableOffline: 'Текст недоступен для просмотра в автономном режиме.',
       ensureDataConverted: 'Файлы библейского текста загружаются по требованию. Убедитесь, что данные сконвертированы и доступны.',
+      bookmarkAdd: 'Добавить закладку',
+      bookmarkEmpty: 'Закладок пока нет',
+      bookmarkRename: 'Название закладки:',
     },
 
     settings: {
@@ -2141,6 +2150,9 @@ const translations: Record<LanguageCode, Translations> = {
       noTextFound: 'Текстъ не найденъ для сего отрывка.',
       notAvailableOffline: 'Текстъ недоступенъ для просмотра въ автономномъ режиме.',
       ensureDataConverted: 'Файлы библейскаго текста загружаются по требованiю. Убедитесь, что данные сконвертированы и доступны.',
+      bookmarkAdd: 'Доба́вити закладкꙋ́',
+      bookmarkEmpty: 'Закладокъ пока̀ нетъ',
+      bookmarkRename: 'Зва́нiе закладки:',
     },
 
     settings: {
