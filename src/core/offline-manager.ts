@@ -20,7 +20,7 @@ import { diagLog } from './diag-log';
 export interface PreloadOptions {
   languages: string[];
   types: ('calendar' | 'bible')[];
-  bibleTranslations?: string[];
+  bibleTranslations?: string[] | 'all';
 }
 
 export interface PreloadProgress {
@@ -89,10 +89,34 @@ function getFallbackCalendarFiles(lang: string): string[] {
 
 export class OfflineManager {
   private static _progress: PreloadProgress | null = null;
+  private static _autoPreloadRequested = false;
+
+  /** Request an automatic "preload everything" once the Settings view opens. */
+  static requestAutoPreload() {
+    OfflineManager._autoPreloadRequested = true;
+  }
+
+  /** Consume (one-shot) the automatic preload request. */
+  static consumeAutoPreload(): boolean {
+    const v = OfflineManager._autoPreloadRequested;
+    OfflineManager._autoPreloadRequested = false;
+    return v;
+  }
 
   /** Get size string for a Bible translation. */
   static getBibleSize(translationPath: string): string {
     return BIBLE_SIZES[translationPath] || '?';
+  }
+
+  /** Resolve every Bible translation id from versions.json (single source). */
+  static async getAllBibleTranslationIds(): Promise<string[]> {
+    try {
+      const resp = await fetch('/data/bible/versions.json');
+      const versions = await resp.json() as any[];
+      return versions.map((v: any) => v.id);
+    } catch {
+      return [];
+    }
   }
 
   /** Discover all book files for a Bible translation from versions.json. */
@@ -140,7 +164,10 @@ export class OfflineManager {
     const uniqueFiles = [...new Set(filesToFetch)];
 
     // Add Bible translation files
-    for (const trans of options.bibleTranslations || []) {
+    const bibleTranslations = options.bibleTranslations === 'all'
+      ? await OfflineManager.getAllBibleTranslationIds()
+      : (options.bibleTranslations || []);
+    for (const trans of bibleTranslations) {
       const bibleFiles = await OfflineManager.getBibleFiles(trans);
       for (const f of bibleFiles) {
         if (!uniqueFiles.includes(f)) uniqueFiles.push(f);
@@ -162,7 +189,7 @@ export class OfflineManager {
     diagLog('preload-start', {
       langs: options.languages.join(','),
       types: options.types.join(','),
-      bibles: (options.bibleTranslations || []).length,
+      bibles: bibleTranslations.length,
       total: progress.total,
       manifest: m !== null,
     });

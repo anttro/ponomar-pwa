@@ -12,6 +12,7 @@ import { loadSettings, type Settings } from './settings-view';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { DataCache } from '../core/data-cache';
 import { diagLog } from '../core/diag-log';
+import { OfflineManager } from '../core/offline-manager';
 import { markEverInstalled, hasEverInstalledMarker } from '../core/pwa-install';
 
 type View = 'calendar' | 'bible' | 'prayer' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'menaion' | 'triodion' | 'lives' | 'settings';
@@ -201,7 +202,8 @@ export class App {
 
     document.getElementById('offline-offer-all')?.addEventListener('click', () => {
       overlay.remove();
-      window.location.hash = '#settings/autopreload';
+      OfflineManager.requestAutoPreload();
+      window.location.hash = '#settings';
     });
     document.getElementById('offline-offer-choose')?.addEventListener('click', () => {
       overlay.remove();

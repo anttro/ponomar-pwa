@@ -672,7 +672,7 @@ export class SettingsView {
       }
 
       // Auto-preload everything if triggered from first-launch offer
-      if (this.action === 'autopreload') {
+      if (OfflineManager.consumeAutoPreload() || this.action === 'autopreload') {
         document.querySelectorAll('.offline-lang').forEach(el => (el as HTMLInputElement).checked = true);
         document.querySelectorAll('.offline-type').forEach(el => (el as HTMLInputElement).checked = true);
         const progressDiv = document.getElementById('offline-progress');
@@ -680,20 +680,19 @@ export class SettingsView {
         const progressText = document.getElementById('offline-progress-text');
         if (progressDiv) progressDiv.classList.remove('hidden');
 
+        // Reveal + select all Bible variants for UI consistency
+        document.getElementById('bible-row')?.dispatchEvent(new Event('click'));
+        setTimeout(() => {
+          document.querySelectorAll('.bible-trans').forEach(el => (el as HTMLInputElement).checked = true);
+        }, 300);
+
         const selectedLangs = LANGUAGES.map(l => l.code);
         const selectedTypes: ('calendar' | 'bible')[] = ['calendar', 'bible'];
-
-        let bibleTrans: string[] = [];
-        try {
-          const resp = await fetch('/data/bible/versions.json');
-          const versions = await resp.json();
-          bibleTrans = versions.map((v: any) => v.id);
-        } catch {}
 
         OfflineManager.preload({
           languages: selectedLangs,
           types: selectedTypes,
-          bibleTranslations: bibleTrans,
+          bibleTranslations: 'all',
         }).then((prog) => {
           if (progressBar) progressBar.style.width = '100%';
           if (progressText) {
