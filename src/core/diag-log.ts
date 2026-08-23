@@ -15,10 +15,21 @@ export interface DiagEvent {
   [key: string]: unknown;
 }
 
+function readEvents(): DiagEvent[] {
+  const raw = localStorage.getItem(DIAG_KEY);
+  if (!raw) return [];
+  try {
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) return arr as DiagEvent[];
+  } catch { /* fall through */ }
+  // Corrupted or non-array value — reset so logging can recover
+  localStorage.removeItem(DIAG_KEY);
+  return [];
+}
+
 export function diagLog(event: string, detail?: Record<string, unknown>) {
   try {
-    const raw = localStorage.getItem(DIAG_KEY);
-    const arr: DiagEvent[] = raw ? JSON.parse(raw) : [];
+    const arr = readEvents();
     arr.push({ t: new Date().toISOString(), event, ...(detail ?? {}) });
     while (arr.length > MAX_EVENTS) arr.shift();
     localStorage.setItem(DIAG_KEY, JSON.stringify(arr));
@@ -27,16 +38,16 @@ export function diagLog(event: string, detail?: Record<string, unknown>) {
 
 export function getDiagLog(): DiagEvent[] {
   try {
-    const raw = localStorage.getItem(DIAG_KEY);
-    const arr = raw ? JSON.parse(raw) : [];
-    return Array.isArray(arr) ? arr : [];
+    return readEvents();
   } catch {
     return [];
   }
 }
 
 function formatEvent(e: DiagEvent): string {
-  const time = (e.t || '').slice(11, 19);
+  // MM-DD HH:MM:SS (local relevance comes from ISO UTC; day boundary matters
+  // when events span days)
+  const time = `${(e.t || '').slice(5, 10)} ${(e.t || '').slice(11, 19)}`;
   const parts: string[] = [];
   for (const [k, v] of Object.entries(e)) {
     if (k === 't' || k === 'event') continue;

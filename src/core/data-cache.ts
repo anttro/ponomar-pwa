@@ -102,7 +102,7 @@ export class DataCache {
       const db = await getDB();
       return await new Promise<boolean | null>((resolve) => {
         const tx = db.transaction(STORE_NAME, 'readonly');
-        const request = tx.objectStore(STORE_NAME).count(IDBKeyRange.only(key));
+        const request = tx.objectStore(STORE_NAME).count(key);
         request.onsuccess = () => resolve(request.result > 0);
         request.onerror = () => resolve(null);
       });

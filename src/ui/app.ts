@@ -12,6 +12,7 @@ import { loadSettings, type Settings } from './settings-view';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { DataCache } from '../core/data-cache';
 import { diagLog } from '../core/diag-log';
+import { markEverInstalled, hasEverInstalledMarker } from '../core/pwa-install';
 
 type View = 'calendar' | 'bible' | 'prayer' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'menaion' | 'triodion' | 'lives' | 'settings';
 
@@ -139,13 +140,20 @@ export class App {
     // Clear first-launch flag on re-install
     window.addEventListener('appinstalled', () => {
       localStorage.removeItem('ponomar-installed');
+      markEverInstalled();
     });
 
     // Show offline offer on first standalone launch
     const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone;
-    if (isStandalone() && !localStorage.getItem('ponomar-installed')) {
-      localStorage.setItem('ponomar-installed', '1');
-      this.showOfflineOfferModal();
+    if (isStandalone()) {
+      markEverInstalled();
+      if (!localStorage.getItem('ponomar-installed')) {
+        localStorage.setItem('ponomar-installed', '1');
+        this.showOfflineOfferModal();
+      }
+    } else if (localStorage.getItem('ponomar-installed') && !hasEverInstalledMarker()) {
+      // One-time migration: legacy offer flag implies the app was installed
+      markEverInstalled();
     }
 
     // Auto-preload essential data for the current language

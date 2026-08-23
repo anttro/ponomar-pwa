@@ -6,6 +6,7 @@ import { getTranslations, type LanguageCode } from '../core/i18n';
 import { OfflineManager } from '../core/offline-manager';
 import { DataCache } from '../core/data-cache';
 import { diagTail } from '../core/diag-log';
+import { isPwaInstalled } from '../core/pwa-install';
 
 const LANGUAGES = [
   { code: 'en', name: 'English', local: 'English' },
@@ -417,7 +418,7 @@ export class SettingsView {
       if (!hintEl) return;
       const ua = navigator.userAgent;
       let hint: string;
-      if (await this.isPwaInstalled()) {
+      if (await isPwaInstalled()) {
         hint = t.settings.installPwaAlreadyInstalled;
       } else if (/firefox/i.test(ua)) {
         hint = t.settings.installPwaHintFirefox;
@@ -435,7 +436,7 @@ export class SettingsView {
       const btn = document.getElementById('install-pwa');
       if (!btn || !('serviceWorker' in navigator)) return;
       try {
-        if (!(await this.isPwaInstalled())) btn.classList.remove('hidden');
+        if (!(await isPwaInstalled())) btn.classList.remove('hidden');
       } catch { /* stay hidden */ }
     })();
 
@@ -602,6 +603,8 @@ export class SettingsView {
       if (statsEl) statsEl.textContent = t.settings.offlineCleared;
       const progressDiv = document.getElementById('offline-progress');
       if (progressDiv) progressDiv.classList.add('hidden');
+      const diagEl = document.getElementById('diag-log');
+      if (diagEl) diagEl.textContent = diagTail();
     });
 
     // Show initial storage stats
@@ -694,12 +697,14 @@ export class SettingsView {
         }).then((prog) => {
           if (progressBar) progressBar.style.width = '100%';
           if (progressText) {
-            const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
-            progressText.textContent = prog.aborted
-              ? t.settings.offlineAborted
-              : prog.failed > 0
-                ? `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`
-                : t.settings.offlineDone;
+            if (prog.aborted) {
+              progressText.textContent = t.settings.offlineAborted;
+            } else if (prog.failed > 0) {
+              const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
+              progressText.textContent = `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`;
+            } else {
+              progressText.textContent = t.settings.offlineDone;
+            }
           }
           const diagEl = document.getElementById('diag-log');
           if (diagEl) diagEl.textContent = diagTail();
@@ -736,20 +741,5 @@ export class SettingsView {
       preview.className = `${fontClass(this.settings.cuFont)} text-lg`;
       preview.style.fontSize = `${this.settings.fontSize}px`;
     }
-  }
-
-  private async isPwaInstalled(): Promise<boolean> {
-    if (window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone === true) {
-      return true;
-    }
-    if (localStorage.getItem('ponomar-installed')) return true;
-    try {
-      const navAny = navigator as any;
-      if (typeof navAny.getInstalledRelatedApps === 'function') {
-        const apps = await navAny.getInstalledRelatedApps();
-        if (Array.isArray(apps) && apps.length > 0) return true;
-      }
-    } catch { /* not supported */ }
-    return false;
   }
 }

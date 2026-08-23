@@ -188,6 +188,8 @@ export class OfflineManager {
           }
           if (!resp.ok) continue;
           const ct = resp.headers.get('content-type');
+          // HTML body (SPA fallback / captive portal) is not our data —
+          // counts as a failure and feeds the circuit-breaker streak
           if (ct && ct.includes('text/html')) break;
 
           let data: unknown;
