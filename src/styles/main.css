@@ -274,7 +274,7 @@ nav details.nav-group a.nav-link {
 }
 nav details.nav-group details a.nav-link {
   padding: 0.5rem 0.5rem 0.5rem 1rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 /* Mobile: top-level dropdown as fixed overlay; nested in-flow */

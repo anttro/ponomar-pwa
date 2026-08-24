@@ -134,7 +134,7 @@ export class SettingsView {
 
         <!-- Language -->
         <div class="mb-6">
-          <label class="block text-sm font-bold text-navy mb-2">${t.settings.language}</label>
+          <label class="block text-base font-bold text-navy mb-2">${t.settings.language}</label>
           <select id="language" class="w-full border border-gold/30 rounded p-2 bg-surface text-navy">
             ${LANGUAGES.map(l => `
               <option value="${l.code}" ${l.code === this.settings.language ? 'selected' : ''}>
@@ -172,7 +172,7 @@ export class SettingsView {
           </div>
 
           <div class="p-3 bg-parchment-dark rounded border border-gold/20">
-            <p class="text-sm text-navy mb-2">${t.settings.fontPreview}</p>
+            <p class="text-base text-navy mb-2">${t.settings.fontPreview}</p>
             <div id="font-preview" class="text-lg">
               Сохрани́ мѧ, гдⷭ҇и, ꙗ҆́кѡ на тѧ̀ ᲂу҆пова́хъ
             </div>
@@ -181,7 +181,7 @@ export class SettingsView {
 
         <!-- Font Size -->
         <div class="mb-6">
-          <label class="block text-sm font-bold text-navy mb-2">
+          <label class="block text-base font-bold text-navy mb-2">
             ${t.settings.fontSize} <span id="font-size-value">${this.settings.fontSize}px</span>
           </label>
           <input type="range" id="font-size" min="12" max="32" value="${this.settings.fontSize}"
@@ -195,12 +195,12 @@ export class SettingsView {
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="radio" name="calendar-type" value="julian" ${this.settings.calendarType === 'julian' ? 'checked' : ''}
                 class="accent-gold">
-              <span class="text-sm text-navy">${t.settings.julian}</span>
+              <span class="text-base text-navy">${t.settings.julian}</span>
             </label>
             <label class="flex items-center gap-2 cursor-pointer">
               <input type="radio" name="calendar-type" value="gregorian" ${this.settings.calendarType === 'gregorian' ? 'checked' : ''}
                 class="accent-gold">
-              <span class="text-sm text-navy">${t.settings.gregorian}</span>
+              <span class="text-base text-navy">${t.settings.gregorian}</span>
             </label>
           </div>
         </div>
@@ -210,21 +210,21 @@ export class SettingsView {
           <h3 class="text-lg font-bold text-red mb-3">${t.settings.locationTitle}</h3>
           <div class="flex gap-2 mb-2">
             <div class="flex-1">
-              <label class="block text-xs font-bold text-navy mb-1">${t.settings.latitude}</label>
+              <label class="block text-sm font-bold text-navy mb-1">${t.settings.latitude}</label>
               <input type="number" id="latitude" step="0.0001" value="${this.settings.latitude}"
-                class="w-full border border-gold/30 rounded p-2 bg-surface text-navy text-sm">
+                class="w-full border border-gold/30 rounded p-2 bg-surface text-navy text-base">
             </div>
             <div class="flex-1">
-              <label class="block text-xs font-bold text-navy mb-1">${t.settings.longitude}</label>
+              <label class="block text-sm font-bold text-navy mb-1">${t.settings.longitude}</label>
               <input type="number" id="longitude" step="0.0001" value="${this.settings.longitude}"
-                class="w-full border border-gold/30 rounded p-2 bg-surface text-navy text-sm">
+                class="w-full border border-gold/30 rounded p-2 bg-surface text-navy text-base">
             </div>
           </div>
           <div class="flex items-center gap-2">
-            <button id="request-location" class="bg-navy text-parchment rounded px-3 py-1 text-sm hover:bg-navy-light transition-colors">
+            <button id="request-location" class="bg-navy text-parchment rounded px-3 py-1 text-base hover:bg-navy-light transition-colors">
               ${t.settings.requestLocation}
             </button>
-            <span class="text-xs text-navy-light">${t.settings.locationNote}</span>
+            <span class="text-sm text-navy-light">${t.settings.locationNote}</span>
           </div>
         </div>
 
@@ -233,7 +233,7 @@ export class SettingsView {
           <h3 class="text-lg font-bold text-red mb-3">${t.settings.bibleSettings}</h3>
 
           <div class="mb-3">
-            <label class="block text-sm font-bold text-navy mb-1">${t.settings.defaultTranslation}</label>
+            <label class="block text-base font-bold text-navy mb-1">${t.settings.defaultTranslation}</label>
             <select id="default-bible" class="w-full border border-gold/30 rounded p-2 bg-surface text-navy">
               <option value="">${t.settings.offlineCalculating}</option>
             </select>
@@ -242,13 +242,13 @@ export class SettingsView {
           <div class="flex items-center gap-3">
             <input type="checkbox" id="show-verses" ${this.settings.showVerseNumbers ? 'checked' : ''}
               class="w-4 h-4 accent-gold">
-            <label for="show-verses" class="text-sm text-navy">${t.settings.showVerseNumbers}</label>
+            <label for="show-verses" class="text-base text-navy">${t.settings.showVerseNumbers}</label>
           </div>
 
           <div class="flex items-center gap-3">
             <input type="checkbox" id="verse-newline" ${this.settings.verseNewLine ? 'checked' : ''}
               class="w-4 h-4 accent-gold">
-            <label for="verse-newline" class="text-sm text-navy">${t.settings.verseNewLine}</label>
+            <label for="verse-newline" class="text-base text-navy">${t.settings.verseNewLine}</label>
           </div>
         </div>
 
@@ -257,7 +257,7 @@ export class SettingsView {
           <button id="install-pwa" class="hidden w-full bg-navy text-parchment rounded p-3 font-bold hover:bg-navy-light transition-colors">
             ${t.settings.installPwa}
           </button>
-          <p id="install-hint" class="hidden text-sm text-navy-light mt-2"></p>
+          <p id="install-hint" class="hidden text-base text-navy-light mt-2"></p>
         </div>
 
         <!-- Offline Content -->
@@ -266,11 +266,11 @@ export class SettingsView {
 
           <!-- Language selection for offline -->
           <div class="mb-3">
-            <label class="block text-sm font-bold text-navy mb-2">${t.settings.offlineLangs}</label>
+            <label class="block text-base font-bold text-navy mb-2">${t.settings.offlineLangs}</label>
             <div id="offline-langs" class="flex flex-wrap gap-3">
               ${LANGUAGES.map(l => `
                 <label class="flex items-center gap-1 cursor-pointer">
-                  <input type="checkbox" value="${l.code}" class="offline-lang accent-gold"> <span class="text-sm">${l.local}</span>
+                  <input type="checkbox" value="${l.code}" class="offline-lang accent-gold"> <span class="text-base">${l.local}</span>
                 </label>
               `).join('')}
             </div>
@@ -278,14 +278,14 @@ export class SettingsView {
 
           <!-- Data type selection -->
           <div class="mb-3">
-            <label class="block text-sm font-bold text-navy mb-2">${t.settings.offlineDataTypes}</label>
+            <label class="block text-base font-bold text-navy mb-2">${t.settings.offlineDataTypes}</label>
             <div id="offline-types" class="flex flex-wrap gap-3">
               <label class="flex items-center gap-1 cursor-pointer">
-                <input type="checkbox" value="calendar" checked class="offline-type accent-gold"> <span class="text-sm">${t.settings.offlineCalendar}</span>
+                <input type="checkbox" value="calendar" checked class="offline-type accent-gold"> <span class="text-base">${t.settings.offlineCalendar}</span>
               </label>
               <div id="bible-row" class="flex items-center gap-1 cursor-pointer">
-                <span class="text-sm">${t.settings.offlineBible} <span id="bible-count" class="text-xs text-navy-light">(0/0)</span></span>
-                <span id="bible-chevron" class="text-xs text-navy-light hover:text-navy select-none">▶</span>
+                <span class="text-base">${t.settings.offlineBible} <span id="bible-count" class="text-sm text-navy-light">(0/0)</span></span>
+                <span id="bible-chevron" class="text-sm text-navy-light hover:text-navy select-none">▶</span>
               </div>
             </div>
             <div id="bible-translations" class="hidden ml-4 mt-1 space-y-1 border-l border-gold/20 pl-3"></div>
@@ -293,17 +293,17 @@ export class SettingsView {
 
           <!-- Storage info and controls -->
           <div class="flex items-center justify-between gap-3 mb-2">
-            <span id="offline-stats" class="text-sm text-navy-light">${t.settings.offlineCalculating}</span>
+            <span id="offline-stats" class="text-base text-navy-light">${t.settings.offlineCalculating}</span>
             <div class="flex gap-2">
-              <button id="offline-preload" class="bg-gold text-navy rounded px-3 py-1 text-sm font-bold hover:bg-gold-dark transition-colors">${t.settings.offlinePreload}</button>
-              <button id="offline-clear" class="bg-red text-parchment rounded px-3 py-1 text-sm hover:bg-red-dark transition-colors">${t.settings.offlineClearCache}</button>
+              <button id="offline-preload" class="bg-gold text-navy rounded px-3 py-1 text-base font-bold hover:bg-gold-dark transition-colors">${t.settings.offlinePreload}</button>
+              <button id="offline-clear" class="bg-red text-parchment rounded px-3 py-1 text-base hover:bg-red-dark transition-colors">${t.settings.offlineClearCache}</button>
             </div>
           </div>
           <div id="offline-progress" class="hidden">
             <div class="w-full bg-parchment-dark rounded-full h-2 mb-1">
               <div id="offline-progress-bar" class="bg-gold h-2 rounded-full" style="width: 0%"></div>
             </div>
-            <p id="offline-progress-text" class="text-xs text-navy-light">0 / 0 ${t.settings.offlineDataTypes}</p>
+            <p id="offline-progress-text" class="text-sm text-navy-light">0 / 0 ${t.settings.offlineDataTypes}</p>
           </div>
           <pre id="diag-log" class="text-[10px] font-mono text-navy-light whitespace-pre-wrap max-h-32 overflow-auto mt-1"></pre>
         </div>
@@ -311,10 +311,10 @@ export class SettingsView {
         <!-- About -->
         <div class="mt-8 pt-6 border-t border-gold/20">
           <h3 class="text-lg font-bold text-red mb-2">${t.settings.about}</h3>
-          <p class="text-sm text-navy-light">
+          <p class="text-base text-navy-light">
             <a href="https://github.com/anttro/ponomar-pwa" target="_blank" rel="noopener" class="underline hover:text-gold">${t.settings.aboutAppName}</a>${t.settings.aboutText}
           </p>
-          <p class="text-xs text-navy-light mt-2">
+          <p class="text-sm text-navy-light mt-2">
             <a href="https://github.com/typiconman/ponomar" target="_blank" rel="noopener" class="underline hover:text-gold">
               ${t.settings.aboutLicense}
             </a>
@@ -497,14 +497,14 @@ export class SettingsView {
               return `
                 <label class="flex items-center gap-1 cursor-pointer">
                   <input type="checkbox" value="${v.id}" class="bible-trans accent-gold" ${isCached ? 'checked' : ''}>
-                  <span class="text-xs text-navy">${v.name}</span>
+                  <span class="text-sm text-navy">${v.name}</span>
                   <span class="text-[10px] text-navy-light">(${OfflineManager.getBibleSize(v.id) || '?'})</span>
                 </label>
               `;
             }));
             container.innerHTML = `
               <div class="mb-1">
-                <button id="select-all-bible" class="text-xs text-blue-600 underline hover:text-blue-800 cursor-pointer">${t.settings.offlineSelectAll}</button>
+                <button id="select-all-bible" class="text-sm text-blue-600 underline hover:text-blue-800 cursor-pointer">${t.settings.offlineSelectAll}</button>
               </div>
             ` + html.join('');
             document.getElementById('select-all-bible')?.addEventListener('click', () => {

@@ -93,7 +93,7 @@ export class ServiceView {
       <div class="flex flex-wrap gap-2 mb-3">
         ${availableServices.map(s => `
           <button
-            class="service-tab text-sm transition-colors
+            class="service-tab text-base transition-colors
               ${this.activeService === s.id
                 ? 'border border-gold bg-gold/10 text-navy font-bold rounded-lg px-3 py-1'
                 : 'border border-gold/20 bg-surface/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1'}"
@@ -132,9 +132,9 @@ export class ServiceView {
           this.container.querySelectorAll('.service-tab').forEach(t => {
             const id = t.getAttribute('data-service');
             if (id === serviceId) {
-              t.className = 'service-tab text-sm transition-colors border border-gold bg-gold/10 text-navy font-bold rounded-lg px-3 py-1';
+              t.className = 'service-tab text-base transition-colors border border-gold bg-gold/10 text-navy font-bold rounded-lg px-3 py-1';
             } else {
-              t.className = 'service-tab text-sm transition-colors border border-gold/20 bg-surface/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1';
+              t.className = 'service-tab text-base transition-colors border border-gold/20 bg-surface/50 text-navy hover:border-gold/50 rounded-lg px-3 py-1';
             }
           });
           this.loadService(service);
@@ -921,7 +921,7 @@ export class ServiceView {
         contentEl.innerHTML = `
           <div class="text-center py-8">
             <p class="text-navy-light mb-2">${this.t.services.serviceProducedNoOutput}</p>
-            <p class="text-xs text-navy-light">${nodes.length} ${this.t.services.nodesAssembled}</p>
+            <p class="text-sm text-navy-light">${nodes.length} ${this.t.services.nodesAssembled}</p>
           </div>
         `;
       }
@@ -929,7 +929,7 @@ export class ServiceView {
       contentEl.innerHTML = `
         <div class="text-center py-8">
           <p class="text-navy-light mb-2">${this.t.services.errorLoading}</p>
-          <p class="text-xs text-navy-light">${err instanceof Error ? err.message : this.t.error}</p>
+          <p class="text-sm text-navy-light">${err instanceof Error ? err.message : this.t.error}</p>
         </div>
       `;
     }

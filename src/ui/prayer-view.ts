@@ -221,7 +221,7 @@ export class PrayerView {
         <div class="flex flex-wrap gap-2 mb-2">
           ${subNavItems.map(item => `
             <button
-              class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1
+              class="sub-nav-chip text-base transition-colors rounded-lg px-3 py-1
                 ${this.collection === item.id
                   ? 'border border-gold bg-gold/10 text-navy font-bold'
                   : 'border border-gold/20 bg-surface/50 text-navy hover:border-gold/50'}"
@@ -229,8 +229,8 @@ export class PrayerView {
             >${item.label}</button>
           `).join('')}
         </div>
-        <p class="text-navy-light text-sm mb-2">${subtitle}</p>
-        <select id="prayer-select" class="w-full appearance-none bg-surface text-navy border border-gold/20 rounded-lg px-3 py-2 text-sm mb-3">
+        <p class="text-navy-light text-base mb-2">${subtitle}</p>
+        <select id="prayer-select" class="w-full appearance-none bg-surface text-navy border border-gold/20 rounded-lg px-3 py-2 text-base mb-3">
           ${sections.map(s => `
             <option value="${s.id}" ${this.activeSection === s.id ? 'selected' : ''}>${s.name}</option>
           `).join('')}

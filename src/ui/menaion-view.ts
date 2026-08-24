@@ -70,7 +70,7 @@ export class MenaionView {
             { id: 'triodion', view: 'triodion', label: this.t.nav.triodion },
           ].map(item => `
             <button
-              class="sub-nav-chip text-sm transition-colors rounded-lg px-3 py-1
+              class="sub-nav-chip text-base transition-colors rounded-lg px-3 py-1
                 ${item.id === 'menaion'
                   ? 'border border-gold bg-gold/10 text-navy font-bold'
                   : 'border border-gold/20 bg-surface/50 text-navy hover:border-gold/50'}"
@@ -119,7 +119,7 @@ export class MenaionView {
       const key = `${mm}-${dd}`;
       const n = this.index[key];
       daysHtml += `
-        <button class="px-1.5 py-0.5 text-xs rounded border transition-colors
+        <button class="px-1.5 py-0.5 text-sm rounded border transition-colors
           ${n ? 'border-gold/40 bg-gold/10 text-navy hover:border-gold cursor-pointer' : 'border-transparent text-navy-light opacity-30 cursor-default'}"
           data-date="${key}" ${n ? '' : 'disabled'}>
           ${d}
@@ -129,9 +129,9 @@ export class MenaionView {
 
     calEl.innerHTML = `
       <div class="flex items-center justify-between mb-3">
-        <button id="menaion-prev" class="text-sm text-navy-light hover:text-navy px-2 py-1">◀</button>
+        <button id="menaion-prev" class="text-base text-navy-light hover:text-navy px-2 py-1">◀</button>
         <span class="text-base font-bold text-navy">${months[month - 1]}</span>
-        <button id="menaion-next" class="text-sm text-navy-light hover:text-navy px-2 py-1">▶</button>
+        <button id="menaion-next" class="text-base text-navy-light hover:text-navy px-2 py-1">▶</button>
       </div>
       <div class="grid gap-1 grid-cols-7 mb-2">
         ${daysHtml}

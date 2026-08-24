@@ -172,24 +172,24 @@ export class BibleView {
     this.container.innerHTML = `
       <div class="flex flex-col h-full">
         <div class="bg-surface/50 border border-gold/20 rounded-lg p-3 flex items-center gap-4 flex-wrap">
-          <select id="version-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-sm">
+          <select id="version-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-base">
             ${this.versions.map(v =>
               `<option value="${v.id}" ${v.id === this.currentVersion ? 'selected' : ''}>${v.name}</option>`
             ).join('')}
           </select>
-          <select id="book-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-sm">
+          <select id="book-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-base">
             ${this.getBooksForVersion().map(b =>
               `<option value="${b.id}" ${b.id === this.currentBook ? 'selected' : ''}>${b.name}</option>`
             ).join('')}
           </select>
           <div class="flex items-center gap-1">
-            <button id="prev-chapter" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-sm hover:bg-gold/20 disabled:opacity-40">◀</button>
-            <select id="chapter-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-sm">
+            <button id="prev-chapter" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-base hover:bg-gold/20 disabled:opacity-40">◀</button>
+            <select id="chapter-select" class="appearance-none bg-surface text-navy border border-gold/20 rounded px-2 py-1 text-base">
             </select>
-            <button id="next-chapter" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-sm hover:bg-gold/20 disabled:opacity-40">▶</button>
+            <button id="next-chapter" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-base hover:bg-gold/20 disabled:opacity-40">▶</button>
           </div>
           <div class="relative ml-auto">
-            <button id="bookmark-btn" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-sm hover:bg-gold/20" title="${this.t.bible.bookmarkAdd}">🔖</button>
+            <button id="bookmark-btn" class="bg-surface/50 text-navy border border-gold/20 rounded px-2 py-1 text-base hover:bg-gold/20" title="${this.t.bible.bookmarkAdd}">🔖</button>
             <div id="bookmark-panel" class="${this.bookmarksOpen ? 'flex flex-col' : 'hidden'} absolute right-0 top-full mt-1 z-50 min-w-64 rounded-lg bg-dropdown-bg shadow-xl p-2 gap-1 text-header-text"></div>
           </div>
         </div>
@@ -308,7 +308,7 @@ export class BibleView {
     const t = this.t.bible;
     const rows = [...this.bookmarks].sort((a, b) => b.created - a.created).map(b => `
       <div class="flex items-center rounded px-1 py-1 hover:bg-white/10">
-        <button class="bookmark-jump flex-1 min-w-0 text-left text-sm truncate cursor-pointer py-1 pr-2 rounded active:bg-white/15" data-id="${b.id}" title="${escapeHtml(b.name)}">${escapeHtml(b.name)}</button>
+        <button class="bookmark-jump flex-1 min-w-0 text-left text-base truncate cursor-pointer py-1 pr-2 rounded active:bg-white/15" data-id="${b.id}" title="${escapeHtml(b.name)}">${escapeHtml(b.name)}</button>
         <div class="shrink-0 flex items-center gap-1 border-l border-gold/25 pl-2 ml-1">
           <button class="bookmark-rename w-8 h-8 flex items-center justify-center text-base rounded-md bg-white/5 border border-white/15 active:bg-white/15 cursor-pointer" data-id="${b.id}">✏</button>
           <button class="bookmark-delete w-8 h-8 flex items-center justify-center text-base rounded-md bg-white/5 border border-white/15 active:bg-white/15 cursor-pointer" data-id="${b.id}">✕</button>
@@ -317,8 +317,8 @@ export class BibleView {
     `).join('');
 
     panel.innerHTML = `
-      <button id="bookmark-add" class="w-full text-left bg-white/10 border border-gold/40 rounded px-2 py-1.5 text-sm font-bold hover:bg-white/20 cursor-pointer">＋ ${t.bookmarkAdd}</button>
-      ${rows ? `<div class="border-t border-gold/20 my-1"></div>${rows}` : `<p class="text-xs italic opacity-70 px-2 py-1">${t.bookmarkEmpty}</p>`}
+      <button id="bookmark-add" class="w-full text-left bg-white/10 border border-gold/40 rounded px-2 py-1.5 text-base font-bold hover:bg-white/20 cursor-pointer">＋ ${t.bookmarkAdd}</button>
+      ${rows ? `<div class="border-t border-gold/20 my-1"></div>${rows}` : `<p class="text-sm italic opacity-70 px-2 py-1">${t.bookmarkEmpty}</p>`}
     `;
 
     document.getElementById('bookmark-add')?.addEventListener('click', () => {
@@ -506,7 +506,7 @@ export class BibleView {
       textEl.innerHTML = `
         <div class="text-center py-12">
           <p class="text-navy-light mb-4">${this.t.bible.notAvailableOffline}</p>
-          <p class="text-sm text-navy-light">
+          <p class="text-base text-navy-light">
             ${this.t.bible.ensureDataConverted}
           </p>
         </div>

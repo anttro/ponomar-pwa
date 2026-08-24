@@ -190,11 +190,11 @@ export class App {
     overlay.innerHTML = `
       <div class="bg-surface rounded-xl shadow-2xl p-6 max-w-md mx-4">
         <h3 class="text-lg font-bold text-navy mb-2">${t.settings.offlineOfferTitle}</h3>
-        <p class="text-sm text-navy mb-4">${t.settings.offlineOfferText}</p>
+        <p class="text-base text-navy mb-4">${t.settings.offlineOfferText}</p>
         <div class="flex flex-col gap-2">
           <button id="offline-offer-all" class="w-full bg-navy text-parchment rounded-lg px-4 py-2 font-bold hover:bg-navy-light transition-colors">${t.settings.offlineOfferPreloadAll}</button>
           <button id="offline-offer-choose" class="w-full bg-gold text-navy rounded-lg px-4 py-2 font-bold hover:bg-gold-light transition-colors">${t.settings.offlineOfferChoose}</button>
-          <button id="offline-offer-skip" class="w-full text-sm text-navy-light underline hover:text-navy text-center cursor-pointer">${t.settings.offlineOfferSkip}</button>
+          <button id="offline-offer-skip" class="w-full text-base text-navy-light underline hover:text-navy text-center cursor-pointer">${t.settings.offlineOfferSkip}</button>
         </div>
       </div>
     `;
@@ -252,10 +252,10 @@ export class App {
             <img src="/icons/icon-192.png" class="w-6 h-6" alt="">
             ${t.nav.appTitle}
           </span>
-          <nav class="flex flex-wrap gap-4 text-sm mx-auto">
+          <nav class="flex flex-wrap gap-4 text-base mx-auto">
             <a href="#calendar" class="nav-link hover:text-gold transition-colors" data-view="calendar">${t.nav.calendar}</a>
             <details class="nav-group relative" data-nav="library">
-              <summary class="cursor-pointer list-none hover:text-gold transition-colors flex items-center gap-1">${t.nav.library} <span class="text-xs">▾</span></summary>
+              <summary class="cursor-pointer list-none hover:text-gold transition-colors flex items-center gap-1">${t.nav.library} <span class="text-sm">▾</span></summary>
               <div class="absolute left-0 top-full mt-1 z-50 min-w-56 rounded-lg bg-dropdown-bg shadow-xl p-2 flex flex-col gap-1">
                 <a href="#bible" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="bible"><span>📖</span> <span class="font-bold">${t.nav.bible}</span></a>
                 <a href="#prayer" class="nav-link hover:text-gold transition-colors px-2 py-1" data-view="prayer">${t.nav.prayer}</a>

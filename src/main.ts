@@ -16,8 +16,8 @@ function showUpdateToast() {
   toast.id = 'pwa-update-toast';
   toast.className = 'fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] bg-surface border border-gold/40 rounded-lg shadow-xl px-4 py-3 flex items-center gap-3 max-w-[calc(100vw-2rem)]';
   toast.innerHTML = `
-    <span class="text-sm text-navy whitespace-nowrap">${t.updateAvailable}</span>
-    <button id="pwa-update-btn" class="bg-gold text-navy rounded px-3 py-1 text-sm font-bold hover:bg-gold-dark transition-colors whitespace-nowrap">${t.updateReload}</button>
+    <span class="text-base text-navy whitespace-nowrap">${t.updateAvailable}</span>
+    <button id="pwa-update-btn" class="bg-gold text-navy rounded px-3 py-1 text-base font-bold hover:bg-gold-dark transition-colors whitespace-nowrap">${t.updateReload}</button>
     <button id="pwa-update-dismiss" class="text-navy-light hover:text-navy text-lg leading-none px-1" aria-label="✕">&times;</button>
   `;
   document.body.appendChild(toast);

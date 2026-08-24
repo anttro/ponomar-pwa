@@ -486,7 +486,7 @@ export class CalendarView {
     let col = 0;
 
     gridHtml += this.t.calendar.dayNames.map(d =>
-      `<div class="text-center text-xs font-bold text-red py-1">${d}</div>`
+      `<div class="text-center text-sm font-bold text-red py-1">${d}</div>`
     ).join('');
 
     for (let i = 0; i < firstDow; i++) {
@@ -516,7 +516,7 @@ export class CalendarView {
         isToday = date.equals(JDate.today());
       }
 
-      let classes = 'day-cell p-1 text-center text-sm cursor-pointer rounded transition-colors ';
+      let classes = 'day-cell p-1 text-center text-base cursor-pointer rounded transition-colors ';
       if (isSelected) classes += 'bg-navy text-parchment font-bold ';
       else if (isToday) classes += 'bg-gold/20 font-bold ';
       else if (dayRank >= 6) classes += 'bg-red/20 text-red font-bold ';
@@ -550,7 +550,7 @@ export class CalendarView {
             <button id="next-month" class="p-2 hover:bg-navy/10 rounded">▶</button>
           </div>
 
-          <div class="grid grid-cols-7 gap-0.5 text-xs">
+          <div class="grid grid-cols-7 gap-0.5 text-sm">
             ${gridHtml}
           </div>
 
@@ -560,33 +560,33 @@ export class CalendarView {
 
         <div class="flex-1 p-3 overflow-auto">
           <div class="max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
-            <h2 class="text-sm font-bold text-red mb-1">
+            <h2 class="text-base font-bold text-red mb-1">
               ${julianStr}
             </h2>
 
             <div id="day-title" class="mb-2"></div>
 
-            <div class="text-sm text-navy-light mb-2">
+            <div class="text-base text-navy-light mb-2">
               ${this.t.calendar.gregorianDate[0].toLowerCase() + this.t.calendar.gregorianDate.slice(1)}: ${gregorianStr}
             </div>
 
-            <div id="astro-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg text-sm text-navy">
+            <div id="astro-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg text-base text-navy">
               <span class="text-navy-light italic">${this.t.loading}</span>
             </div>
 
             <div id="commemorations-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
-              <p class="text-sm text-navy-light italic">${this.t.loading}</p>
+              <p class="text-base text-navy-light italic">${this.t.loading}</p>
             </div>
 
             <div id="fasting-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.fastingRule}</h3>
-              <p class="text-sm italic text-navy-light">${this.t.loading}</p>
+              <p class="text-base italic text-navy-light">${this.t.loading}</p>
             </div>
 
             <div id="readings-panel" class="mb-2 p-2 bg-surface/50 border border-gold/20 rounded-lg ${fnClass}">
               <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
-              <p class="text-sm text-navy-light italic">${this.t.loading}</p>
+              <p class="text-base text-navy-light italic">${this.t.loading}</p>
             </div>
 
             <div id="services-panel" class="mb-2 border-t border-gold/20 pt-3"></div>
@@ -652,7 +652,7 @@ export class CalendarView {
     if (fastingPanel) {
       fastingPanel.innerHTML = `
         <h3 class="font-bold text-red mb-2">${this.t.calendar.fastingRule}</h3>
-        <p class="text-sm">${fastingResult.description || this.t.notAvailable}</p>
+        <p class="text-base">${fastingResult.description || this.t.notAvailable}</p>
       `;
     }
 
@@ -742,7 +742,7 @@ export class CalendarView {
         const toneSuffix = tone > 0 ? `; ${this.t.calendar.tone}${tone}` : '';
         const feastSuffix = feastName && feastCid !== periodCid ? `; ${feastName}` : '';
         const titleColor = feastName ? 'text-red-700' : 'text-navy';
-        titleEl.innerHTML = `<span class="text-sm font-semibold ${titleColor} italic">${periodName}${toneSuffix}${feastSuffix}</span>`;
+        titleEl.innerHTML = `<span class="text-base font-semibold ${titleColor} italic">${periodName}${toneSuffix}${feastSuffix}</span>`;
       }
 
       if (feastCid) this.skipCids.add(feastCid);
@@ -754,7 +754,7 @@ export class CalendarView {
       if (cids.length === 0) {
         commPanel.innerHTML = `
           <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
-          <p class="text-sm text-navy-light italic">${this.t.calendar.noCommemorations}</p>
+          <p class="text-base text-navy-light italic">${this.t.calendar.noCommemorations}</p>
         `;
       } else {
         const commHtmlParts: string[] = [];
@@ -783,11 +783,11 @@ export class CalendarView {
             const icon = this.t.calendar.rankIcons[rank] || '';
             const iconHtml = icon ? `<span class="font-slavonic text-lg mr-1">${icon}</span>` : '';
             const lifeHtml = lifeText
-              ? `<div class="life-text hidden mt-2 p-3 bg-surface border border-gold/20 rounded text-sm leading-relaxed max-h-60 overflow-y-auto">${lifeText}</div>`
+              ? `<div class="life-text hidden mt-2 p-3 bg-surface border border-gold/20 rounded text-base leading-relaxed max-h-60 overflow-y-auto">${lifeText}</div>`
               : '';
             commHtmlParts.push(
 `<div class="comm-item">
-                 <div class="text-sm font-medium ${lifeText ? 'text-blue-600 underline cursor-pointer hover:text-blue-800' : 'text-navy'}">${iconHtml}${name}${lifeText ? '<span class="comm-chevron text-xs align-middle ml-1 inline-block">▶</span>' : ''}</div>
+                 <div class="text-base font-medium ${lifeText ? 'text-blue-600 underline cursor-pointer hover:text-blue-800' : 'text-navy'}">${iconHtml}${name}${lifeText ? '<span class="comm-chevron text-sm align-middle ml-1 inline-block">▶</span>' : ''}</div>
                  ${lifeHtml}
                </div>`
             );
@@ -813,7 +813,7 @@ commPanel.addEventListener('click', (e) => {
         } else {
           commPanel.innerHTML = `
             <h3 class="font-bold text-red mb-2">${this.t.calendar.commemorations}</h3>
-            <p class="text-sm text-navy-light italic">${this.t.calendar.noCommemorations}</p>
+            <p class="text-base text-navy-light italic">${this.t.calendar.noCommemorations}</p>
           `;
         }
       }
@@ -897,7 +897,7 @@ commPanel.addEventListener('click', (e) => {
       if (readingsGroups.length === 0) {
         readingsPanel.innerHTML = `
           <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
-          <p class="text-sm text-navy-light italic">${this.t.calendar.noReadings}</p>
+          <p class="text-base text-navy-light italic">${this.t.calendar.noReadings}</p>
         `;
       } else {
         const sorted = [...readingsGroups].sort((a, b) => {
@@ -917,7 +917,7 @@ commPanel.addEventListener('click', (e) => {
               refs += item.purpose;
             }
           }
-          return `<div class="text-sm text-navy"><strong>${g.service}</strong>${this.t.calendar.colon}${refs}</div>`;
+          return `<div class="text-base text-navy"><strong>${g.service}</strong>${this.t.calendar.colon}${refs}</div>`;
         }).join('');
         readingsPanel.innerHTML = `
           <h3 class="font-bold text-red mb-2">${this.t.calendar.readings}</h3>
@@ -963,7 +963,7 @@ commPanel.addEventListener('click', (e) => {
         const svcView = new ServiceView(svcPanel, this.currentDate, this.language);
         await svcView.render(false);
       } catch {
-        svcPanel.innerHTML = `<p class="text-sm text-navy-light italic">${this.t.loading}</p>`;
+        svcPanel.innerHTML = `<p class="text-base text-navy-light italic">${this.t.loading}</p>`;
       }
     }
 
