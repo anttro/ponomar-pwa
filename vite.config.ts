@@ -6,11 +6,10 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    VitePWA({
-      registerType: 'autoUpdate',
+    VitePWA({      registerType: 'prompt',
       workbox: {
-        skipWaiting: true,
-        clientsClaim: true,
+        skipWaiting: false,
+        clientsClaim: false,
         globPatterns: ['**/*.{js,css,html,woff,png}'],
         globIgnores: ['**/data/**'],
         maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
@@ -65,6 +64,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+  },
+  define: {
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
   },
   publicDir: 'static',
 });

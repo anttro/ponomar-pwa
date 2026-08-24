@@ -12,6 +12,10 @@ export interface Translations {
   error: string;
   notAvailable: string;
 
+  // App update
+  updateAvailable: string;
+  updateReload: string;
+
   // Navigation
   nav: {
     calendar: string;
@@ -547,6 +551,9 @@ const translations: Record<LanguageCode, Translations> = {
     loading: 'Loading...',
     error: 'Error',
     notAvailable: 'Not available',
+
+    updateAvailable: 'New version available',
+    updateReload: 'Update',
 
     nav: {
       calendar: '📅 Calendar',
@@ -1116,6 +1123,9 @@ const translations: Record<LanguageCode, Translations> = {
     error: 'Ошибка',
     notAvailable: 'Недоступно',
 
+    updateAvailable: 'Достꙋ́пна новаѧ вєрсі́ѧ',
+    updateReload: 'Обнови́ти',
+
     nav: {
       calendar: '📅 Календарь',
       service: '📖 Устав',
@@ -1683,6 +1693,9 @@ const translations: Record<LanguageCode, Translations> = {
     loading: 'Загрузка...',
     error: 'Ошибка',
     notAvailable: 'Недоступно',
+
+    updateAvailable: 'Доступна новая версия',
+    updateReload: 'Обновить',
 
     nav: {
       calendar: '📅 Календарь',

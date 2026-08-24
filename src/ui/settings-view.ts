@@ -319,6 +319,7 @@ export class SettingsView {
               ${t.settings.aboutLicense}
             </a>
           </p>
+          <p class="text-[10px] text-navy-light mt-2 opacity-70">build ${__BUILD_DATE__}</p>
         </div>
       </div>
     `;
