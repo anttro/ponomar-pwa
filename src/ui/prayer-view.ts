@@ -191,6 +191,9 @@ export class PrayerView {
 
   async render() {
     const sections = this.getSections();
+    if (!this.activeSection) {
+      this.activeSection = sections[0]?.id ?? null;
+    }
     const isTriodion = this.collection === 'triodion';
     const subtitle = isTriodion ? this.t.triodion.subtitle
       : this.collection === 'akathists' ? this.t.akathists.subtitle
@@ -250,6 +253,8 @@ export class PrayerView {
       this.activeSection = id;
       this.loadSection(id);
     });
+
+    if (this.activeSection) void this.loadSection(this.activeSection);
   }
 
   private async loadSection(id: string) {
