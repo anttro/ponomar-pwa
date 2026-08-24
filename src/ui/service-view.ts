@@ -15,6 +15,7 @@ import {
   HOLY_WEEK, holyWeekVarName, type ServiceTabDef,
 } from '../core/service-tabs';
 import { loadSettings, fontClass } from './settings-view';
+import { DataCache } from '../core/data-cache';
 
 interface ServiceDef {
   id: string;
@@ -74,9 +75,8 @@ export class ServiceView {
 
     // Load the daily Menaion index (date -> section count) for the Служба дня tabs
     try {
-      const resp = await fetch('/data/shared/menaion-daily/index.json');
-      if (resp.ok) {
-        const index = await resp.json() as Record<string, number>;
+      const index = await DataCache.fetchWithFallback<Record<string, number>>('/data/shared/menaion-daily/index.json');
+      if (index) {
         for (const [dk, n] of Object.entries(index)) {
           this.menaionDayCount.set(dk, n);
         }
@@ -386,9 +386,8 @@ export class ServiceView {
       try {
         const tryFetch = async (lang: string) => {
           const url = `/data/${lang}/services/octoecheos/tone${toneNum}/${weekday.toLowerCase()}.json`;
-          const resp = await fetch(url);
-          if (!resp.ok) return null;
-          const nodes: ServiceNode[] = await resp.json();
+          const nodes = await DataCache.fetchWithFallback<ServiceNode[]>(url);
+          if (!nodes) return null;
           for (const node of nodes) {
             if (node.type === serviceType) {
               if (!node.cmd || evalBool(node.cmd as string, this.evalContext)) {
@@ -417,11 +416,10 @@ export class ServiceView {
       try {
         const tryLoad = async (url: string): Promise<{ cid: string }[] | null> => {
           try {
-            const resp = await fetch(url);
-            if (!resp.ok) return null;
-            const all = await resp.json();
+            const all = await DataCache.fetchWithFallback<Record<string, unknown>[]>(url);
+            if (!all) return null;
             if (Array.isArray(all)) return all.map((e: Record<string, unknown>) => ({ cid: String(e.id ?? '') }));
-            const entries = all[dateKey] as Record<string, unknown>[] | undefined;
+            const entries = (all as Record<string, unknown>)[dateKey] as Record<string, unknown>[] | undefined;
             if (Array.isArray(entries)) return entries.map((e: Record<string, unknown>) => ({ cid: String(e.id ?? '') }));
             return null;
           } catch { return null; }
@@ -435,11 +433,10 @@ export class ServiceView {
         // Load from merged calendar files
         const loadCalendarEntry = async (file: string, index: number): Promise<{ cid: string }[] | null> => {
           try {
-            const resp = await fetch(`/data/shared/calendar/${file}.json`);
-            if (!resp.ok) return null;
-            const data = await resp.json();
+            const data = await DataCache.fetchWithFallback<Record<string, unknown>>(`/data/shared/calendar/${file}.json`);
+            if (!data) return null;
             const key = String(index).padStart(2, '0');
-            const entry = data[key];
+            const entry = data[key] as { id?: unknown } | undefined;
             return entry ? [{ cid: String(entry.id ?? '') }] : null;
           } catch { return null; }
         };
@@ -457,9 +454,8 @@ export class ServiceView {
         for (const entry of allEntries) {
           if (!entry.cid) continue;
           try {
-            const shmResp = await fetch(`/data/shared/commemorations/${entry.cid}.json`);
-            if (!shmResp.ok) continue;
-            const shm = await shmResp.json();
+            const shm = await DataCache.fetchWithFallback<Record<string, unknown>>(`/data/shared/commemorations/${entry.cid}.json`);
+            if (!shm) continue;
             const troparion = shm.TROPARION as { Tone?: string; text?: string } | undefined;
             const kontakion = shm.KONTAKION as { Tone?: string; text?: string } | undefined;
             if (troparion?.text || kontakion?.text) {
@@ -507,9 +503,8 @@ export class ServiceView {
     const toneNum = tone === 8 ? 0 : tone;
     const url = `/data/shared/services/canons/tone${toneNum}/sunday.json`;
     try {
-      const resp = await fetch(url);
-      if (!resp.ok) return null;
-      const canonData: CanonData = await resp.json();
+      const canonData = await DataCache.fetchWithFallback<CanonData>(url);
+      if (!canonData) return null;
       const ODE_SLAV = ['', 'а', 'в', 'г', 'д', 'є', 'ѕ', 'з', 'и', 'ѳ'];
 
       const nodes: ServiceNode[] = [];
@@ -543,62 +538,27 @@ export class ServiceView {
     const dayKey = WEEKDAY[dow] ?? '';
     if (!dayKey) return null;
     const url = `/data/shared/services/canons/paraclete/tone${tone}/${dayKey}.json`;
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) return null;
-      const nodes: ServiceNode[] = await resp.json();
-      return nodes;
-    } catch {
-      return null;
-    }
+    return DataCache.fetchWithFallback<ServiceNode[]>(url);
   }
 
   private async loadMenaionDay(dateKey: string, index: number): Promise<ServiceNode[] | null> {
     const url = `/data/shared/menaion-daily/${dateKey}/${index}.json`;
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) return null;
-      const nodes: ServiceNode[] = await resp.json();
-      return nodes;
-    } catch {
-      return null;
-    }
+    return DataCache.fetchWithFallback<ServiceNode[]>(url);
   }
 
   private async loadTriodion(index: number): Promise<ServiceNode[] | null> {
     const url = `/data/shared/triodion/${String(index).padStart(2, '0')}.json`;
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) return null;
-      const nodes: ServiceNode[] = await resp.json();
-      return nodes;
-    } catch {
-      return null;
-    }
+    return DataCache.fetchWithFallback<ServiceNode[]>(url);
   }
 
   private async loadMariasStandingData(): Promise<ServiceNode[] | null> {
     const url = `/data/shared/services/marias-standing/full.json`;
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) return null;
-      const nodes: ServiceNode[] = await resp.json();
-      return nodes;
-    } catch {
-      return null;
-    }
+    return DataCache.fetchWithFallback<ServiceNode[]>(url);
   }
 
   private async loadHolyWeekData(service: string): Promise<ServiceNode[] | null> {
     const url = `/data/shared/services/${service}/full.json`;
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) return null;
-      const nodes: ServiceNode[] = await resp.json();
-      return nodes;
-    } catch {
-      return null;
-    }
+    return DataCache.fetchWithFallback<ServiceNode[]>(url);
   }
 
   private async loadGreatCanonData(): Promise<ServiceNode[] | null> {
@@ -617,9 +577,8 @@ export class ServiceView {
 
     const url = `/data/shared/services/canons/great-canon/part${part}.json`;
     try {
-      const resp = await fetch(url);
-      if (!resp.ok) return null;
-      const canonData: GreatCanonPart = await resp.json();
+      const canonData = await DataCache.fetchWithFallback<GreatCanonPart>(url);
+      if (!canonData) return null;
       const ODE_SLAV = ['', 'а҃', 'в҃', 'г҃', 'д҃', 'є҃', 'ѕ҃', 'з҃', 'и҃', 'ѳ҃'];
       const nodes: ServiceNode[] = [];
 
@@ -872,12 +831,11 @@ export class ServiceView {
         const dd = String(this.currentDate.getDay()).padStart(2, '0');
         const dateKey = `${mm}-${dd}`;
         try {
-          const resp = await fetch(`/data/${this.serviceLang}/menaion-bundle.json`);
-          if (resp.ok) {
-            const bundle = await resp.json();
+          const bundle = await DataCache.fetchWithFallback<Record<string, unknown>>(`/data/${this.serviceLang}/menaion-bundle.json`);
+          if (bundle) {
             const entries = bundle[dateKey];
             if (entries) {
-              for (const e of entries) {
+              for (const e of entries as Record<string, unknown>[]) {
                 if (e.id) ids.push(String(e.id));
               }
             }
@@ -885,9 +843,8 @@ export class ServiceView {
         } catch {}
         for (const cid of ids) {
           try {
-            const resp = await fetch(`/data/shared/commemorations/${cid}.json`);
-            if (!resp.ok) continue;
-            const data = await resp.json();
+            const data = await DataCache.fetchWithFallback<Record<string, unknown>>(`/data/shared/commemorations/${cid}.json`);
+            if (!data) continue;
             const scripts = data.SCRIPTURE;
             if (!Array.isArray(scripts)) continue;
             let epistlePassage = '';
@@ -1000,11 +957,9 @@ export class ServiceView {
     const tryFetch = async (lang: string): Promise<string | null> => {
       const url = `/data/${lang}/bible/${version}/${book}.text`;
       if (this.notFound.has(url)) return null;
-      const resp = await fetch(url);
-      if (!resp.ok) { this.notFound.add(url); return null; }
-      const ct = resp.headers.get('content-type');
-      if (ct && ct.includes('text/html')) { this.notFound.add(url); return null; }
-      return resp.text();
+      const text = await DataCache.fetchWithFallback<string>(url, 'text');
+      if (!text) { this.notFound.add(url); return null; }
+      return text;
     };
 
     let text = await tryFetch(this.serviceLang);
@@ -1103,15 +1058,12 @@ export class ServiceView {
     const cached = this.livesCache.get(cacheKey);
     if (cached) return cached;
 
-    const bundleName = /^(0[1-9]|1[0-2])\d+/.test(id) ? id.substring(0, 2) : 'misc';
+    const bundleName = /^(0[1-9]|1[0-2])\d+/.test(id) ? id.substring(0, 2) : `misc/${id.charAt(0)}`;
     const tryFetch = async (lang: string): Promise<Record<string, Record<string, Record<string, unknown>>> | null> => {
       const url = `/data/${lang}/lives/${bundleName}.json`;
       if (this.notFound.has(url)) return null;
-      const resp = await fetch(url);
-      if (!resp.ok) { this.notFound.add(url); return null; }
-      const ct = resp.headers.get('content-type');
-      if (ct && ct.includes('text/html')) { this.notFound.add(url); return null; }
-      const bundle = await resp.json() as Record<string, Record<string, unknown>>;
+      const bundle = await DataCache.fetchWithFallback<Record<string, Record<string, unknown>>>(url);
+      if (!bundle) { this.notFound.add(url); return null; }
       const entry = bundle[id] as { services?: Record<string, Record<string, Record<string, unknown>>> } | undefined;
       return entry?.services || null;
     };
@@ -1129,15 +1081,12 @@ export class ServiceView {
     if (cached) return cached;
 
     const tryFetch = async (lang: string): Promise<string | null> => {
-      const url = `/data/${lang}/services/Command/${name}.json`;
+      const url = `/data/${lang}/services/commands/${name}.json`;
       if (this.notFound.has(url)) return null;
-      const resp = await fetch(url);
-      if (!resp.ok) { this.notFound.add(url); return null; }
-      const ct = resp.headers.get('content-type');
-      if (ct && ct.includes('text/html')) { this.notFound.add(url); return null; }
-      const json = await resp.json() as Record<string, unknown>[];
+      const json = await DataCache.fetchWithFallback<Record<string, unknown>[]>(url);
+      if (!json) { this.notFound.add(url); return null; }
       return json
-        .filter(n => n.type === 'TEXT')
+        .filter(n => n.type === 'TEXT' || n.type === 'text')
         .map(n => String(n.value ?? ''))
         .filter(Boolean)
         .join(' ') || null;
@@ -1157,11 +1106,8 @@ export class ServiceView {
       const tryFetch = async (lang: string): Promise<{ cmd: string; value: string }[] | null> => {
         const url = `/data/${lang}/commands/Times.json`;
         if (this.notFound.has(url)) return null;
-        const resp = await fetch(url);
-        if (!resp.ok) { this.notFound.add(url); return null; }
-        const ct = resp.headers.get('content-type');
-        if (ct && ct.includes('text/html')) { this.notFound.add(url); return null; }
-        const json = await resp.json() as { DATA: { TIMES: { '@_Value': string; '@_Cmd': string }[] } };
+        const json = await DataCache.fetchWithFallback<{ DATA?: { TIMES?: { '@_Value': string; '@_Cmd': string }[] } }>(url);
+        if (!json) { this.notFound.add(url); return null; }
         const arr = json?.DATA?.TIMES;
         if (!Array.isArray(arr)) return null;
         return arr.map(r => ({ value: r['@_Value'], cmd: r['@_Cmd'] }));
@@ -1227,22 +1173,13 @@ export class ServiceView {
         if (this.notFound.has(url)) return null;
         const cached = this.jsonCache.get(url);
         if (cached) return cached;
-        try {
-          const resp = await fetch(url);
-          if (!resp.ok) { this.notFound.add(url); return null; }
-          const ct = resp.headers.get('content-type');
-          if (ct && ct.includes('text/html')) { this.notFound.add(url); return null; }
-          const json = JSON.parse(await resp.text());
-          if (Array.isArray(json)) {
-            this.jsonCache.set(url, json);
-            return json;
-          }
-          this.notFound.add(url);
-          return null;
-        } catch {
-          this.notFound.add(url);
-          return null;
+        const json = await DataCache.fetchWithFallback<Record<string, unknown>[]>(url);
+        if (Array.isArray(json)) {
+          this.jsonCache.set(url, json);
+          return json;
         }
+        this.notFound.add(url);
+        return null;
       };
 
       const filterNodes = (json: Record<string, unknown>[], header: boolean): string | null => {
@@ -1254,7 +1191,7 @@ export class ServiceView {
             .join(' ') || null;
         }
         return json
-          .filter(n => n.type === 'TEXT')
+          .filter(n => n.type === 'TEXT' || n.type === 'text')
           .map(n => String(n.value ?? '').replace(/\n/g, ' '))
           .filter(Boolean)
           .join('<br>') || null;
@@ -1293,27 +1230,18 @@ export class ServiceView {
          return `/data/${lang}/services/${fetchPath}`;
        };
 
-       const tryFetch = async (url: string): Promise<ServiceNode[] | null> => {
-         if (this.notFound.has(url)) return null;
-         const cached = this.nodeCache.get(url);
-         if (cached) return cached;
-         try {
-           const resp = await fetch(url);
-           if (!resp.ok) { this.notFound.add(url); return null; }
-           const ct = resp.headers.get('content-type') || '';
-           if (ct.includes('text/html')) { this.notFound.add(url); return null; }
-           const nodes = await resp.json();
-           if (Array.isArray(nodes)) {
-             this.nodeCache.set(url, nodes);
-             return nodes;
-           }
-           this.notFound.add(url);
-           return null;
-         } catch {
-           this.notFound.add(url);
-           return null;
-         }
-       };
+        const tryFetch = async (url: string): Promise<ServiceNode[] | null> => {
+          if (this.notFound.has(url)) return null;
+          const cached = this.nodeCache.get(url);
+          if (cached) return cached;
+          const nodes = await DataCache.fetchWithFallback<ServiceNode[]>(url);
+          if (Array.isArray(nodes)) {
+            this.nodeCache.set(url, nodes);
+            return nodes;
+          }
+          this.notFound.add(url);
+          return null;
+        };
 
        try {
          let url = resolvePath(this.serviceLang);
@@ -1373,15 +1301,10 @@ export class ServiceView {
       if (this.notFound.has(url)) return null;
       const cached = this.nodeCache.get(url);
       if (cached) return cached;
-      try {
-        const resp = await fetch(url);
-        if (!resp.ok) { this.notFound.add(url); return null; }
-        const ct = resp.headers.get('content-type') || '';
-        if (ct.includes('text/html')) { this.notFound.add(url); return null; }
-        const nodes = await resp.json();
-        this.nodeCache.set(url, nodes);
-        return nodes;
-      } catch { this.notFound.add(url); return null; }
+      const nodes = await DataCache.fetchWithFallback<ServiceNode[]>(url);
+      if (!nodes) { this.notFound.add(url); return null; }
+      this.nodeCache.set(url, nodes);
+      return nodes;
     };
     let url = resolvePath(this.serviceLang);
     if (url) {

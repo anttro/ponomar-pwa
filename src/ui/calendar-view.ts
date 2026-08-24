@@ -52,12 +52,10 @@ async function loadBookAbbrevs(lang: string): Promise<void> {
   bookAbbrevLang = lang;
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const resp = await fetch('/data/bible/versions.json');
-      if (!resp.ok) { if (attempt === 0) await new Promise(r => setTimeout(r, 300)); continue; }
-      const ct = resp.headers.get('content-type');
-      if (ct && ct.includes('text/html')) { if (attempt === 0) await new Promise(r => setTimeout(r, 300)); continue; }
-      const versions = await resp.json() as any[];
-      const ver = versions.find((v: any) => v.id.startsWith(lang + '/')) || versions[0];
+      const versions = await DataCache.fetchWithFallback<any[]>('/data/bible/versions.json');
+      const ver = Array.isArray(versions)
+        ? (versions.find((v: any) => v.id.startsWith(lang + '/')) || versions[0])
+        : null;
       if (ver) {
         const map: Record<string, string> = {};
         if (ver.books) {
@@ -72,8 +70,9 @@ async function loadBookAbbrevs(lang: string): Promise<void> {
         return;
       }
     } catch {
-      if (attempt === 0) await new Promise(r => setTimeout(r, 300));
+      // fall through
     }
+    if (attempt === 0) await new Promise(r => setTimeout(r, 300));
   }
 }
 
@@ -295,11 +294,7 @@ async function loadLife(lang: LanguageCode, cid: string): Promise<LifeData | nul
 
 async function loadCommemoration(sharedId: string): Promise<CommemorationData | null> {
   try {
-    const resp = await fetch(`/data/shared/commemorations/${sharedId}.json`);
-    if (!resp.ok) return null;
-    const ct = resp.headers.get('content-type');
-    if (ct && ct.includes('text/html')) return null;
-    return await resp.json();
+    return await DataCache.fetchWithFallback<CommemorationData>(`/data/shared/commemorations/${sharedId}.json`);
   } catch {
     return null;
   }
@@ -350,12 +345,8 @@ async function loadMenaion(lang: LanguageCode, month: number, day: number): Prom
 async function loadTriodionData(): Promise<Record<string, unknown>> {
   if (cachedTriodion) return cachedTriodion;
   try {
-    const resp = await fetch('/data/shared/calendar/triodion.json');
-    if (!resp.ok) return {};
-    const ct = resp.headers.get('content-type');
-    if (ct && ct.includes('text/html')) return {};
-    cachedTriodion = await resp.json();
-    return cachedTriodion!;
+    cachedTriodion = (await DataCache.fetchWithFallback<Record<string, unknown>>('/data/shared/calendar/triodion.json')) ?? {};
+    return cachedTriodion;
   } catch {
     return {};
   }
@@ -371,12 +362,8 @@ async function loadTriodionFile(index: number): Promise<unknown[]> {
 async function loadPentecostarionData(): Promise<Record<string, unknown>> {
   if (cachedPentecostarion) return cachedPentecostarion;
   try {
-    const resp = await fetch('/data/shared/calendar/pentecostarion.json');
-    if (!resp.ok) return {};
-    const ct = resp.headers.get('content-type');
-    if (ct && ct.includes('text/html')) return {};
-    cachedPentecostarion = await resp.json();
-    return cachedPentecostarion!;
+    cachedPentecostarion = (await DataCache.fetchWithFallback<Record<string, unknown>>('/data/shared/calendar/pentecostarion.json')) ?? {};
+    return cachedPentecostarion;
   } catch {
     return {};
   }

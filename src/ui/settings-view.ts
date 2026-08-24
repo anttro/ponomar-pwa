@@ -326,8 +326,8 @@ export class SettingsView {
     // Load default Bible versions dynamically
     (async () => {
       try {
-        const resp = await fetch('/data/bible/versions.json');
-        const versions = await resp.json();
+        const versions = await DataCache.fetchWithFallback<any[]>('/data/bible/versions.json');
+        if (!versions || !Array.isArray(versions)) return;
         const userLang = this.settings.language;
 
         // Sort by language priority
@@ -479,8 +479,8 @@ export class SettingsView {
         // Load translations on first expand
         if (container.innerHTML === '') {
           try {
-            const resp = await fetch('/data/bible/versions.json');
-            const versions = await resp.json();
+            const versions = await DataCache.fetchWithFallback<any[]>('/data/bible/versions.json');
+            if (!versions || !Array.isArray(versions)) throw new Error('unavailable');
             const userLang = this.settings.language;
             versions.sort((a: any, b: any) => {
               const pa = versionPriority(a.language, userLang);
@@ -637,8 +637,8 @@ export class SettingsView {
       // Count cached Bible translations
       (async () => {
         try {
-          const resp = await fetch('/data/bible/versions.json');
-          const versions = await resp.json();
+          const versions = await DataCache.fetchWithFallback<any[]>('/data/bible/versions.json');
+          if (!versions || !Array.isArray(versions)) return;
           const total = versions.length;
           let cached = 0;
           for (const v of versions) {

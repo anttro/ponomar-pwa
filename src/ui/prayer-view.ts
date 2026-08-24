@@ -8,6 +8,7 @@ import { assembleService, type ServiceContext } from '../core/service-assembler'
 import type { EvalContext, ServiceNode } from '../core/types';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { loadSettings, fontClass } from './settings-view';
+import { DataCache } from '../core/data-cache';
 
 export type PrayerCollection = 'prayer-rule' | 'akathists' | 'parimii' | 'horologion' | 'sbornik' | 'paraclete' | 'irmologion' | 'triodion';
 
@@ -270,12 +271,11 @@ export class PrayerView {
         }
         dataPath = `/data/shared/services/paraclete/tone${m[1]}/${m[2]}.json`;
       }
-      const resp = await fetch(dataPath);
-      if (!resp.ok) {
+      const nodes = await DataCache.fetchWithFallback<ServiceNode[]>(dataPath);
+      if (!nodes) {
         contentEl.innerHTML = `<p class="text-navy-light">${this.t.prayer.notFound}</p>`;
         return;
       }
-      const nodes: ServiceNode[] = await resp.json();
 
       const evalCtx: EvalContext = {};
       const ctx: ServiceContext = {

@@ -9,6 +9,7 @@ import {
   formatPassageHTML,
 } from '../core/bible-reader';
 import { getTranslations, type LanguageCode } from '../core/i18n';
+import { DataCache } from '../core/data-cache';
 
 const SETTINGS_KEY = 'ponomar-settings';
 const BIBLE_STATE_KEY = 'ponomar-bible-state';
@@ -138,8 +139,9 @@ export class BibleView {
 
   private async loadVersions() {
     try {
-      const resp = await fetch('/data/bible/versions.json');
-      this.versions = await resp.json();
+      const versions = await DataCache.fetchWithFallback<typeof this.versions>('/data/bible/versions.json');
+      if (!versions || !Array.isArray(versions) || versions.length === 0) throw new Error('unavailable');
+      this.versions = versions;
       this.sortVersionsByLanguage();
     } catch {
       this.versions = [
@@ -473,9 +475,8 @@ export class BibleView {
 
       if (!text) {
         // Version IDs are full paths like "en/bible/kjv"
-        const resp = await fetch(`/data/${this.currentVersion}/${this.currentBook}.text`);
-        if (!resp.ok) throw new Error('Not found');
-        text = await resp.text();
+        text = (await DataCache.fetchWithFallback<string>(`/data/${this.currentVersion}/${this.currentBook}.text`, 'text')) ?? undefined;
+        if (!text) throw new Error('Not found');
         this.loadedText.set(cacheKey, text);
       }
 

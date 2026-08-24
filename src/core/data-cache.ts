@@ -205,6 +205,30 @@ export class DataCache {
   }
 
   /**
+   * Network-first fetch with IndexedDB fallback.
+   *
+   * Online: fetches, parses and writes through to IDB under the same
+   * `url:` keys the offline preload uses. Offline: serves the precached
+   * IDB copy, or null when the file was never preloaded.
+   */
+  static async fetchWithFallback<T = unknown>(url: string, type: 'json' | 'text' = 'json'): Promise<T | null> {
+    try {
+      const resp = await fetch(url);
+      const ct = resp.headers.get('content-type');
+      if (resp.ok && !(ct && ct.includes('text/html'))) {
+        const data: unknown = type === 'text' ? await resp.text() : await resp.json();
+        await DataCache.set(`url:${url}`, data);
+        return data as T;
+      }
+    } catch { /* offline or invalid response — fall through to IDB */ }
+    try {
+      return ((await DataCache.get(`url:${url}`)) as T) ?? null;
+    } catch {
+      return null;
+    }
+  }
+
+  /**
    * Cache-first fetch: tries IndexedDB first, falls back to network.
    * If the data is fetched from network, it's cached for future use.
    */

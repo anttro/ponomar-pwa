@@ -7,6 +7,7 @@ import { assembleService, type ServiceContext } from '../core/service-assembler'
 import type { EvalContext, ServiceNode } from '../core/types';
 import { getTranslations, type LanguageCode } from '../core/i18n';
 import { loadSettings, fontClass } from './settings-view';
+import { DataCache } from '../core/data-cache';
 
 export class MenaionView {
   private container: HTMLElement;
@@ -45,9 +46,9 @@ export class MenaionView {
 
   async render() {
     try {
-      const resp = await fetch('/data/shared/menaion-daily/index.json');
-      if (resp.ok) {
-        this.index = await resp.json() as Record<string, number>;
+      const index = await DataCache.fetchWithFallback<Record<string, number>>('/data/shared/menaion-daily/index.json');
+      if (index) {
+        this.index = index;
       }
     } catch { /* empty */ }
 
@@ -164,9 +165,8 @@ export class MenaionView {
     let html = '';
     for (let i = 1; i <= count; i++) {
       try {
-        const resp = await fetch(`/data/shared/menaion-daily/${dateKey}/${i}.json`);
-        if (!resp.ok) continue;
-        const nodes: ServiceNode[] = await resp.json();
+        const nodes = await DataCache.fetchWithFallback<ServiceNode[]>(`/data/shared/menaion-daily/${dateKey}/${i}.json`);
+        if (!nodes) continue;
         const evalCtx: EvalContext = {};
         const ctx: ServiceContext = {
           evalCtx, lang: 'cu', t: this.t,
