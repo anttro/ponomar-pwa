@@ -44,7 +44,7 @@ interface Settings {
 const DEFAULT_SETTINGS: Settings = {
   language: 'en',
   cuFont: 'Ponomar',
-  fontSize: 16,
+  fontSize: 18,
   theme: 'default',
   defaultBibleVersion: 'kjv',
   showVerseNumbers: true,
