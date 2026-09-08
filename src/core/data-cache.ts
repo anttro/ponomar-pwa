@@ -113,11 +113,12 @@ export class DataCache {
 
   /**
    * Store a value in the cache.
+   * Resolves true on success; false when the write failed (e.g. quota).
    */
-  static async set(key: string, data: unknown, ttl: number = DEFAULT_TTL_MS): Promise<void> {
+  static async set(key: string, data: unknown, ttl: number = DEFAULT_TTL_MS): Promise<boolean> {
     try {
       const db = await getDB();
-      return new Promise((resolve, reject) => {
+      return await new Promise<boolean>((resolve) => {
         const tx = db.transaction(STORE_NAME, 'readwrite');
         const store = tx.objectStore(STORE_NAME);
         const entry: CacheEntry = {
@@ -128,11 +129,13 @@ export class DataCache {
           ttl,
         };
         store.put(entry);
-        tx.oncomplete = () => resolve();
-        tx.onerror = () => reject(tx.error);
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+        tx.onabort = () => resolve(false);
       });
     } catch {
-      // Silently fail — cache is best-effort
+      // Write failed (e.g. quota exceeded) — report as failure.
+      return false;
     }
   }
 

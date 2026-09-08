@@ -186,6 +186,17 @@ export class OfflineManager {
     };
     OfflineManager._progress = progress;
 
+    // Best-effort: request persistent storage so the OS won't evict data
+    // for LRU pressure (and try to lift legacy quota caps where supported).
+    if (navigator.storage?.persist) {
+      try {
+        const granted = await navigator.storage.persist();
+        diagLog('storage-persist', { granted });
+      } catch {
+        diagLog('storage-persist-error');
+      }
+    }
+
     diagLog('preload-start', {
       langs: options.languages.join(','),
       types: options.types.join(','),
@@ -225,8 +236,15 @@ export class OfflineManager {
           } else {
             data = await resp.json();
           }
-          await DataCache.set(`url:${file}`, data);
-          success = true;
+          const stored = await DataCache.set(`url:${file}`, data);
+          if (stored) {
+            success = true;
+          } else {
+            // IDB write failed (e.g. quota exceeded) — the cache is not
+            // healthy; count as failure so the circuit breaker can abort
+            // instead of reporting a misleading "done".
+            diagLog('preload-write-fail', { file });
+          }
           break;
         } catch {
           // Retry on network error

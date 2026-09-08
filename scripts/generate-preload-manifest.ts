@@ -123,16 +123,6 @@ function calendarFiles(lang: string): string[] {
     if (exists(fp)) files.push(`/data${fp}`);
   }
 
-  // Menaion common + add
-  for (let i = 1; i <= 42; i++) {
-    const fp = `/shared/menaion-common/${String(i).padStart(2, '0')}.json`;
-    if (exists(fp)) files.push(`/data${fp}`);
-  }
-  for (let i = 1; i <= 51; i++) {
-    const fp = `/shared/menaion-add/${String(i).padStart(2, '0')}.json`;
-    if (exists(fp)) files.push(`/data${fp}`);
-  }
-
   // Prayer collections
   const prayerDirs: [string, string[]][] = [];
   for (const coll of ['akathists', 'horologion', 'prayer-rule', 'sbornik', 'irmologion']) {
@@ -147,19 +137,6 @@ function calendarFiles(lang: string): string[] {
       const fp = `/shared/${coll}/${item}/full.json`;
       if (exists(fp)) files.push(`/data${fp}`);
     }
-  }
-
-  // Horologion additions
-  const horAddItems = ['exapostilaria', 'katavasia', 'lamps', 'songs-daily', 'songs-feasts', 'songs-lent',
-    'theotokia-8tones', 'theotokia-dismissal', 'theotokia-sunday', 'trinity-8tones',
-    'trop-common', 'trop-daily', 'trop-lent', 'trop-pentecost', 'trop-sunday'];
-  for (const item of horAddItems) {
-    const fp = `/shared/horologionadd/${item}/full.json`;
-    if (exists(fp)) files.push(`/data${fp}`);
-  }
-  for (const m of ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']) {
-    const fp = `/shared/horologionadd/trop-feasts-${m}/full.json`;
-    if (exists(fp)) files.push(`/data${fp}`);
   }
 
   // Parimii
@@ -191,14 +168,26 @@ function calendarFiles(lang: string): string[] {
     }
   }
 
-  // Language-specific service commands
-  for (let tone = 1; tone <= 8; tone++) {
-    const fp = `/${lang}/services/commands/Tone${tone}.json`;
-    if (exists(fp)) files.push(`/data${fp}`);
+  // Language-specific service commands (enumerate all on disk)
+  const cmdDir = path.join(DATA_DIR, lang, 'services', 'commands');
+  if (fs.existsSync(cmdDir)) {
+    for (const c of fs.readdirSync(cmdDir)) {
+      if (c.endsWith('.json')) files.push(`/data/${lang}/services/commands/${c}`);
+    }
   }
-  for (const cmd of ['AfterEach.json', 'Bow.json', 'Prostration.json', 'S1.json', 'S2.json']) {
-    const fp = `/${lang}/services/commands/${cmd}`;
-    if (exists(fp)) files.push(`/data${fp}`);
+
+  // Dereferenceable service subtrees (Services/CommonPrayers -> prayers, etc.)
+  for (const sub of ['prayers', 'texts', 'headers', 'var']) {
+    const subDir = path.join(DATA_DIR, lang, 'services', sub);
+    if (!fs.existsSync(subDir)) continue;
+    const walk = (d: string, rel: string): void => {
+      for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+        const p = path.join(d, e.name);
+        if (e.isDirectory()) walk(p, `${rel}/${e.name}`);
+        else if (e.name.endsWith('.json')) files.push(`/data/${lang}/services/${sub}${rel}/${e.name}`);
+      }
+    };
+    walk(subDir, '');
   }
 
   return files;
