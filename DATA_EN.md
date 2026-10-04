@@ -51,8 +51,8 @@ static/data/
 │   ├── menaion/                     # Daily menaion entries (366 days)
 │   ├── calendar/                    # Calendar metadata
 │   └── services/                    # Service templates
-├── cu/                              # Church Slavonic (similar structure)
-├── ru/                              # Russian (lives, services)
+├── cu/                              # Church Slavonic (authoritative calendar + service texts)
+├── ru/                              # Russian (enriched lives; services fall back to cu)
 ├── el/                              # Greek (includes mono/)
 ├── fr/                              # French
 ├── zh/                              # Chinese (includes Hans/, Hant/)

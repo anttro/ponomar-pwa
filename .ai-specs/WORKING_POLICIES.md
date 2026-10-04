@@ -16,6 +16,27 @@
 - **Forbidden**: Deleting or renaming CIds without proper validation
 - **Forbidden**: Changing JSON structure without updating related code
 
+## Liturgical Content Policies
+
+### Never Translate Service or Bible Texts
+- All liturgical and scriptural texts must be **sourced** through the data pipeline
+  (original-language conversions, Chetyi-Minei, Bulgakov, EPUB/PDF imports, etc.)
+- Never machine-translate, paraphrase or invent text — not even "just one line"
+- Missing text stays empty (the app falls back `serviceLang → cu → shared`) until its
+  source is converted
+
+### Church Slavonic Texts Are Presented Verbatim
+- Never "normalise", latinise, transliterate or strip diacritics/accents/titla from cu texts
+- Render the text exactly as stored in the source data; display-layer transformations
+  are forbidden
+- Orthography fixes belong in the conversion pipeline and must preserve the source
+
+### Service Assembly Follows the Typicon
+- Service-building logic (templates, ordering, conditional rules, canons) must reproduce
+  the Typicon
+- Whenever service building logic is changed, check the expected structure against the
+  Typicon (and the pinned service data) before and after the change
+
 ## Validation Requirements
 
 ### Pre-Commit Checklist

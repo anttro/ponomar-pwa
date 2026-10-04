@@ -16,6 +16,19 @@
 - **Bundle system**: menaion-bundles, lives bundles (month-prefixed + misc split), service templates
 - **File routing**: CIds with `01`-`12` prefix → month files, else `misc/{first-digit}.json`
 
+### Language Model (UI vs. Content)
+- **UI strings**: en/ru/cu via `getTranslations()`; completeness checked by `validate-i18n.ts`
+- **Service language** (`serviceLang` in `service-view.ts`): `en → en`, `cu → cu`, **`ru → cu`** —
+  a Russian interface intentionally renders services in Church Slavonic
+- **Service content fallback chain**: `serviceLang → cu → shared` (texts, prayers, headers,
+  lives, octoechos, templates); `ru/services/` carries only `var/`
+- **Scripture inside services** follows the service language: en → `en/bible/kjv`,
+  cu (and ru) → `cu/bible/elis`
+- **Bible reader tab** is independent: 13 translations (incl. `ru/bible/synod`), any UI language
+- **Fonts**: the Slavonic font setting applies to liturgical text for cu **and** ru
+  (`getFontClass()`)
+- **Calendar authority**: `cu/menaion-bundle.json`; `{lang}-menaion-bundle.json` overrides
+
 ### Core Scripts
 - `convert-services.ts` — Service XML to JSON conversion
 - `enrich-lives.ts` — Fuzzy matching and enrichment pipeline (Chetyi-Minei + Bulgakov)
@@ -44,6 +57,9 @@
 - **Bundle CIds must exist**: Menaion CIds require corresponding lives entries
 - **Static data is tracked**: `static/data/` in git (except `scripts/output/minei.json`)
 - **Validation must pass**: Changes must pass `tsc --noEmit`, `npm run build`
+- **Content policies**: service/Bible texts are sourced (never translated), cu text is
+  verbatim (no normalisation/latinisation), service assembly follows the Typicon — see
+  `.ai-specs/WORKING_POLICIES.md` ("Liturgical Content Policies")
 
 ## Key Script Quick Reference
 
