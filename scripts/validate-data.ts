@@ -152,8 +152,10 @@ class Validator {
         continue;
       }
       const obj = node as Record<string, unknown>;
-      if (!obj.type || !['TEXT', 'HEADER', 'TROPARION', 'KONTAKION'].includes(obj.type as string)) {
-        this.addError(path, `[${i}].type`, 'Type must be TEXT or HEADER');
+      // LITANY/THEOTOKION are bare classification markers (no payload):
+      // TROPARION/KONTAKION have the same convention, content is TEXT/HEADER.
+      if (!obj.type || !['TEXT', 'HEADER', 'TROPARION', 'KONTAKION', 'LITANY', 'THEOTOKION'].includes(obj.type as string)) {
+        this.addError(path, `[${i}].type`, 'Type must be TEXT, HEADER, TROPARION, KONTAKION, LITANY or THEOTOKION');
       }
     }
   }
