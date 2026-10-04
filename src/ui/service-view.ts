@@ -935,15 +935,15 @@ export class ServiceView {
     }
   }
 
+  /**
+   * Bible translation used for scripture readings inside services.
+   * Only 'en' and 'cu' can occur here: `serviceLang` maps ru→cu, so RU
+   * users read the Slavonic text, matching the rest of the service body.
+   */
   private bibleVersion(lang: string): string {
     const map: Record<string, string> = {
       en: 'kjv',
       cu: 'elis',
-      fr: 'ls',
-      el: 'spt',
-      la: 'vulgate',
-      zh: 'cuv',
-      ar: 'svd',
     };
     return map[lang] || 'kjv';
   }
@@ -964,7 +964,6 @@ export class ServiceView {
 
     let text = await tryFetch(this.serviceLang);
     if (!text && this.serviceLang !== 'cu') text = await tryFetch('cu');
-    if (!text) text = await tryFetch('shared');
     if (!text) return '';
 
     const lines = text.split('\n');
