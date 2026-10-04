@@ -11,6 +11,16 @@ import { fileURLToPath } from 'url';
 const __dirname = new URL('.', import.meta.url).pathname;
 const DATA_DIR = join(__dirname, '..', 'static', 'data');
 
+/**
+ * Node types allowed in prayer files. Besides TEXT/HEADER content nodes,
+ * imported prayers carry bare classification markers (no payload) that the
+ * assembler intentionally ignores — keep this list in sync with the data.
+ */
+const PRAYER_NODE_TYPES = [
+  'TEXT', 'HEADER',
+  'TROPARION', 'KONTAKION', 'THEOTOKION', 'LITANY', 'COMMUNION',
+];
+
 interface ValidationError {
   file: string;
   path: string;
@@ -152,10 +162,8 @@ class Validator {
         continue;
       }
       const obj = node as Record<string, unknown>;
-      // LITANY/THEOTOKION are bare classification markers (no payload):
-      // TROPARION/KONTAKION have the same convention, content is TEXT/HEADER.
-      if (!obj.type || !['TEXT', 'HEADER', 'TROPARION', 'KONTAKION', 'LITANY', 'THEOTOKION'].includes(obj.type as string)) {
-        this.addError(path, `[${i}].type`, 'Type must be TEXT, HEADER, TROPARION, KONTAKION, LITANY or THEOTOKION');
+      if (!obj.type || !PRAYER_NODE_TYPES.includes(obj.type as string)) {
+        this.addError(path, `[${i}].type`, `Type must be one of: ${PRAYER_NODE_TYPES.join(', ')}`);
       }
     }
   }
@@ -263,6 +271,13 @@ function main() {
     validator.validateDir(join(enDir, 'services', 'templates'), 'service-template');
     validator.validateDir(join(enDir, 'services', 'prayers'), 'prayer');
     validator.validateDir(join(enDir, 'services', 'commands'), 'command');
+  }
+
+  // Church Slavonic prayers share the same import format and marker types
+  const cuDir = join(DATA_DIR, 'cu');
+  if (existsSync(cuDir)) {
+    console.log('Validating Church Slavonic data...');
+    validator.validateDir(join(cuDir, 'services', 'prayers'), 'prayer');
   }
 
   validator.printReport();
