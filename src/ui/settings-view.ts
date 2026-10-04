@@ -3,10 +3,25 @@
  */
 
 import { getTranslations, type LanguageCode } from '../core/i18n';
-import { OfflineManager } from '../core/offline-manager';
+import { OfflineManager, type PreloadProgress } from '../core/offline-manager';
 import { DataCache } from '../core/data-cache';
 import { diagTail } from '../core/diag-log';
 import { isPwaInstalled } from '../core/pwa-install';
+
+/** Human message for a finished preload run (shared by manual + auto preload). */
+function preloadResultText(
+  prog: PreloadProgress,
+  s: { offlineAborted: string; offlineDone: string; offlineFailed: string; offlineDegraded: string; offlineMissing: string },
+): string {
+  if (prog.aborted) return s.offlineAborted;
+  if (prog.manifestMissing) return s.offlineDegraded;
+  if (prog.failed > 0) {
+    const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
+    return `${s.offlineDone} ${prog.failed} ${s.offlineFailed}${failList}`;
+  }
+  if ((prog.missing ?? 0) > 0) return s.offlineMissing.replace('{0}', String(prog.missing));
+  return s.offlineDone;
+}
 
 const LANGUAGES = [
   { code: 'en', name: 'English', local: 'English' },
@@ -563,16 +578,7 @@ export class SettingsView {
         bibleTranslations: bibleTrans,
       }).then((prog) => {
         if (progressBar) progressBar.style.width = '100%';
-        if (progressText) {
-          if (prog.aborted) {
-            progressText.textContent = t.settings.offlineAborted;
-          } else if (prog.failed > 0) {
-            const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
-            progressText.textContent = `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`;
-          } else {
-            progressText.textContent = t.settings.offlineDone;
-          }
-        }
+        if (progressText) progressText.textContent = preloadResultText(prog, t.settings);
         const diagEl = document.getElementById('diag-log');
         if (diagEl) diagEl.textContent = diagTail();
         OfflineManager.getStats().then(stats => {
@@ -696,16 +702,7 @@ export class SettingsView {
           bibleTranslations: 'all',
         }).then((prog) => {
           if (progressBar) progressBar.style.width = '100%';
-          if (progressText) {
-            if (prog.aborted) {
-              progressText.textContent = t.settings.offlineAborted;
-            } else if (prog.failed > 0) {
-              const failList = prog.failedFiles?.length ? `: ${prog.failedFiles.join(', ')}` : '';
-              progressText.textContent = `${t.settings.offlineDone} ${prog.failed} ${t.settings.offlineFailed}${failList}`;
-            } else {
-              progressText.textContent = t.settings.offlineDone;
-            }
-          }
+          if (progressText) progressText.textContent = preloadResultText(prog, t.settings);
           const diagEl = document.getElementById('diag-log');
           if (diagEl) diagEl.textContent = diagTail();
           OfflineManager.getStats().then(stats => {

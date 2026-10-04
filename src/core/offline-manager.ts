@@ -30,6 +30,10 @@ export interface PreloadProgress {
   done: boolean;
   failed: number;
   failedFiles?: string[];
+  /** Files the server answered 404 for (deployment drift). */
+  missing?: number;
+  /** True when the manifest was unavailable and a reduced fallback set ran. */
+  manifestMissing?: boolean;
   aborted?: boolean;
 }
 
@@ -54,24 +58,40 @@ let manifestPromise: Promise<Record<string, Record<string, string[]>> | null> | 
 
 function loadManifest(): Promise<Record<string, Record<string, string[]>> | null> {
   if (!manifestPromise) {
-    manifestPromise = (async () => {
-      try {
-        const resp = await fetch('/data/shared/preload-manifest.json');
-        if (!resp.ok) return null;
-        return await resp.json();
-      } catch {
-        return null;
-      }
-    })().then((m) => {
-      // Don't cache a failure forever — allow retry on next call
-      if (m === null) {
-        diagLog('manifest-unavailable');
-        manifestPromise = null;
-      }
-      return m;
-    });
+    // Network-first with the IDB fallback: a copy written while online
+    // survives SW-cache eviction, so a later (possibly offline) call can
+    // still read the full file list instead of the reduced fallback set.
+    manifestPromise = DataCache
+      .fetchWithFallback<Record<string, Record<string, string[]>>>('/data/shared/preload-manifest.json')
+      .then((m) => {
+        // Don't cache a failure forever — allow retry on next call
+        if (m === null || typeof m !== 'object') {
+          diagLog('manifest-unavailable');
+          manifestPromise = null;
+          return null;
+        }
+        return m;
+      });
   }
   return manifestPromise;
+}
+
+/** versions.json loaded once per session (retried on failure). */
+let bibleVersionsPromise: Promise<any[] | null> | null = null;
+
+function loadBibleVersions(): Promise<any[] | null> {
+  if (!bibleVersionsPromise) {
+    bibleVersionsPromise = DataCache
+      .fetchWithFallback<any[]>('/data/bible/versions.json')
+      .then((v) => {
+        if (!v || !Array.isArray(v) || v.length === 0) {
+          bibleVersionsPromise = null;
+          return null;
+        }
+        return v;
+      });
+  }
+  return bibleVersionsPromise;
 }
 
 function getFallbackCalendarFiles(lang: string): string[] {
@@ -89,6 +109,7 @@ function getFallbackCalendarFiles(lang: string): string[] {
 
 export class OfflineManager {
   private static _progress: PreloadProgress | null = null;
+  private static _running: Promise<PreloadProgress> | null = null;
   private static _autoPreloadRequested = false;
 
   /** Request an automatic "preload everything" once the Settings view opens. */
@@ -110,28 +131,21 @@ export class OfflineManager {
 
   /** Resolve every Bible translation id from versions.json (single source). */
   static async getAllBibleTranslationIds(): Promise<string[]> {
-    try {
-      const resp = await fetch('/data/bible/versions.json');
-      const versions = await resp.json() as any[];
-      return versions.map((v: any) => v.id);
-    } catch {
-      return [];
-    }
+    const versions = await loadBibleVersions();
+    return versions ? versions.map((v: any) => v.id) : [];
   }
 
   /** Discover all book files for a Bible translation from versions.json. */
   static async getBibleFiles(translationPath: string): Promise<string[]> {
     const files: string[] = [];
-    try {
-      const resp = await fetch('/data/bible/versions.json');
-      const versions = await resp.json() as any[];
-      const ver = versions.find((v: any) => v.id === translationPath);
-      if (ver && ver.books) {
-        for (const book of ver.books) {
-          files.push(`/data/${translationPath}/${book.id}.text`);
-        }
+    const versions = await loadBibleVersions();
+    if (!versions) return files;
+    const ver = versions.find((v: any) => v.id === translationPath);
+    if (ver && ver.books) {
+      for (const book of ver.books) {
+        files.push(`/data/${translationPath}/${book.id}.text`);
       }
-    } catch {}
+    }
     return files;
   }
 
@@ -143,8 +157,19 @@ export class OfflineManager {
   /**
    * Preload selected data files for offline use.
    * Returns a PreloadProgress object that can be polled for progress.
+   * Re-entrant calls join the run already in flight.
    */
   static async preload(options: PreloadOptions): Promise<PreloadProgress> {
+    if (OfflineManager._running) return OfflineManager._running;
+    const run = OfflineManager._preloadImpl(options)
+      .finally(() => {
+        if (OfflineManager._running === run) OfflineManager._running = null;
+      });
+    OfflineManager._running = run;
+    return run;
+  }
+
+  private static async _preloadImpl(options: PreloadOptions): Promise<PreloadProgress> {
     const startedAt = Date.now();
     const filesToFetch: string[] = [];
     const m = await loadManifest();
@@ -184,6 +209,7 @@ export class OfflineManager {
       done: false,
       failed: 0,
     };
+    if (m === null) progress.manifestMissing = true;
     OfflineManager._progress = progress;
 
     // Best-effort: request persistent storage so the OS won't evict data
@@ -262,15 +288,21 @@ export class OfflineManager {
           break;
         }
       } else {
+        if (notFound) progress.missing = (progress.missing ?? 0) + 1;
         // Success or 404 both prove connectivity
         netFailStreak = 0;
       }
+    }
+
+    if ((progress.missing ?? 0) > 0) {
+      diagLog('preload-missing', { count: progress.missing });
     }
 
     progress.done = true;
     diagLog('preload-done', {
       total: progress.total,
       failed: progress.failed,
+      missing: progress.missing ?? 0,
       ms: Date.now() - startedAt,
       aborted: progress.aborted === true,
     });

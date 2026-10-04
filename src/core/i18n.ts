@@ -524,6 +524,8 @@ export interface Translations {
     offlineCalculating: string;
     offlineDone: string;
     offlineFailed: string;
+    offlineDegraded: string;
+    offlineMissing: string;
     offlineSelectLang: string;
     offlineSelectAll: string;
     offlineCleared: string;
@@ -1097,6 +1099,8 @@ const translations: Record<LanguageCode, Translations> = {
       offlineCalculating: 'Calculating storage...',
       offlineDone: 'Done! Data cached for offline use.',
       offlineFailed: 'files failed to load (retry to attempt again)',
+      offlineDegraded: 'Preload could not read the full file list — a reduced set was cached. Check your connection and try again.',
+      offlineMissing: 'Note: {0} files were not found on the server.',
       offlineSelectLang: 'Please select at least one language.',
       offlineSelectAll: 'Select all',
       offlineCleared: 'Cache cleared.',
@@ -1668,6 +1672,8 @@ const translations: Record<LanguageCode, Translations> = {
       offlineCalculating: 'Расчёт размера...',
       offlineDone: 'Готово! Данные закэшированы для офлайн-использования.',
       offlineFailed: 'файлов не загружено (повторите для повторной попытки)',
+      offlineDegraded: 'Не удалось загрузить полный список файлов — закэширован сокращённый набор. Проверьте соединение и повторите.',
+      offlineMissing: 'Примечание: {0} файлов не найдено на сервере.',
       offlineSelectLang: 'Пожалуйста, выберите хотя бы один язык.',
       offlineSelectAll: 'Выбрать все',
       offlineCleared: 'Кэш очищен.',
@@ -2239,6 +2245,8 @@ const translations: Record<LanguageCode, Translations> = {
       offlineCalculating: 'Расчётъ размѣра...',
       offlineDone: 'Готово! Данныя закешированы для офлайн-потребленїя.',
       offlineFailed: 'фа́йловъ не загружено (повтори́те для повторной попытки)',
+      offlineDegraded: 'Не возмо́жно бѣ̀ прочестѝ по́лный спи́сокъ фа́йловъ — закеши́рованъ сокраще́нный набо́ръ. Провѣ́рьте соедине́нїе и҆ повтори́те.',
+      offlineMissing: 'Примѣча́нїе: {0} фа́йловъ не ѡ҆брѣте́но на се́рверѣ.',
       offlineSelectLang: 'Пожалуйста, изберите хотя бы единъ языкъ.',
       offlineSelectAll: 'И҆збра́ти всѧ̑',
       offlineCleared: 'Кешъ очищенъ.',

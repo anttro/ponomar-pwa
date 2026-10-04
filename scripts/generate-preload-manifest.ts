@@ -48,6 +48,21 @@ function calendarFiles(lang: string): string[] {
     if (exists(f)) files.push(`/data${f}`);
   }
 
+  // Shared fallback lives/commands — normally served per-language, but the
+  // runtime chain ends with a 'shared' attempt; keep those copies offline too.
+  for (const sub of ['lives', 'commands']) {
+    const subDir = path.join(DATA_DIR, 'shared', sub);
+    if (!fs.existsSync(subDir)) continue;
+    const walkShared = (d: string, rel: string): void => {
+      for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+        const p = path.join(d, e.name);
+        if (e.isDirectory()) walkShared(p, `${rel}/${e.name}`);
+        else if (e.name.endsWith('.json')) files.push(`/data/shared/${sub}${rel}/${e.name}`);
+      }
+    };
+    walkShared(subDir, '');
+  }
+
   // Menaion bundle
   const mb = `/${lang}/menaion-bundle.json`;
   if (exists(mb)) files.push(`/data${mb}`);

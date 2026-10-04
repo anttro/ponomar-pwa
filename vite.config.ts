@@ -15,6 +15,16 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
         runtimeCaching: [
           {
+            // The preload file list must be fresh when online; a stale copy
+            // silently loses coverage. Offline falls back to the SW copy.
+            urlPattern: /\/data\/shared\/preload-manifest\.json$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'ponomar-manifest',
+              networkTimeoutSeconds: 3,
+            },
+          },
+          {
             urlPattern: /\/data\/.*\.json$/,
             handler: 'StaleWhileRevalidate',
             options: {

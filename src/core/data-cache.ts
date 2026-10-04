@@ -13,6 +13,8 @@
  *   const estimate = await DataCache.estimate();
  */
 
+import { diagLog } from './diag-log';
+
 const DB_NAME = 'ponomar-cache';
 const DB_VERSION = 1;
 const STORE_NAME = 'data';
@@ -220,7 +222,11 @@ export class DataCache {
       const ct = resp.headers.get('content-type');
       if (resp.ok && !(ct && ct.includes('text/html'))) {
         const data: unknown = type === 'text' ? await resp.text() : await resp.json();
-        await DataCache.set(`url:${url}`, data);
+        const stored = await DataCache.set(`url:${url}`, data);
+        if (!stored) {
+          // Online view still gets its data; the offline copy is missing.
+          diagLog('idb-write-fail', { url });
+        }
         return data as T;
       }
     } catch { /* offline or invalid response — fall through to IDB */ }
@@ -261,7 +267,8 @@ export class DataCache {
       }
 
       // Cache the fetched data
-      await DataCache.set(cacheKey, data, options?.ttl);
+      const stored = await DataCache.set(cacheKey, data, options?.ttl);
+      if (!stored) diagLog('idb-write-fail', { url });
       return data as T;
     } catch {
       return null;
