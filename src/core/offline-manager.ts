@@ -231,16 +231,19 @@ export class OfflineManager {
       manifest: m !== null,
     });
 
-    // Fetch files sequentially to avoid overwhelming the network
+    // Fetch files with bounded concurrency (6 in flight). Browsers already cap
+    // ~6 connections per origin, so this parallelism is safe and cuts the
+    // wall-clock time of a full preload dramatically versus one-at-a-time.
+    const CONCURRENCY = 6;
     let netFailStreak = 0;
-    for (const file of uniqueFiles) {
-      progress.current++;
-      progress.file = file;
+    let aborted = false;
 
+    // Fetch (and cache) one file, returning its verdict. Already-cached files
+    // resolve immediately without touching the network.
+    const fetchOne = async (file: string): Promise<'ok' | 'notFound' | 'fail'> => {
       const cacheKey = `url:${file}`;
-      if (await DataCache.get(cacheKey) !== null) continue;
+      if (await DataCache.get(cacheKey) !== null) return 'ok';
 
-      let success = false;
       let notFound = false;
       for (let attempt = 0; attempt < 3; attempt++) {
         if (attempt > 0) await new Promise(r => setTimeout(r, 1000));
@@ -262,37 +265,61 @@ export class OfflineManager {
           } else {
             data = await resp.json();
           }
-          const stored = await DataCache.set(`url:${file}`, data);
+          const stored = await DataCache.set(cacheKey, data);
           if (stored) {
-            success = true;
+            return 'ok';
           } else {
             // IDB write failed (e.g. quota exceeded) — the cache is not
             // healthy; count as failure so the circuit breaker can abort
             // instead of reporting a misleading "done".
             diagLog('preload-write-fail', { file });
+            break;
           }
-          break;
         } catch {
           // Retry on network error
         }
       }
-      if (!success && !notFound) {
-        progress.failed++;
-        netFailStreak++;
-        if (!progress.failedFiles) progress.failedFiles = [];
-        if (progress.failedFiles.length < 10) progress.failedFiles.push(file);
-        if (netFailStreak >= 5) {
-          // Circuit breaker — network appears dead; abort instead of grinding
-          progress.aborted = true;
-          diagLog('preload-abort', { failed: progress.failed, current: progress.current });
-          break;
+      return notFound ? 'notFound' : 'fail';
+    };
+
+    const queue = [...uniqueFiles];
+    let nextIndex = 0;
+
+    const worker = async (): Promise<void> => {
+      while (true) {
+        if (aborted) return;
+        const idx = nextIndex++;
+        if (idx >= queue.length) return;
+        const file = queue[idx];
+        progress.file = file;
+
+        const result = await fetchOne(file);
+        if (aborted) return; // a sibling tripped the breaker; stop counting
+        progress.current++;
+
+        if (result === 'notFound') {
+          progress.missing = (progress.missing ?? 0) + 1;
+          netFailStreak = 0;
+        } else if (result === 'ok') {
+          netFailStreak = 0;
+        } else {
+          progress.failed++;
+          netFailStreak++;
+          if (!progress.failedFiles) progress.failedFiles = [];
+          if (progress.failedFiles.length < 10) progress.failedFiles.push(file);
+          if (netFailStreak >= 5) {
+            // Circuit breaker — network appears dead; abort instead of grinding
+            aborted = true;
+            progress.aborted = true;
+            diagLog('preload-abort', { failed: progress.failed, current: progress.current });
+          }
         }
-      } else {
-        if (notFound) progress.missing = (progress.missing ?? 0) + 1;
-        // Success or 404 both prove connectivity
-        netFailStreak = 0;
       }
-    }
+    };
+
+    await Promise.all(
+      Array.from({ length: Math.min(CONCURRENCY, queue.length) }, () => worker())
+    );
 
     if ((progress.missing ?? 0) > 0) {
       diagLog('preload-missing', { count: progress.missing });

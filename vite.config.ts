@@ -25,22 +25,6 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/data\/.*\.json$/,
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'ponomar-data',
-              expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 30 },
-            },
-          },
-          {
-            urlPattern: /\/data\/.*\.text$/,
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'ponomar-bible',
-              expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
-            },
-          },
-          {
             urlPattern: /\/fonts\/.*\.woff2?$/,
             handler: 'CacheFirst',
             options: {
