@@ -34,7 +34,7 @@ npm run dev
 
 Data files in `static/data/` are tracked in git. The only gitignored output is `scripts/output/minei.json` (33MB Chetyi-Minei source).
 
-**Data version**: `DATA_VERSION` in `src/ui/app.ts` controls cache invalidation. Bump it when restructuring data (new fields, reorganized bundles, updated sources) to force users to re-fetch cached data on next app load.
+**Data version**: derived automatically at build time from a content hash of `static/data/`, embedded as a `version` field in the preload manifest. Any data change (including edits to existing files) auto-invalidates cached data on the next app load — no manual bump required. Regenerate with `npm run generate-manifest` and commit the manifest with the data changes.
 
 **Preload manifest**: After adding or removing data files, regenerate the preload manifest:
 ```bash

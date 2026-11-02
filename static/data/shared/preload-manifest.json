@@ -5260,5 +5260,6 @@
     "bible": [
       "/data/bible/versions.json"
     ]
-  }
+  },
+  "version": "7631e35da99e"
 }

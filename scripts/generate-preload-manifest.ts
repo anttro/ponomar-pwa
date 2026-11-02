@@ -7,19 +7,20 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { createHash } from 'crypto';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, '../static/data');
-const LANGUAGES = ['en', 'ru', 'cu'];
+const LANGUAGES = ['en', 'ru', 'cu'] as const;
 const dom = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 interface Manifest {
-  [lang: string]: {
-    calendar: string[];
-    bible: string[];
-  };
+  version?: string;
+  en?: { calendar: string[]; bible: string[] };
+  ru?: { calendar: string[]; bible: string[] };
+  cu?: { calendar: string[]; bible: string[] };
 }
 
 function exists(p: string): boolean {
@@ -208,16 +209,53 @@ function calendarFiles(lang: string): string[] {
   return files;
 }
 
-const manifest: Manifest = {} as Manifest;
+const manifest: Manifest = {};
 
 for (const lang of LANGUAGES) {
   manifest[lang] = {
     calendar: calendarFiles(lang),
     bible: ['/data/bible/versions.json'],
   };
-  console.log(`${lang}: ${manifest[lang].calendar.length} calendar files`);
+  console.log(`${lang}: ${manifest[lang]!.calendar.length} calendar files`);
 }
 
 const outPath = path.join(DATA_DIR, 'shared', 'preload-manifest.json');
+
+/**
+ * SHA-256 content hash over the data tree (relative path + bytes, sorted),
+ * truncated to 12 hex chars. The manifest itself is excluded so regenerating
+ * it cannot change its own version. Used by the runtime to invalidate the
+ * IndexedDB cache whenever any data file changes.
+ */
+function computeDataVersion(dataDir: string, excludePath: string): string {
+  const hash = createHash('sha256');
+  const files: string[] = [];
+  const walk = (dir: string): void => {
+    const entries = fs.readdirSync(dir, { withFileTypes: true })
+      .filter((e) => !e.name.startsWith('.'))
+      .sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.isFile()) files.push(full);
+    }
+  };
+  walk(dataDir);
+  files.sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+  const excludeAbs = path.resolve(excludePath);
+  for (const file of files) {
+    if (path.resolve(file) === excludeAbs) continue; // exclude the manifest itself (avoids self-reference)
+    const rel = path.relative(dataDir, file).split(path.sep).join('/');
+    hash.update(rel);
+    hash.update('\0');
+    hash.update(fs.readFileSync(file));
+    hash.update('\0');
+  }
+  return hash.digest('hex').slice(0, 12);
+}
+
+const version = computeDataVersion(DATA_DIR, outPath);
+manifest.version = version;
+console.log(`\nData version: ${version}`);
 fs.writeFileSync(outPath, JSON.stringify(manifest, null, 2));
 console.log(`\nManifest written to ${outPath}`);

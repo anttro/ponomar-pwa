@@ -76,8 +76,19 @@ export class App {
   }
 
   private async checkDataVersion() {
-    const DATA_VERSION = '2026-08-04'; // bump when data structure changes
     try {
+      // Data version is derived at build time from a content hash of the data
+      // tree, embedded in the preload manifest (scripts/generate-preload-manifest.ts).
+      // Reading it here means any data change auto-invalidates cached data —
+      // no hand-maintained constant to forget to bump.
+      const manifest = await DataCache.fetchWithFallback<{ version?: string }>('/data/shared/preload-manifest.json');
+      const dataVersion = manifest?.version;
+      if (typeof dataVersion !== 'string' || dataVersion.length === 0) {
+        // No manifest/version (offline first run, or a stale deployment) —
+        // can't determine staleness; never wipe the cache on an unreadable signal.
+        diagLog('version-check', { result: 'no-version', action: 'skip' });
+        return;
+      }
       const present = await DataCache.has('__data_version__');
       if (present === null) {
         // Unreadable IDB — never wipe the cache on a flaky read
@@ -85,15 +96,15 @@ export class App {
         return;
       }
       if (!present) {
-        await DataCache.set('__data_version__', DATA_VERSION);
-        diagLog('version-init');
+        await DataCache.set('__data_version__', dataVersion);
+        diagLog('version-init', { version: dataVersion });
         return;
       }
       const cachedVer = await DataCache.get('__data_version__') as string | null;
-      if (cachedVer !== DATA_VERSION) {
+      if (cachedVer !== dataVersion) {
         await DataCache.clear();
-        await DataCache.set('__data_version__', DATA_VERSION);
-        diagLog('version-clear', { old: cachedVer });
+        await DataCache.set('__data_version__', dataVersion);
+        diagLog('version-clear', { old: cachedVer, version: dataVersion });
       }
     } catch (err) {
       diagLog('idb-error', { where: 'checkDataVersion', msg: String(err) });
@@ -106,7 +117,7 @@ export class App {
     this.handleRoute();
     window.addEventListener('hashchange', () => this.handleRoute());
 
-    // Data version check — bump DATA_VERSION when static data structure changes
+    // Data version check — the version comes from the preload manifest's content hash; run `npm run generate-manifest` after data changes
     this.checkDataVersion();
 
     // Close dropdown menus on click/touch outside
